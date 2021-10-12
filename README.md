@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/badge/PreRelease-^0.1.38-red.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/PreRelease-^0.0.1-red.svg?style=for-the-badge)](https://shields.io/)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
 
 # afya_moja_core
