@@ -1,5 +1,5 @@
 // Flutter imports:
-import 'package:afya_moja_core/src/my_afya_hub_primary_button.dart';
+import 'package:afya_moja_core/src/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
