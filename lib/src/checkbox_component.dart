@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:shared_themes/text_themes.dart';
 
-class MyAfyaHubCheckBox extends StatelessWidget {
-  /// [MyAfyaHubCheckBox] used as a custom checkbox with text.
-  const MyAfyaHubCheckBox({
+class CheckBoxComponent extends StatelessWidget {
+  /// [CheckBoxComponent] used as a custom checkbox with text.
+  const CheckBoxComponent({
     required this.value,
     required this.text,
     required this.onChanged,

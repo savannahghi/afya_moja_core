@@ -1,5 +1,5 @@
 // Project imports:
-import 'package:afya_moja_core/src/my_afya_hub_checkbox.dart';
+import 'package:afya_moja_core/src/checkbox_component.dart';
 
 // Flutter imports:
 import 'package:flutter/gestures.dart';
@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('MyAfyaHubCheckBox', () {
-    testWidgets('should render MyAfyaHubCheckBox when a child widget is passed',
+  group('CheckBoxComponent', () {
+    testWidgets('should render correctly when a child widget is passed',
         (WidgetTester tester) async {
       bool counter = false;
       bool onTap = false;
@@ -19,7 +19,7 @@ void main() {
         home: Builder(
           builder: (BuildContext context) {
             return Scaffold(
-              body: MyAfyaHubCheckBox(
+              body: CheckBoxComponent(
                 text: '',
                 value: true,
                 onChanged: (bool? value) {
@@ -85,8 +85,7 @@ void main() {
       expect(onTap, true);
     });
 
-    testWidgets(
-        'should render MyAfyaHubCheckBox when no child widget is passed',
+    testWidgets('should render correctly when no child widget is passed',
         (WidgetTester tester) async {
       bool counter = false;
       const String checkBoxActionText = 'Action';
@@ -94,7 +93,7 @@ void main() {
         home: Builder(
           builder: (BuildContext context) {
             return Scaffold(
-              body: MyAfyaHubCheckBox(
+              body: CheckBoxComponent(
                 text: checkBoxActionText,
                 value: counter,
                 onChanged: (bool? value) {
