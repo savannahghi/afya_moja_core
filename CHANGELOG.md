@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8
+
+- feat: modify community list item
+
 ## 0.0.7
 
 - chore: finish package publishing automation
