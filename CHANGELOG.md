@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.10
+
+- feat: notification list item
+
 ## 0.0.9
 
 - fix: exports
@@ -31,7 +35,7 @@
 ## Pre - [0.0.2]
 
 - refactor: checkbox component
-  
+
 ## Pre - [0.0.1]
 
 - initial package setup
