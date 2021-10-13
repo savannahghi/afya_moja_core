@@ -1,4 +1,7 @@
 # Changelog
+### Pre - [0.0.4]
+
+- feat: expandable question
 
 ## Pre - [0.0.3]
 
