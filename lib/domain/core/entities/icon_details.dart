@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'icon_details.freezed.dart';
+
 part 'icon_details.g.dart';
 
 @freezed

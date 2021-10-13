@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/hints.dart';
+import 'package:afya_moja_core/src/text_form_hint_text.dart';
 import 'package:afya_moja_core/src/types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

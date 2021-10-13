@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.11
+
+- feat: add phone input component
+
 ## 0.0.10
 
 - feat: notification list item
