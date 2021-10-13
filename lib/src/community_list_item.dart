@@ -12,7 +12,7 @@ import 'package:unicons/unicons.dart';
 class CommunityListItem extends StatelessWidget {
   /// [CommunityListItem] is used within the [CommunityPage] to show incoming messages.
   ///
-  /// [title], [message], [avatarImage], [lastMessageDate] and [onTap] are all required.
+  /// [title], [message], [avatarImage] and [lastMessageDate] are all required.
   ///
   /// [isGroupMessage] is used to determine whether the message belongs to a group.
   ///
@@ -22,10 +22,10 @@ class CommunityListItem extends StatelessWidget {
     bool? isGroupMessage,
     this.unreadNotificationCount,
     this.avatarImage,
+    this.onTap,
     required this.title,
     required this.message,
     required this.lastMessageDate,
-    required this.onTap,
   })  : isGroupMessage = isGroupMessage ?? false,
         assert(unreadNotificationCount == null || unreadNotificationCount >= 0);
 
@@ -35,7 +35,7 @@ class CommunityListItem extends StatelessWidget {
   final String message;
   final ImageProvider? avatarImage;
   final String lastMessageDate;
-  final Function onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class CommunityListItem extends StatelessWidget {
     }
 
     return GestureDetector(
-      onTap: onTap as Function(),
+      onTap: onTap,
       child: Container(
         color: hasUnreadNotifications ? Colors.grey.shade200 : null,
         padding:
