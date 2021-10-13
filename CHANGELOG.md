@@ -1,5 +1,10 @@
 # Changelog
-### Pre - [0.0.4]
+
+## Pre - [0.0.5]
+
+- chore: community list item
+
+## Pre - [0.0.4]
 
 - feat: expandable question
 
