@@ -1,1 +1,1 @@
-export 'package:afya_moja_core/buttons.dart';
+export 'src/buttons.dart';

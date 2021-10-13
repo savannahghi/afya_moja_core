@@ -1,1 +1,1 @@
-export 'package:afya_moja_core/information_list_card.dart';
+export 'src/information_list_card.dart';
