@@ -1,5 +1,6 @@
-[![Release](https://img.shields.io/badge/PreRelease--^0.0.5red.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/Version-^0.0.5-success.svg?style=for-the-badge)](https://shields.io/)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/Coverage-100-success.svg?style=for-the-badge)](https://shields.io/)
 
 # afya_moja_core
 
@@ -21,7 +22,7 @@ $ flutter pub add afya_moja_core
 
 This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
 
-```dar
+```dart
 dependencies:
   afya_moja_core: ^0.0.5
 ```
