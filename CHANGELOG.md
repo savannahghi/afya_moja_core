@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.7
+
+- chore: finish package publishing automation
+
+## 0.0.6
+
+- chore: automate deployment of package to pub.dev
+
 ## Pre - [0.0.5]
 
 - chore: community list item
