@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.9
+
+- fix: exports
+
 ## 0.0.8
 
 - feat: modify community list item

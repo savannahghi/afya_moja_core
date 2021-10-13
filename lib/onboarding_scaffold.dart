@@ -1,1 +1,1 @@
-export 'package:afya_moja_core/onboarding_scaffold.dart';
+export 'src/onboarding_scaffold.dart';
