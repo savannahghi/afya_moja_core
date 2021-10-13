@@ -1,0 +1,48 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:shared_themes/text_themes.dart';
+
+class CustomCheckBox extends StatelessWidget {
+  /// [CustomCheckBox] used as a custom checkbox with text.
+  const CustomCheckBox({
+    required this.value,
+    required this.text,
+    required this.onChanged,
+    this.color,
+    this.onTap,
+    this.child,
+    this.checkBoxKey,
+  });
+
+  final Key? checkBoxKey;
+  final Widget? child;
+  final ValueChanged<bool?>? onChanged;
+  final Function? onTap;
+  final String? text;
+  final bool? value;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Checkbox(
+          key: checkBoxKey,
+          activeColor: color ?? Colors.white,
+          materialTapTargetSize: MaterialTapTargetSize.padded,
+          value: value,
+          onChanged: onChanged,
+        ),
+        Expanded(
+          child: child ??
+              Text(
+                text ?? '',
+                style: TextThemes.normalSize14Text(color ?? Colors.white),
+              ),
+        )
+      ],
+    );
+  }
+}
