@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.12
+
+- fix: bug fixes
+  - default checkbox color to black
+  - add auto validation to input component
+  - improve overall code formatting
+
 ## 0.0.11
 
 - feat: add phone input component

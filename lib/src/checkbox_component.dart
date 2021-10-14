@@ -30,7 +30,7 @@ class CheckBoxComponent extends StatelessWidget {
       children: <Widget>[
         Checkbox(
           key: checkBoxKey,
-          activeColor: color ?? Colors.white,
+          activeColor: color ?? Colors.black,
           materialTapTargetSize: MaterialTapTargetSize.padded,
           value: value,
           onChanged: onChanged,
@@ -39,7 +39,7 @@ class CheckBoxComponent extends StatelessWidget {
           child: child ??
               Text(
                 text ?? '',
-                style: TextThemes.normalSize14Text(color ?? Colors.white),
+                style: TextThemes.normalSize14Text(color ?? Colors.black),
               ),
         )
       ],
