@@ -7,13 +7,14 @@ import 'package:shared_themes/text_themes.dart';
 
 ///[OnboardingScaffoldHeader] header on the onboarding scaffold
 class OnboardingScaffoldHeader extends StatelessWidget {
-  final String title;
-  final String description;
-
   const OnboardingScaffoldHeader({
     required this.title,
     required this.description,
   });
+
+  final String description;
+  final String title;
+
   @override
   Widget build(BuildContext context) {
     return Column(

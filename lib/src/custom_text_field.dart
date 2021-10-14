@@ -36,45 +36,55 @@ class CustomTextField extends StatelessWidget {
     this.inputFormatters,
     this.maxLength,
     this.isRequired,
+    this.autovalidateMode,
   })  : enabled = enabled ?? true,
         obscureText = obscureText ?? false;
 
-  final Key formFieldKey;
+  final AutovalidateMode? autovalidateMode;
+  final Color? borderColor;
   final TextEditingController? controller;
-  final FocusNode? focusNode;
+  final Color? customFillColor;
+  final bool enabled;
   final String? fieldLabel;
-  final String? hintText;
+  final FocusNode? focusNode;
+  final Key formFieldKey;
   final Color? hintColor;
+  final String? hintText;
+  final List<TextInputFormatter>? inputFormatters;
+  // An indicator in the label text to show if this input is required
+  final bool? isRequired;
+
+  final TextInputType? keyboardType;
+  final String? labelText;
+  final int? maxLength;
+  final int? maxLines;
+  // Whether to obscure text. Defaults to `false`
+  final bool obscureText;
+
   final OnChangedString? onChanged;
   final OnChangedString? onSubmitted;
-  final bool enabled;
-  final Color? customFillColor;
-  final int? maxLines;
-  final String? labelText;
-  final Widget? suffixIcon;
   final Widget? prefixIcon;
-  final Color? borderColor;
-  final TextInputType? keyboardType;
-  final bool obscureText;
+  final Widget? suffixIcon;
   final FormFieldValidator<String>? validator;
-  final List<TextInputFormatter>? inputFormatters;
-  final int? maxLength;
-  final bool? isRequired;
+
+  bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> labels = <Widget>[];
     if (fieldLabel != null) {
-      labels.addAll(<Widget>[
-        Align(
-          alignment: Alignment.topLeft,
-          child: TextFormHintText(
-            hintText: fieldLabel!,
-            isRequired: isRequired,
+      labels.addAll(
+        <Widget>[
+          Align(
+            alignment: Alignment.topLeft,
+            child: TextFormHintText(
+              hintText: fieldLabel!,
+              isRequired: isRequired,
+            ),
           ),
-        ),
-        smallVerticalSizedBox,
-      ]);
+          smallVerticalSizedBox,
+        ],
+      );
     }
 
     return Column(
@@ -85,7 +95,7 @@ class CustomTextField extends StatelessWidget {
           keyboardType: keyboardType,
           controller: controller,
           obscureText: obscureText,
-          autovalidateMode: AutovalidateMode.always,
+          autovalidateMode: autovalidateMode ?? AutovalidateMode.always,
           enabled: enabled,
           key: formFieldKey,
           onFieldSubmitted: onSubmitted,
@@ -141,6 +151,4 @@ class CustomTextField extends StatelessWidget {
       ],
     );
   }
-
-  bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 }

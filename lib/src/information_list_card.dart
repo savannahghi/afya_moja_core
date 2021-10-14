@@ -15,12 +15,12 @@ class InformationListCard extends StatelessWidget {
     double? borderRadius,
   }) : borderRadius = borderRadius ?? 8;
 
-  final Text title;
-  final Widget? body;
-  final Widget? leadingIcon;
-  final Color? iconBackgroundColor;
   final Widget? alternateLeadingIcon;
+  final Widget? body;
   final double borderRadius;
+  final Color? iconBackgroundColor;
+  final Widget? leadingIcon;
+  final Text title;
 
   @override
   Widget build(BuildContext context) {

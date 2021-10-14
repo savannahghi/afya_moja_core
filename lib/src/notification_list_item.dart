@@ -23,11 +23,11 @@ class NotificationListItem extends StatelessWidget {
     this.status,
   });
 
-  final String? status;
-  final String description;
-  final String date;
   final List<NotificationActions>? actions;
+  final String date;
+  final String description;
   final IconDetails icon;
+  final String? status;
 
   @override
   Widget build(BuildContext context) {

@@ -15,9 +15,11 @@ class OnboardingScaffold extends StatelessWidget {
     required this.description,
   });
 
-  final String title;
-  final String description;
   final Widget child;
+  final String description;
+
+  // The title of the scaffold
+  final String title;
 
   @override
   Widget build(BuildContext context) {
