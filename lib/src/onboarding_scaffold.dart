@@ -13,6 +13,7 @@ class OnboardingScaffold extends StatelessWidget {
     required this.child,
     required this.title,
     required this.description,
+    this.backgroundColor,
   });
 
   final Widget child;
@@ -20,11 +21,13 @@ class OnboardingScaffold extends StatelessWidget {
 
   // The title of the scaffold
   final String title;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     final double sizedBoxHeight = MediaQuery.of(context).size.width / 4;
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,

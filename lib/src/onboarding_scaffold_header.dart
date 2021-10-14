@@ -23,7 +23,7 @@ class OnboardingScaffoldHeader extends StatelessWidget {
         mediumVerticalSizedBox,
         Text(
           title,
-          style: TextThemes.normalSize32Text(Theme.of(context).primaryColor),
+          style: TextThemes.boldSize30Text(Theme.of(context).primaryColor),
         ),
         smallVerticalSizedBox,
         Text(
