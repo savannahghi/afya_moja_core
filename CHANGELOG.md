@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.14
+
+- fix: Onboarding Scaffold test
+
 ## 0.0.13
 
 - style:

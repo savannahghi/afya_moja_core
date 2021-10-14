@@ -36,7 +36,12 @@ void main() {
         ),
       );
       await tester.pump();
-      expect(find.byType(OnboardingScaffoldHeader), findsOneWidget);
+      expect(
+        (tester.firstWidget(find.byType(OnboardingScaffold))
+                as OnboardingScaffold)
+            .backgroundColor,
+        Colors.white,
+      );
     });
   });
 }
