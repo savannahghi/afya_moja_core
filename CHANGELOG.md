@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.13
+
+- style:
+  - Onboarding Scaffold Header Title to be bold
+  - Add background color option to onboarding scaffold
+  - Add background color option to phone input
+
 ## 0.0.12
 
 - fix: bug fixes

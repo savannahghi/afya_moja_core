@@ -26,6 +26,7 @@ class MyAfyaHubPhoneInput extends FormField<String> {
     TextStyle? labelStyle,
     required PhoneNumberFormatterFunc phoneNumberFormatter,
     required Widget suffixIcon,
+    Color? backgroundColor,
     bool? enabled,
     bool? autoFocus,
     String? initialValue = '',
@@ -90,7 +91,7 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey[200]!),
-                    color: white,
+                    color: backgroundColor ?? white,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Row(

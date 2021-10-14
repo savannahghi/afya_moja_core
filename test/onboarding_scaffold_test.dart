@@ -23,5 +23,20 @@ void main() {
       await tester.pump();
       expect(find.byType(OnboardingScaffoldHeader), findsOneWidget);
     });
+
+    testWidgets('sets background color', (WidgetTester tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: OnboardingScaffold(
+            backgroundColor: Colors.white,
+            title: 'My Afya Hub Onboarding Scaffold',
+            description: 'test My Afya Hub Onboarding Scaffold',
+            child: Text('Test'),
+          ),
+        ),
+      );
+      await tester.pump();
+      expect(find.byType(OnboardingScaffoldHeader), findsOneWidget);
+    });
   });
 }
