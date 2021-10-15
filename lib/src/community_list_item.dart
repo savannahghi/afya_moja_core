@@ -23,6 +23,7 @@ class CommunityListItem extends StatelessWidget {
     this.unreadNotificationCount,
     this.avatarImage,
     this.onTap,
+    this.textColor,
     required this.title,
     required this.message,
     required this.lastMessageDate,
@@ -36,6 +37,7 @@ class CommunityListItem extends StatelessWidget {
   final ImageProvider? avatarImage;
   final String lastMessageDate;
   final VoidCallback? onTap;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +90,15 @@ class CommunityListItem extends StatelessWidget {
                       if (isGroupMessage)
                         Text(
                           groupText,
-                          style:
-                              TextThemes.normalSize10Text(Colors.grey.shade600),
+                          style: TextThemes.normalSize10Text(
+                            textColor ?? Colors.grey.shade600,
+                          ),
                         ),
                       Text(
                         lastMessageDate,
-                        style:
-                            TextThemes.normalSize10Text(Colors.grey.shade600),
+                        style: TextThemes.normalSize10Text(
+                          textColor ?? Colors.grey.shade600,
+                        ),
                       ),
                     ],
                   ),

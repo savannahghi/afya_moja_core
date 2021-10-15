@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     bool? enabled,
     final bool? obscureText,
-    required this.formFieldKey,
+    this.formFieldKey,
     this.focusNode,
     this.fieldLabel,
     this.controller,
@@ -42,12 +42,12 @@ class CustomTextField extends StatelessWidget {
 
   final AutovalidateMode? autovalidateMode;
   final Color? borderColor;
+  final Key? formFieldKey;
   final TextEditingController? controller;
   final Color? customFillColor;
   final bool enabled;
   final String? fieldLabel;
   final FocusNode? focusNode;
-  final Key formFieldKey;
   final Color? hintColor;
   final String? hintText;
   final List<TextInputFormatter>? inputFormatters;
