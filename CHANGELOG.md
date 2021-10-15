@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.15
+
+- Make CustomTextField formFieldKey parameter optional
+- Add textColor parameter to CommunityListItem
+
 ## 0.0.14
 
 - fix: Onboarding Scaffold test
