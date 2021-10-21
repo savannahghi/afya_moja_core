@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.22
+
+- fix: make suffix icon optional in phone input
+
 ## 0.0.21
 
 - chore: profile details card
