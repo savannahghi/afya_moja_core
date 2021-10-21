@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.16
+
+- feat: search widget
+
 ## 0.0.15
 
 - Make CustomTextField formFieldKey parameter optional
