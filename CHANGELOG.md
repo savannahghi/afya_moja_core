@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.19
+
+- feat: selection option field
+
 ## 0.0.18
 
 - feat: Verify OTP Input widget
