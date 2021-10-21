@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.23
+
+- chore: custom confirm dialog
+
 ## 0.0.22
 
 - fix: make suffix icon optional in phone input
