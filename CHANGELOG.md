@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.20
+
+- fix: change phone dropdown selection color to black
+
 ## 0.0.19
 
 - feat: selection option field

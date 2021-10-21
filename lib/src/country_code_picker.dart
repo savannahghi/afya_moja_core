@@ -49,9 +49,9 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
               child: Text(
                 getCountry(this._country)!['code']!,
                 key: const Key('countrySelectedKey'),
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w300,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Colors.black,
                   fontSize: 15,
                 ),
               ),
