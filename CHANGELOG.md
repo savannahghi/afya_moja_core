@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.21
+
+- chore: profile details card
+
 ## 0.0.20
 
 - fix: change phone dropdown selection color to black
