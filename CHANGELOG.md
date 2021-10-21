@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.18
+
+- feat: Verify OTP Input widget
+
 ## 0.0.17
 
 - fix: export search widget

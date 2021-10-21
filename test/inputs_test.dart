@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 void main() {
   group('ExpandableQuestion', () {
@@ -89,6 +90,30 @@ void main() {
       final TextField formField =
           tester.widget<TextField>(find.byType(TextField));
       expect(formField.decoration?.fillColor, Colors.grey[200]);
+    });
+  });
+
+  group('VerifyOTPInput', () {
+    testWidgets('VerifyOTPInput should render correctly',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: VerifyOTPInput(
+              maxLength: null,
+              onDone: (String val) {},
+              onTextChanged: (String val) {},
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await tester.showKeyboard(find.byType(VerifyOTPInput));
+      await tester.enterText(find.byType(VerifyOTPInput), '1234');
+      await tester.pumpAndSettle();
+
+      final Finder pinCodeTextField = find.byType(PinCodeTextField);
+      expect(pinCodeTextField, findsOneWidget);
     });
   });
 }
