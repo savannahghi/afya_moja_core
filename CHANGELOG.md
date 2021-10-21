@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.17
+
+- fix: export search widget
+
 ## 0.0.16
 
 - feat: search widget
