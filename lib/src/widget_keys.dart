@@ -6,3 +6,7 @@ const Key correctionRequestButtonKey = Key('correction_request_button');
 const Key inviteButtonKey = Key('invite_button_key');
 const Key viewProfileButtonKey = Key('view_profile_button_key');
 const Key editUserProfileButtonKey = Key('edit_user_profile_button_key');
+
+//Custom Confirm Dialog
+const Key dialogConfirmButtonKey = Key('dialog_confirm_button_key');
+const Key dialogCancelButtonKey = Key('dialog_cancel_button_key');

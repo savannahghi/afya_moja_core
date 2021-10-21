@@ -11,3 +11,7 @@ const String searchUser = 'Search user';
 const String correctionRequestString = 'Request for correction';
 const String inviteToMyAfyaHubString = 'Invite to My Afya Hub';
 const String viewProfileString = 'View profile';
+
+//Custom confirm dialog
+const String confirmString = 'Confirm';
+const String cancelString = 'Cancel';
