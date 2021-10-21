@@ -25,7 +25,7 @@ class MyAfyaHubPhoneInput extends FormField<String> {
     required String? labelText,
     TextStyle? labelStyle,
     required PhoneNumberFormatterFunc phoneNumberFormatter,
-    required Widget suffixIcon,
+    Widget? suffixIcon,
     Color? backgroundColor,
     bool? enabled,
     bool? autoFocus,
@@ -166,7 +166,8 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                                     );
                                   },
                                 ),
-                                if (!isValidNumber) suffixIcon
+                                if (!isValidNumber)
+                                  suffixIcon ?? const SizedBox()
                               ],
                             ),
                           ),
