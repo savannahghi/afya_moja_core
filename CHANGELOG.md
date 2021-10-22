@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.24
+
+- refactor: custom text field
+
 ## 0.0.23
 
 - chore: custom confirm dialog

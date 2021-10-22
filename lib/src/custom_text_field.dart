@@ -113,7 +113,9 @@ class CustomTextField extends StatelessWidget {
                 .textTheme
                 .headline4!
                 .copyWith(color: hintColor ?? grey, fontSize: 16),
-            suffix: suffixIcon,
+            suffixIcon: suffixIcon,
+            suffixIconConstraints:
+                const BoxConstraints(minHeight: 24, minWidth: 24),
             prefixIcon: prefixIcon,
             labelStyle: const TextStyle(
               fontWeight: FontWeight.w300,
