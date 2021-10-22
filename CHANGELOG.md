@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.25
+
+- chore: Community chat screen widgets
+
 ## 0.0.24
 
 - refactor: custom text field

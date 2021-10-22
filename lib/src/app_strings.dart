@@ -15,3 +15,7 @@ const String viewProfileString = 'View profile';
 //Custom confirm dialog
 const String confirmString = 'Confirm';
 const String cancelString = 'Cancel';
+// Community Chat
+const String awaitingModerationString = 'Awaiting Moderation';
+const String typeYourMessageHereString = 'Type your Message here';
+const String comingSoonText = 'Coming soon';

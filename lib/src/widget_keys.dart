@@ -10,3 +10,7 @@ const Key editUserProfileButtonKey = Key('edit_user_profile_button_key');
 //Custom Confirm Dialog
 const Key dialogConfirmButtonKey = Key('dialog_confirm_button_key');
 const Key dialogCancelButtonKey = Key('dialog_cancel_button_key');
+// community chat page
+const Key messageInputAttachFileKey = Key('message_input_attach_file_key');
+const Key messageInputSendMessageKey = Key('message_input_send_message_key');
+const Key moreAppBarKey = Key('more_app_bar_key');
