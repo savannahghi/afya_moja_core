@@ -37,6 +37,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLength,
     this.isRequired,
     this.autovalidateMode,
+    this.labelStyle,
   })  : enabled = enabled ?? true,
         obscureText = obscureText ?? false;
 
@@ -66,6 +67,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final FormFieldValidator<String>? validator;
+  final TextStyle? labelStyle;
 
   bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -117,7 +119,7 @@ class CustomTextField extends StatelessWidget {
             suffixIconConstraints:
                 const BoxConstraints(minHeight: 24, minWidth: 24),
             prefixIcon: prefixIcon,
-            labelStyle: const TextStyle(
+            labelStyle: labelStyle ?? const TextStyle(
               fontWeight: FontWeight.w300,
               color: Colors.grey,
               fontSize: 15,

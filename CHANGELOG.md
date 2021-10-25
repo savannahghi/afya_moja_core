@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.26
+
+- chore: add labelStyle property to CustomTextField
+
 ## 0.0.25
 
 - chore: Community chat screen widgets
