@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.27
+
+- chore: increase touch target size on checkbox
+
 ## 0.0.26
 
 - chore: add labelStyle property to CustomTextField
