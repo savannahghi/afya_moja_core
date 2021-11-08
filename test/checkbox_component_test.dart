@@ -90,18 +90,14 @@ void main() {
       bool counter = false;
       const String checkBoxActionText = 'Action';
       final Widget testWidget = MaterialApp(
-        home: Builder(
-          builder: (BuildContext context) {
-            return Scaffold(
-              body: CheckBoxComponent(
-                text: checkBoxActionText,
-                value: counter,
-                onChanged: (bool? value) {
-                  counter = value!;
-                },
-              ),
-            );
-          },
+        home: Scaffold(
+          body: CheckBoxComponent(
+            text: checkBoxActionText,
+            value: counter,
+            onChanged: (bool? value) {
+              counter = value!;
+            },
+          ),
         ),
       );
       await tester.pumpWidget(testWidget);
@@ -114,6 +110,33 @@ void main() {
 
       await tester.tap(find.byType(Checkbox));
       await tester.pump();
+
+      expect(counter, true);
+    });
+
+    testWidgets('tapping the text should also activate the checkbox',
+        (WidgetTester tester) async {
+      bool counter = false;
+      const String checkBoxActionText = 'Action';
+      final Widget testWidget = MaterialApp(
+        home: Scaffold(
+          body: CheckBoxComponent(
+            text: checkBoxActionText,
+            value: counter,
+            onChanged: (bool? value) {
+              counter = value!;
+            },
+          ),
+        ),
+      );
+      await tester.pumpWidget(testWidget);
+
+      await tester.pumpAndSettle();
+
+      final Finder actionTextFinder = find.text(checkBoxActionText);
+      expect(actionTextFinder, findsOneWidget);
+      await tester.tap(actionTextFinder);
+      await tester.pumpAndSettle();
 
       expect(counter, true);
     });
