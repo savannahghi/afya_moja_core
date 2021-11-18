@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.28
+
+- chore: Edit information dropdown widget
+
 ## 0.0.27
 
 - chore: increase touch target size on checkbox
