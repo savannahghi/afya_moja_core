@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:misc_utilities/misc.dart';
 
 // Package imports:
 import 'package:shared_themes/colors.dart';
@@ -329,4 +330,74 @@ BoxDecoration customRoundedPinBoxDecoration(
     color: pinBoxColor,
     borderRadius: const BorderRadius.all(Radius.circular(4)),
   );
+}
+
+class EditInformationDropDown extends StatelessWidget {
+  ///[EditInformationDropDown] dropdown widgets for Editing user profile
+  const EditInformationDropDown({
+    required this.value,
+    required this.items,
+    required this.onChange,
+  });
+
+  final String value;
+  final List<String> items;
+  final Function(String?) onChange;
+
+  @override
+  Widget build(BuildContext context) {
+    return InputDecorator(
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: white,
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 15,
+          horizontal: 15,
+        ),
+        labelStyle: const TextStyle(
+          fontWeight: FontWeight.w300,
+          color: Colors.grey,
+          fontSize: 15,
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white24,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
+        disabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: grey),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
+        ),
+        focusColor: Theme.of(context).colorScheme.secondary,
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          style: Theme.of(context)
+              .textTheme
+              .headline4!
+              .copyWith(color: grey, fontSize: 16),
+          dropdownColor: white,
+          value: value,
+          items: items.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              key: ValueKey<String>(value),
+              value: value,
+              child: Text(
+                titleCase(value),
+              ),
+            );
+          }).toList(),
+          onChanged: onChange,
+          isDense: true,
+        ),
+      ),
+    );
+  }
 }

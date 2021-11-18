@@ -116,4 +116,80 @@ void main() {
       expect(pinCodeTextField, findsOneWidget);
     });
   });
+
+  group('EditInformationDropDown', () {
+    testWidgets('EditInformationDropDown should render correctly',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: EditInformationDropDown(
+              items: const <String>['Test', 'Trial'],
+              value: 'Test',
+              onChange: (String? value) {},
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.byType(EditInformationDropDown), findsOneWidget);
+    });
+
+    testWidgets('EditInformationDropDown displays dropdown list',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: EditInformationDropDown(
+              items: const <String>['Test', 'Trial'],
+              value: 'Test',
+              onChange: (String? value) {},
+            ),
+          ),
+        ),
+      );
+
+      await tester.tap(
+        find.byType(EditInformationDropDown),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Trial').first, findsOneWidget);
+    });
+
+    testWidgets('EditInformationDropDown onChange on tap',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Builder(builder: (BuildContext context) {
+            return Scaffold(
+              body: EditInformationDropDown(
+                items: const <String>['Test', 'Trial'],
+                value: 'Test',
+                onChange: (String? value) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(value!),
+                    ),
+                  );
+                },
+              ),
+            );
+          }),
+        ),
+      );
+
+      await tester.tap(
+        find.byType(EditInformationDropDown),
+      );
+      await tester.pumpAndSettle();
+
+      await tester.tap(
+        find.text('Test').last,
+      );
+
+      expect(find.byType(ScaffoldMessenger), findsOneWidget);
+    });
+  });
 }
