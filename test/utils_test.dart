@@ -9,12 +9,14 @@ void main() {
       expect(popValue('Tanzania'), Country.tanzania);
       expect(popValue('United Kingdom'), Country.uk);
       expect(popValue('Belgium'), Country.belgium);
+      expect(popValue('Nigeria'), Country.nigeria);
 
       expect(getCountry(Country.uganda), supportedCountries['uganda']);
       expect(getCountry(Country.tanzania), supportedCountries['tanzania']);
       expect(getCountry(Country.uk), supportedCountries['uk']);
       expect(getCountry(Country.belgium), supportedCountries['belgium']);
       expect(getCountry(Country.us), supportedCountries['usa']);
+      expect(getCountry(Country.nigeria), supportedCountries['nigeria']);
     });
   });
 }

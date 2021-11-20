@@ -1,9 +1,7 @@
 // Project imports:
 import 'package:afya_moja_core/src/inputs.dart';
-
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
@@ -162,21 +160,23 @@ void main() {
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: Builder(builder: (BuildContext context) {
-            return Scaffold(
-              body: EditInformationDropDown(
-                items: const <String>['Test', 'Trial'],
-                value: 'Test',
-                onChange: (String? value) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(value!),
-                    ),
-                  );
-                },
-              ),
-            );
-          }),
+          home: Builder(
+            builder: (BuildContext context) {
+              return Scaffold(
+                body: EditInformationDropDown(
+                  items: const <String>['Test', 'Trial'],
+                  value: 'Test',
+                  onChange: (String? value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(value!),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
         ),
       );
 

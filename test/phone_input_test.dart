@@ -62,7 +62,7 @@ void main() {
         await tester.tap(find.byType(MyAfyaHubCountryPicker));
         await tester.pumpAndSettle();
 
-        expect(find.byType(ListTile), findsNWidgets(6));
+        expect(find.byType(ListTile), findsNWidgets(7));
         await tester.tap(find.byType(ListTile).first);
         await tester.pumpAndSettle();
 
