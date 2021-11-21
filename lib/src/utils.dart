@@ -61,7 +61,7 @@ Map<String, Map<String, String>> supportedCountries =
   'nigeria': <String, String>{
     'code': '+234',
     'initial': 'NG',
-    'name': 'nigeria',
+    'name': 'Nigeria',
     'flag': 'packages/shared_ui_components/assets/ng.png',
   },
 };
