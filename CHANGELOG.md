@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.29
+
+- chore: nigeria utils
 ## 0.0.28
 
 - chore: Edit information dropdown widget

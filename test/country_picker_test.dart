@@ -2,7 +2,6 @@
 import 'package:afya_moja_core/src/country_code_picker.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
@@ -35,7 +34,7 @@ void main() {
       await tester.tap(selectCountry);
       await tester.pumpAndSettle();
 
-      expect(find.byType(ListTile), findsNWidgets(6));
+      expect(find.byType(ListTile), findsNWidgets(7));
       await tester.tap(find.byType(ListTile).first);
       await tester.pumpAndSettle();
     });

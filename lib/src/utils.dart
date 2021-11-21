@@ -13,6 +13,8 @@ Map<String, String>? getCountry(Country country) {
       return supportedCountries['belgium'];
     case Country.uk:
       return supportedCountries['uk'];
+    case Country.nigeria:
+      return supportedCountries['nigeria'];
     default:
       return supportedCountries['usa'];
   }
@@ -56,6 +58,12 @@ Map<String, Map<String, String>> supportedCountries =
     'name': 'Belgium',
     'flag': 'packages/shared_ui_components/assets/bel.png',
   },
+  'nigeria': <String, String>{
+    'code': '+234',
+    'initial': 'NG',
+    'name': 'Nigeria',
+    'flag': 'packages/shared_ui_components/assets/ng.png',
+  },
 };
 
 dynamic selectCountryModalBottomSheet(BuildContext context) {
@@ -95,6 +103,8 @@ Country popValue(String name) {
       return Country.belgium;
     case 'United Kingdom':
       return Country.uk;
+    case 'Nigeria':
+      return Country.nigeria;
     default:
       return Country.us;
   }
