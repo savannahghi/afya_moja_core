@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/badge/Version-^0.0.29-success.svg?style=for-the-badge)](https://shields.io/)
+[![Release](https://img.shields.io/badge/Version-^0.0.30-success.svg?style=for-the-badge)](https://shields.io/)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
 [![Release](https://img.shields.io/badge/Coverage-100-success.svg?style=for-the-badge)](https://shields.io/)
 
@@ -17,14 +17,14 @@ Run this command:
 - With Flutter:
 
 ```dart
-$ flutter pub add afya_moja_core
+flutter pub add afya_moja_core
 ```
 
 This will add a line like this to your package's pubspec.yaml (and run an implicit dart pub get):
 
 ```dart
 dependencies:
-  afya_moja_core: ^0.0.29
+  afya_moja_core: ^0.0.30
 ```
 
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
