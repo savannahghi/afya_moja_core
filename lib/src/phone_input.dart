@@ -6,18 +6,20 @@ import 'package:afya_moja_core/src/types.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 // Package imports:
 import 'package:misc_utilities/misc.dart';
 
 import 'package:shared_themes/colors.dart';
 
-/// [MyAfyaHubPhoneInput] is a shared widget to input user phone number and country code
+/// [MyAfyaHubPhoneInput] is a shared widget to input user phone number and
+/// country code
 ///
-/// It takes in required [inputController], [onChanged] and [phoneNumberFormatter] parameters
+/// It takes in required [inputController], [onChanged] and
+/// [phoneNumberFormatter] parameters
 ///
-/// The [PhoneNumberFormatterFunc] function takes in countyCode and phoneNumber to return a standard
-/// phoneNumber string
-
+/// The [PhoneNumberFormatterFunc] function takes in countyCode and phoneNumber
+///  to return a standard phoneNumber string
 class MyAfyaHubPhoneInput extends FormField<String> {
   MyAfyaHubPhoneInput({
     required TextEditingController? inputController,
@@ -51,13 +53,6 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                 return phoneNumberRequiredText;
               }
 
-              final List<int> validLengths = <int>[9, 10];
-
-              if (!validLengths.contains(value.length)) {
-                isValidNumber = showAlertIcon;
-                return validPhoneNumberText;
-              }
-
               String phone;
 
               if (value.startsWith('0')) {
@@ -70,11 +65,13 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                 isValidNumber = showAlertIcon;
                 return validPhoneNumberText;
               }
+
               if (countryCode == '+254' &&
                   !validateKenyanNumber('$countryCode$phone')) {
                 isValidNumber = showAlertIcon;
                 return validPhoneNumberText;
               }
+
               isValidNumber = !showAlertIcon;
             }
           },
@@ -111,9 +108,11 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                             onChanged(
                               phoneNumberFormatter(
                                 countryCode: phoneInputBehaviorSubject
-                                    .countryCode.valueOrNull!,
+                                        .countryCode.valueOrNull ??
+                                    '',
                                 phoneNumber: phoneInputBehaviorSubject
-                                    .phoneNumber.valueOrNull!,
+                                        .phoneNumber.valueOrNull ??
+                                    '',
                               ),
                             );
                           },
