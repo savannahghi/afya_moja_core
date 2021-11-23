@@ -2,10 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:misc_utilities/misc.dart';
-
+import 'package:pin_code_text_field/pin_code_text_field.dart';
 // Package imports:
 import 'package:shared_themes/colors.dart';
-import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -48,6 +47,7 @@ class ExpandableQuestion extends StatelessWidget {
     this.suffixIcon,
     this.isSearchField = false,
     this.obscureText,
+    this.validator,
     this.autoValidate = false,
     this.isSearchFieldSmall = false,
     this.autoFocus,
@@ -68,6 +68,7 @@ class ExpandableQuestion extends StatelessWidget {
         super(key: key);
 
   final bool? autoFocus;
+  final FormFieldValidator<String>? validator;
   final bool? autoValidate;
   final Color? borderColor;
   final Color? color;
@@ -149,6 +150,7 @@ class ExpandableQuestion extends StatelessWidget {
                     enabled: enabled ?? true,
                     maxLines: maxLines,
                     maxLength: maxLength,
+                    validator: validator,
                     autovalidateMode: autoValidate ?? false
                         ? AutovalidateMode.always
                         : AutovalidateMode.disabled,

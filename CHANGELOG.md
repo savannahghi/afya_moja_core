@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.31
+
+- chore: add expansion question validator
+
 ## 0.0.30
 
 - chore: fix phone number validation errors
