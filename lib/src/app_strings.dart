@@ -19,3 +19,6 @@ const String cancelString = 'Cancel';
 const String awaitingModerationString = 'Awaiting Moderation';
 const String typeYourMessageHereString = 'Type your Message here';
 const String comingSoonText = 'Coming soon';
+
+// Expansion Question
+const String dateLabelText = 'Tap to select a date';
