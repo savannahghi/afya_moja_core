@@ -1,10 +1,12 @@
 // Flutter imports:
+import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:misc_utilities/misc.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 // Package imports:
 import 'package:shared_themes/colors.dart';
+import 'package:shared_ui_components/inputs.dart';
 
 bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -27,6 +29,8 @@ class ExpandableQuestion extends StatelessWidget {
   ///       on the provided context. For example getting colors from [Theme.of(context)]
   const ExpandableQuestion({
     required this.question,
+    this.isDateType = false,
+    required this.dateController,
     this.color,
     Key? key,
     this.enabled,
@@ -68,10 +72,12 @@ class ExpandableQuestion extends StatelessWidget {
         super(key: key);
 
   final bool? autoFocus;
+  final bool isDateType;
   final FormFieldValidator<String>? validator;
   final bool? autoValidate;
   final Color? borderColor;
   final Color? color;
+  final TextEditingController dateController;
   final TextEditingController? controller;
   final Color? customFillColor;
   final InputDecoration? decoration;
@@ -91,7 +97,7 @@ class ExpandableQuestion extends StatelessWidget {
   final int? maxLength;
   final int? maxLines;
   final bool? obscureText;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<String?> onChanged;
   final ValueChanged<String>? onFieldSubmit;
   final FormFieldSetter<String>? onSaved;
   final Function? onTap;
@@ -145,96 +151,113 @@ class ExpandableQuestion extends StatelessWidget {
                   ),
                 ),
                 children: <Widget>[
-                  TextFormField(
-                    key: fieldKey,
-                    enabled: enabled ?? true,
-                    maxLines: maxLines,
-                    maxLength: maxLength,
-                    validator: validator,
-                    autovalidateMode: autoValidate ?? false
-                        ? AutovalidateMode.always
-                        : AutovalidateMode.disabled,
-                    initialValue: initialValue,
-                    decoration: decoration ??
-                        InputDecoration(
-                          filled: true,
-                          fillColor: (enabled != null && !enabled!)
-                              ? Colors.grey[200]
-                              : customFillColor ?? Colors.grey[200],
-                          alignLabelWithHint: alignLabelWithHint(maxLines),
-                          contentPadding: isSearchField
-                              ? const EdgeInsets.all(20)
-                              : EdgeInsets.symmetric(
-                                  vertical: isSearchFieldSmall ? 10 : 15,
-                                  horizontal: 15,
-                                ),
-                          labelText: labelText,
-                          hintText: hintText,
-                          hintStyle: Theme.of(context)
-                              .textTheme
-                              .headline4!
-                              .copyWith(color: hintColor ?? grey, fontSize: 16),
-                          suffix: suffixIcon,
-                          prefixIcon: prefixIcon,
-                          labelStyle: Theme.of(context)
+                  if (isDateType)
+                    SILDatePickerField(
+                      // check documentation for this widget to understand how dates are constrained
+                      allowCurrentYear: true,
+                      allowFutureYears: true,
+                      enabled: true,
+                      controller: dateController,
+                      hintText: dateController.text == '' ? dateLabelText : '',
+
+                      suffixIcon: Icon(
+                        Icons.calendar_today_outlined,
+                        color: Colors.grey[200],
+                      ),
+                      onChanged: onChanged,
+                    )
+                  else
+                    TextFormField(
+                      key: fieldKey,
+                      enabled: enabled ?? true,
+                      maxLines: maxLines,
+                      maxLength: maxLength,
+                      validator: validator,
+                      autovalidateMode: autoValidate ?? false
+                          ? AutovalidateMode.always
+                          : AutovalidateMode.disabled,
+                      initialValue: initialValue,
+                      decoration: decoration ??
+                          InputDecoration(
+                            filled: true,
+                            fillColor: (enabled != null && !enabled!)
+                                ? Colors.grey[200]
+                                : customFillColor ?? Colors.grey[200],
+                            alignLabelWithHint: alignLabelWithHint(maxLines),
+                            contentPadding: isSearchField
+                                ? const EdgeInsets.all(20)
+                                : EdgeInsets.symmetric(
+                                    vertical: isSearchFieldSmall ? 10 : 15,
+                                    horizontal: 15,
+                                  ),
+                            labelText: labelText,
+                            hintText: hintText,
+                            hintStyle:
+                                Theme.of(context).textTheme.headline4!.copyWith(
+                                      color: hintColor ?? grey,
+                                      fontSize: 16,
+                                    ),
+                            suffix: suffixIcon,
+                            prefixIcon: prefixIcon,
+                            labelStyle: Theme.of(context)
+                                .textTheme
+                                .headline6!
+                                .copyWith(color: grey, fontSize: 16),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: customFillColor ??
+                                    borderColor ??
+                                    Colors.white24,
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(isSearchField ? 1 : 5),
+                              ),
+                            ),
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey[200]!),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(isSearchField ? 1 : 5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey[200]!),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(isSearchField == true ? 1 : 5),
+                              ),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: red),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(isSearchField == true ? 1 : 5),
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: red),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(isSearchField == true ? 1 : 5),
+                              ),
+                            ),
+                            focusColor: black,
+                          ),
+                      cursorColor: black,
+                      autofocus: autoFocus ?? false,
+                      style: textStyle ??
+                          Theme.of(context)
                               .textTheme
                               .headline6!
-                              .copyWith(color: grey, fontSize: 16),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: customFillColor ??
-                                  borderColor ??
-                                  Colors.white24,
-                            ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(isSearchField ? 1 : 5),
-                            ),
-                          ),
-                          disabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey[200]!),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(isSearchField ? 1 : 5),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey[200]!),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(isSearchField == true ? 1 : 5),
-                            ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: red),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(isSearchField == true ? 1 : 5),
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: red),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(isSearchField == true ? 1 : 5),
-                            ),
-                          ),
-                          focusColor: black,
-                        ),
-                    cursorColor: black,
-                    autofocus: autoFocus ?? false,
-                    style: textStyle ??
-                        Theme.of(context)
-                            .textTheme
-                            .headline6!
-                            .copyWith(color: black, fontSize: 14),
-                    onFieldSubmitted: onFieldSubmit,
-                    textInputAction: textInputAction ?? TextInputAction.done,
-                    textAlignVertical: TextAlignVertical.center,
-                    onChanged: onChanged,
-                    onSaved: onSaved,
-                    onTap: onTap != null ? () => onTap!() : null,
-                    controller: controller,
-                    focusNode: focusNode,
-                    obscureText: obscureText ?? false,
-                    keyboardType: keyboardType ?? TextInputType.text,
-                    inputFormatters: inputFormatters,
-                  )
+                              .copyWith(color: black, fontSize: 14),
+                      onFieldSubmitted: onFieldSubmit,
+                      textInputAction: textInputAction ?? TextInputAction.done,
+                      textAlignVertical: TextAlignVertical.center,
+                      onChanged: onChanged,
+                      onSaved: onSaved,
+                      onTap: onTap != null ? () => onTap!() : null,
+                      controller: controller,
+                      focusNode: focusNode,
+                      obscureText: obscureText ?? false,
+                      keyboardType: keyboardType ?? TextInputType.text,
+                      inputFormatters: inputFormatters,
+                    )
                 ],
               ),
             ],

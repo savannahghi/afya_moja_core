@@ -1,46 +1,81 @@
 // Project imports:
 import 'package:afya_moja_core/src/inputs.dart';
-
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
+import 'package:shared_ui_components/inputs.dart';
 
 void main() {
   group('ExpandableQuestion', () {
     const String question = 'Where do you live ?';
     const String hintText = 'Answer here';
-    testWidgets('should render correctly', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Builder(
-            builder: (BuildContext context) {
-              return Material(
-                child: ExpandableQuestion(
-                  question: question,
-                  hintText: hintText,
-                  onChanged: (String value) {},
-                ),
-              );
-            },
+    testWidgets(
+      'should render correctly if not of date type',
+      (WidgetTester tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (BuildContext context) {
+                return Material(
+                  child: ExpandableQuestion(
+                    question: question,
+                    hintText: hintText,
+                    onChanged: (String? value) {},
+                    dateController: TextEditingController(),
+                  ),
+                );
+              },
+            ),
           ),
-        ),
-      );
-      expect(find.text(question), findsWidgets);
-      final Finder expansionTile = find.byType(ExpansionTile);
-      expect(expansionTile, findsOneWidget);
+        );
+        expect(find.text(question), findsWidgets);
+        final Finder expansionTile = find.byType(ExpansionTile);
+        expect(expansionTile, findsOneWidget);
 
-      await tester.tap(expansionTile);
-      await tester.pumpAndSettle();
+        await tester.tap(expansionTile);
+        await tester.pumpAndSettle();
 
-      final Finder textFormField = find.byType(TextFormField);
-      expect(textFormField, findsOneWidget);
-      await tester.showKeyboard(textFormField);
-      await tester.enterText(textFormField, 'text');
-      await tester.pumpAndSettle();
-    });
+        final Finder textFormField = find.byType(TextFormField);
+        expect(textFormField, findsOneWidget);
+        await tester.showKeyboard(textFormField);
+        await tester.enterText(textFormField, 'text');
+        await tester.pumpAndSettle();
+      },
+    );
+
+    testWidgets(
+      'should render correctly if its of date type',
+      (WidgetTester tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Builder(
+              builder: (BuildContext context) {
+                return Material(
+                  child: ExpandableQuestion(
+                    question: question,
+                    hintText: hintText,
+                    onChanged: (String? value) {},
+                    dateController: TextEditingController(),
+                    isDateType: true,
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+        expect(find.text(question), findsWidgets);
+        final Finder expansionTile = find.byType(ExpansionTile);
+        expect(expansionTile, findsOneWidget);
+
+        await tester.tap(expansionTile);
+        await tester.pumpAndSettle();
+
+        final Finder datePickerField = find.byType(SILDatePickerField);
+        expect(datePickerField, findsOneWidget);
+      },
+    );
 
     testWidgets(
         'should throw assertion error if both controller and initialValue'
@@ -53,9 +88,10 @@ void main() {
             child: ExpandableQuestion(
               question: question,
               hintText: hintText,
-              onChanged: (String value) {},
+              onChanged: (String? value) {},
               controller: controller,
               initialValue: '',
+              dateController: TextEditingController(),
             ),
           ),
         );
@@ -74,8 +110,9 @@ void main() {
               enabled: false,
               fieldKey: fieldKey,
               initialValue: '',
-              onChanged: (String value) {},
+              onChanged: (String? value) {},
               question: question,
+              dateController: TextEditingController(),
             ),
           ),
         ),
@@ -162,21 +199,23 @@ void main() {
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: Builder(builder: (BuildContext context) {
-            return Scaffold(
-              body: EditInformationDropDown(
-                items: const <String>['Test', 'Trial'],
-                value: 'Test',
-                onChange: (String? value) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(value!),
-                    ),
-                  );
-                },
-              ),
-            );
-          }),
+          home: Builder(
+            builder: (BuildContext context) {
+              return Scaffold(
+                body: EditInformationDropDown(
+                  items: const <String>['Test', 'Trial'],
+                  value: 'Test',
+                  onChange: (String? value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(value!),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
         ),
       );
 

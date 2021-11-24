@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.32
+
+- refactor: update expansion question with date picker
+
 ## 0.0.31
 
 - chore: add expansion question validator
