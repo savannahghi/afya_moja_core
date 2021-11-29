@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.33
+
+- chore: expansion question custom textstyles
+
 ## 0.0.32
 
 - refactor: update expansion question with date picker

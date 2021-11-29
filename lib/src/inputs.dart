@@ -47,7 +47,8 @@ class ExpandableQuestion extends StatelessWidget {
     this.formatters,
     this.maxLines,
     this.maxLength,
-    this.textStyle,
+    this.questionTextStyle,
+    this.responseTextStyle,
     this.suffixIcon,
     this.isSearchField = false,
     this.obscureText,
@@ -106,7 +107,8 @@ class ExpandableQuestion extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? textFieldBackgroundColor;
   final TextInputAction? textInputAction;
-  final TextStyle? textStyle;
+  final TextStyle? questionTextStyle;
+  final TextStyle? responseTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -144,11 +146,12 @@ class ExpandableQuestion extends StatelessWidget {
                 iconColor: black,
                 title: Text(
                   question,
-                  style: const TextStyle(
-                    color: black,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  style: questionTextStyle ??
+                      const TextStyle(
+                        color: black,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.normal,
+                      ),
                 ),
                 children: <Widget>[
                   if (isDateType)
@@ -241,7 +244,7 @@ class ExpandableQuestion extends StatelessWidget {
                           ),
                       cursorColor: black,
                       autofocus: autoFocus ?? false,
-                      style: textStyle ??
+                      style: responseTextStyle ??
                           Theme.of(context)
                               .textTheme
                               .headline6!
