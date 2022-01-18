@@ -1,14 +1,12 @@
 // Project imports:
 import 'package:afya_moja_core/domain/core/entities/icon_details.dart';
 import 'package:afya_moja_core/domain/core/entities/notification_actions.dart';
-
+import 'package:afya_moja_core/src/text_themes.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 /// [NotificationListItem] Displays the notifications with Icons and
 /// a short description
@@ -71,7 +69,7 @@ class NotificationListItem extends StatelessWidget {
                         child: Center(
                           child: Text(
                             status!,
-                            style: TextThemes.normalSize12Text(
+                            style: normalSize12Text(
                               warningColor,
                             ),
                           ),
@@ -82,14 +80,14 @@ class NotificationListItem extends StatelessWidget {
                 // verySmallVerticalSizedBox,
                 Text(
                   description,
-                  style: TextThemes.normalSize14Text(
+                  style: normalSize14Text(
                     Theme.of(context).colorScheme.secondary,
                   ),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   date,
-                  style: TextThemes.normalSize12Text(Colors.grey),
+                  style: normalSize12Text(Colors.grey),
                 ),
                 const SizedBox(height: 5),
                 if (actions != null && actions!.isNotEmpty)
@@ -129,7 +127,7 @@ class NotificationListItem extends StatelessWidget {
                                       Expanded(
                                         child: Text(
                                           notificationActions.name,
-                                          style: TextThemes.normalSize11Text(
+                                          style: normalSize11Text(
                                             Theme.of(context)
                                                 .colorScheme
                                                 .secondary,

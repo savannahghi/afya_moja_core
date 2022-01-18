@@ -1,11 +1,10 @@
 // Flutter imports:
 import 'package:afya_moja_core/src/community_chat_widgets/awaiting_moderation_widget.dart';
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:misc_utilities/number_constants.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 // Project imports:
 
@@ -60,16 +59,15 @@ class SentMessageItem extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     child: Text(
                       message,
-                      style: TextThemes.normalSize12Text()
-                          .copyWith(color: whiteColor),
+                      style: normalSize12Text().copyWith(color: whiteColor),
                     ),
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Text(
                       time,
-                      style: TextThemes.normalSize10Text()
-                          .copyWith(color: userInitialsColor),
+                      style:
+                          normalSize10Text().copyWith(color: userInitialsColor),
                     ),
                   ),
                 ],

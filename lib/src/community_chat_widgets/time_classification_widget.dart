@@ -1,11 +1,8 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:shared_themes/text_themes.dart';
-
 // Project imports:
 import 'package:afya_moja_core/colors.dart';
+import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:flutter/material.dart';
 
 class TimeClassificationWidget extends StatelessWidget {
   /// [TimeClassificationWidget] used within the community chat screen to classify
@@ -37,8 +34,7 @@ class TimeClassificationWidget extends StatelessWidget {
         ),
         child: Text(
           time,
-          style:
-              TextThemes.normalSize14Text().copyWith(color: darkGreyTextColor),
+          style: normalSize14Text().copyWith(color: darkGreyTextColor),
         ),
       ),
     );

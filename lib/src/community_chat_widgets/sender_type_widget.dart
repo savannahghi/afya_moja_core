@@ -1,10 +1,9 @@
 // Flutter imports:
 import 'package:afya_moja_core/colors.dart';
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 // Project imports:
 
@@ -36,7 +35,7 @@ class SenderTypeWidget extends StatelessWidget {
         verySmallHorizontalSizedBox,
         Text(
           senderTitle,
-          style: TextThemes.normalSize10Text().copyWith(color: whiteColor),
+          style: normalSize10Text().copyWith(color: whiteColor),
         ),
       ],
     );

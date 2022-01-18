@@ -1,9 +1,7 @@
 // Flutter imports:
 import 'package:afya_moja_core/src/app_strings.dart';
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:shared_themes/text_themes.dart';
 import 'package:unicons/unicons.dart';
 
 // Project imports:
@@ -90,13 +88,13 @@ class CommunityListItem extends StatelessWidget {
                       if (isGroupMessage)
                         Text(
                           groupText,
-                          style: TextThemes.normalSize10Text(
+                          style: normalSize10Text(
                             textColor ?? Colors.grey.shade600,
                           ),
                         ),
                       Text(
                         lastMessageDate,
-                        style: TextThemes.normalSize10Text(
+                        style: normalSize10Text(
                           textColor ?? Colors.grey.shade600,
                         ),
                       ),
@@ -111,7 +109,7 @@ class CommunityListItem extends StatelessWidget {
                           // Chat title
                           Text(
                             title,
-                            style: TextThemes.boldSize14Text(
+                            style: boldSize14Text(
                               Theme.of(context).colorScheme.secondary,
                             ),
                           ),
@@ -119,7 +117,7 @@ class CommunityListItem extends StatelessWidget {
                           // message
                           Text(
                             message,
-                            style: TextThemes.normalSize10Text(
+                            style: normalSize10Text(
                               Colors.grey.shade600,
                             ),
                           )

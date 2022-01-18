@@ -1,8 +1,6 @@
 // Flutter imports:
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:shared_themes/text_themes.dart';
 
 class MyAfyaHubPrimaryButton extends StatelessWidget {
   const MyAfyaHubPrimaryButton({
@@ -56,8 +54,7 @@ class MyAfyaHubPrimaryButton extends StatelessWidget {
       child: customChild ??
           Text(
             text ?? '',
-            style: textStyle ??
-                TextThemes.veryBoldSize15Text(textColor ?? Colors.white),
+            style: textStyle ?? veryBoldSize15Text(textColor ?? Colors.white),
           ),
     );
   }

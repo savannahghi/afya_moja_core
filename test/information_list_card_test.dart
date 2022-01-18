@@ -1,6 +1,5 @@
 import 'package:afya_moja_core/src/information_list_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 
