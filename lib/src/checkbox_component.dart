@@ -1,8 +1,6 @@
 // Flutter imports:
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:shared_themes/text_themes.dart';
 
 class CheckBoxComponent extends StatelessWidget {
   /// [CheckBoxComponent] used as a custom checkbox with text.
@@ -45,7 +43,7 @@ class CheckBoxComponent extends StatelessWidget {
             child: child ??
                 Text(
                   text ?? '',
-                  style: TextThemes.normalSize14Text(color ?? Colors.black),
+                  style: normalSize14Text(color ?? Colors.black),
                 ),
           )
         ],

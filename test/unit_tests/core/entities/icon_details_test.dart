@@ -12,6 +12,7 @@ void main() {
 
       final IconDetails iconDetails = IconDetails.fromJson(mockIconDetails);
       expect(iconDetails, isA<IconDetails>());
+      expect(iconDetails.iconUrlSvgPath, testAssetString);
     });
   });
 }

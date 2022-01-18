@@ -1,10 +1,10 @@
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/buttons.dart';
 import 'package:afya_moja_core/src/colors.dart';
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 class CustomConfirmDialog extends StatelessWidget {
   /// [CustomConfirmDialog] is a shared widget used with a header, body, and two buttons
@@ -12,7 +12,7 @@ class CustomConfirmDialog extends StatelessWidget {
   /// It takes in two required [header] and [body] parameters
   /// [oTapConfirm] is used to add functionality to the confirm button
   /// [activateConfirmButton] is a boolean used to activate or deactivate the confirm button and
-  ///  its default value is set to true 
+  ///  its default value is set to true
   final Widget header;
   final Widget body;
   final VoidCallback? onTapConfirm;
@@ -50,7 +50,7 @@ class CustomConfirmDialog extends StatelessWidget {
                   borderColor: Colors.transparent,
                   text: cancelString,
                   buttonColor: Colors.red,
-                  textStyle: TextThemes.veryBoldSize14Text(
+                  textStyle: veryBoldSize14Text(
                     Colors.white,
                   ),
                   customPadding: const EdgeInsets.all(
@@ -67,7 +67,7 @@ class CustomConfirmDialog extends StatelessWidget {
                   buttonColor: activateConfirmButton
                       ? malachiteColor
                       : Colors.grey.withOpacity(0.8),
-                  textStyle: TextThemes.veryBoldSize14Text(
+                  textStyle: veryBoldSize14Text(
                     Colors.white,
                   ),
                   onPressed: () {

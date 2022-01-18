@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.34
+
+- chore: change font to google saro
+
 ## 0.0.33
 
 - chore: expansion question custom textstyles

@@ -1,9 +1,8 @@
 // Flutter imports:
+import 'package:afya_moja_core/src/text_themes.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:shared_themes/spaces.dart';
-import 'package:shared_themes/text_themes.dart';
 
 ///[OnboardingScaffoldHeader] header on the onboarding scaffold
 class OnboardingScaffoldHeader extends StatelessWidget {
@@ -23,12 +22,12 @@ class OnboardingScaffoldHeader extends StatelessWidget {
         mediumVerticalSizedBox,
         Text(
           title,
-          style: TextThemes.boldSize30Text(Theme.of(context).primaryColor),
+          style: boldSize30Text(Theme.of(context).primaryColor),
         ),
         smallVerticalSizedBox,
         Text(
           description,
-          style: TextThemes.lightSize16Text(Colors.grey),
+          style: lightSize16Text(Colors.grey),
         ),
         smallVerticalSizedBox,
       ],

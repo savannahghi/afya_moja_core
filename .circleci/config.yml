@@ -4,7 +4,7 @@ jobs:
   run_tests_and_generate_coverage:
     resource_class: large
     docker:
-      - image: cirrusci/flutter:stable
+      - image: cirrusci/flutter:2.5.3
     steps:
       - checkout
       - run:
@@ -25,7 +25,7 @@ jobs:
             python3 check_coverage.py
       - store_artifacts:
           path: coverage/
-  
+
   publish_package_to_pub_dev:
     docker:
       - image: cirrusci/flutter:stable
@@ -33,13 +33,11 @@ jobs:
       - checkout
       - run:
           name: Setup credentials
-          command:
-            echo $PUB_CREDENTIALS_JSON_FILE > ~/.pub-cache/credentials.json
+          command: echo $PUB_CREDENTIALS_JSON_FILE > ~/.pub-cache/credentials.json
       - run:
           name: Publish package to pub.dev
           no_output_timeout: 5m
-          command: 
-            pub publish -f
+          command: pub publish -f
 
 workflows:
   version: 2
