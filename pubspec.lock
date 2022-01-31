@@ -21,7 +21,7 @@ packages:
       name: app_wrapper
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.30"
+    version: "0.1.33"
   args:
     dependency: transitive
     description:
@@ -271,7 +271,7 @@ packages:
       name: flutter_graphql_client
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.23"
+    version: "0.1.24"
   flutter_image_compress:
     dependency: transitive
     description:
@@ -491,7 +491,7 @@ packages:
       name: misc_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.31-nullsafety"
+    version: "0.1.32-nullsafety"
   package_config:
     dependency: transitive
     description:
@@ -666,7 +666,7 @@ packages:
       name: shared_ui_components
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.43-nullsafety"
+    version: "0.1.46-nullsafety"
   shelf:
     dependency: transitive
     description:

@@ -1,6 +1,6 @@
 name: afya_moja_core
 description: A shared library for `afyamoja` and `myafyahub` that is responsible for rendering and exposing shared components
-version: 0.0.34
+version: 0.0.35
 homepage: https://github.com/savannahghi/afya_moja_core
 repository: https://github.com/savannahghi/afya_moja_core
 issue_tracker: https://github.com/savannahghi/afya_moja_core/issues
@@ -22,7 +22,7 @@ dependencies:
   pin_code_text_field: ^1.8.0
   rxdart: ^0.27.1
   shared_themes: ^0.1.1
-  shared_ui_components: ^0.1.43-nullsafety
+  shared_ui_components: ^0.1.46-nullsafety
   unicons: ^2.0.1
 
 dev_dependencies:
