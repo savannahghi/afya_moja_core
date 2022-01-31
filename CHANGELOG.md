@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.35
+
+- chore: add flavor enums
+
 ## 0.0.34
 
 - chore: change font to google saro
