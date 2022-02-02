@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/text_form_hint_text.dart';
+import 'package:afya_moja_core/src/presentation/text_form_hint_text.dart';
 import 'package:afya_moja_core/src/types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -119,11 +119,12 @@ class CustomTextField extends StatelessWidget {
             suffixIconConstraints:
                 const BoxConstraints(minHeight: 24, minWidth: 24),
             prefixIcon: prefixIcon,
-            labelStyle: labelStyle ?? const TextStyle(
-              fontWeight: FontWeight.w300,
-              color: Colors.grey,
-              fontSize: 15,
-            ),
+            labelStyle: labelStyle ??
+                const TextStyle(
+                  fontWeight: FontWeight.w300,
+                  color: Colors.grey,
+                  fontSize: 15,
+                ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: customFillColor ?? borderColor ?? Colors.white24,

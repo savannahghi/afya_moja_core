@@ -1,5 +1,5 @@
 // Flutter imports:
-import 'package:afya_moja_core/src/country_code_picker.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 // Package imports:

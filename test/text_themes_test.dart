@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,7 +1,7 @@
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/buttons.dart';
-import 'package:afya_moja_core/src/colors.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/src/presentation/buttons.dart';
+import 'package:afya_moja_core/src/presentation/colors.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_themes/spaces.dart';

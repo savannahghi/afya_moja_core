@@ -1,8 +1,9 @@
 // Flutter imports:
 // Project imports:
-import 'package:afya_moja_core/colors.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
+
+import '../colors.dart';
 
 class TimeClassificationWidget extends StatelessWidget {
   /// [TimeClassificationWidget] used within the community chat screen to classify

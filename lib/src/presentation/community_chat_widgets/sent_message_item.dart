@@ -1,6 +1,6 @@
 // Flutter imports:
-import 'package:afya_moja_core/src/community_chat_widgets/awaiting_moderation_widget.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/src/presentation/community_chat_widgets/awaiting_moderation_widget.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:misc_utilities/number_constants.dart';
@@ -8,7 +8,7 @@ import 'package:shared_themes/spaces.dart';
 
 // Project imports:
 
-import '../../colors.dart';
+import '../colors.dart';
 import 'quoted_message_widget.dart';
 
 /// [SentMessageItem] used within the community chat screen to show sent messages.

@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/community_list_item.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:unicons/unicons.dart';
@@ -14,7 +14,7 @@ void main() {
             lastMessageDate: '12/03/2012',
             unreadNotificationCount: 5,
             isGroupMessage: true,
-            onTap: (){},
+            onTap: () {},
           ),
         ),
       );
@@ -37,7 +37,8 @@ void main() {
             lastMessageDate: '12/03/2012',
             unreadNotificationCount: 5,
             isGroupMessage: true,
-            avatarImage: const AssetImage('assets/images/feed_image_1.png'), onTap: (){},
+            avatarImage: const AssetImage('assets/images/feed_image_1.png'),
+            onTap: () {},
           ),
         ),
       );
@@ -55,15 +56,17 @@ void main() {
         (WidgetTester tester) async {
       expect(
         () async {
-          await tester.pumpWidget(MaterialApp(
-            home: CommunityListItem(
-              title: 'Ruaka Questions Group',
-              message: "Don't miss your appointment tomorrow",
-              lastMessageDate: '12/03/2012',
-              unreadNotificationCount: -1,
-              onTap: (){},
+          await tester.pumpWidget(
+            MaterialApp(
+              home: CommunityListItem(
+                title: 'Ruaka Questions Group',
+                message: "Don't miss your appointment tomorrow",
+                lastMessageDate: '12/03/2012',
+                unreadNotificationCount: -1,
+                onTap: () {},
+              ),
             ),
-          ),);
+          );
         },
         throwsAssertionError,
       );
