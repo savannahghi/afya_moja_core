@@ -9,7 +9,7 @@ import 'package:shared_themes/spaces.dart';
 // Project imports:
 import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/colors.dart';
+import 'package:afya_moja_core/src/presentation/colors.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 
 class MessageInput extends StatelessWidget {

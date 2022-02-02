@@ -1,13 +1,11 @@
-// Flutter imports:
-import 'package:afya_moja_core/src/app_asset_strings.dart';
-import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/colors.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
-import 'package:afya_moja_core/src/widget_keys.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
-// Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_themes/spaces.dart';
+
+import '../app_asset_strings.dart';
+import '../app_strings.dart';
+import '../widget_keys.dart';
 
 class UserDetailsCard extends StatelessWidget {
   /// [UserDetailsCard] is a shared widget used in both AfyaMoja and MyAfyaHub

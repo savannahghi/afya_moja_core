@@ -1,7 +1,7 @@
 // Flutter imports:
 
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/community_chat_widgets/message_input.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,6 +1,5 @@
-// Project imports:
-import 'package:afya_moja_core/src/inputs.dart';
 // Flutter imports:
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';

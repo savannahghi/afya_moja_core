@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'dart:io';
 
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
-import 'package:afya_moja_core/src/community_chat_widgets/sender_type_widget.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:

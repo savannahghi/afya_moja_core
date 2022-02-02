@@ -1,10 +1,11 @@
 // Flutter imports:
 // Project imports:
-import 'package:afya_moja_core/colors.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:shared_themes/spaces.dart';
+
+import '../colors.dart';
 
 class QuotedMessageWidget extends StatelessWidget {
   /// [QuotedMessageWidget] used within the [ReceivedMessageItem] and [SentMessageItem] to

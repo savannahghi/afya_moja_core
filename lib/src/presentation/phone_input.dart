@@ -1,7 +1,7 @@
 // Flutter imports:
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/behavior_subjects.dart';
-import 'package:afya_moja_core/src/country_code_picker.dart';
+import 'package:afya_moja_core/src/presentation/country_code_picker.dart';
 import 'package:afya_moja_core/src/types.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';

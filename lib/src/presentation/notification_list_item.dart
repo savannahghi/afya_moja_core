@@ -1,7 +1,7 @@
 // Project imports:
 import 'package:afya_moja_core/domain/core/entities/icon_details.dart';
 import 'package:afya_moja_core/domain/core/entities/notification_actions.dart';
-import 'package:afya_moja_core/src/text_themes.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 // Package imports:

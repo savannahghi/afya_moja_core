@@ -1,5 +1,5 @@
 // Project imports:
-import 'package:afya_moja_core/src/onboarding_scaffold_header.dart';
+import 'package:afya_moja_core/src/presentation/onboarding_scaffold_header.dart';
 
 // Flutter imports:
 import 'package:flutter/material.dart';

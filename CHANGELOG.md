@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.37
+
+- chore: rearrange package to common dart standard
+
 ## 0.0.36
 
 - chore: add token related functions
