@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.36
+
+- chore: add token related functions
+
 ## 0.0.35
 
 - chore: add flavor enums
