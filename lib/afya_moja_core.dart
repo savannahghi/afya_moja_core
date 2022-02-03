@@ -27,3 +27,5 @@ export 'src/presentation/search_widget.dart';
 export 'src/presentation/selection_option_field.dart';
 export 'src/presentation/text_themes.dart';
 export 'src/presentation/user_details_card_widget.dart';
+export 'src/presentation/verify_otp_widget.dart';
+export 'src/presentation/error_card_widget.dart';

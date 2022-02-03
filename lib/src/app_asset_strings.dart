@@ -11,3 +11,7 @@ const String awaitingModerationIcon =
     'assets/icons/awaiting_moderation_icon.svg';
 const String attachFileIcon = 'assets/icons/attach_file.svg';
 const String sendTextIcon = 'assets/icons/send_text.svg';
+
+const String closeIconUrl = 'assets/icons/close.png';
+const String errorIconUrl = 'assets/icons/error.svg';
+const String errorImageSvg = 'assets/images/error_image.svg';

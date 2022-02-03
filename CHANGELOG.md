@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.39
+
+- chore: add verify phone shared resources
+
 ## 0.0.38
 
 - add onboarding helper functions
