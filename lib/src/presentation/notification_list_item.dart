@@ -1,12 +1,12 @@
 // Project imports:
-import 'package:afya_moja_core/domain/core/entities/icon_details.dart';
-import 'package:afya_moja_core/domain/core/entities/notification_actions.dart';
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_svg/svg.dart';
 import 'package:shared_themes/spaces.dart';
+
+import '../../afya_moja_core.dart';
 
 /// [NotificationListItem] Displays the notifications with Icons and
 /// a short description

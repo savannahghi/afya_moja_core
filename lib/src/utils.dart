@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/enums.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
 
 Map<String, String>? getCountry(Country country) {
@@ -108,11 +108,4 @@ Country popValue(String name) {
     default:
       return Country.us;
   }
-}
-
-bool isNumeric(String? s) {
-  if (s == null) {
-    return false;
-  }
-  return int.tryParse(s) != null;
 }

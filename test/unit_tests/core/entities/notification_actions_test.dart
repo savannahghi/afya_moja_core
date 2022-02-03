@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/domain/core/entities/notification_actions.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
