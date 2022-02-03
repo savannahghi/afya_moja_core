@@ -14,3 +14,11 @@ const Key dialogCancelButtonKey = Key('dialog_cancel_button_key');
 const Key messageInputAttachFileKey = Key('message_input_attach_file_key');
 const Key messageInputSendMessageKey = Key('message_input_send_message_key');
 const Key moreAppBarKey = Key('more_app_bar_key');
+
+// feedback bottom sheet key
+const Key feedbackBottomSheetKey = Key('feedback_bottom_sheet_key');
+const Key feedbackBottomSheetCloseIconKey =
+    Key('show_feedback_bottom_sheet_close_icon');
+
+//verify OTP
+const Key resendOtpButtonKey = Key('resend_otp_button_key');
