@@ -1,3 +1,7 @@
+export 'src/domain/core/entities/icon_details.dart';
+export 'src/domain/core/entities/notification_actions.dart';
+export 'src/domain/core/entities/onboarding_path_config.dart';
+export 'src/domain/core/entities/processed_response.dart';
 export 'src/enums.dart';
 export 'src/helpers.dart';
 export 'src/presentation/buttons.dart';
