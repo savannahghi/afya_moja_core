@@ -12,3 +12,15 @@ extension FlavourEx on Flavour {
     return describeEnum(this).toUpperCase();
   }
 }
+
+/// Security Questions response type
+// ignore: constant_identifier_names
+enum SecurityQuestionResponseType { NUMBER, TEXT, DATE, UNKNOWN }
+
+/// [SecurityQuestionResponseTypeEx] extends [SecurityQuestionResponseType] enum to get the values as
+/// strings
+extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
+  String get name {
+    return describeEnum(this).toUpperCase();
+  }
+}
