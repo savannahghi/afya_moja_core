@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.38
+
+- add onboarding helper functions
+
 ## 0.0.37
 
 - chore: rearrange package to common dart standard
