@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.40
+
+- feat: add security questions shared classes
+
 ## 0.0.39
 
 - chore: add verify phone shared resources

@@ -1,3 +1,5 @@
+// ignore: constant_identifier_names
+const String UNKNOWN = 'UNKNOWN';
 // Community strings
 const String groupText = 'Group';
 

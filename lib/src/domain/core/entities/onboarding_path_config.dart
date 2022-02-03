@@ -8,6 +8,6 @@ class OnboardingPathConfig with _$OnboardingPathConfig {
     // The route to navigate to
     required String route,
     // Any route arguments that may need to be passed while navigating
-    @Default(null) dynamic argumets,
+    @Default(null) dynamic arguments,
   }) = _OnboardingPathConfig;
 }

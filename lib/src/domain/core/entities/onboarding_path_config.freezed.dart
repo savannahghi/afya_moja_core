@@ -16,10 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$OnboardingPathConfigTearOff {
   const _$OnboardingPathConfigTearOff();
 
-  _OnboardingPathConfig call({required String route, dynamic argumets = null}) {
+  _OnboardingPathConfig call(
+      {required String route, dynamic arguments = null}) {
     return _OnboardingPathConfig(
       route: route,
-      argumets: argumets,
+      arguments: arguments,
     );
   }
 }
@@ -32,7 +33,7 @@ mixin _$OnboardingPathConfig {
 // The route to navigate to
   String get route =>
       throw _privateConstructorUsedError; // Any route arguments that may need to be passed while navigating
-  dynamic get argumets => throw _privateConstructorUsedError;
+  dynamic get arguments => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OnboardingPathConfigCopyWith<OnboardingPathConfig> get copyWith =>
@@ -44,7 +45,7 @@ abstract class $OnboardingPathConfigCopyWith<$Res> {
   factory $OnboardingPathConfigCopyWith(OnboardingPathConfig value,
           $Res Function(OnboardingPathConfig) then) =
       _$OnboardingPathConfigCopyWithImpl<$Res>;
-  $Res call({String route, dynamic argumets});
+  $Res call({String route, dynamic arguments});
 }
 
 /// @nodoc
@@ -59,16 +60,16 @@ class _$OnboardingPathConfigCopyWithImpl<$Res>
   @override
   $Res call({
     Object? route = freezed,
-    Object? argumets = freezed,
+    Object? arguments = freezed,
   }) {
     return _then(_value.copyWith(
       route: route == freezed
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as String,
-      argumets: argumets == freezed
-          ? _value.argumets
-          : argumets // ignore: cast_nullable_to_non_nullable
+      arguments: arguments == freezed
+          ? _value.arguments
+          : arguments // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
   }
@@ -81,7 +82,7 @@ abstract class _$OnboardingPathConfigCopyWith<$Res>
           $Res Function(_OnboardingPathConfig) then) =
       __$OnboardingPathConfigCopyWithImpl<$Res>;
   @override
-  $Res call({String route, dynamic argumets});
+  $Res call({String route, dynamic arguments});
 }
 
 /// @nodoc
@@ -98,16 +99,16 @@ class __$OnboardingPathConfigCopyWithImpl<$Res>
   @override
   $Res call({
     Object? route = freezed,
-    Object? argumets = freezed,
+    Object? arguments = freezed,
   }) {
     return _then(_OnboardingPathConfig(
       route: route == freezed
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as String,
-      argumets: argumets == freezed
-          ? _value.argumets
-          : argumets // ignore: cast_nullable_to_non_nullable
+      arguments: arguments == freezed
+          ? _value.arguments
+          : arguments // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
   }
@@ -116,17 +117,17 @@ class __$OnboardingPathConfigCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_OnboardingPathConfig implements _OnboardingPathConfig {
-  _$_OnboardingPathConfig({required this.route, this.argumets = null});
+  _$_OnboardingPathConfig({required this.route, this.arguments = null});
 
   @override // The route to navigate to
   final String route;
   @JsonKey(defaultValue: null)
   @override // Any route arguments that may need to be passed while navigating
-  final dynamic argumets;
+  final dynamic arguments;
 
   @override
   String toString() {
-    return 'OnboardingPathConfig(route: $route, argumets: $argumets)';
+    return 'OnboardingPathConfig(route: $route, arguments: $arguments)';
   }
 
   @override
@@ -135,16 +136,16 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
         (other is _OnboardingPathConfig &&
             (identical(other.route, route) ||
                 const DeepCollectionEquality().equals(other.route, route)) &&
-            (identical(other.argumets, argumets) ||
+            (identical(other.arguments, arguments) ||
                 const DeepCollectionEquality()
-                    .equals(other.argumets, argumets)));
+                    .equals(other.arguments, arguments)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(route) ^
-      const DeepCollectionEquality().hash(argumets);
+      const DeepCollectionEquality().hash(arguments);
 
   @JsonKey(ignore: true)
   @override
@@ -154,13 +155,13 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
 }
 
 abstract class _OnboardingPathConfig implements OnboardingPathConfig {
-  factory _OnboardingPathConfig({required String route, dynamic argumets}) =
+  factory _OnboardingPathConfig({required String route, dynamic arguments}) =
       _$_OnboardingPathConfig;
 
   @override // The route to navigate to
   String get route => throw _privateConstructorUsedError;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get argumets => throw _privateConstructorUsedError;
+  dynamic get arguments => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$OnboardingPathConfigCopyWith<_OnboardingPathConfig> get copyWith =>
