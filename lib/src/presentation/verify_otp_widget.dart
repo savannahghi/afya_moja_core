@@ -1,4 +1,3 @@
-import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/helpers.dart';
 import 'package:afya_moja_core/src/presentation/buttons.dart';
@@ -17,7 +16,6 @@ class VerifyOtpWidget extends StatefulWidget {
     required this.phoneNumber,
     required this.loader,
     required this.onTimeOut,
-    required this.onRestartTimer,
     required this.canResendOTP,
     required this.isResetPin,
     required this.otp,
@@ -33,7 +31,6 @@ class VerifyOtpWidget extends StatefulWidget {
   final String otp;
   final Widget loader;
   final VoidCallback onTimeOut;
-  final VoidCallback onRestartTimer;
   final VoidCallback onWrongCodeEntered;
   final VoidCallback onPrimaryButtonPressed;
   final bool canResendOTP;
@@ -114,7 +111,6 @@ class VerifyOtpWidgetState extends State<VerifyOtpWidget>
               showFeedbackBottomSheet(
                 context: context,
                 modalContent: invalidCode,
-                imageAssetPath: errorIconUrl,
               );
             }
           },
