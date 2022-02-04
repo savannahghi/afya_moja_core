@@ -125,7 +125,7 @@ String getErrorMessage([String message = '']) {
 Future<dynamic> showFeedbackBottomSheet({
   required BuildContext context,
   required String modalContent,
-  required String imageAssetPath,
+  String imageAssetPath = errorIconUrl,
 }) async {
   return showModalBottomSheet(
     context: context,

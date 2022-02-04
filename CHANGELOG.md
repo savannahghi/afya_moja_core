@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.41
+
+- fix: feedback bottom sheet
+
 ## 0.0.40
 
 - feat: add security questions shared classes
