@@ -22,3 +22,8 @@ const Key feedbackBottomSheetCloseIconKey =
 
 //verify OTP
 const Key resendOtpButtonKey = Key('resend_otp_button_key');
+
+//generic widget
+const Key genericNoDataButtonKey = Key('generic_no_data_button_key');
+const Key genericRetryButtonKey = Key('generic_primary_button');
+const Key genericListViewKey = Key('generic_list_view');

@@ -15,3 +15,5 @@ const String sendTextIcon = 'assets/icons/send_text.svg';
 const String closeIconUrl = 'assets/icons/close.png';
 const String errorIconUrl = 'assets/icons/error.svg';
 const String errorImageSvg = 'assets/images/error_image.svg';
+const String errorPageImage = 'assets/images/error_page_image.svg';
+const String noDataImgUrl = 'assets/images/no_data.svg';

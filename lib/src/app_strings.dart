@@ -55,3 +55,9 @@ const String didNotReceiveOTPString = 'Did not receive a verification code?';
 const String resendOTP = 'Resend code';
 const String sendOTPError =
     'There was an error while sending your verification code. Let’s get you a fresh verification code';
+    
+// generic widget
+const String genericErrorOccurred = 'Sorry, an error occurred';
+const String genericTryAgain =
+    'Something went wrong while fetching content for you. Please retry or check in later for more. You can also contact our support center in case the issue persists';
+const String genericVerifyPhoneNumber = 'Verify Phone number';

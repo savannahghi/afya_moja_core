@@ -39,3 +39,5 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - packages/afya_moja_core/assets/images/error_page_image.svg
+    - packages/afya_moja_core/assets/images/images/no_data.svg
