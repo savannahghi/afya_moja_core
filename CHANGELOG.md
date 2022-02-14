@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.42
+
+- feat: user profile components
+
 ## 0.0.41
 
 - fix: feedback bottom sheet
