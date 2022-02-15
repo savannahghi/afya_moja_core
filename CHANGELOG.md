@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.43
+
+- chore: user profile item update
+
 ## 0.0.42
 
 - feat: user profile components

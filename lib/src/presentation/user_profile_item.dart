@@ -14,13 +14,13 @@ class UserProfileItem extends StatelessWidget {
   const UserProfileItem({
     required this.iconPath,
     required this.title,
-    required this.routeName,
+    required this.onTap,
     this.itemBackgroundColor,
   });
 
   final String iconPath;
   final String title;
-  final String routeName;
+  final Function() onTap;
   final Color? itemBackgroundColor;
 
   @override
@@ -28,11 +28,7 @@ class UserProfileItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
       child: GestureDetector(
-        onTap: () {
-          if (routeName.isNotEmpty) {
-            Navigator.pushNamed(context, routeName);
-          }
-        },
+        onTap: onTap,
         child: InformationListCard(
           title: Text(
             title,
