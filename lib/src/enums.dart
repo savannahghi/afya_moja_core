@@ -24,3 +24,6 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
     return describeEnum(this).toUpperCase();
   }
 }
+
+enum EditInformationInputType { text, dropDown }
+enum CaregiverType { father, mother, sibling }
