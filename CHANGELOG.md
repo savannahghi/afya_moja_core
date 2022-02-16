@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.45
+
+- feat: caregiver type name
+
 ## 0.0.44
 
 - chore: update profile components
