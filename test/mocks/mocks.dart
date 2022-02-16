@@ -50,3 +50,13 @@ Map<String, dynamic> mockFAQContent = <String, dynamic>{
   'Description': 'description',
   'Flavour': Flavour.consumer.name,
 };
+
+Map<String, dynamic> mockFAQContentResponse = <String, dynamic>{
+  'getFAQContent': <dynamic>[mockFAQContent]
+};
+
+Map<String, dynamic> mockFAQContentState = <String, dynamic>{
+  'profileFAQs': <dynamic>[],
+  'errorFetchingFAQs': false,
+  'timeoutFetchingFAQs': false
+};
