@@ -51,7 +51,9 @@ const String invalidCode =
 String anOtpHasBeenSentText(String phoneNumber) {
   return 'An OTP has been sent to $phoneNumber';
 }
+
 const String didNotReceiveOTPString = 'Did not receive a verification code?';
 const String resendOTP = 'Resend code';
 const String sendOTPError =
     'There was an error while sending your verification code. Let’s get you a fresh verification code';
+const String tapToLearnMoreText = 'Tap to learn more';
