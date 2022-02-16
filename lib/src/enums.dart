@@ -27,3 +27,9 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
 
 enum EditInformationInputType { text, dropDown }
 enum CaregiverType { father, mother, sibling }
+
+extension CaregiverTypeEx on CaregiverType {
+  String get name {
+    return describeEnum(this);
+  }
+}
