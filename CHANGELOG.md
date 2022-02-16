@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.46
+
+- chore: export FAQs content classes
+
 ## 0.0.45
 
 - feat: caregiver type name
