@@ -25,8 +25,10 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
   }
 }
 
-enum EditInformationInputType { text, dropDown }
-enum CaregiverType { father, mother, sibling }
+// ignore: constant_identifier_names
+enum EditInformationInputType { Text, DropDown }
+// ignore: constant_identifier_names
+enum CaregiverType { Father, Mother, Sibling }
 
 extension CaregiverTypeEx on CaregiverType {
   String get name {
