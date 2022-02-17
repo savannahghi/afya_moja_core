@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.47
+
+- chore: update edit information enums
+
 ## 0.0.46
 
 - chore: export FAQs content classes

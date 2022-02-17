@@ -7,7 +7,7 @@ void main() {
       expect(Flavour.consumer.name, 'CONSUMER');
     });
     test('expects get enum names in lowercase', () {
-      expect(CaregiverType.father.name, 'father');
+      expect(CaregiverType.Father.name, 'Father');
     });
   });
 }
