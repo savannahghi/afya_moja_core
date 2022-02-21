@@ -43,17 +43,3 @@ const String pinNotFound = 'No PIN found for this user.';
 const String defaultUserFriendlyMessage =
     'Sorry, an unknown error occurred, please try again or get help from our '
     'help center.';
-
-//verify OTP
-const String verifyOTPState = 'verifyOTPState';
-const String invalidCode =
-    'You have entered a wrong code. Kindly verify the code sent or resend the code to your phone number';
-String anOtpHasBeenSentText(String phoneNumber) {
-  return 'An OTP has been sent to $phoneNumber';
-}
-
-const String didNotReceiveOTPString = 'Did not receive a verification code?';
-const String resendOTP = 'Resend code';
-const String sendOTPError =
-    'There was an error while sending your verification code. Let’s get you a fresh verification code';
-const String tapToLearnMoreText = 'Tap to learn more';

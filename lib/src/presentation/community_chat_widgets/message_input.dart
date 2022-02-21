@@ -20,10 +20,12 @@ class MessageInput extends StatelessWidget {
   ///
   const MessageInput({
     required this.onChanged,
+    required this.onTap,
     this.sendIconColor,
   });
 
   final ValueChanged<String> onChanged;
+  final Function() onTap;
   final Color? sendIconColor;
 
   @override
@@ -68,10 +70,7 @@ class MessageInput extends StatelessWidget {
               smallHorizontalSizedBox,
               GestureDetector(
                 key: messageInputSendMessageKey,
-                onTap: () {
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(snackbar(content: comingSoonText));
-                },
+                onTap: onTap,
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
