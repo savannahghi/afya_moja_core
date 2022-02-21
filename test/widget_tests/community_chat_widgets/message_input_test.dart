@@ -14,7 +14,7 @@ void main() {
           builder: (BuildContext context) {
             return Scaffold(
               body: MessageInput(
-                onChanged: (String test) {},
+                onChanged: (String test) {}, onTap: () {  },
               ),
             );
           },
@@ -31,7 +31,7 @@ void main() {
           builder: (BuildContext context) {
             return Scaffold(
               body: MessageInput(
-                onChanged: (String test) {},
+                onChanged: (String test) {}, onTap: () {  },
               ),
             );
           },

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.48
+
+- chore: remove unused conflicting code
+
 ## 0.0.47
 
 - chore: update edit information enums
