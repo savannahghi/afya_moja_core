@@ -37,3 +37,4 @@ export 'src/presentation/search_widget.dart';
 export 'src/presentation/selection_option_field.dart';
 export 'src/presentation/text_themes.dart';
 export 'src/presentation/user_profile_item.dart';
+export 'src/presentation/responsive_widget.dart';

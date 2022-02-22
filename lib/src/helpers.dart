@@ -1,8 +1,16 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
+import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:flutter_graphql_client/graph_constants.dart';
+import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
+import 'package:shared_themes/constants.dart';
 
 String formatPhoneNumber({
   required String countryCode,
@@ -36,6 +44,7 @@ DateTime getTokenExpiryTimestamp(String? expiresIn) {
 bool hasTokenExpired(DateTime expiresAt, DateTime now) {
   return expiresAt.difference(now).inMinutes < 10;
 }
+
 bool isNumeric(String? s) {
   if (s == null) {
     return false;
@@ -115,4 +124,142 @@ String getErrorMessage([String message = '']) {
     return 'Sorry, an error occurred while $message.'
         ' Please try again later, or contact support center';
   }
+}
+
+/// [validatePhoneNumber] checks if a number is either a [Kenyan] , [American],  [UK] or [Belgium] phone number
+bool validatePhoneNumber(String phone) {
+  if (kenyanPhoneRegExp.hasMatch(phone) ||
+      (americanPhoneRegExp.hasMatch(phone)) ||
+      (unitedKingdomRegExp.hasMatch(phone)) ||
+      (genericInternationalRegExp.hasMatch(phone))) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+String? parseError(Map<String, dynamic>? body) {
+  if (body == null) return null;
+
+  final Object? error =
+      body.containsKey('errors') ? body['errors'] : body['error'];
+
+  if (error == null) return null;
+
+  if (error is List<dynamic>) {
+    final Map<String, dynamic> firstEntry = error.first as Map<String, dynamic>;
+    return firstEntry['message'] as String;
+  }
+
+  if (error is String) {
+    return error.contains(RegExp('ID token', caseSensitive: false))
+        ? kLoginLogoutPrompt
+        : error;
+  }
+
+  return null;
+}
+
+/// [snackbar]
+SnackBar snackbar({
+  required dynamic
+      content, // [content] must be either of type [Widget] or [String]
+  int durationSeconds = 10,
+  String? label,
+  Function? callback,
+}) {
+  return SnackBar(
+    content: content.runtimeType == String
+        ? Text(content as String)
+        : content as Widget,
+    duration: Duration(seconds: durationSeconds),
+    action: callback != null
+        ? SnackBarAction(label: label!, onPressed: callback as void Function())
+        : null,
+  );
+}
+
+/// [Dismiss snackbar]
+SnackBarAction dismissSnackBar(String text, Color color, BuildContext context) {
+  return SnackBarAction(
+    label: text,
+    textColor: color,
+    onPressed: () {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    },
+  );
+}
+
+/// [extractNamesInitials] => Extracts name initials from a name
+///
+/// Usage:
+///
+/// If you pass in a name like 'Abiud Orina', it returns 'AO'
+String extractNamesInitials({required String name}) {
+  final List<String> parts = name.split(' ');
+  if (parts.length >= 2) {
+    final StringBuffer initials = StringBuffer();
+    for (int i = 0; i <= 1; i++) {
+      final String part = parts[i];
+      initials.write(part[0].toUpperCase());
+    }
+    return initials.toString().trim().substring(0, 2);
+  }
+  return parts.first.split('')[0].toUpperCase();
+}
+
+/// [titleCase] returns a title cased sentence
+String titleCase(String sentence) {
+  return sentence
+      .toLowerCase()
+      .split(' ')
+      .map((String e) => e.trim())
+      .map((String word) => toBeginningOfSentenceCase(word))
+      .join(' ');
+}
+
+/// [removeUnderscores] removes underscores from a sentence
+String removeUnderscores(String sentence) {
+  return titleCase(sentence.replaceAll('_', ' ').toLowerCase());
+}
+
+/// [Generic Fetch Function]
+/// a generic fetch function for fetching all the problems, allergies
+/// medications, tests and diagnoses for the current patient
+/// in an episode
+///
+/// it takes in a [String queryString], the Map of the query variables [variables],
+/// the BuildContext [context], and a stream controller [streamController] in which the data is added to
+///
+/// it then updates the stream controller with the returned data (if any) or
+/// an error if there was an error
+Future<dynamic> genericFetchFunction({
+  required StreamController<dynamic> streamController,
+  required BuildContext context,
+  required String queryString,
+  required Map<String, dynamic> variables,
+  required String logTitle,
+  String? logDescription,
+}) async {
+  streamController.add(<String, dynamic>{'loading': true});
+
+  final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+
+  /// fetch the data from the api
+  final http.Response response = await _client.query(
+    queryString,
+    variables,
+  );
+
+  final Map<String, dynamic> payLoad = _client.toMap(response);
+  final String? error = parseError(payLoad);
+
+  if (error != null) {
+    return streamController
+        .addError(<String, dynamic>{'error': _client.parseError(payLoad)});
+  }
+
+  return (payLoad['data'] != null)
+      ? streamController.add(payLoad['data'])
+      : streamController.add(null);
 }
