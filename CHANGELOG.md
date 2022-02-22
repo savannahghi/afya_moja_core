@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.49
+
+- chore: make a copy of some functions in misc_utils
+
 ## 0.0.48
 
 - chore: remove unused conflicting code

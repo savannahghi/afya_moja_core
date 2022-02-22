@@ -16,7 +16,7 @@ packages:
     source: hosted
     version: "1.7.2"
   app_wrapper:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: app_wrapper
       url: "https://pub.dartlang.org"
@@ -266,7 +266,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_graphql_client:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_graphql_client
       url: "https://pub.dartlang.org"
@@ -402,7 +402,7 @@ packages:
     source: hosted
     version: "2.4.1"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
@@ -492,6 +492,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.32-nullsafety"
+  mockito:
+    dependency: "direct main"
+    description:
+      name: mockito
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.15"
   package_config:
     dependency: transitive
     description:
