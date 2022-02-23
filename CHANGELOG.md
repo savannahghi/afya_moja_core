@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.52
+
+- chore: add widgets from shared ui components
+
 ## 0.0.51
 
 - chore: remove shared ui preference

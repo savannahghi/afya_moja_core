@@ -59,3 +59,37 @@ class MyAfyaHubPrimaryButton extends StatelessWidget {
     );
   }
 }
+
+class MyAfyaHubNoBorderButton extends StatelessWidget {
+  const MyAfyaHubNoBorderButton({
+    this.buttonKey,
+    required this.onPressed,
+    required this.text,
+    this.onLongPress,
+    this.textColor,
+    this.customChild,
+  }) : assert(text != null);
+  final Key? buttonKey;
+  final Widget? customChild;
+  final VoidCallback? onLongPress;
+  final Function? onPressed;
+  final String? text;
+  final Color? textColor;
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      key: buttonKey,
+      onPressed: () {
+        onPressed!();
+      },
+      onLongPress: onLongPress,
+      child: customChild ??
+          Text(
+            text ?? '',
+            style: veryBoldSize15Text(
+              textColor ?? Theme.of(context).primaryColor,
+            ),
+          ),
+    );
+  }
+}

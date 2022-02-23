@@ -22,3 +22,4 @@ const Key feedbackBottomSheetCloseIconKey =
 
 //verify OTP
 const Key resendOtpButtonKey = Key('resend_otp_button_key');
+const Key iosLoaderThemeKey = Key('InboxCupertinoThemeKey');
