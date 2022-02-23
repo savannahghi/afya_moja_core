@@ -7,7 +7,6 @@ import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
-import 'package:misc_utilities/mutations.dart';
 
 import '../mocks/mocks.dart';
 
@@ -521,6 +520,11 @@ void main() {
       await tester.pumpAndSettle();
 
       await _controller.close();
+    });
+    test('should return false when phone doest match prefix', () {
+      const String phone = '+2541908765432';
+
+      expect(validateKenyanNumber(phone), false);
     });
   });
 }

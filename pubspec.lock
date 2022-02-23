@@ -486,7 +486,7 @@ packages:
     source: hosted
     version: "1.0.1"
   misc_utilities:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: misc_utilities
       url: "https://pub.dartlang.org"

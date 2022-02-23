@@ -3,7 +3,6 @@ import 'package:afya_moja_core/src/presentation/community_chat_widgets/awaiting_
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
 // Package imports:
-import 'package:misc_utilities/number_constants.dart';
 import 'package:shared_themes/spaces.dart';
 
 // Project imports:
@@ -38,7 +37,7 @@ class SentMessageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: number50),
+      padding: const EdgeInsets.only(left: 50),
       child: Column(
         children: <Widget>[
           Container(

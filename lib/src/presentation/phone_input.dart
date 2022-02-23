@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/behavior_subjects.dart';
+import 'package:afya_moja_core/src/helpers.dart';
 import 'package:afya_moja_core/src/presentation/country_code_picker.dart';
 import 'package:afya_moja_core/src/types.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
@@ -8,8 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Package imports:
-import 'package:misc_utilities/misc.dart';
-
 import 'package:shared_themes/colors.dart';
 
 /// [MyAfyaHubPhoneInput] is a shared widget to input user phone number and

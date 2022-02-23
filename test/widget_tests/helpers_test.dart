@@ -21,6 +21,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.showKeyboard(find.byType(PINInputField));
     await tester.enterText(find.byType(PINInputField), '123456');
+    
     await tester.pumpAndSettle();
 
     final Finder pinCodeTextField = find.byType(PinCodeTextField);
