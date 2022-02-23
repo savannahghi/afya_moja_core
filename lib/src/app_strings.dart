@@ -43,3 +43,6 @@ const String pinNotFound = 'No PIN found for this user.';
 const String defaultUserFriendlyMessage =
     'Sorry, an unknown error occurred, please try again or get help from our '
     'help center.';
+
+/// Date picker format
+const String datePickerFormat = 'dd MMM, yyyy';

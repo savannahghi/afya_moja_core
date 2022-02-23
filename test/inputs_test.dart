@@ -1,10 +1,10 @@
 // Flutter imports:
 import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/presentation/date_picker.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 void main() {
   group('ExpandableQuestion', () {
@@ -71,7 +71,7 @@ void main() {
         await tester.tap(expansionTile);
         await tester.pumpAndSettle();
 
-        final Finder datePickerField = find.byType(SILDatePickerField);
+        final Finder datePickerField = find.byType(DatePickerField);
         expect(datePickerField, findsOneWidget);
       },
     );

@@ -2,12 +2,12 @@
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/helpers.dart';
 import 'package:afya_moja_core/src/presentation/colors.dart';
+import 'package:afya_moja_core/src/presentation/date_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 // Package imports:
 import 'package:shared_themes/colors.dart';
-import 'package:shared_ui_components/inputs.dart';
 
 bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -156,7 +156,7 @@ class ExpandableQuestion extends StatelessWidget {
                 ),
                 children: <Widget>[
                   if (isDateType)
-                    SILDatePickerField(
+                    DatePickerField(
                       // check documentation for this widget to understand how dates are constrained
                       allowCurrentYear: true,
                       allowFutureYears: true,
