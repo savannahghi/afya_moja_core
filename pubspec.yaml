@@ -1,6 +1,6 @@
 name: afya_moja_core
 description: A shared library for `afyamoja` and `myafyahub` that is responsible for rendering and exposing shared components
-version: 0.0.52
+version: 0.0.53
 homepage: https://github.com/savannahghi/afya_moja_core
 repository: https://github.com/savannahghi/afya_moja_core
 issue_tracker: https://github.com/savannahghi/afya_moja_core/issues
@@ -42,3 +42,10 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - packages/afya_moja_core/assets/ken.png
+    - packages/afya_moja_core/assets/tza.png
+    - packages/afya_moja_core/assets/uga.png
+    - packages/afya_moja_core/assets/usa.png
+    - packages/afya_moja_core/assets/gbr.png
+    - packages/afya_moja_core/assets/bel.png
+    - packages/afya_moja_core/assets/nga.png

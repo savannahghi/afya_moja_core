@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.53
+
+- fix: flag paths
+
 ## 0.0.52
 
 - chore: add widgets from shared ui components
