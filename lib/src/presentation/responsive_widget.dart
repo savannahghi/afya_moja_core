@@ -1,7 +1,6 @@
+import 'package:afya_moja_core/src/enums.dart';
+import 'package:afya_moja_core/src/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/number_constants.dart';
 
 /// Refer to https://gitlab.slade360emr.com/optimalhealth/healthcloud/-/merge_requests/355/diffs
 /// if you want to introduce medium screen in future
@@ -95,11 +94,11 @@ class ResponsiveWidget extends StatelessWidget {
   static double preferredPaddingOnStretchedScreens(
       {required BuildContext context,}) {
     final double deviceWidth = MediaQuery.of(context).size.width;
-    if (deviceWidth >= number420) {
-      final double paddingSize = (deviceWidth - number420) / number2;
+    if (deviceWidth >= 420) {
+      final double paddingSize = (deviceWidth - 420) / 2;
       return paddingSize;
     } else {
-      return number15;
+      return 15;
     }
   }
 

@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/foundation.dart';
 
 enum Country { kenya, uganda, tanzania, us, uk, belgium, nigeria }
@@ -14,7 +16,6 @@ extension FlavourEx on Flavour {
 }
 
 /// Security Questions response type
-// ignore: constant_identifier_names
 enum SecurityQuestionResponseType { NUMBER, TEXT, DATE, UNKNOWN }
 
 /// [SecurityQuestionResponseTypeEx] extends [SecurityQuestionResponseType] enum to get the values as
@@ -25,9 +26,8 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
   }
 }
 
-// ignore: constant_identifier_names
+
 enum EditInformationInputType { Text, DropDown }
-// ignore: constant_identifier_names
 enum CaregiverType { Father, Mother, Sibling }
 
 extension CaregiverTypeEx on CaregiverType {
@@ -35,3 +35,5 @@ extension CaregiverTypeEx on CaregiverType {
     return describeEnum(this);
   }
 }
+
+enum DeviceScreensType { Mobile, Tablet, Desktop }

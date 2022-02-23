@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.50
+
+- chore: add implementation for references from misc
+
 ## 0.0.49
 
 - chore: make a copy of some functions in misc_utils

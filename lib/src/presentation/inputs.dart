@@ -1,9 +1,9 @@
 // Flutter imports:
 import 'package:afya_moja_core/src/app_strings.dart';
+import 'package:afya_moja_core/src/helpers.dart';
 import 'package:afya_moja_core/src/presentation/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:misc_utilities/misc.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 // Package imports:
 import 'package:shared_themes/colors.dart';

@@ -1,9 +1,8 @@
+import 'package:afya_moja_core/src/enums.dart';
+import 'package:afya_moja_core/src/helpers.dart';
 import 'package:afya_moja_core/src/presentation/responsive_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:misc_utilities/enums.dart';
-import 'package:misc_utilities/misc.dart';
-import 'package:misc_utilities/number_constants.dart';
 
 import '../utils_test.dart';
 
@@ -129,7 +128,7 @@ void main() {
                 ResponsiveWidget.preferredPaddingOnStretchedScreens(
                   context: context,
                 ),
-                number15,
+                15,
               );
 
               return Container();
@@ -150,7 +149,7 @@ void main() {
       tester.binding.window.devicePixelRatioTestValue = 1.0;
       tester.binding.window.physicalSizeTestValue = tabletLandscape;
 
-      const double width = (number1280 - number420) / number2;
+      const double width = (1280 - 420) / 2;
 
       await tester.pumpWidget(
         MaterialApp(
@@ -279,6 +278,40 @@ void main() {
 
                 expect(isLandscape, isTrue);
                 expect(mediaQuery.size.width, 1280);
+                expect(screenType, DeviceScreensType.Tablet);
+
+                return const Placeholder();
+              },
+            ),
+          ),
+        ),
+      );
+
+      addTearDown(() {
+        tester.binding.window.clearPhysicalSizeTestValue();
+        tester.binding.window.clearDevicePixelRatioTestValue();
+      });
+    });
+
+     testWidgets('returns device width for large screen portrait',
+        (WidgetTester tester) async {
+      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      tester.binding.window.physicalSizeTestValue = tabletPortrait;
+
+      await tester.pumpWidget(
+        MediaQuery(
+          data: MediaQueryData.fromWindow(tester.binding.window)
+              .copyWith(size: tabletPortrait),
+          child: MaterialApp(
+            home: Builder(
+              builder: (BuildContext context) {
+                final MediaQueryData mediaQuery = MediaQuery.of(context);
+                final bool isLandscape =
+                    ResponsiveWidget.isLandscape(context: context);
+                final DeviceScreensType screenType = getDeviceType(context);
+
+                expect(isLandscape, isFalse);
+                expect(mediaQuery.size.width, 720);
                 expect(screenType, DeviceScreensType.Tablet);
 
                 return const Placeholder();

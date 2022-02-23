@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
+import 'package:afya_moja_core/src/constants.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
@@ -138,6 +139,23 @@ bool validatePhoneNumber(String phone) {
   }
 }
 
+/// [validateKenyanNumber] checks if a number is either has either prefix of '+254111', '+254110', '+254100', '+2540101', '+254102' or '+2547xx'
+bool validateKenyanNumber(String phone) {
+  String prefix;
+  final String fifthChar = phone.substring(4, 5);
+  if (fifthChar == '7') {
+    return true;
+  } else if (fifthChar == '1') {
+    prefix = phone.substring(0, 7);
+    if (validPrefixes.contains(prefix)) {
+      return true;
+    }
+    return false;
+  } else {
+    return false;
+  }
+}
+
 String? parseError(Map<String, dynamic>? body) {
   if (body == null) return null;
 
@@ -262,4 +280,24 @@ Future<dynamic> genericFetchFunction({
   return (payLoad['data'] != null)
       ? streamController.add(payLoad['data'])
       : streamController.add(null);
+}
+
+/// [getDeviceType]
+DeviceScreensType getDeviceType(BuildContext context) {
+  final MediaQueryData mediaQuery = MediaQuery.of(context);
+  final Orientation deviceOrientation = mediaQuery.orientation;
+  double deviceWidth = 0;
+  if (deviceOrientation == Orientation.landscape) {
+    deviceWidth = mediaQuery.size.height;
+  } else {
+    deviceWidth = mediaQuery.size.width;
+  }
+
+  if (deviceWidth > 1200) {
+    return DeviceScreensType.Desktop;
+  }
+  if (deviceWidth > 600) {
+    return DeviceScreensType.Tablet;
+  }
+  return DeviceScreensType.Mobile;
 }
