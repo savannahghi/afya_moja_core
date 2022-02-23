@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('SilCountryPicker', () {
-    testWidgets('should render SilCountryPicker ', (WidgetTester tester) async {
+    testWidgets('should render CountryPicker ', (WidgetTester tester) async {
       final Widget testWidget = MaterialApp(
         home: Builder(
           builder: (BuildContext context) {

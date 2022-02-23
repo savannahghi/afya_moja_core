@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.51
+
+- chore: remove shared ui preference
+
 ## 0.0.50
 
 - chore: add implementation for references from misc
