@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.54
+
+- feat: onboarding responsiveness
+
 ## 0.0.53
 
 - fix: flag paths
