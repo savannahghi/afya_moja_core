@@ -1,9 +1,8 @@
 // Project imports:
 import 'package:afya_moja_core/src/presentation/onboarding_scaffold_header.dart';
-
+import 'package:afya_moja_core/src/presentation/responsive_widget.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:shared_themes/spaces.dart';
 
@@ -35,7 +34,11 @@ class OnboardingScaffold extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(
+                horizontal: ResponsiveWidget.preferredPaddingOnStretchedScreens(
+                  context: context,
+                ),
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
