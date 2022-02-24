@@ -42,18 +42,15 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
       child: SizedBox(
         key: selectCountryKey,
         height: 54,
-        width: 78,
         child: Row(
           children: <Widget>[
-            Expanded(
-              child: Text(
-                getCountry(this._country)!['code']!,
-                key: const Key('countrySelectedKey'),
-                style: const TextStyle(
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
+            Text(
+              getCountry(this._country)!['code']!,
+              key: const Key('countrySelectedKey'),
+              style: const TextStyle(
+                fontWeight: FontWeight.w300,
+                color: Colors.black,
+                fontSize: 15,
               ),
             ),
             const SizedBox(
