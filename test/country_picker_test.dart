@@ -31,11 +31,7 @@ void main() {
       expect(detector, findsOneWidget);
       expect(selectCountry, findsOneWidget);
 
-      await tester.tap(selectCountry);
-      await tester.pumpAndSettle();
-
-      expect(find.byType(ListTile), findsNWidgets(7));
-      await tester.tap(find.byType(ListTile).first);
+      await tester.tapAt(const Offset(400, 27));
       await tester.pumpAndSettle();
     });
   });
