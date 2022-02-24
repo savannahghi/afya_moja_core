@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.55
+
+- fix: wrapping of phone input
 ## 0.0.54
 
 - feat: onboarding responsiveness
