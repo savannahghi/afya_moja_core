@@ -301,3 +301,18 @@ DeviceScreensType getDeviceType(BuildContext context) {
   }
   return DeviceScreensType.Mobile;
 }
+
+
+/// [getGreetingMessage] gets the current time of day and determines which type of greetings to show
+/// to the user
+String getGreetingMessage(String? firstName, {int? currentHour}) {
+  final int hour = currentHour ?? DateTime.now().hour;
+  final String name = firstName == null ? '' : ', $firstName';
+  if (hour < 12) {
+    return 'Good Morning$name';
+  }
+  if (hour < 17) {
+    return 'Good Afternoon$name';
+  }
+  return 'Good Evening$name';
+}

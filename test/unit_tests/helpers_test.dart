@@ -527,4 +527,31 @@ void main() {
       expect(validateKenyanNumber(phone), false);
     });
   });
+  test('should return the correct greeting message', () {
+    const int morningHour = 11;
+    const int afternoonHour = 15;
+    const int eveningHour = 20;
+    const String firstName = 'coverage';
+
+    String greetingMessage =
+        getGreetingMessage(firstName, currentHour: morningHour);
+
+    expect(greetingMessage, isA<String>());
+    expect(greetingMessage.contains('Morning'), true);
+    expect(greetingMessage.contains(firstName), true);
+
+    greetingMessage = getGreetingMessage(firstName, currentHour: afternoonHour);
+    expect(greetingMessage, isA<String>());
+    expect(greetingMessage.contains('Afternoon'), true);
+    expect(greetingMessage.contains(firstName), true);
+
+    greetingMessage = getGreetingMessage(firstName, currentHour: eveningHour);
+    expect(greetingMessage, isA<String>());
+    expect(greetingMessage.contains('Evening'), true);
+    expect(greetingMessage.contains(firstName), true);
+
+    greetingMessage = getGreetingMessage(firstName);
+    expect(greetingMessage, isA<String>());
+    expect(greetingMessage.contains(firstName), true);
+  });
 }
