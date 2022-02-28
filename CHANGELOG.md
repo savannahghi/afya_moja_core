@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.58
+
+- add value objects
+
 ## 0.0.57
 
 - Update packages

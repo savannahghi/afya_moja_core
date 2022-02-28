@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'faq_content.dart';
 
@@ -37,7 +39,7 @@ class _$FAQContentTearOff {
     );
   }
 
-  FAQContent fromJson(Map<String, Object> json) {
+  FAQContent fromJson(Map<String, Object?> json) {
     return FAQContent.fromJson(json);
   }
 }
@@ -201,7 +203,7 @@ class _$_FAQContent implements _FAQContent {
       @JsonKey(name: 'Flavour') this.flavour});
 
   factory _$_FAQContent.fromJson(Map<String, dynamic> json) =>
-      _$_$_FAQContentFromJson(json);
+      _$$_FAQContentFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -230,31 +232,26 @@ class _$_FAQContent implements _FAQContent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FAQContent &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.active, active) ||
-                const DeepCollectionEquality().equals(other.active, active)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.body, body) ||
-                const DeepCollectionEquality().equals(other.body, body)) &&
-            (identical(other.flavour, flavour) ||
-                const DeepCollectionEquality().equals(other.flavour, flavour)));
+        (other.runtimeType == runtimeType &&
+            other is _FAQContent &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.active, active) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.body, body) &&
+            const DeepCollectionEquality().equals(other.flavour, flavour));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(active) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(body) ^
-      const DeepCollectionEquality().hash(flavour);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(active),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(body),
+      const DeepCollectionEquality().hash(flavour));
 
   @JsonKey(ignore: true)
   @override
@@ -263,7 +260,7 @@ class _$_FAQContent implements _FAQContent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_FAQContentToJson(this);
+    return _$$_FAQContentToJson(this);
   }
 }
 
@@ -281,22 +278,22 @@ abstract class _FAQContent implements FAQContent {
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'Active')
-  bool? get active => throw _privateConstructorUsedError;
+  bool? get active;
   @override
   @JsonKey(name: 'Title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'Description')
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
   @JsonKey(name: 'Body')
-  String? get body => throw _privateConstructorUsedError;
+  String? get body;
   @override
   @JsonKey(name: 'Flavour')
-  String? get flavour => throw _privateConstructorUsedError;
+  String? get flavour;
   @override
   @JsonKey(ignore: true)
   _$FAQContentCopyWith<_FAQContent> get copyWith =>

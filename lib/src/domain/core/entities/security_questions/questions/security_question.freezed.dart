@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'security_question.dart';
 
@@ -40,7 +42,7 @@ class _$SecurityQuestionTearOff {
     );
   }
 
-  SecurityQuestion fromJson(Map<String, Object> json) {
+  SecurityQuestion fromJson(Map<String, Object?> json) {
     return SecurityQuestion.fromJson(json);
   }
 }
@@ -209,7 +211,7 @@ class _$_SecurityQuestion implements _SecurityQuestion {
           this.active = false});
 
   factory _$_SecurityQuestion.fromJson(Map<String, dynamic> json) =>
-      _$_$_SecurityQuestionFromJson(json);
+      _$$_SecurityQuestionFromJson(json);
 
   @override
   @JsonKey(name: 'SecurityQuestionID')
@@ -236,31 +238,27 @@ class _$_SecurityQuestion implements _SecurityQuestion {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SecurityQuestion &&
-            (identical(other.securityQuestionID, securityQuestionID) ||
-                const DeepCollectionEquality()
-                    .equals(other.securityQuestionID, securityQuestionID)) &&
-            (identical(other.questionStem, questionStem) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionStem, questionStem)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.responseType, responseType) ||
-                const DeepCollectionEquality()
-                    .equals(other.responseType, responseType)) &&
-            (identical(other.active, active) ||
-                const DeepCollectionEquality().equals(other.active, active)));
+        (other.runtimeType == runtimeType &&
+            other is _SecurityQuestion &&
+            const DeepCollectionEquality()
+                .equals(other.securityQuestionID, securityQuestionID) &&
+            const DeepCollectionEquality()
+                .equals(other.questionStem, questionStem) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.responseType, responseType) &&
+            const DeepCollectionEquality().equals(other.active, active));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(securityQuestionID) ^
-      const DeepCollectionEquality().hash(questionStem) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(responseType) ^
-      const DeepCollectionEquality().hash(active);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(securityQuestionID),
+      const DeepCollectionEquality().hash(questionStem),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(responseType),
+      const DeepCollectionEquality().hash(active));
 
   @JsonKey(ignore: true)
   @override
@@ -269,7 +267,7 @@ class _$_SecurityQuestion implements _SecurityQuestion {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SecurityQuestionToJson(this);
+    return _$$_SecurityQuestionToJson(this);
   }
 }
 
@@ -291,21 +289,20 @@ abstract class _SecurityQuestion implements SecurityQuestion {
 
   @override
   @JsonKey(name: 'SecurityQuestionID')
-  String? get securityQuestionID => throw _privateConstructorUsedError;
+  String? get securityQuestionID;
   @override
   @JsonKey(name: 'QuestionStem')
-  String? get questionStem => throw _privateConstructorUsedError;
+  String? get questionStem;
   @override
   @JsonKey(name: 'Description')
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
   @JsonKey(
       name: 'ResponseType', defaultValue: SecurityQuestionResponseType.UNKNOWN)
-  SecurityQuestionResponseType? get responseType =>
-      throw _privateConstructorUsedError;
+  SecurityQuestionResponseType? get responseType;
   @override
   @JsonKey(name: 'Active')
-  bool? get active => throw _privateConstructorUsedError;
+  bool? get active;
   @override
   @JsonKey(ignore: true)
   _$SecurityQuestionCopyWith<_SecurityQuestion> get copyWith =>

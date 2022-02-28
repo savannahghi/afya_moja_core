@@ -1,3 +1,4 @@
+export 'src/constants.dart';
 export 'src/domain/core/entities/faqs/faq_content.dart';
 export 'src/domain/core/entities/faqs/faq_content_response.dart';
 export 'src/domain/core/entities/faqs/faqs_content_state.dart';
@@ -12,7 +13,10 @@ export 'src/domain/core/entities/security_questions/responses/record_security_qu
 export 'src/domain/core/entities/security_questions/responses/record_security_question_responses_data.dart';
 export 'src/domain/core/entities/security_questions/responses/security_question_response.dart';
 export 'src/domain/core/entities/security_questions/responses/verify_security_question_data.dart';
+export 'src/domain/value_objects/name.dart';
+export 'src/domain/value_objects/phone_number.dart';
 export 'src/enums.dart';
+export 'src/failures/exception.dart';
 export 'src/helpers.dart';
 export 'src/presentation/buttons.dart';
 export 'src/presentation/checkbox_component.dart';

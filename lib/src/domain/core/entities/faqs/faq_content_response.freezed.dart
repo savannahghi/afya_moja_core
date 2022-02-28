@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'faq_content_response.dart';
 
@@ -27,7 +29,7 @@ class _$FAQContentResponseTearOff {
     );
   }
 
-  FAQContentResponse fromJson(Map<String, Object> json) {
+  FAQContentResponse fromJson(Map<String, Object?> json) {
     return FAQContentResponse.fromJson(json);
   }
 }
@@ -120,7 +122,7 @@ class _$_FAQContentResponse implements _FAQContentResponse {
       {@JsonKey(name: 'getFAQContent') this.profileFAQsContent});
 
   factory _$_FAQContentResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_FAQContentResponseFromJson(json);
+      _$$_FAQContentResponseFromJson(json);
 
   @override
   @JsonKey(name: 'getFAQContent')
@@ -134,16 +136,15 @@ class _$_FAQContentResponse implements _FAQContentResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FAQContentResponse &&
-            (identical(other.profileFAQsContent, profileFAQsContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.profileFAQsContent, profileFAQsContent)));
+        (other.runtimeType == runtimeType &&
+            other is _FAQContentResponse &&
+            const DeepCollectionEquality()
+                .equals(other.profileFAQsContent, profileFAQsContent));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(profileFAQsContent);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(profileFAQsContent));
 
   @JsonKey(ignore: true)
   @override
@@ -152,7 +153,7 @@ class _$_FAQContentResponse implements _FAQContentResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_FAQContentResponseToJson(this);
+    return _$$_FAQContentResponseToJson(this);
   }
 }
 
@@ -166,8 +167,7 @@ abstract class _FAQContentResponse implements FAQContentResponse {
 
   @override
   @JsonKey(name: 'getFAQContent')
-  List<FAQContent>? get profileFAQsContent =>
-      throw _privateConstructorUsedError;
+  List<FAQContent>? get profileFAQsContent;
   @override
   @JsonKey(ignore: true)
   _$FAQContentResponseCopyWith<_FAQContentResponse> get copyWith =>

@@ -135,13 +135,13 @@ void main() {
       formatPhoneNumber(phoneNumber: '1234567', countryCode: '+255'),
       '+2551234567',
     );
-    expect(validatePhoneNumber('+2551234567'), true);
+    expect(isValidPhoneNumber('+2551234567'), true);
 
     expect(
       formatPhoneNumber(countryCode: '254', phoneNumber: '790123456'),
       '+254790123456',
     );
-    expect(validatePhoneNumber('+254790123456'), true);
+    expect(isValidPhoneNumber('+254790123456'), true);
 
     expect(
       formatPhoneNumber(countryCode: '254', phoneNumber: '0790123456'),
@@ -152,7 +152,7 @@ void main() {
       formatPhoneNumber(countryCode: '+1', phoneNumber: '100000'),
       '+1100000',
     );
-    expect(validatePhoneNumber('+1100000'), true);
+    expect(isValidPhoneNumber('+1100000'), true);
 
     expect(
       formatPhoneNumber(countryCode: '+254', phoneNumber: '07100000'),
@@ -165,7 +165,7 @@ void main() {
     expect(formattedUKPhoneNumber, '+442087599036');
 
     // validate the phone number
-    expect(validatePhoneNumber(formattedUKPhoneNumber), true);
+    expect(isValidPhoneNumber(formattedUKPhoneNumber), true);
 
     // Output should be +32460205037 (A Belgium phone number)
     final String formattedBelgiumPhoneNumber =
@@ -173,7 +173,7 @@ void main() {
     expect(formattedBelgiumPhoneNumber, '+32460205037');
 
     // validate the phone number
-    expect(validatePhoneNumber(formattedBelgiumPhoneNumber), true);
+    expect(isValidPhoneNumber(formattedBelgiumPhoneNumber), true);
 
     // Output should be +2547123456789 (A normal Kenyan phone number)
     final String formattedNormalKenyanPhoneNumber =
@@ -181,7 +181,7 @@ void main() {
     expect(formattedNormalKenyanPhoneNumber, '+2547123456789');
 
     // validate the phone number
-    expect(validatePhoneNumber(formattedNormalKenyanPhoneNumber), true);
+    expect(isValidPhoneNumber(formattedNormalKenyanPhoneNumber), true);
 
     // Output should be +254110123456 (A new Safaricom phone number)
     final String formattedNewSafaricomKenyanPhoneNumber =
@@ -189,7 +189,7 @@ void main() {
     expect(formattedNewSafaricomKenyanPhoneNumber, '+254110123456');
 
     // validate the phone number
-    expect(validatePhoneNumber(formattedNewSafaricomKenyanPhoneNumber), true);
+    expect(isValidPhoneNumber(formattedNewSafaricomKenyanPhoneNumber), true);
 
     // Output should be +254110123456 (A new Safaricom phone number)
     final String formattedKenyanPhoneNumberWithSpaces =
@@ -197,7 +197,7 @@ void main() {
     expect(formattedKenyanPhoneNumberWithSpaces, '+254110123456');
 
     // validate the phone number
-    expect(validatePhoneNumber(formattedKenyanPhoneNumberWithSpaces), true);
+    expect(isValidPhoneNumber(formattedKenyanPhoneNumberWithSpaces), true);
   });
 
   testWidgets('should show snackbar and dismiss it',
