@@ -60,7 +60,7 @@ class MyAfyaHubPhoneInput extends FormField<String> {
                 phone = value;
               }
 
-              if (!validatePhoneNumber('$countryCode$phone')) {
+              if (!isValidPhoneNumber('$countryCode$phone')) {
                 isValidNumber = showAlertIcon;
                 return validPhoneNumberText;
               }

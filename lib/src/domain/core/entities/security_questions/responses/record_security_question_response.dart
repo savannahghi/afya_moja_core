@@ -1,7 +1,7 @@
 // Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../app_strings.dart';
+import '../../../../../../afya_moja_core.dart';
 
 part 'record_security_question_response.freezed.dart';
 part 'record_security_question_response.g.dart';

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'security_question_response.dart';
 
@@ -32,7 +34,7 @@ class _$SecurityQuestionResponseTearOff {
     );
   }
 
-  SecurityQuestionResponse fromJson(Map<String, Object> json) {
+  SecurityQuestionResponse fromJson(Map<String, Object?> json) {
     return SecurityQuestionResponse.fromJson(json);
   }
 }
@@ -155,7 +157,7 @@ class _$_SecurityQuestionResponse implements _SecurityQuestionResponse {
       @JsonKey(name: 'response') this.response});
 
   factory _$_SecurityQuestionResponse.fromJson(Map<String, dynamic> json) =>
-      _$_$_SecurityQuestionResponseFromJson(json);
+      _$$_SecurityQuestionResponseFromJson(json);
 
   @override
   @JsonKey(name: 'userID')
@@ -175,23 +177,20 @@ class _$_SecurityQuestionResponse implements _SecurityQuestionResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SecurityQuestionResponse &&
-            (identical(other.userID, userID) ||
-                const DeepCollectionEquality().equals(other.userID, userID)) &&
-            (identical(other.securityQuestionID, securityQuestionID) ||
-                const DeepCollectionEquality()
-                    .equals(other.securityQuestionID, securityQuestionID)) &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)));
+        (other.runtimeType == runtimeType &&
+            other is _SecurityQuestionResponse &&
+            const DeepCollectionEquality().equals(other.userID, userID) &&
+            const DeepCollectionEquality()
+                .equals(other.securityQuestionID, securityQuestionID) &&
+            const DeepCollectionEquality().equals(other.response, response));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userID) ^
-      const DeepCollectionEquality().hash(securityQuestionID) ^
-      const DeepCollectionEquality().hash(response);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userID),
+      const DeepCollectionEquality().hash(securityQuestionID),
+      const DeepCollectionEquality().hash(response));
 
   @JsonKey(ignore: true)
   @override
@@ -201,7 +200,7 @@ class _$_SecurityQuestionResponse implements _SecurityQuestionResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SecurityQuestionResponseToJson(this);
+    return _$$_SecurityQuestionResponseToJson(this);
   }
 }
 
@@ -217,13 +216,13 @@ abstract class _SecurityQuestionResponse implements SecurityQuestionResponse {
 
   @override
   @JsonKey(name: 'userID')
-  String? get userID => throw _privateConstructorUsedError;
+  String? get userID;
   @override
   @JsonKey(name: 'securityQuestionID')
-  String? get securityQuestionID => throw _privateConstructorUsedError;
+  String? get securityQuestionID;
   @override
   @JsonKey(name: 'response')
-  String? get response => throw _privateConstructorUsedError;
+  String? get response;
   @override
   @JsonKey(ignore: true)
   _$SecurityQuestionResponseCopyWith<_SecurityQuestionResponse> get copyWith =>

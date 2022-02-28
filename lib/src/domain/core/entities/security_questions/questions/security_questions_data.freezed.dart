@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'security_questions_data.dart';
 
@@ -29,7 +31,7 @@ class _$SecurityQuestionsDataTearOff {
     );
   }
 
-  SecurityQuestionsData fromJson(Map<String, Object> json) {
+  SecurityQuestionsData fromJson(Map<String, Object?> json) {
     return SecurityQuestionsData.fromJson(json);
   }
 }
@@ -124,7 +126,7 @@ class _$_SecurityQuestionsData implements _SecurityQuestionsData {
       {@JsonKey(name: 'getSecurityQuestions') required this.securityQuestions});
 
   factory _$_SecurityQuestionsData.fromJson(Map<String, dynamic> json) =>
-      _$_$_SecurityQuestionsDataFromJson(json);
+      _$$_SecurityQuestionsDataFromJson(json);
 
   @override
   @JsonKey(name: 'getSecurityQuestions')
@@ -138,16 +140,15 @@ class _$_SecurityQuestionsData implements _SecurityQuestionsData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SecurityQuestionsData &&
-            (identical(other.securityQuestions, securityQuestions) ||
-                const DeepCollectionEquality()
-                    .equals(other.securityQuestions, securityQuestions)));
+        (other.runtimeType == runtimeType &&
+            other is _SecurityQuestionsData &&
+            const DeepCollectionEquality()
+                .equals(other.securityQuestions, securityQuestions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(securityQuestions);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(securityQuestions));
 
   @JsonKey(ignore: true)
   @override
@@ -157,7 +158,7 @@ class _$_SecurityQuestionsData implements _SecurityQuestionsData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SecurityQuestionsDataToJson(this);
+    return _$$_SecurityQuestionsDataToJson(this);
   }
 }
 
@@ -172,8 +173,7 @@ abstract class _SecurityQuestionsData implements SecurityQuestionsData {
 
   @override
   @JsonKey(name: 'getSecurityQuestions')
-  List<SecurityQuestion> get securityQuestions =>
-      throw _privateConstructorUsedError;
+  List<SecurityQuestion> get securityQuestions;
   @override
   @JsonKey(ignore: true)
   _$SecurityQuestionsDataCopyWith<_SecurityQuestionsData> get copyWith =>

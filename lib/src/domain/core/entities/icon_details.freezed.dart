@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'icon_details.dart';
 
@@ -26,7 +28,7 @@ class _$IconDetailsTearOff {
     );
   }
 
-  IconDetails fromJson(Map<String, Object> json) {
+  IconDetails fromJson(Map<String, Object?> json) {
     return IconDetails.fromJson(json);
   }
 }
@@ -113,7 +115,7 @@ class _$_IconDetails implements _IconDetails {
   _$_IconDetails({@JsonKey(name: 'url') required this.iconUrlSvgPath});
 
   factory _$_IconDetails.fromJson(Map<String, dynamic> json) =>
-      _$_$_IconDetailsFromJson(json);
+      _$$_IconDetailsFromJson(json);
 
   @override
   @JsonKey(name: 'url')
@@ -127,16 +129,15 @@ class _$_IconDetails implements _IconDetails {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _IconDetails &&
-            (identical(other.iconUrlSvgPath, iconUrlSvgPath) ||
-                const DeepCollectionEquality()
-                    .equals(other.iconUrlSvgPath, iconUrlSvgPath)));
+        (other.runtimeType == runtimeType &&
+            other is _IconDetails &&
+            const DeepCollectionEquality()
+                .equals(other.iconUrlSvgPath, iconUrlSvgPath));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(iconUrlSvgPath);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(iconUrlSvgPath));
 
   @JsonKey(ignore: true)
   @override
@@ -145,7 +146,7 @@ class _$_IconDetails implements _IconDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_IconDetailsToJson(this);
+    return _$$_IconDetailsToJson(this);
   }
 }
 
@@ -158,7 +159,7 @@ abstract class _IconDetails implements IconDetails {
 
   @override
   @JsonKey(name: 'url')
-  String get iconUrlSvgPath => throw _privateConstructorUsedError;
+  String get iconUrlSvgPath;
   @override
   @JsonKey(ignore: true)
   _$IconDetailsCopyWith<_IconDetails> get copyWith =>

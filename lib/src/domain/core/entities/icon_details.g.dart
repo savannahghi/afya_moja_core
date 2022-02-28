@@ -6,13 +6,12 @@ part of 'icon_details.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_IconDetails _$_$_IconDetailsFromJson(Map<String, dynamic> json) {
-  return _$_IconDetails(
-    iconUrlSvgPath: json['url'] as String,
-  );
-}
+_$_IconDetails _$$_IconDetailsFromJson(Map<String, dynamic> json) =>
+    _$_IconDetails(
+      iconUrlSvgPath: json['url'] as String,
+    );
 
-Map<String, dynamic> _$_$_IconDetailsToJson(_$_IconDetails instance) =>
+Map<String, dynamic> _$$_IconDetailsToJson(_$_IconDetails instance) =>
     <String, dynamic>{
       'url': instance.iconUrlSvgPath,
     };

@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'onboarding_path_config.dart';
 
@@ -121,7 +123,7 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
 
   @override // The route to navigate to
   final String route;
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override // Any route arguments that may need to be passed while navigating
   final dynamic arguments;
 
@@ -133,19 +135,17 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OnboardingPathConfig &&
-            (identical(other.route, route) ||
-                const DeepCollectionEquality().equals(other.route, route)) &&
-            (identical(other.arguments, arguments) ||
-                const DeepCollectionEquality()
-                    .equals(other.arguments, arguments)));
+        (other.runtimeType == runtimeType &&
+            other is _OnboardingPathConfig &&
+            const DeepCollectionEquality().equals(other.route, route) &&
+            const DeepCollectionEquality().equals(other.arguments, arguments));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(route) ^
-      const DeepCollectionEquality().hash(arguments);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(route),
+      const DeepCollectionEquality().hash(arguments));
 
   @JsonKey(ignore: true)
   @override
@@ -159,9 +159,9 @@ abstract class _OnboardingPathConfig implements OnboardingPathConfig {
       _$_OnboardingPathConfig;
 
   @override // The route to navigate to
-  String get route => throw _privateConstructorUsedError;
+  String get route;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get arguments => throw _privateConstructorUsedError;
+  dynamic get arguments;
   @override
   @JsonKey(ignore: true)
   _$OnboardingPathConfigCopyWith<_OnboardingPathConfig> get copyWith =>

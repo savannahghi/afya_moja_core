@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'faqs_content_state.dart';
 
@@ -31,7 +33,7 @@ class _$FAQsContentStateTearOff {
     );
   }
 
-  FAQsContentState fromJson(Map<String, Object> json) {
+  FAQsContentState fromJson(Map<String, Object?> json) {
     return FAQsContentState.fromJson(json);
   }
 }
@@ -148,7 +150,7 @@ class _$_FAQsContentState implements _FAQsContentState {
       {this.profileFAQs, this.errorFetchingFAQs, this.timeoutFetchingFAQs});
 
   factory _$_FAQsContentState.fromJson(Map<String, dynamic> json) =>
-      _$_$_FAQsContentStateFromJson(json);
+      _$$_FAQsContentStateFromJson(json);
 
   @override
   final List<FAQContent?>? profileFAQs;
@@ -165,24 +167,22 @@ class _$_FAQsContentState implements _FAQsContentState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FAQsContentState &&
-            (identical(other.profileFAQs, profileFAQs) ||
-                const DeepCollectionEquality()
-                    .equals(other.profileFAQs, profileFAQs)) &&
-            (identical(other.errorFetchingFAQs, errorFetchingFAQs) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorFetchingFAQs, errorFetchingFAQs)) &&
-            (identical(other.timeoutFetchingFAQs, timeoutFetchingFAQs) ||
-                const DeepCollectionEquality()
-                    .equals(other.timeoutFetchingFAQs, timeoutFetchingFAQs)));
+        (other.runtimeType == runtimeType &&
+            other is _FAQsContentState &&
+            const DeepCollectionEquality()
+                .equals(other.profileFAQs, profileFAQs) &&
+            const DeepCollectionEquality()
+                .equals(other.errorFetchingFAQs, errorFetchingFAQs) &&
+            const DeepCollectionEquality()
+                .equals(other.timeoutFetchingFAQs, timeoutFetchingFAQs));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(profileFAQs) ^
-      const DeepCollectionEquality().hash(errorFetchingFAQs) ^
-      const DeepCollectionEquality().hash(timeoutFetchingFAQs);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(profileFAQs),
+      const DeepCollectionEquality().hash(errorFetchingFAQs),
+      const DeepCollectionEquality().hash(timeoutFetchingFAQs));
 
   @JsonKey(ignore: true)
   @override
@@ -191,7 +191,7 @@ class _$_FAQsContentState implements _FAQsContentState {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_FAQsContentStateToJson(this);
+    return _$$_FAQsContentStateToJson(this);
   }
 }
 
@@ -205,11 +205,11 @@ abstract class _FAQsContentState implements FAQsContentState {
       _$_FAQsContentState.fromJson;
 
   @override
-  List<FAQContent?>? get profileFAQs => throw _privateConstructorUsedError;
+  List<FAQContent?>? get profileFAQs;
   @override
-  bool? get errorFetchingFAQs => throw _privateConstructorUsedError;
+  bool? get errorFetchingFAQs;
   @override
-  bool? get timeoutFetchingFAQs => throw _privateConstructorUsedError;
+  bool? get timeoutFetchingFAQs;
   @override
   @JsonKey(ignore: true)
   _$FAQsContentStateCopyWith<_FAQsContentState> get copyWith =>

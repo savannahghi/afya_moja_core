@@ -11,7 +11,6 @@ import 'package:flutter_graphql_client/graph_constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
-import 'package:shared_themes/constants.dart';
 
 String formatPhoneNumber({
   required String countryCode,
@@ -127,8 +126,8 @@ String getErrorMessage([String message = '']) {
   }
 }
 
-/// [validatePhoneNumber] checks if a number is either a [Kenyan] , [American],  [UK] or [Belgium] phone number
-bool validatePhoneNumber(String phone) {
+/// [isValidPhoneNumber] checks if a number is either a [Kenyan] , [American],  [UK] or [Belgium] phone number
+bool isValidPhoneNumber(String phone) {
   if (kenyanPhoneRegExp.hasMatch(phone) ||
       (americanPhoneRegExp.hasMatch(phone)) ||
       (unitedKingdomRegExp.hasMatch(phone)) ||
@@ -301,7 +300,6 @@ DeviceScreensType getDeviceType(BuildContext context) {
   }
   return DeviceScreensType.Mobile;
 }
-
 
 /// [getGreetingMessage] gets the current time of day and determines which type of greetings to show
 /// to the user

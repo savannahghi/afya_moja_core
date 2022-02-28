@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'verify_security_question_data.dart';
 
@@ -34,7 +36,7 @@ class _$VerifySecurityQuestionDataTearOff {
     );
   }
 
-  VerifySecurityQuestionData fromJson(Map<String, Object> json) {
+  VerifySecurityQuestionData fromJson(Map<String, Object?> json) {
     return VerifySecurityQuestionData.fromJson(json);
   }
 }
@@ -173,7 +175,7 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
       @JsonKey(name: 'phoneNumber') this.phoneNumber});
 
   factory _$_VerifySecurityQuestionData.fromJson(Map<String, dynamic> json) =>
-      _$_$_VerifySecurityQuestionDataFromJson(json);
+      _$$_VerifySecurityQuestionDataFromJson(json);
 
   @override
   @JsonKey(name: 'questionID')
@@ -196,28 +198,23 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _VerifySecurityQuestionData &&
-            (identical(other.questionID, questionID) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionID, questionID)) &&
-            (identical(other.flavour, flavour) ||
-                const DeepCollectionEquality()
-                    .equals(other.flavour, flavour)) &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumber, phoneNumber)));
+        (other.runtimeType == runtimeType &&
+            other is _VerifySecurityQuestionData &&
+            const DeepCollectionEquality()
+                .equals(other.questionID, questionID) &&
+            const DeepCollectionEquality().equals(other.flavour, flavour) &&
+            const DeepCollectionEquality().equals(other.response, response) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questionID) ^
-      const DeepCollectionEquality().hash(flavour) ^
-      const DeepCollectionEquality().hash(response) ^
-      const DeepCollectionEquality().hash(phoneNumber);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(questionID),
+      const DeepCollectionEquality().hash(flavour),
+      const DeepCollectionEquality().hash(response),
+      const DeepCollectionEquality().hash(phoneNumber));
 
   @JsonKey(ignore: true)
   @override
@@ -227,7 +224,7 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_VerifySecurityQuestionDataToJson(this);
+    return _$$_VerifySecurityQuestionDataToJson(this);
   }
 }
 
@@ -245,16 +242,16 @@ abstract class _VerifySecurityQuestionData
 
   @override
   @JsonKey(name: 'questionID')
-  String? get questionID => throw _privateConstructorUsedError;
+  String? get questionID;
   @override
   @JsonKey(name: 'flavour')
-  String? get flavour => throw _privateConstructorUsedError;
+  String? get flavour;
   @override
   @JsonKey(name: 'response')
-  String? get response => throw _privateConstructorUsedError;
+  String? get response;
   @override
   @JsonKey(name: 'phoneNumber')
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$VerifySecurityQuestionDataCopyWith<_VerifySecurityQuestionData>

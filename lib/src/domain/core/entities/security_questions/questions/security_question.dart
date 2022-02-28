@@ -4,8 +4,6 @@ import 'package:afya_moja_core/afya_moja_core.dart';
 // Project imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../app_strings.dart';
-
 part 'security_question.freezed.dart';
 part 'security_question.g.dart';
 

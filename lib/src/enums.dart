@@ -26,7 +26,6 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
   }
 }
 
-
 enum EditInformationInputType { Text, DropDown }
 enum CaregiverType { Father, Mother, Sibling }
 
@@ -37,3 +36,11 @@ extension CaregiverTypeEx on CaregiverType {
 }
 
 enum DeviceScreensType { Mobile, Tablet, Desktop }
+
+enum Gender { male, female, unknown }
+
+extension GenderEx on Gender {
+  String get name {
+    return describeEnum(this);
+  }
+}
