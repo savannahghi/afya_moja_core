@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.57
+
+- Update packages
+
 ## 0.0.56
 
 - chore: add greetings message function
