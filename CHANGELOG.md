@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.59
+
+- chore: add other value to Gender enum
+
 ## 0.0.58
 
 - add value objects

@@ -37,7 +37,7 @@ extension CaregiverTypeEx on CaregiverType {
 
 enum DeviceScreensType { Mobile, Tablet, Desktop }
 
-enum Gender { male, female, unknown }
+enum Gender { male, female, other, unknown }
 
 extension GenderEx on Gender {
   String get name {
