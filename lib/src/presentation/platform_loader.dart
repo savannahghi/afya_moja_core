@@ -2,9 +2,8 @@ import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:shared_themes/colors.dart';
-class SILPlatformLoader extends StatelessWidget {
-  const SILPlatformLoader({this.color = grey});
+class PlatformLoader extends StatelessWidget {
+  const PlatformLoader({this.color = Colors.grey});
 
   final Color color;
 
@@ -12,7 +11,7 @@ class SILPlatformLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     final TargetPlatform _platform = Theme.of(context).platform;
     Brightness brightness = Brightness.light;
-    if (color != grey) {
+    if (color != Colors.grey) {
       brightness = Brightness.dark;
     }
     return Center(

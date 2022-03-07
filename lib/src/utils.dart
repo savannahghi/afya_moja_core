@@ -66,10 +66,10 @@ Map<String, Map<String, String>> supportedCountries =
   },
 };
 
-dynamic selectCountryModalBottomSheet(BuildContext context) {
-  return showModalBottomSheet(
+Future<Country?> selectCountryModalBottomSheet(BuildContext context) {
+  return showModalBottomSheet<Country>(
     context: context,
-    builder: (BuildContext bc) {
+    builder: (_) {
       return SizedBox(
         child: Wrap(
           children: <Widget>[
