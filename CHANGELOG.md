@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.60
+
+- refactor: notifications list item
+
 ## 0.0.59
 
 - chore: add other value to Gender enum
