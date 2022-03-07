@@ -1,19 +1,21 @@
 // Flutter imports:
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('SilCountryPicker', () {
+  group('MyAfyaHubCountryPicker', () {
     testWidgets('should render CountryPicker ', (WidgetTester tester) async {
+      const Key selectCountryKey = Key('select_country_key');
+
       final Widget testWidget = MaterialApp(
         home: Builder(
           builder: (BuildContext context) {
             return Scaffold(
               body: SizedBox(
                 child: MyAfyaHubCountryPicker(
+                  selectCountryKey: selectCountryKey,
                   onChanged: (String val) {},
                 ),
               ),

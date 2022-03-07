@@ -2,17 +2,20 @@
 import 'package:afya_moja_core/src/behavior_subjects.dart';
 import 'package:afya_moja_core/src/enums.dart';
 import 'package:afya_moja_core/src/utils.dart';
-import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 
 /// [MyAfyaHubCountryPicker] is used in [MyAfyaHubPhoneLoginPage] select Country Code
 ///
 /// It takes in a required [onChanged] parameter
 class MyAfyaHubCountryPicker extends StatefulWidget {
-  const MyAfyaHubCountryPicker({Key? key, required this.onChanged})
-      : super(key: key);
+  const MyAfyaHubCountryPicker({
+    Key? key,
+    this.selectCountryKey,
+    required this.onChanged,
+  }) : super(key: key);
 
-  final Function onChanged;
+  final void Function(String) onChanged;
+  final Key? selectCountryKey;
 
   @override
   _MyAfyaHubCountryPickerState createState() => _MyAfyaHubCountryPickerState();
@@ -26,42 +29,40 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
 
   @override
   Widget build(BuildContext context) {
-    phoneInputBehaviorSubject.countryCode.add(getCountry(_country)!['code']!);
+    final String countryCode = getCountry(_country)!['code']!;
+    phoneInputBehaviorSubject.countryCode.add(countryCode);
+
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      key: widget.selectCountryKey,
       onTap: () async {
-        final dynamic _result = await selectCountryModalBottomSheet(context);
+        final Country? _result = await selectCountryModalBottomSheet(context);
         if (_result != null) {
           setState(() {
-            _country = _result as Country;
+            _country = _result;
           });
-          widget.onChanged(getCountry(_country)!['code']);
-          phoneInputBehaviorSubject.countryCode
-              .add(getCountry(_country)!['code']!);
+          widget.onChanged(countryCode);
+          phoneInputBehaviorSubject.countryCode.add(countryCode);
         }
       },
-      child: SizedBox(
-        key: selectCountryKey,
-        height: 54,
-        child: Row(
-          children: <Widget>[
-            Text(
-              getCountry(this._country)!['code']!,
-              key: const Key('countrySelectedKey'),
-              style: const TextStyle(
-                fontWeight: FontWeight.w300,
-                color: Colors.black,
-                fontSize: 15,
-              ),
+      child: Row(
+        children: <Widget>[
+          Text(
+            getCountry(this._country)!['code']!,
+            key: const Key('countrySelectedKey'),
+            style: const TextStyle(
+              fontWeight: FontWeight.w300,
+              color: Colors.black,
+              fontSize: 15,
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Image.asset(
-              getCountry(this._country)!['flag']!,
-              height: 20,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(width: 10),
+          Image.asset(
+            getCountry(this._country)!['flag']!,
+            height: 20,
+          ),
+          const Icon(Icons.arrow_drop_down),
+        ],
       ),
     );
   }
