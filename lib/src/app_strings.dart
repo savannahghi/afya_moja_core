@@ -44,3 +44,5 @@ const String defaultUserFriendlyMessage =
 
 /// Date picker format
 const String datePickerFormat = 'dd MMM, yyyy';
+
+const String retryString = 'Retry';

@@ -11,3 +11,6 @@ const String awaitingModerationIcon =
     'assets/icons/awaiting_moderation_icon.svg';
 const String attachFileIcon = 'assets/icons/attach_file.svg';
 const String sendTextIcon = 'assets/icons/send_text.svg';
+
+const String errorPageImageSvgPath =
+    'packages/afya_moja_core/assets/error_page_image.svg';

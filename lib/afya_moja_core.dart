@@ -31,6 +31,7 @@ export 'src/presentation/community_list_item.dart';
 export 'src/presentation/country_code_picker.dart';
 export 'src/presentation/custom_confirm_dialog.dart';
 export 'src/presentation/custom_text_field.dart';
+export 'src/presentation/generic_error_widget.dart';
 export 'src/presentation/information_list_card.dart';
 export 'src/presentation/inputs.dart';
 export 'src/presentation/notification_list_item.dart';
