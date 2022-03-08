@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.62
+
+- Generic error widget
+
 ## 0.0.61
 
 - refactor: phone number input
