@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.63
+
+- feat: login error widget
+
 ## 0.0.62
 
 - Generic error widget

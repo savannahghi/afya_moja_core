@@ -45,3 +45,4 @@ export 'src/presentation/user_profile_item.dart';
 export 'src/presentation/responsive_widget.dart';
 export 'src/presentation/platform_loader.dart';
 export 'src/presentation/date_picker.dart';
+export 'src/presentation/login_error_widget.dart';

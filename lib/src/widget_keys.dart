@@ -21,3 +21,7 @@ const Key feedbackBottomSheetCloseIconKey =
 //verify OTP
 const Key resendOtpButtonKey = Key('resend_otp_button_key');
 const Key iosLoaderThemeKey = Key('InboxCupertinoThemeKey');
+
+// error alert box keys
+const Key errorAlertBoxKey = Key('error_alert_box_key');
+const Key errorAlertBoxTextKey = Key('error_alert_box_text_key');
