@@ -44,5 +44,11 @@ const String defaultUserFriendlyMessage =
 
 /// Date picker format
 const String datePickerFormat = 'dd MMM, yyyy';
-
 const String retryString = 'Retry';
+
+// create PIN
+const String createNewPINSubTitleString = 'Enter your new 4 digit PIN.';
+const String pinString = 'PIN';
+const String confirmPinString = 'Confirm new PIN';
+const String saveAndContinueButtonText = 'Save & Continue';
+const String pinMustMatchString = 'PIN must match';
