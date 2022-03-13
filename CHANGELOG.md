@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.64
+
+- feat: create new PIN widget
+
 ## 0.0.63
 
 - feat: login error widget

@@ -109,3 +109,10 @@ Country popValue(String name) {
       return Country.us;
   }
 }
+
+bool confirmPinValidator(String pin, String confirmPin) {
+  if (pin != confirmPin) {
+    return false;
+  }
+  return true;
+}

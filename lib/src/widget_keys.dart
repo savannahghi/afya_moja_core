@@ -25,3 +25,8 @@ const Key iosLoaderThemeKey = Key('InboxCupertinoThemeKey');
 // error alert box keys
 const Key errorAlertBoxKey = Key('error_alert_box_key');
 const Key errorAlertBoxTextKey = Key('error_alert_box_text_key');
+
+//create new PIN widget
+const Key pinInputKey = Key('pin_input_key');
+const Key confirmPinInputKey = Key('confirm_pin_input_key');
+const Key createPINContinueButtonKey = Key('create_pin_continue_button_key');
