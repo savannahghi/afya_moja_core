@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.65
+
+- chore: add timer to login error widget
+
 ## 0.0.64
 
 - feat: create new PIN widget
