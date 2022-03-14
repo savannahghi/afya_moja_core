@@ -12,29 +12,30 @@ void main() {
   testWidgets('error container should be rendered properly',
       (WidgetTester tester) async {
     const String errorMsgText = 'some error message ';
-    const String actionSpanText = 'or some other error message';
+    late bool test;
 
     await tester.pumpWidget(
-      const MaterialApp(
+      MaterialApp(
         home: Scaffold(
           body: LoginErrorWidget(
-            title: 'test',
+            title: 'attempts',
             message: errorMsgText,
-            spannedText: actionSpanText,
+            timerAction: (bool disable) {
+              test = disable;
+            },
+            retryTimeout: 30,
           ),
         ),
       ),
     );
 
+    await tester.pump(const Duration(seconds: 18));
+
     expect(find.byKey(errorAlertBoxKey), findsOneWidget);
     expect(find.byType(RichText), findsNWidgets(2));
+    expect(test, true);
 
-    final Finder widgetFinder = find.byKey(errorAlertBoxKey);
-    final Finder richTextFinder =
-        find.descendant(of: widgetFinder, matching: find.byType(RichText));
-    final RichText errorSpanTextWidget =
-        richTextFinder.evaluate().last.widget as RichText;
-    final String errorSpanText = errorSpanTextWidget.text.toPlainText();
-    expect(errorSpanText, errorMsgText + actionSpanText);
+    await tester.pump(const Duration(seconds: 40));
+    expect(test, false);
   });
 }
