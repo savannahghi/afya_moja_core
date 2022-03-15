@@ -8,6 +8,4 @@ const Color malachiteColor = Color(0xff00BE33);
 const Color darkGreyTextColor = Color(0xFF797979);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color greyTextColor = Color(0xFF707070);
-
-const Color lightRedColor = Color(0xffe5cfcf);
 const Color redColor = Color(0xffe6373c);

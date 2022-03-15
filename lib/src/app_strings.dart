@@ -52,3 +52,6 @@ const String pinString = 'PIN';
 const String confirmPinString = 'Confirm new PIN';
 const String saveAndContinueButtonText = 'Save & Continue';
 const String pinMustMatchString = 'PIN must match';
+
+//login error widget
+const String resetPINString = 'Reset your PIN';
