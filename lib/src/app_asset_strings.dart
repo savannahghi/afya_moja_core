@@ -14,3 +14,5 @@ const String sendTextIcon = 'assets/icons/send_text.svg';
 
 const String errorPageImageSvgPath =
     'packages/afya_moja_core/assets/error_page_image.svg';
+    const String tooManyAttemptsIconSvgPath =
+    'packages/afya_moja_core/assets/too_many_attempts_icon.svg';

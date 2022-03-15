@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.67
+
+- feat: login counter widget
+
 ## 0.0.66
 
 - chore: update login error widget
