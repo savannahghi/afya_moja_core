@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.66
+
+- chore: update login error widget
+
 ## 0.0.65
 
 - chore: add timer to login error widget
