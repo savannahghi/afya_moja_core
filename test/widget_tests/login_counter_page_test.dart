@@ -13,7 +13,7 @@ void main() {
         home: Scaffold(
           body: LoginCounterPage(
             retryTimeout: 20,
-            buttonText: 'test',
+            actionText: 'test',
             onButtonTapped: () {
               test = 'button';
             },
