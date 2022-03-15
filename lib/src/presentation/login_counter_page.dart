@@ -12,14 +12,16 @@ import 'package:shared_themes/spaces.dart';
 class LoginCounterPage extends StatefulWidget {
   const LoginCounterPage({
     required this.retryTimeout,
-    this.buttonText,
+    this.actionText,
     this.onButtonTapped,
     this.onTimerEnded,
+    this.actionKey,
   });
   final int retryTimeout;
-  final String? buttonText;
+  final String? actionText;
   final VoidCallback? onButtonTapped;
   final VoidCallback? onTimerEnded;
+  final Key? actionKey;
 
   @override
   State<LoginCounterPage> createState() => _LoginCounterPageState();
@@ -106,11 +108,12 @@ class _LoginCounterPageState extends State<LoginCounterPage> {
                   textAlign: TextAlign.center,
                 ),
                 largeVerticalSizedBox,
-                if (widget.buttonText != null)
+                if (widget.actionText != null)
                   SizedBox(
                     width: double.infinity,
                     child: MyAfyaHubPrimaryButton(
-                      text: widget.buttonText,
+                      buttonKey: widget.actionKey,
+                      text: widget.actionText,
                       onPressed: () {
                         widget.onButtonTapped?.call();
                       },

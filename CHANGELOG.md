@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.68
+
+- feat: pin request scaffold
+
 ## 0.0.67
 
 - feat: login counter widget
