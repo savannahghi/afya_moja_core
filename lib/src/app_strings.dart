@@ -55,3 +55,8 @@ const String pinMustMatchString = 'PIN must match';
 
 //login error widget
 const String resetPINString = 'Reset your PIN';
+const String tooManyAttemptsString = 'Too many login attempts';
+const String tooManyAttemptsMessageString =
+    'You have made too many login attempts. No worries though, you can try again in ';
+const String requestForAssistanceMessageString =
+    'You can also request for assistance from your doctor or admin by tapping on the button below';
