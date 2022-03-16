@@ -38,6 +38,7 @@ class CustomTextField extends StatelessWidget {
     this.isRequired,
     this.autovalidateMode,
     this.labelStyle,
+    this.focusedBorderColor,
   })  : enabled = enabled ?? true,
         obscureText = obscureText ?? false;
 
@@ -68,6 +69,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final FormFieldValidator<String>? validator;
   final TextStyle? labelStyle;
+  final Color? focusedBorderColor;
 
   bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -127,17 +129,18 @@ class CustomTextField extends StatelessWidget {
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: customFillColor ?? borderColor ?? Colors.white24,
+                color: borderColor ?? customFillColor ??  Colors.white24,
               ),
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
-            disabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: grey),
-              borderRadius: BorderRadius.all(Radius.circular(5)),
+            disabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: borderColor ?? grey),
+              borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide:
-                  BorderSide(color: Theme.of(context).colorScheme.secondary),
+              borderSide: BorderSide(
+                  color: focusedBorderColor ??
+                      Theme.of(context).colorScheme.secondary,),
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             errorBorder: const OutlineInputBorder(

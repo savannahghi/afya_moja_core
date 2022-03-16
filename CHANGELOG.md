@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.69
+
+- chore: update custom text field
+
 ## 0.0.68
 
 - feat: pin request scaffold
