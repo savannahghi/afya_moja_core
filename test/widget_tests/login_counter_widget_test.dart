@@ -1,5 +1,5 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/presentation/login_counter_page.dart';
+import 'package:afya_moja_core/src/presentation/login_counter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -11,7 +11,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: LoginCounterPage(
+          body: LoginCounterWidget(
             retryTimeout: 20,
             actionText: 'test',
             onButtonTapped: () {
@@ -43,7 +43,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: LoginCounterPage(
+          body: LoginCounterWidget(
             retryTimeout: -1,
             onTimerEnded: () {
               test = 'timer ended';
