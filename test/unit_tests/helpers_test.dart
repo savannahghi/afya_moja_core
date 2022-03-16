@@ -118,6 +118,26 @@ void main() {
       expect(processedRespnse.response, httpResponse);
       expect(processedRespnse.message, defaultUserFriendlyMessage);
     });
+
+    test('returns PIN expiry error', () {
+      final Response httpResponse = Response(
+        jsonEncode(
+          <String, dynamic>{
+            'message': '48: pin expired:',
+            'code': 48,
+            'failed_login_count': 0
+          },
+        ),
+        400,
+      );
+
+      final ProcessedResponse processedRespnse =
+          processHttpResponse(httpResponse);
+
+      expect(processedRespnse.ok, false);
+      expect(processedRespnse.response, httpResponse);
+      expect(processedRespnse.message, pinExpired);
+    });
   });
 
   group('getErrorMessage', () {

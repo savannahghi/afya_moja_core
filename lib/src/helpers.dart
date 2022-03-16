@@ -111,6 +111,8 @@ String getUserFriendlyMsg(int code) {
       return wrongLoginCredentials;
     case 9:
       return pinNotFound;
+    case 48:
+      return pinExpired;
 
     default:
       return defaultUserFriendlyMessage;

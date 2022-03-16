@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.70
+
+- feat: add PIN expiry error code
+
 ## 0.0.69
 
 - chore: update custom text field
