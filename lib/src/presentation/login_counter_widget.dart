@@ -115,6 +115,7 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
                       buttonKey: widget.actionKey,
                       text: widget.actionText,
                       onPressed: () {
+                        timer.cancel();
                         widget.onButtonTapped?.call();
                       },
                     ),
