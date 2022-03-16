@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.71
+
+- chore: update login error widget and counter widget
+
 ## 0.0.70
 
 - feat: add PIN expiry error code

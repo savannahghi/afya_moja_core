@@ -1,5 +1,4 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_themes/spaces.dart';
@@ -8,12 +7,16 @@ class LoginErrorWidget extends StatelessWidget {
   const LoginErrorWidget({
     required this.message,
     required this.title,
-    this.onRestPIN,
+    this.actionCallback,
+    this.actionText,
+    this.actionKey,
   });
 
   final String message;
   final String title;
-  final VoidCallback? onRestPIN;
+  final VoidCallback? actionCallback;
+  final String? actionText;
+  final Key? actionKey;
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +42,17 @@ class LoginErrorWidget extends StatelessWidget {
               darkGreyTextColor,
             ),
           ),
-          SizedBox(
-            width: double.infinity,
-            child: MyAfyaHubPrimaryButton(
-              text: resetPINString,
-              textColor: Theme.of(context).primaryColor,
-              buttonColor: Theme.of(context).primaryColor.withOpacity(0.3),
-              onPressed: () => onRestPIN?.call(),
+          if (actionText != null)
+            SizedBox(
+              width: double.infinity,
+              child: MyAfyaHubPrimaryButton(
+                buttonKey: actionKey,
+                text: actionText,
+                textColor: Theme.of(context).primaryColor,
+                buttonColor: Theme.of(context).primaryColor.withOpacity(0.3),
+                onPressed: () => actionCallback?.call(),
+              ),
             ),
-          ),
         ],
       ),
     );

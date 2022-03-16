@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_themes/spaces.dart';
 
-class LoginCounterPage extends StatefulWidget {
-  const LoginCounterPage({
+class LoginCounterWidget extends StatefulWidget {
+  const LoginCounterWidget({
     required this.retryTimeout,
     this.actionText,
     this.onButtonTapped,
@@ -24,10 +24,10 @@ class LoginCounterPage extends StatefulWidget {
   final Key? actionKey;
 
   @override
-  State<LoginCounterPage> createState() => _LoginCounterPageState();
+  State<LoginCounterWidget> createState() => _LoginCounterWidgetState();
 }
 
-class _LoginCounterPageState extends State<LoginCounterPage> {
+class _LoginCounterWidgetState extends State<LoginCounterWidget> {
   late Timer timer;
   late int _start = widget.retryTimeout;
   bool timerRunning = false;

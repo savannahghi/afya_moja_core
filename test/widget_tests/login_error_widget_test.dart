@@ -20,7 +20,8 @@ void main() {
           body: LoginErrorWidget(
             title: 'attempts',
             message: errorMsgText,
-            onRestPIN: () {
+            actionText: 'test',
+            actionCallback: () {
               test = true;
             },
           ),
