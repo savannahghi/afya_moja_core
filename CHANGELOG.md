@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.74
+
+- chore: add more error codes to the error response processing
+
 ## 0.0.73
 
 - chore: add code to processed HTTP response

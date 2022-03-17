@@ -63,7 +63,7 @@ int extractErrorCode(Map<String, dynamic>? body) {
 
 ProcessedResponse processHttpResponse(Response response) {
   if (<int>[200, 201, 202].contains(response.statusCode)) {
-    return ProcessedResponse(ok: true, response: response);
+    return ProcessedResponse(ok: true, response: response, code: 200);
   }
 
   final Map<String, dynamic> body =
@@ -76,6 +76,7 @@ ProcessedResponse processHttpResponse(Response response) {
       ok: false,
       response: response,
       message: getUserFriendlyMsg(code),
+      code: code,
     );
   }
 
@@ -84,6 +85,7 @@ ProcessedResponse processHttpResponse(Response response) {
       ok: false,
       response: response,
       message: getUserFriendlyMsg(0),
+      code: 0,
     );
   }
 
@@ -91,6 +93,7 @@ ProcessedResponse processHttpResponse(Response response) {
     ok: false,
     response: response,
     message: getErrorMessage(),
+    code: code,
   );
 }
 
@@ -113,6 +116,10 @@ String getUserFriendlyMsg(int code) {
       return pinNotFound;
     case 48:
       return pinExpired;
+    case 72:
+      return pendingPINResetRequest;
+    case 73:
+      return tooManyAttemptsString;
 
     default:
       return defaultUserFriendlyMessage;

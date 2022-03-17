@@ -138,6 +138,46 @@ void main() {
       expect(processedResponse.response, httpResponse);
       expect(processedResponse.message, pinExpired);
     });
+
+    test('returns pending PIN reset request notification', () {
+      final Response httpResponse = Response(
+        jsonEncode(
+          <String, dynamic>{
+            'message': 'pending PIN reset request:',
+            'code': 72,
+            'failed_login_count': 0
+          },
+        ),
+        400,
+      );
+
+      final ProcessedResponse processedResponse =
+          processHttpResponse(httpResponse);
+
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, pendingPINResetRequest);
+    });
+
+    test('returns too many requests error message', () {
+      final Response httpResponse = Response(
+        jsonEncode(
+          <String, dynamic>{
+            'message': 'too many requests',
+            'code': 73,
+            'failed_login_count': 0
+          },
+        ),
+        400,
+      );
+
+      final ProcessedResponse processedResponse =
+          processHttpResponse(httpResponse);
+
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, tooManyAttemptsString);
+    });
   });
 
   group('getErrorMessage', () {

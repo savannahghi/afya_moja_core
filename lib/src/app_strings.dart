@@ -39,6 +39,7 @@ const String userNotFound =
 const String wrongLoginCredentials = 'Your phone number or PIN do not match.';
 const String pinNotFound = 'No PIN found for this user.';
 const String pinExpired = 'Your PIN has expired';
+const String pendingPINResetRequest = 'You have a pending PIN reset request';
 
 const String defaultUserFriendlyMessage =
     'Sorry, an unknown error occurred, please try again or get help from our '
