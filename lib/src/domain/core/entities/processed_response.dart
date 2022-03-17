@@ -6,6 +6,12 @@ class ProcessedResponse {
   final bool ok;
   final Response response;
   final String? message;
+  final int? code;
 
-  ProcessedResponse({required this.ok, required this.response, this.message});
+  ProcessedResponse({
+    required this.ok,
+    required this.response,
+    this.message,
+    this.code,
+  });
 }
