@@ -61,14 +61,14 @@ void main() {
   });
 
   group('processHttpResponse', () {
-    test('returns true for succesful response', () {
+    test('returns true for successful response', () {
       final Response httpResponse =
           Response(jsonEncode(<String, dynamic>{'data': 'data'}), 201);
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, true);
-      expect(processedRespnse.response, httpResponse);
+      expect(processedResponse.ok, true);
+      expect(processedResponse.response, httpResponse);
     });
 
     test('returns false for error response', () {
@@ -77,46 +77,46 @@ void main() {
         400,
       );
 
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, false);
-      expect(processedRespnse.response, httpResponse);
-      expect(processedRespnse.message, pinNotFound);
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, pinNotFound);
     });
 
     test('returns false for 500 response', () {
       final Response httpResponse =
           Response(jsonEncode(<String, dynamic>{'data': 'data'}), 500);
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, false);
-      expect(processedRespnse.response, httpResponse);
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
     });
 
     test('returns false for 408 response', () {
       final Response httpResponse =
           Response(jsonEncode(<String, dynamic>{'data': 'data'}), 408);
 
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, false);
-      expect(processedRespnse.response, httpResponse);
-      expect(processedRespnse.message, slowInternet);
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, slowInternet);
     });
 
     test('returns generic error for unhandled code', () {
       final Response httpResponse =
           Response(jsonEncode(<String, dynamic>{'data': 'data'}), 300);
 
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, false);
-      expect(processedRespnse.response, httpResponse);
-      expect(processedRespnse.message, defaultUserFriendlyMessage);
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, defaultUserFriendlyMessage);
     });
 
     test('returns PIN expiry error', () {
@@ -131,12 +131,12 @@ void main() {
         400,
       );
 
-      final ProcessedResponse processedRespnse =
+      final ProcessedResponse processedResponse =
           processHttpResponse(httpResponse);
 
-      expect(processedRespnse.ok, false);
-      expect(processedRespnse.response, httpResponse);
-      expect(processedRespnse.message, pinExpired);
+      expect(processedResponse.ok, false);
+      expect(processedResponse.response, httpResponse);
+      expect(processedResponse.message, pinExpired);
     });
   });
 

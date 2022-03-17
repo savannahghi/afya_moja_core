@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.73
+
+- chore: add code to processed HTTP response
+
 ## 0.0.72
 
 - chore: counter widget update

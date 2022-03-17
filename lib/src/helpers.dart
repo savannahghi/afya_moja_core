@@ -38,7 +38,7 @@ DateTime getTokenExpiryTimestamp(String? expiresIn) {
   return now;
 }
 
-/// Checks if token has expired based on expiry datetime
+/// Checks if token has expired based on expiry date
 /// returns true if token expires in 10 minutes or less
 /// otherwise returns false
 bool hasTokenExpired(DateTime expiresAt, DateTime now) {
@@ -52,7 +52,7 @@ bool isNumeric(String? s) {
   return int.tryParse(s) != null;
 }
 
-int unMarshallErrorResponse(Map<String, dynamic>? body) {
+int extractErrorCode(Map<String, dynamic>? body) {
   if (body != null && body.containsKey('code')) {
     final String code = body['code']?.toString() ?? '';
     return int.tryParse(code) ?? 11;
@@ -69,7 +69,7 @@ ProcessedResponse processHttpResponse(Response response) {
   final Map<String, dynamic> body =
       json.decode(response.body) as Map<String, dynamic>;
 
-  final int code = unMarshallErrorResponse(body);
+  final int code = extractErrorCode(body);
 
   if (response.statusCode == 400 || response.statusCode == 500) {
     return ProcessedResponse(
