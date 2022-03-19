@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.75
+
+- chore: update login counter widget
+
 ## 0.0.74
 
 - chore: add more error codes to the error response processing
