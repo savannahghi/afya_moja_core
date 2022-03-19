@@ -82,22 +82,19 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
                   style: heavySize20Text(redColor),
                 ),
                 smallVerticalSizedBox,
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    style: normalSize14Text(
-                      darkGreyTextColor,
-                    ),
-                    children: <TextSpan>[
-                      const TextSpan(text: tooManyAttemptsMessageString),
-                      TextSpan(
-                        text: '$_start seconds',
-                        style: heavySize14Text(
-                          Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ],
+                Text(
+                  tooManyAttemptsMessageString,
+                  style: normalSize14Text(
+                    darkGreyTextColor,
                   ),
+                ),
+                Text(
+                  '$_start seconds',
+                  style: heavySize14Text(
+                    Theme.of(context).primaryColor,
+                  ),
+
+                  textAlign: TextAlign.center,
                 ),
                 smallVerticalSizedBox,
                 Text(
