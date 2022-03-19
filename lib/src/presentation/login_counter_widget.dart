@@ -87,13 +87,13 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
                   style: normalSize14Text(
                     darkGreyTextColor,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '$_start seconds',
                   style: heavySize14Text(
                     Theme.of(context).primaryColor,
                   ),
-
                   textAlign: TextAlign.center,
                 ),
                 smallVerticalSizedBox,

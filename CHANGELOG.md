@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.76
+
+- chore: counter message alignment
+
 ## 0.0.75
 
 - chore: update login counter widget
