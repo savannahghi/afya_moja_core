@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.77
+
+- chore: ccc number validator
+
 ## 0.0.76
 
 - chore: counter message alignment
