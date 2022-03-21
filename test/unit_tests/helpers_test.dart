@@ -614,4 +614,10 @@ void main() {
     expect(greetingMessage, isA<String>());
     expect(greetingMessage.contains(firstName), true);
   });
+  test('should return the correct error message', () {
+    expect(cccNumberValidator(''), 'Your CCC number is required');
+    expect(cccNumberValidator('a'), 'Only digits are allowed, 0-9');
+    expect(cccNumberValidator('1'), 'Enter a ten digit CCC number');
+    expect(cccNumberValidator('0123456789'), null);
+  });
 }
