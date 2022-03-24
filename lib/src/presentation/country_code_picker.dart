@@ -28,10 +28,13 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
   Country _country = Country.kenya;
 
   @override
-  Widget build(BuildContext context) {
-    final String countryCode = getCountry(_country)!['code']!;
-    phoneInputBehaviorSubject.countryCode.add(countryCode);
+  void initState() {
+    super.initState();
+    phoneInputBehaviorSubject.countryCode.add(getCountry(_country)!['code']!);
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       key: widget.selectCountryKey,
@@ -40,9 +43,10 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
         if (_result != null) {
           setState(() {
             _country = _result;
+            final String countryCode = getCountry(_country)!['code']!;
+            widget.onChanged(countryCode);
+            phoneInputBehaviorSubject.countryCode.add(countryCode);
           });
-          widget.onChanged(countryCode);
-          phoneInputBehaviorSubject.countryCode.add(countryCode);
         }
       },
       child: Row(
