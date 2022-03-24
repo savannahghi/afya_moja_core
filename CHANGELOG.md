@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.78
+
+- fix country picker error
+
 ## 0.0.77
 
 - chore: ccc number validator
@@ -174,11 +178,11 @@
 
 ## 0.0.34
 
-- chore: change font to google saro
+- chore: change font to google sora
 
 ## 0.0.33
 
-- chore: expansion question custom textstyles
+- chore: expansion question custom text styles
 
 ## 0.0.32
 
