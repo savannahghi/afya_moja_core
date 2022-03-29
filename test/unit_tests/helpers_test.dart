@@ -357,12 +357,18 @@ void main() {
 
     expect(find.byType(SnackBarAction), findsNothing);
   });
+
   test('test extract name initials', () {
-    expect('DD', extractNamesInitials(name: 'david dexter'));
+    expect('AO', extractNamesInitials(name: 'abiud orina'));
+    expect('A', extractNamesInitials(name: 'abiud '));
+    // Add some extra spaces before and after the name
+    expect('AO', extractNamesInitials(name: ' abiud   orina  '));
     expect('MV', extractNamesInitials(name: 'Michuki vincent'));
     expect('dd', isNot(extractNamesInitials(name: 'david dexter mwangi')));
-    expect('D', extractNamesInitials(name: 'david'));
+    expect('dd', isNot(extractNamesInitials(name: 'david  dexter')));
+    expect('UU', extractNamesInitials(name: ' '));
   });
+
   test('should return the titleCase of a sentence', () {
     String sentence = 'bewell is improving healthcare';
     String expectedFormattedSentence = 'Bewell Is Improving Healthcare';
