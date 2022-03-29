@@ -222,14 +222,20 @@ SnackBarAction dismissSnackBar(String text, Color color, BuildContext context) {
 ///
 /// If you pass in a name like 'Abiud Orina', it returns 'AO'
 String extractNamesInitials({required String name}) {
-  final List<String> parts = name.split(' ');
-  if (parts.length >= 2) {
+  final List<String> parts = name.trim().split(' ');
+
+  // Remove parts that are empty
+  parts.removeWhere((String p) => p.isEmpty);
+
+  if (parts.isEmpty) {
+    return 'UU';
+  } else if (parts.length >= 2) {
     final StringBuffer initials = StringBuffer();
     for (int i = 0; i <= 1; i++) {
       final String part = parts[i];
       initials.write(part[0].toUpperCase());
     }
-    return initials.toString().trim().substring(0, 2);
+    return initials.toString().substring(0, 2);
   }
   return parts.first.split('')[0].toUpperCase();
 }

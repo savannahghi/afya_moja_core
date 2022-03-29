@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.79
+
+- fix: name initial extraction
+
 ## 0.0.78
 
 - fix country picker error
