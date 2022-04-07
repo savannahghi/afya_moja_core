@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.80
+
+- refactor: generic error widget button
+
 ## 0.0.79
 
 - fix: name initial extraction

@@ -34,6 +34,7 @@ class GenericErrorWidget extends StatelessWidget {
     this.headerIconSvgUrl,
     this.padding,
     this.actionKey,
+    this.showPrimaryButton = true,
   }) : super(key: key);
 
   /// [actionText]
@@ -60,6 +61,8 @@ class GenericErrorWidget extends StatelessWidget {
   final EdgeInsets? padding;
 
   final Key? actionKey;
+
+  final bool showPrimaryButton;
 
   @override
   Widget build(BuildContext context) {
@@ -103,18 +106,19 @@ class GenericErrorWidget extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       mediumVerticalSizedBox,
-                      SizedBox(
-                        width: double.infinity,
-                        height: 48,
-                        child: MyAfyaHubPrimaryButton(
-                          customRadius: 8.0,
-                          buttonKey: actionKey,
-                          buttonColor: Theme.of(context).primaryColor,
-                          textColor: Colors.white,
-                          onPressed: recoverCallback,
-                          text: actionText,
+                      if (showPrimaryButton)
+                        SizedBox(
+                          width: double.infinity,
+                          height: 48,
+                          child: MyAfyaHubPrimaryButton(
+                            customRadius: 8.0,
+                            buttonKey: actionKey,
+                            buttonColor: Theme.of(context).primaryColor,
+                            textColor: Colors.white,
+                            onPressed: recoverCallback,
+                            text: actionText,
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),
