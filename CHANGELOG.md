@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.81
+
+- chore: update app wrapper
+
 ## 0.0.80
 
 - refactor: generic error widget button
