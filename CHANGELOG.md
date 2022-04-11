@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.82
+
+- refactor: disable date question future years
+
 ## 0.0.81
 
 - chore: update app wrapper
