@@ -159,7 +159,6 @@ class ExpandableQuestion extends StatelessWidget {
                     DatePickerField(
                       // check documentation for this widget to understand how dates are constrained
                       allowCurrentYear: true,
-                      allowFutureYears: true,
                       enabled: true,
                       controller: dateController,
                       hintText: dateController.text == '' ? dateLabelText : '',
