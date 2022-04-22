@@ -32,7 +32,7 @@ enum CaregiverType { FATHER, MOTHER, SIBLING, HEALTHCARE_PROFESSIONAL }
 
 extension CaregiverTypeEx on CaregiverType {
   String get name {
-    return titleCase(describeEnum(this));
+    return titleCase(describeEnum(this)).replaceAll(RegExp('_'), ' ');
   }
 }
 
