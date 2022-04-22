@@ -1,5 +1,7 @@
 # Changelog
+## 0.0.83
 
+- chore: update enums to match backend enums
 ## 0.0.82
 
 - refactor: disable date question future years
