@@ -1,4 +1,8 @@
 # Changelog
+
+## 0.0.84
+
+- chore: fix enum description
 ## 0.0.83
 
 - chore: update enums to match backend enums
