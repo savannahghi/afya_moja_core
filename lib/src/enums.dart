@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:afya_moja_core/src/helpers.dart';
 import 'package:flutter/foundation.dart';
 
 enum Country { kenya, uganda, tanzania, us, uk, belgium, nigeria }
@@ -27,11 +28,11 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
 }
 
 enum EditInformationInputType { Text, DropDown }
-enum CaregiverType { Father, Mother, Sibling }
+enum CaregiverType { FATHER, MOTHER, SIBLING, HEALTHCARE_PROFESSIONAL }
 
 extension CaregiverTypeEx on CaregiverType {
   String get name {
-    return describeEnum(this);
+    return titleCase(describeEnum(this));
   }
 }
 
