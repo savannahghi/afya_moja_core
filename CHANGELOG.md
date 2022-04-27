@@ -1,11 +1,17 @@
 # Changelog
 
+## 0.0.85
+
+- chore: add notification details
+
 ## 0.0.84
 
 - chore: fix enum description
+
 ## 0.0.83
 
 - chore: update enums to match backend enums
+
 ## 0.0.82
 
 - refactor: disable date question future years

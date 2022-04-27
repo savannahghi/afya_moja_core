@@ -45,3 +45,5 @@ extension GenderEx on Gender {
     return describeEnum(this);
   }
 }
+
+enum NotificationType { APPOINTMENT, SERVICE_REQUEST, COMMUNITIES, UNKNOWN }
