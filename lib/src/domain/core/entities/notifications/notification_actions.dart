@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../afya_moja_core.dart';
+import '../../../../../afya_moja_core.dart';
 
 part 'notification_actions.freezed.dart';
 part 'notification_actions.g.dart';
