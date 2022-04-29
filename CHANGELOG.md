@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.86
+
+- chore: add questions responses data
+
 ## 0.0.85
 
 - chore: add notification details

@@ -10,6 +10,7 @@ export 'src/domain/core/entities/processed_response.dart';
 export 'src/domain/core/entities/security_questions/questions/responded_security_questions_data.dart';
 export 'src/domain/core/entities/security_questions/questions/security_question.dart';
 export 'src/domain/core/entities/security_questions/questions/security_questions_data.dart';
+export 'src/domain/core/entities/security_questions/responses/questions_responses_data.dart';
 export 'src/domain/core/entities/security_questions/responses/record_security_question_response.dart';
 export 'src/domain/core/entities/security_questions/responses/record_security_question_responses_data.dart';
 export 'src/domain/core/entities/security_questions/responses/security_question_response.dart';
