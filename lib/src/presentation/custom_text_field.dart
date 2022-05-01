@@ -39,37 +39,37 @@ class CustomTextField extends StatelessWidget {
     this.autovalidateMode,
     this.labelStyle,
     this.focusedBorderColor,
+    this.initialValue,
   })  : enabled = enabled ?? true,
         obscureText = obscureText ?? false;
 
   final AutovalidateMode? autovalidateMode;
   final Color? borderColor;
-  final Key? formFieldKey;
   final TextEditingController? controller;
   final Color? customFillColor;
   final bool enabled;
   final String? fieldLabel;
   final FocusNode? focusNode;
+  final Color? focusedBorderColor;
+  final Key? formFieldKey;
   final Color? hintColor;
   final String? hintText;
+  final String? initialValue;
   final List<TextInputFormatter>? inputFormatters;
   // An indicator in the label text to show if this input is required
   final bool? isRequired;
-
   final TextInputType? keyboardType;
+  final TextStyle? labelStyle;
   final String? labelText;
   final int? maxLength;
   final int? maxLines;
   // Whether to obscure text. Defaults to `false`
   final bool obscureText;
-
   final OnChangedString? onChanged;
   final OnChangedString? onSubmitted;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final FormFieldValidator<String>? validator;
-  final TextStyle? labelStyle;
-  final Color? focusedBorderColor;
 
   bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -129,7 +129,7 @@ class CustomTextField extends StatelessWidget {
                 ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? customFillColor ??  Colors.white24,
+                color: borderColor ?? customFillColor ?? Colors.white24,
               ),
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
@@ -139,8 +139,9 @@ class CustomTextField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: focusedBorderColor ??
-                      Theme.of(context).colorScheme.secondary,),
+                color: focusedBorderColor ??
+                    Theme.of(context).colorScheme.secondary,
+              ),
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             errorBorder: const OutlineInputBorder(
@@ -155,6 +156,7 @@ class CustomTextField extends StatelessWidget {
           ),
           validator: validator,
           inputFormatters: inputFormatters,
+          initialValue: initialValue,
         ),
       ],
     );
