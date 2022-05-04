@@ -8,10 +8,6 @@ const Key editUserProfileButtonKey = Key('edit_user_profile_button_key');
 //Custom Confirm Dialog
 const Key dialogConfirmButtonKey = Key('dialog_confirm_button_key');
 const Key dialogCancelButtonKey = Key('dialog_cancel_button_key');
-// community chat page
-const Key messageInputAttachFileKey = Key('message_input_attach_file_key');
-const Key messageInputSendMessageKey = Key('message_input_send_message_key');
-const Key moreAppBarKey = Key('more_app_bar_key');
 
 // feedback bottom sheet key
 const Key feedbackBottomSheetKey = Key('feedback_bottom_sheet_key');
@@ -30,3 +26,8 @@ const Key errorAlertBoxTextKey = Key('error_alert_box_text_key');
 const Key pinInputKey = Key('pin_input_key');
 const Key confirmPinInputKey = Key('confirm_pin_input_key');
 const Key createPINContinueButtonKey = Key('create_pin_continue_button_key');
+
+// moderation actions
+const Key promoteButtonKey = Key('promote_button_key');
+const Key removeButtonKey = Key('remove_button_key');
+const Key banButtonKey = Key('ban_button_key');
