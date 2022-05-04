@@ -1,7 +1,13 @@
 # Changelog
+
+## 0.0.87
+
+add communities widgets
+
 ## 0.0.86
 
 - chore: add initial value to custom text field
+
 ## 0.0.85
 
 - chore: add notification details

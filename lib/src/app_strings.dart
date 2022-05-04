@@ -62,3 +62,12 @@ const String tooManyAttemptsMessageString =
     'You have made too many login attempts. No worries though, you can try again in ';
 const String requestForAssistanceMessageString =
     'You can also request for assistance from your doctor or admin by tapping on the button below';
+
+// Communities
+const String moderatorText = 'Moderator';
+const String bannedString = 'Banned';
+const String promoteToModeratorText = 'Promote to moderator';
+const String banUserText = 'Ban user';
+const String unBanUserText = 'UnBan user';
+const String actionsText = 'Actions';
+const String removeFromGroupText = 'Remove user from group';
