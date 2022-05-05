@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'member.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
+      id: json['id'] as String?,
+      username: json['username'] as String?,
+      role: json['role'] as String?,
+      gender: genderFromJson(json['gender'] as String?),
+      extraData: json['extraData'] == null
+          ? null
+          : ExtraData.fromJson(json['extraData'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_MemberToJson(_$_Member instance) => <String, dynamic>{
+      'id': instance.id,
+      'username': instance.username,
+      'role': instance.role,
+      'gender': genderToJson(instance.gender),
+      'extraData': instance.extraData,
+    };

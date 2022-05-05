@@ -1,4 +1,7 @@
 export 'src/constants.dart';
+export 'src/domain/core/entities/communities/extra_data.dart';
+export 'src/domain/core/entities/communities/group_member.dart';
+export 'src/domain/core/entities/communities/member.dart';
 export 'src/domain/core/entities/faqs/faq_content.dart';
 export 'src/domain/core/entities/faqs/faq_content_response.dart';
 export 'src/domain/core/entities/faqs/faqs_content_state.dart';
