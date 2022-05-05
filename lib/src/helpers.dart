@@ -5,6 +5,7 @@ import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/constants.dart';
 import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_constants.dart';
@@ -356,4 +357,17 @@ String? cccNumberValidator(dynamic val) {
     return 'Enter a ten digit CCC number';
   }
   return null;
+}
+
+RoleValue roleValueFromJson(String? roleString) {
+  if (roleString == null || roleString.isEmpty || roleString == UNKNOWN) {
+    return RoleValue.CONTENT_MANAGEMENT;
+  }
+
+  return RoleValue.values.firstWhere((RoleValue role) {
+    return describeEnum(role)
+            .toLowerCase()
+            .compareTo(roleString.toLowerCase()) ==
+        0;
+  });
 }

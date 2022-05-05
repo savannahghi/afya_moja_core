@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.88
+
+add role entity
+
 ## 0.0.87
 
 add communities widgets
