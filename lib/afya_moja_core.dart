@@ -7,6 +7,7 @@ export 'src/domain/core/entities/notifications/notification_actions.dart';
 export 'src/domain/core/entities/notifications/notification_details.dart';
 export 'src/domain/core/entities/onboarding_path_config.dart';
 export 'src/domain/core/entities/processed_response.dart';
+export 'src/domain/core/entities/role.dart';
 export 'src/domain/core/entities/security_questions/questions/responded_security_questions_data.dart';
 export 'src/domain/core/entities/security_questions/questions/security_question.dart';
 export 'src/domain/core/entities/security_questions/questions/security_questions_data.dart';
