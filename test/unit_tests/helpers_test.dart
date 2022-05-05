@@ -190,6 +190,7 @@ void main() {
       );
     });
   });
+
   test('should test other phone number', () {
     expect(
       formatPhoneNumber(phoneNumber: '1234567', countryCode: '+255'),
@@ -314,6 +315,7 @@ void main() {
 
     expect(isSnackBarActionTapped, true);
   });
+
   testWidgets('should show dismiss snackbar', (WidgetTester tester) async {
     const Key snackbarKey = Key('show_dismiss_snackbar');
     await tester.pumpWidget(
@@ -387,6 +389,7 @@ void main() {
     actualTitleCasedString = titleCase(sentence);
     expect(actualTitleCasedString, expectedFormattedSentence);
   });
+
   test('should return a string without underscore', () {
     const String name = 'be_well';
     const String expectedFormattedName = 'Be Well';
@@ -394,6 +397,7 @@ void main() {
 
     expect(actualRemovedUnderscoreString, expectedFormattedName);
   });
+
   group('generic fetch function', () {
     testWidgets('should get data', (WidgetTester tester) async {
       final MockGraphQlClient mockGraphQlClient = MockGraphQlClient();
@@ -593,6 +597,7 @@ void main() {
       expect(validateKenyanNumber(phone), false);
     });
   });
+
   test('should return the correct greeting message', () {
     const int morningHour = 11;
     const int afternoonHour = 15;
@@ -620,10 +625,15 @@ void main() {
     expect(greetingMessage, isA<String>());
     expect(greetingMessage.contains(firstName), true);
   });
+
   test('should return the correct error message', () {
     expect(cccNumberValidator(''), 'Your CCC number is required');
     expect(cccNumberValidator('a'), 'Only digits are allowed, 0-9');
     expect(cccNumberValidator('1'), 'Enter a ten digit CCC number');
     expect(cccNumberValidator('0123456789'), null);
+  });
+
+  test('should convert gender to json', () {
+    expect(genderToJson(Gender.male), 'male');
   });
 }

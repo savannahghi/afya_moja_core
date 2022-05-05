@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.89
+
+communities entities
+
 ## 0.0.88
 
 add role entity
