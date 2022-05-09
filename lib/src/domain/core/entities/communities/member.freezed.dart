@@ -25,18 +25,24 @@ class _$MemberTearOff {
   _Member call(
       {@JsonKey(name: 'id')
           String? id,
-      @JsonKey(name: 'username')
-          String? username,
+      @JsonKey(name: 'userID')
+          String? userID,
       @JsonKey(name: 'role')
           String? role,
+      @JsonKey(name: 'username')
+          String? username,
+      @JsonKey(name: 'userType')
+          String? userType,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
           Gender? gender,
       @JsonKey(name: 'extraData')
           ExtraData? extraData}) {
     return _Member(
       id: id,
-      username: username,
+      userID: userID,
       role: role,
+      username: username,
+      userType: userType,
       gender: gender,
       extraData: extraData,
     );
@@ -54,10 +60,14 @@ const $Member = _$MemberTearOff();
 mixin _$Member {
   @JsonKey(name: 'id')
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'username')
-  String? get username => throw _privateConstructorUsedError;
+  @JsonKey(name: 'userID')
+  String? get userID => throw _privateConstructorUsedError;
   @JsonKey(name: 'role')
   String? get role => throw _privateConstructorUsedError;
+  @JsonKey(name: 'username')
+  String? get username => throw _privateConstructorUsedError;
+  @JsonKey(name: 'userType')
+  String? get userType => throw _privateConstructorUsedError;
   @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
   Gender? get gender => throw _privateConstructorUsedError;
   @JsonKey(name: 'extraData')
@@ -75,10 +85,14 @@ abstract class $MemberCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id')
           String? id,
-      @JsonKey(name: 'username')
-          String? username,
+      @JsonKey(name: 'userID')
+          String? userID,
       @JsonKey(name: 'role')
           String? role,
+      @JsonKey(name: 'username')
+          String? username,
+      @JsonKey(name: 'userType')
+          String? userType,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
           Gender? gender,
       @JsonKey(name: 'extraData')
@@ -98,8 +112,10 @@ class _$MemberCopyWithImpl<$Res> implements $MemberCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? username = freezed,
+    Object? userID = freezed,
     Object? role = freezed,
+    Object? username = freezed,
+    Object? userType = freezed,
     Object? gender = freezed,
     Object? extraData = freezed,
   }) {
@@ -108,13 +124,21 @@ class _$MemberCopyWithImpl<$Res> implements $MemberCopyWith<$Res> {
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      userID: userID == freezed
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
               as String?,
       role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userType: userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
               as String?,
       gender: gender == freezed
           ? _value.gender
@@ -147,10 +171,14 @@ abstract class _$MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id')
           String? id,
-      @JsonKey(name: 'username')
-          String? username,
+      @JsonKey(name: 'userID')
+          String? userID,
       @JsonKey(name: 'role')
           String? role,
+      @JsonKey(name: 'username')
+          String? username,
+      @JsonKey(name: 'userType')
+          String? userType,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
           Gender? gender,
       @JsonKey(name: 'extraData')
@@ -172,8 +200,10 @@ class __$MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? username = freezed,
+    Object? userID = freezed,
     Object? role = freezed,
+    Object? username = freezed,
+    Object? userType = freezed,
     Object? gender = freezed,
     Object? extraData = freezed,
   }) {
@@ -182,13 +212,21 @@ class __$MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      userID: userID == freezed
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
               as String?,
       role: role == freezed
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userType: userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
               as String?,
       gender: gender == freezed
           ? _value.gender
@@ -208,10 +246,14 @@ class _$_Member implements _Member {
   _$_Member(
       {@JsonKey(name: 'id')
           this.id,
-      @JsonKey(name: 'username')
-          this.username,
+      @JsonKey(name: 'userID')
+          this.userID,
       @JsonKey(name: 'role')
           this.role,
+      @JsonKey(name: 'username')
+          this.username,
+      @JsonKey(name: 'userType')
+          this.userType,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
           this.gender,
       @JsonKey(name: 'extraData')
@@ -224,11 +266,17 @@ class _$_Member implements _Member {
   @JsonKey(name: 'id')
   final String? id;
   @override
-  @JsonKey(name: 'username')
-  final String? username;
+  @JsonKey(name: 'userID')
+  final String? userID;
   @override
   @JsonKey(name: 'role')
   final String? role;
+  @override
+  @JsonKey(name: 'username')
+  final String? username;
+  @override
+  @JsonKey(name: 'userType')
+  final String? userType;
   @override
   @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
   final Gender? gender;
@@ -238,7 +286,7 @@ class _$_Member implements _Member {
 
   @override
   String toString() {
-    return 'Member(id: $id, username: $username, role: $role, gender: $gender, extraData: $extraData)';
+    return 'Member(id: $id, userID: $userID, role: $role, username: $username, userType: $userType, gender: $gender, extraData: $extraData)';
   }
 
   @override
@@ -247,8 +295,10 @@ class _$_Member implements _Member {
         (other.runtimeType == runtimeType &&
             other is _Member &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.userID, userID) &&
             const DeepCollectionEquality().equals(other.role, role) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.userType, userType) &&
             const DeepCollectionEquality().equals(other.gender, gender) &&
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
@@ -257,8 +307,10 @@ class _$_Member implements _Member {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(userID),
       const DeepCollectionEquality().hash(role),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(userType),
       const DeepCollectionEquality().hash(gender),
       const DeepCollectionEquality().hash(extraData));
 
@@ -277,10 +329,14 @@ abstract class _Member implements Member {
   factory _Member(
       {@JsonKey(name: 'id')
           String? id,
-      @JsonKey(name: 'username')
-          String? username,
+      @JsonKey(name: 'userID')
+          String? userID,
       @JsonKey(name: 'role')
           String? role,
+      @JsonKey(name: 'username')
+          String? username,
+      @JsonKey(name: 'userType')
+          String? userType,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
           Gender? gender,
       @JsonKey(name: 'extraData')
@@ -292,11 +348,17 @@ abstract class _Member implements Member {
   @JsonKey(name: 'id')
   String? get id;
   @override
-  @JsonKey(name: 'username')
-  String? get username;
+  @JsonKey(name: 'userID')
+  String? get userID;
   @override
   @JsonKey(name: 'role')
   String? get role;
+  @override
+  @JsonKey(name: 'username')
+  String? get username;
+  @override
+  @JsonKey(name: 'userType')
+  String? get userType;
   @override
   @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
   Gender? get gender;

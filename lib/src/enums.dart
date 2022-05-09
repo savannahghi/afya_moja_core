@@ -48,6 +48,12 @@ extension GenderEx on Gender {
 
 enum NotificationType { APPOINTMENT, SERVICE_REQUEST, COMMUNITIES, UNKNOWN }
 
+extension RoleName on RoleValue {
+  String get name {
+    return describeEnum(this).split('_').join(' ');
+  }
+}
+
 enum RoleValue {
   SYSTEM_ADMINISTRATOR,
   COMMUNITY_MANAGEMENT,

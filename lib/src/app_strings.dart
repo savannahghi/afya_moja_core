@@ -71,3 +71,4 @@ const String banUserText = 'Ban user';
 const String unBanUserText = 'UnBan user';
 const String actionsText = 'Actions';
 const String removeFromGroupText = 'Remove user from group';
+const String staffMemberText = 'Staff member';

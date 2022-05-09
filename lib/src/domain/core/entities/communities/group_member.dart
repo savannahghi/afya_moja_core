@@ -9,8 +9,14 @@ class GroupMember with _$GroupMember {
   factory GroupMember({
     @JsonKey(name: 'user') Member? memberDetails,
     @JsonKey(name: 'isModerator') @Default(false) bool isModerator,
+    @JsonKey(name: 'userType') String? userType,
   }) = _GroupMember;
 
   factory GroupMember.fromJson(Map<String, dynamic> json) =>
       _$GroupMemberFromJson(json);
+
+  factory GroupMember.initial() => GroupMember(
+        memberDetails: Member.initial(),
+        isModerator: false,
+      );
 }

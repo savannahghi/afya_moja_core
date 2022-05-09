@@ -12,4 +12,8 @@ class ExtraData with _$ExtraData {
 
   factory ExtraData.fromJson(Map<String, dynamic> json) =>
       _$ExtraDataFromJson(json);
+
+  factory ExtraData.initial() => ExtraData(
+        isBanned: false,
+      );
 }

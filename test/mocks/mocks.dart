@@ -1,11 +1,11 @@
 import 'dart:convert';
+
+import 'package:afya_moja_core/src/enums.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
-
-import 'package:afya_moja_core/src/enums.dart';
 
 class MockDeviceCapabilities extends IDeviceCapabilities {}
 
@@ -68,6 +68,28 @@ Map<String, dynamic> mockFAQContentState = <String, dynamic>{
   'profileFAQs': <dynamic>[],
   'errorFetchingFAQs': false,
   'timeoutFetchingFAQs': false
+};
+
+Map<String, dynamic> mockExtraData = <String, dynamic>{
+  'bannedInCommunity': false,
+};
+
+Map<String, dynamic> mockMember = <String, dynamic>{
+  'id': 'some-id',
+  'userID': 'some-user-id',
+  'role': 'some-role',
+  'username': 'username',
+  'userType': 'STAFF',
+  'gender': 'MALE',
+  'extraData': <String, dynamic>{
+    'bannedInCommunity': false,
+  }
+};
+
+Map<String, dynamic> mockGroupMember = <String, dynamic>{
+  'user': mockMember,
+  'isModerator': false,
+  'userType': 'STAFF'
 };
 
 // ignore: subtype_of_sealed_class

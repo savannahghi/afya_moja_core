@@ -9,12 +9,24 @@ part 'member.g.dart';
 class Member with _$Member {
   factory Member({
     @JsonKey(name: 'id') String? id,
-    @JsonKey(name: 'username') String? username,
+    @JsonKey(name: 'userID') String? userID,
     @JsonKey(name: 'role') String? role,
+    @JsonKey(name: 'username') String? username,
+    @JsonKey(name: 'userType') String? userType,
     @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
         Gender? gender,
     @JsonKey(name: 'extraData') ExtraData? extraData,
   }) = _Member;
 
   factory Member.fromJson(Map<String, dynamic> json) => _$MemberFromJson(json);
+
+  factory Member.initial() => Member(
+        id: UNKNOWN,
+        userID: UNKNOWN,
+        role: UNKNOWN,
+        userType: UNKNOWN,
+        username: UNKNOWN,
+        gender: Gender.unknown,
+        extraData: ExtraData.initial(),
+      );
 }

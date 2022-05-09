@@ -11,6 +11,7 @@ class GroupMemberItem extends StatelessWidget {
     required this.memberID,
     required this.communityId,
     required this.communityName,
+    required this.userType,
     this.isModerator = false,
     this.canModerate = false,
     this.isBanned = false,
@@ -22,6 +23,7 @@ class GroupMemberItem extends StatelessWidget {
   final String memberID;
   final String communityId;
   final String communityName;
+  final String userType;
   final bool isModerator;
   final bool canModerate;
   final bool isBanned;
@@ -58,11 +60,24 @@ class GroupMemberItem extends StatelessWidget {
                   ),
                 ),
                 size15HorizontalSizedBox,
-                Text(
-                  userName.isNotEmpty ? userName : UNKNOWN,
-                  style: boldSize12Text(
-                    isBanned ? lightGrey.withOpacity(0.6) : null,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      userName.isNotEmpty ? userName : UNKNOWN,
+                      style: boldSize14Text(
+                        isBanned ? lightGrey.withOpacity(0.6) : null,
+                      ),
+                    ),
+                    if (userType == 'STAFF')
+                      Text(
+                        staffMemberText,
+                        style: boldSize12Text().copyWith(
+                          color: greyTextColor.withOpacity(0.6),
+                          fontSize: 10,
+                        ),
+                      ),
+                  ],
                 ),
               ],
             ),
