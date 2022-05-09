@@ -636,4 +636,40 @@ void main() {
   test('should convert gender to json', () {
     expect(genderToJson(Gender.male), 'male');
   });
+
+  test('summarizeDate should return the correct value', () {
+    expect(summarizeDate(DateTime.now().toString()), '0 mins ago');
+    expect(
+      summarizeDate(
+        DateTime.now().subtract(const Duration(seconds: 63)).toString(),
+      ),
+      '1 min ago',
+    );
+    expect(
+      summarizeDate(
+        DateTime.now().subtract(const Duration(seconds: 125)).toString(),
+      ),
+      '2 mins ago',
+    );
+    expect(
+      summarizeDate(
+        DateTime.now().subtract(const Duration(minutes: 1430)).toString(),
+      ),
+      '24 hours ago',
+    );
+    expect(
+      summarizeDate(
+        DateTime.now().subtract(const Duration(minutes: 1400)).toString(),
+      ),
+      '23 hours ago',
+    );
+    expect(
+      summarizeDate(
+        DateTime.now().subtract(const Duration(minutes: 2800)).toString(),
+      ),
+      'Yesterday',
+    );
+    expect(summarizeDate('2022-05-03 12:06:55.451884'), '3 May, 2022');
+    expect(formatDate(''), isA<String>());
+  });
 }

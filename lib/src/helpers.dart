@@ -384,3 +384,32 @@ Gender genderFromJson(String? genderString) {
 String genderToJson(Gender? gender) {
   return gender?.name ?? Gender.unknown.name;
 }
+
+String summarizeDate(String loadedDate) {
+  final DateTime parsedDate =
+      DateTime.tryParse(loadedDate)?.toLocal() ?? DateTime.now();
+  final int difference = DateTime.now().difference(parsedDate).inMinutes;
+
+  if (difference < 1) {
+    return '0 mins ago';
+  } else if (difference == 1) {
+    return '1 min ago';
+  } else if (difference < 60) {
+    return '$difference mins ago';
+  } else if (difference < 1440) {
+    return '${(difference / 60).round()} hours ago';
+  } else if (difference < 2880) {
+    return 'Yesterday';
+  }
+  return formatDate(loadedDate);
+}
+
+String formatDate(String date, {bool showTime = false}) {
+  final DateTime parsedDate =
+      DateTime.tryParse(date)?.toLocal() ?? DateTime.now();
+  final String postDayTime = DateFormat.jm().format(parsedDate);
+  final String postDay = DateFormat.d().format(parsedDate);
+  final String postMonth = DateFormat.MMMM().format(parsedDate);
+  final String postYear = DateFormat.y().format(parsedDate);
+  return '$postDay $postMonth, $postYear${showTime ? ' at $postDayTime' : ''}';
+}
