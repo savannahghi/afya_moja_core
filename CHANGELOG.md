@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.92
+
+- chore: add notification actions data class
+
 ## 0.0.91
 
 - refactor: communities components
