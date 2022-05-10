@@ -12,12 +12,19 @@ _$_GroupMember _$$_GroupMemberFromJson(Map<String, dynamic> json) =>
           ? null
           : Member.fromJson(json['user'] as Map<String, dynamic>),
       isModerator: json['isModerator'] as bool? ?? false,
-      userType: json['userType'] as String?,
+      userType: $enumDecodeNullable(_$UserTypeEnumMap, json['userType']) ??
+          UserType.UNKNOWN,
     );
 
 Map<String, dynamic> _$$_GroupMemberToJson(_$_GroupMember instance) =>
     <String, dynamic>{
       'user': instance.memberDetails,
       'isModerator': instance.isModerator,
-      'userType': instance.userType,
+      'userType': _$UserTypeEnumMap[instance.userType],
     };
+
+const _$UserTypeEnumMap = {
+  UserType.CLIENT: 'CLIENT',
+  UserType.STAFF: 'STAFF',
+  UserType.UNKNOWN: 'UNKNOWN',
+};
