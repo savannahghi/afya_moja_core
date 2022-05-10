@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.93
+
+- chore: user type enums
+
 ## 0.0.92
 
 - chore: add notification actions data class

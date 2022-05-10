@@ -60,3 +60,5 @@ enum RoleValue {
   CONTENT_MANAGEMENT,
   CLIENT_MANAGEMENT,
 }
+
+enum UserType { CLIENT, STAFF, UNKNOWN }
