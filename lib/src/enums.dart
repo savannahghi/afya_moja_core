@@ -62,3 +62,10 @@ enum RoleValue {
 }
 
 enum UserType { CLIENT, STAFF, UNKNOWN }
+
+/// The type of content being served to the user
+enum ContentType { AUDIO_VIDEO, DOCUMENT, ARTICLE, PDF_DOCUMENT, UNKNOWN }
+
+enum FeaturedMediaType { audio, video, UNKNOWN }
+
+enum ContentDisplayedType { RECENT, FEED, BOOKMARK, UNKNOWN }

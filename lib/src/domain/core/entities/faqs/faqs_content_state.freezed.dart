@@ -23,7 +23,7 @@ class _$FAQsContentStateTearOff {
   const _$FAQsContentStateTearOff();
 
   _FAQsContentState call(
-      {List<FAQContent?>? profileFAQs,
+      {List<Content?>? profileFAQs,
       bool? errorFetchingFAQs,
       bool? timeoutFetchingFAQs}) {
     return _FAQsContentState(
@@ -43,7 +43,7 @@ const $FAQsContentState = _$FAQsContentStateTearOff();
 
 /// @nodoc
 mixin _$FAQsContentState {
-  List<FAQContent?>? get profileFAQs => throw _privateConstructorUsedError;
+  List<Content?>? get profileFAQs => throw _privateConstructorUsedError;
   bool? get errorFetchingFAQs => throw _privateConstructorUsedError;
   bool? get timeoutFetchingFAQs => throw _privateConstructorUsedError;
 
@@ -59,7 +59,7 @@ abstract class $FAQsContentStateCopyWith<$Res> {
           FAQsContentState value, $Res Function(FAQsContentState) then) =
       _$FAQsContentStateCopyWithImpl<$Res>;
   $Res call(
-      {List<FAQContent?>? profileFAQs,
+      {List<Content?>? profileFAQs,
       bool? errorFetchingFAQs,
       bool? timeoutFetchingFAQs});
 }
@@ -83,7 +83,7 @@ class _$FAQsContentStateCopyWithImpl<$Res>
       profileFAQs: profileFAQs == freezed
           ? _value.profileFAQs
           : profileFAQs // ignore: cast_nullable_to_non_nullable
-              as List<FAQContent?>?,
+              as List<Content?>?,
       errorFetchingFAQs: errorFetchingFAQs == freezed
           ? _value.errorFetchingFAQs
           : errorFetchingFAQs // ignore: cast_nullable_to_non_nullable
@@ -104,7 +104,7 @@ abstract class _$FAQsContentStateCopyWith<$Res>
       __$FAQsContentStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<FAQContent?>? profileFAQs,
+      {List<Content?>? profileFAQs,
       bool? errorFetchingFAQs,
       bool? timeoutFetchingFAQs});
 }
@@ -130,7 +130,7 @@ class __$FAQsContentStateCopyWithImpl<$Res>
       profileFAQs: profileFAQs == freezed
           ? _value.profileFAQs
           : profileFAQs // ignore: cast_nullable_to_non_nullable
-              as List<FAQContent?>?,
+              as List<Content?>?,
       errorFetchingFAQs: errorFetchingFAQs == freezed
           ? _value.errorFetchingFAQs
           : errorFetchingFAQs // ignore: cast_nullable_to_non_nullable
@@ -153,7 +153,7 @@ class _$_FAQsContentState implements _FAQsContentState {
       _$$_FAQsContentStateFromJson(json);
 
   @override
-  final List<FAQContent?>? profileFAQs;
+  final List<Content?>? profileFAQs;
   @override
   final bool? errorFetchingFAQs;
   @override
@@ -197,7 +197,7 @@ class _$_FAQsContentState implements _FAQsContentState {
 
 abstract class _FAQsContentState implements FAQsContentState {
   factory _FAQsContentState(
-      {List<FAQContent?>? profileFAQs,
+      {List<Content?>? profileFAQs,
       bool? errorFetchingFAQs,
       bool? timeoutFetchingFAQs}) = _$_FAQsContentState;
 
@@ -205,7 +205,7 @@ abstract class _FAQsContentState implements FAQsContentState {
       _$_FAQsContentState.fromJson;
 
   @override
-  List<FAQContent?>? get profileFAQs;
+  List<Content?>? get profileFAQs;
   @override
   bool? get errorFetchingFAQs;
   @override
