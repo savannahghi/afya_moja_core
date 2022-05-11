@@ -16,3 +16,4 @@ const Color warningColor = Color(0xFFDC0000);
 const Color blackColor = Color(0xFF000000);
 const Color lightRedColor = Color(0xfffac8c9);
 const Color bannedColor = Color(0xfff02532);
+const Color greenColor = Color(0xFF50C878);

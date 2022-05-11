@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.95
+
+- refactor: notification list item
+
 ## 0.0.94
 
 - chore: add content data classes

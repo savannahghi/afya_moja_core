@@ -31,3 +31,6 @@ const Key createPINContinueButtonKey = Key('create_pin_continue_button_key');
 const Key promoteButtonKey = Key('promote_button_key');
 const Key removeButtonKey = Key('remove_button_key');
 const Key banButtonKey = Key('ban_button_key');
+
+// notifications
+const Key notificationItemActionKey = Key('notification_item_action_key');
