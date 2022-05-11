@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.94
+
+- chore: add all to gender
+
 ## 0.0.93
 
 - chore: user type enums
