@@ -1,5 +1,4 @@
-// Package imports:
-import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/domain/core/entities/content/content.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'faqs_content_state.freezed.dart';
@@ -8,7 +7,7 @@ part 'faqs_content_state.g.dart';
 @freezed
 class FAQsContentState with _$FAQsContentState {
   factory FAQsContentState({
-    List<FAQContent?>? profileFAQs,
+    List<Content?>? profileFAQs,
     bool? errorFetchingFAQs,
     bool? timeoutFetchingFAQs,
   }) = _FAQsContentState;
@@ -17,7 +16,7 @@ class FAQsContentState with _$FAQsContentState {
       _$FAQsContentStateFromJson(json);
 
   factory FAQsContentState.initial() => FAQsContentState(
-        profileFAQs: <FAQContent>[],
+        profileFAQs: <Content>[],
         errorFetchingFAQs: false,
         timeoutFetchingFAQs: false,
       );

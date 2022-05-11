@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.94
+
+- chore: add content data classes
+
 ## 0.0.93
 
 - chore: user type enums

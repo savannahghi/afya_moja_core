@@ -10,7 +10,7 @@ _$_FAQsContentState _$$_FAQsContentStateFromJson(Map<String, dynamic> json) =>
     _$_FAQsContentState(
       profileFAQs: (json['profileFAQs'] as List<dynamic>?)
           ?.map((e) =>
-              e == null ? null : FAQContent.fromJson(e as Map<String, dynamic>))
+              e == null ? null : Content.fromJson(e as Map<String, dynamic>))
           .toList(),
       errorFetchingFAQs: json['errorFetchingFAQs'] as bool?,
       timeoutFetchingFAQs: json['timeoutFetchingFAQs'] as bool?,

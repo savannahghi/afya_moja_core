@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:afya_moja_core/src/enums.dart';
 import 'package:app_wrapper/app_wrapper.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
+import 'package:flutter_graphql_client/graph_client.dart' as graph;
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
@@ -64,11 +64,216 @@ Map<String, dynamic> mockFAQContentResponse = <String, dynamic>{
   'getFAQContent': <dynamic>[mockFAQContent]
 };
 
-Map<String, dynamic> mockFAQContentState = <String, dynamic>{
-  'profileFAQs': <dynamic>[],
-  'errorFetchingFAQs': false,
-  'timeoutFetchingFAQs': false
+Map<String, dynamic> mockContentDetails = <String, dynamic>{
+  'content': <String, dynamic>{
+    'ID': 1,
+    'title': 'Tips on how to keep yourself healthy',
+    'date': '2021-08-23T06:42:05.085216Z',
+    'intro': 'Keep yourself healthy',
+    'authorName': 'Abiud Orina',
+    'authorAvatar': 'https://i.postimg.cc/9XpbrC25/profile-image.png',
+    'author': <String, dynamic>{'ID': 'some-id'},
+    'itemType': 'ARTICLE',
+    'timeEstimateSeconds': 180,
+    'body':
+        'The coronavirus pandemic has affected our lives, our economy, and nearly every corner of the globe. Almost 4 billion vaccine doses have been administered worldwide; 53 for every 100 people. But the worldwide numbers of infections continue to rise, driven by the Delta variant with highly vaccinated regions like Western Europe and the United States, where cases are relatively low but climbing fast. As cases continue to surge, you can take some steps to keep yourself and your family safe. Here are some tips from our trusted science team.',
+    'heroImageRendition': <String, dynamic>{
+      'url': 'https://i.postimg.cc/zvW46yxk/wellness.jpg',
+    },
+    'likeCount': 180,
+    'bookmarkCount': 180,
+    'viewCount': 180,
+    'shareCount': 180,
+    'hasSaved': false,
+    'hasLiked': false,
+    'documents': <dynamic>[],
+    'isNew': true,
+    'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    'meta': <String, dynamic>{
+      'contentHTMLURL': 'https://mycarehub.co.ke/',
+      'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    },
+    'tagNames': <String>['Recommended', 'Health', 'Fitness'],
+    'featuredMedia': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'ID': 7,
+        'url':
+            'https://storage.googleapis.com/mycarehub-test/media/media/Background_Music_Soft_Piano_Music.aac',
+        'title': 'Background',
+        'type': 'audio',
+        'width': 0,
+        'duration': 6,
+        'height': 0,
+        'thumbnail': ''
+      }
+    ]
+  },
+  'showReactions': true,
+  'contentDisplayedType': 'FEED'
 };
+
+final Map<String, dynamic> mockFeedContent = <String, dynamic>{
+  'getContent': <String, dynamic>{
+    'items': <dynamic>[mockContentDetails]
+  },
+};
+
+
+final Map<String, dynamic> mockGalleryImage = <String, dynamic>{
+  'id': 2,
+  'image': <String, dynamic>{
+    'title': 'mockImage',
+    'meta': <String, String>{'imageDownloadUrl': 'testImage'}
+  }
+};
+
+
+final List<Map<String, dynamic>> contentMock = <Map<String, dynamic>>[
+  <String, dynamic>{
+    'ID': 1,
+    'title': 'Tips on how to keep yourself healthy',
+    'date': '2021-08-23T06:42:05.085216Z',
+    'intro': 'Keep yourself healthy',
+    'authorName': 'Abiud Orina',
+    'authorAvatar': 'https://i.postimg.cc/9XpbrC25/profile-image.png',
+    'author': <String, dynamic>{'ID': 'some-id'},
+    'itemType': 'ARTICLE',
+    'timeEstimateSeconds': 180,
+    'body':
+        'The coronavirus pandemic has affected our lives, our economy, and nearly every corner of the globe. Almost 4 billion vaccine doses have been administered worldwide; 53 for every 100 people. But the worldwide numbers of infections continue to rise, driven by the Delta variant with highly vaccinated regions like Western Europe and the United States, where cases are relatively low but climbing fast. As cases continue to surge, you can take some steps to keep yourself and your family safe. Here are some tips from our trusted science team.',
+    'heroImageRendition': <String, dynamic>{
+      'url': 'https://i.postimg.cc/zvW46yxk/wellness.jpg',
+    },
+    'likeCount': 180,
+    'bookmarkCount': 180,
+    'viewCount': 180,
+    'shareCount': 180,
+    'hasSaved': false,
+    'hasLiked': false,
+    'documents': <dynamic>[],
+    'isNew': true,
+    'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    'meta': <String, dynamic>{
+      'contentHTMLURL': 'https://mycarehub.co.ke/',
+      'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    },
+    'tagNames': <String>['Recommended', 'Health', 'Fitness'],
+    'featuredMedia': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'ID': 7,
+        'url':
+            'https://storage.googleapis.com/mycarehub-test/media/media/Background_Music_Soft_Piano_Music.aac',
+        'title': 'Background',
+        'type': 'audio',
+        'width': 0,
+        'duration': 6,
+        'height': 0,
+        'thumbnail': ''
+      }
+    ]
+  },
+  <String, dynamic>{
+    'ID': 12,
+    'title': 'Test article',
+    'date': '2022-01-06',
+    'intro': 'This is a test article',
+    'authorName': 'John Ngugi',
+    'tagNames': <String>['test'],
+    'meta': <String, dynamic>{
+      'contentType': 'content.ContentItem',
+      'contentHTMLURL':
+          'http://mycarehub-stage.savannahghi.org/health-education/test-article/',
+      'slug': 'test-article',
+      'showInMenus': false,
+      'seoTitle': '',
+      'searchDescription': '',
+      'firstPublishedAt': '2022-01-06T09:18:42.024393+03:00',
+      'locale': 'en'
+    },
+    'itemType': 'AUDIO_VIDEO',
+    'timeEstimateSeconds': 6,
+    'body': '<p data-block-key="9gd2w">Test article</p>',
+    'heroImage': <String, dynamic>{'ID': 10, 'title': 'sunbeds3'},
+    'heroImageRendition': <String, dynamic>{
+      'url':
+          'https://storage.googleapis.com/mycarehub-test/media/images/sunbeds3_VNXQPgI.2e16d0ba.fill-800x1200.jpegquality-60.jpg',
+      'width': 800,
+      'height': 1200,
+      'alt': 'sunbeds3'
+    },
+    'likeCount': 6,
+    'bookmarkCount': 2,
+    'viewCount': 0,
+    'shareCount': 1,
+    'author': <String, dynamic>{'ID': 'cd92a709-c397-4b04-a963-709eb7e08486'},
+    'categoryDetails': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'ID': 6,
+        'categoryName': 'recommended',
+        'categoryIcon': ''
+      }
+    ],
+    'featuredMedia': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'ID': 2,
+        'url':
+            'https://storage.googleapis.com/mycarehub-test/media/media/Background_Music_Soft_Piano_Music_ppKS2s4.aac',
+        'title': 'soft_piano_music',
+        'type': 'audio',
+        'duration': 141,
+        'width': 0,
+        'height': 0,
+        'thumbnail': ''
+      }
+    ],
+    'galleryImages': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'ID': 1,
+        'image': <String, dynamic>{
+          'ID': 8,
+          'title': 'Contrail',
+          'meta': <String, dynamic>{
+            'imageDownloadUrl':
+                'https://storage.googleapis.com/mycarehub-test/media/original_images/jake-nackos-zAeD6Gug2PY-unsplash_IXYJr4K.jpg'
+          }
+        }
+      },
+      <String, dynamic>{
+        'ID': 2,
+        'image': <String, dynamic>{
+          'ID': 7,
+          'title': 'Plane_with_background',
+          'meta': <String, dynamic>{
+            'imageDownloadUrl':
+                'https://storage.googleapis.com/mycarehub-test/media/original_images/vino-li-kpcJgsvpY3Q-unsplash_9w4CILs.jpg'
+          }
+        }
+      },
+      <String, dynamic>{
+        'ID': 3,
+        'image': <String, dynamic>{
+          'ID': 9,
+          'title': 'sunbeds3',
+          'meta': <String, dynamic>{
+            'imageDownloadUrl':
+                'https://storage.googleapis.com/mycarehub-test/media/original_images/valentin-b-kremer-icXbm3QDw2w-unsplash_YNcTzbk.jpg'
+          }
+        }
+      },
+      <String, dynamic>{
+        'ID': 4,
+        'image': <String, dynamic>{
+          'ID': 11,
+          'title': 'syringe',
+          'meta': <String, dynamic>{
+            'imageDownloadUrl':
+                'https://storage.googleapis.com/mycarehub-test/media/original_images/mika-baumeister-fPE_qTJu3Ws-unsplash_4NqBMVN.jpg'
+          }
+        }
+      }
+    ],
+  },
+];
 
 Map<String, dynamic> mockExtraData = <String, dynamic>{
   'bannedInCommunity': false,
@@ -93,7 +298,7 @@ Map<String, dynamic> mockGroupMember = <String, dynamic>{
 };
 
 // ignore: subtype_of_sealed_class
-class MockGraphQlClient extends Mock implements GraphQlClient {
+class MockGraphQlClient extends Mock implements graph.GraphQlClient {
   String setupUserAsExperimenterVariables =
       json.encode(<String, bool>{'participate': true});
   String removeUserAsExperimenterVariables =
@@ -103,7 +308,7 @@ class MockGraphQlClient extends Mock implements GraphQlClient {
   Future<http.Response> query(
     String queryString,
     Map<String, dynamic> variables, [
-    ContentType contentType = ContentType.json,
+    graph.ContentType contentType = graph.ContentType.json,
   ]) {
     if (json.encode(variables) == setupUserAsExperimenterVariables) {
       return Future<http.Response>.value(
