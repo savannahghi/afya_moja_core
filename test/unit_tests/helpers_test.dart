@@ -672,4 +672,17 @@ void main() {
     expect(summarizeDate('2022-05-03 12:06:55.451884'), '3 May, 2022');
     expect(formatDate(''), isA<String>());
   });
+  test('audioTime should return the correct VALUE', () {
+    expect(audioTime(62), '1:02');
+    expect(audioTime(20), '0:20');
+  });
+  test('contentReadDuration should return the correct VALUE', () {
+    expect(contentReadDuration(0), '...');
+    expect(contentReadDuration(70), '1 min read');
+  });
+  test('contentAudioVideoDuration should return the correct VALUE', () {
+    expect(contentAudioVideoDuration(0), '...');
+    expect(contentAudioVideoDuration(70), '1 min');
+  });
+
 }

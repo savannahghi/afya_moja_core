@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.96
+
+- chore: add content utils
+
 ## 0.0.95
 
 - refactor: notification list item

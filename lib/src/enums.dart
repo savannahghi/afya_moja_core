@@ -63,6 +63,12 @@ enum RoleValue {
 
 enum UserType { CLIENT, STAFF, UNKNOWN }
 
+extension UserTypeEx on UserType {
+  String get name {
+    return describeEnum(this);
+  }
+}
+
 /// The type of content being served to the user
 enum ContentType { AUDIO_VIDEO, DOCUMENT, ARTICLE, PDF_DOCUMENT, UNKNOWN }
 

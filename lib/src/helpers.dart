@@ -413,3 +413,22 @@ String formatDate(String date, {bool showTime = false}) {
   final String postYear = DateFormat.y().format(parsedDate);
   return '$postDay $postMonth, $postYear${showTime ? ' at $postDayTime' : ''}';
 }
+
+String audioTime(int duration) {
+  Duration(seconds: duration);
+  final int min = (duration / 60).floor();
+  final int sec = duration % 60;
+  String formattedSec;
+  if (sec <= 9) {
+    formattedSec = '0$sec';
+  } else {
+    formattedSec = '$sec';
+  }
+
+  return '$min:$formattedSec';
+}
+
+String contentReadDuration(int duration) =>
+    duration == 0 ? '...' : '${(duration / 60).floor()} min read';
+String contentAudioVideoDuration(int duration) =>
+    duration == 0 ? '...' : '${(duration / 60).floor()} min';
