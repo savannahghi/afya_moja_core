@@ -9,6 +9,10 @@ void main() {
         RoleValue.SYSTEM_ADMINISTRATOR.name,
         'SYSTEM ADMINISTRATOR',
       );
+      expect(
+        UserType.CLIENT.name,
+        'CLIENT',
+      );
 
       expect(
         RoleValue.CLIENT_MANAGEMENT.name,

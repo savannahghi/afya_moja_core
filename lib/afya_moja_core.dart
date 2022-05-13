@@ -12,6 +12,8 @@ export 'src/domain/core/entities/content/gallery_image.dart';
 export 'src/domain/core/entities/content/content_metadata.dart';
 export 'src/domain/core/entities/content/hero_image.dart';
 export 'src/domain/core/entities/content/featured_media.dart';
+export 'src/domain/core/entities/content/audio_position_data.dart';
+export 'src/domain/core/entities/content/list_content_categories.dart';
 export 'src/domain/core/entities/faqs/faqs_content_state.dart';
 export 'src/domain/core/entities/icon_details.dart';
 export 'src/domain/core/entities/notifications/notification_actions.dart';
