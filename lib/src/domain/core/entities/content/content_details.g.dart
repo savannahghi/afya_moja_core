@@ -9,7 +9,6 @@ part of 'content_details.dart';
 ContentDetails _$ContentDetailsFromJson(Map<String, dynamic> json) =>
     ContentDetails(
       content: Content.fromJson(json['content'] as Map<String, dynamic>),
-      showReactions: json['showReactions'] as bool? ?? true,
       contentDisplayedType: $enumDecodeNullable(
               _$ContentDisplayedTypeEnumMap, json['contentDisplayedType']) ??
           ContentDisplayedType.UNKNOWN,
@@ -18,7 +17,6 @@ ContentDetails _$ContentDetailsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ContentDetailsToJson(ContentDetails instance) =>
     <String, dynamic>{
       'content': instance.content,
-      'showReactions': instance.showReactions,
       'contentDisplayedType':
           _$ContentDisplayedTypeEnumMap[instance.contentDisplayedType],
     };

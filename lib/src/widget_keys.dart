@@ -34,3 +34,11 @@ const Key banButtonKey = Key('ban_button_key');
 
 // notifications
 const Key notificationItemActionKey = Key('notification_item_action_key');
+
+//content
+const Key feedContentItemKey = Key('feed_content_item_key');
+const Key contentHeroImagePlaceHolder = Key('content_hero_image_place_holder');
+const Key feedVideoPlayIconKey = Key('feed_video_play_icon_key');
+const Key galleryImagePageKey = Key('gallery_image_page_key');
+const Key cancelButtonKey = Key('cancel_button');
+const Key genericContainerKey = Key('generic_container');

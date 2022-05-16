@@ -72,3 +72,8 @@ const String unBanUserText = 'UnBan user';
 const String actionsText = 'Actions';
 const String removeFromGroupText = 'Remove user from group';
 const String staffMemberText = 'Staff member';
+
+//content
+const String newText = 'New';
+const String pdfText = 'PDF';
+const String datePublishedString = 'Published on ';

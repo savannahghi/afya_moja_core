@@ -1,5 +1,8 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/services/video_player_initializer.dart';
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 Map<String, String>? getCountry(Country country) {
   switch (country) {
@@ -115,4 +118,13 @@ bool confirmPinValidator(String pin, String confirmPin) {
     return false;
   }
   return true;
+}
+
+Future<ChewieController> initializeChewieController({
+  required String dataSource,
+}) {
+  return VideoPlayerInitializer().initializePlayer(
+    videoPlayerController: VideoPlayerController.network(dataSource),
+    autoPlay: false,
+  );
 }
