@@ -17,3 +17,6 @@ const Color blackColor = Color(0xFF000000);
 const Color lightRedColor = Color(0xfffac8c9);
 const Color bannedColor = Color(0xfff02532);
 const Color greenColor = Color(0xFF50C878);
+const Color readTimeBackgroundColor = Color(0xff4c4c4c);
+const Color marigoldNavColor = Color(0xFFF79E25);
+const Color lightGreyBackgroundColor = Color(0xfff6f6f6);

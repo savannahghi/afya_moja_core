@@ -1,11 +1,14 @@
 import 'dart:convert';
 
+import 'package:afya_moja_core/src/domain/core/entities/content/content.dart';
 import 'package:afya_moja_core/src/enums.dart';
 import 'package:app_wrapper/app_wrapper.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart' as graph;
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
+import 'package:video_player/video_player.dart';
 
 class MockDeviceCapabilities extends IDeviceCapabilities {}
 
@@ -467,3 +470,198 @@ String uploadMutationQuery = r'''
   }
 }
 ''';
+
+// chewi mocks
+class MockVideoPlayerController extends ValueNotifier<VideoPlayerValue>
+    implements VideoPlayerController {
+  MockVideoPlayerController()
+      : super(VideoPlayerValue(duration: Duration.zero));
+
+  @override
+  Future<void> dispose() async {
+    super.dispose();
+  }
+
+  @override
+  int textureId = VideoPlayerController.kUninitializedTextureId;
+
+  @override
+  String get dataSource => '';
+
+  @override
+  Map<String, String> get httpHeaders => <String, String>{};
+
+  @override
+  DataSourceType get dataSourceType => DataSourceType.file;
+
+  @override
+  String get package => '';
+
+  @override
+  Future<Duration> get position async => value.position;
+
+  @override
+  Future<void> seekTo(Duration moment) async {}
+
+  @override
+  Future<void> setVolume(double volume) async {}
+
+  @override
+  Future<void> setPlaybackSpeed(double speed) async {}
+
+  @override
+  Future<void> initialize() async {}
+
+  @override
+  Future<void> pause() async {}
+
+  @override
+  Future<void> play() async {}
+
+  @override
+  Future<void> setLooping(bool looping) async {}
+
+  @override
+  VideoFormat? get formatHint => null;
+
+  @override
+  Future<ClosedCaptionFile> get closedCaptionFile => _loadClosedCaption();
+
+  @override
+  VideoPlayerOptions? get videoPlayerOptions => null;
+
+  @override
+  void setCaptionOffset(Duration offset) {}
+}
+
+
+Future<ClosedCaptionFile> _loadClosedCaption() async =>
+    _FakeClosedCaptionFile();
+
+class _FakeClosedCaptionFile extends ClosedCaptionFile {
+  @override
+  List<Caption> get captions {
+    return <Caption>[
+      const Caption(
+        text: 'one',
+        number: 0,
+        start: Duration(milliseconds: 100),
+        end: Duration(milliseconds: 200),
+      ),
+      const Caption(
+        text: 'two',
+        number: 1,
+        start: Duration(milliseconds: 300),
+        end: Duration(milliseconds: 400),
+      ),
+    ];
+  }
+}
+
+final Content mockContent = Content.fromJson(contentMock.first);
+final Content mockVideoContent =
+    Content.fromJson(videoContentMock.first);
+
+final Map<String, dynamic> documentContentMock = <String, dynamic>{
+  'ID': 16,
+  'title': 'Test Document',
+  'date': '2022-01-13',
+  'intro': 'This is a test document',
+  'authorName': 'Test',
+  'tagNames': <String>['test'],
+  'meta': <String, dynamic>{
+    'contentType': 'content.ContentItem',
+    'contentHTMLURL': 'http://test-document/',
+    'slug': 'test-document',
+    'showInMenus': false,
+    'seoTitle': '',
+    'searchDescription': '',
+    'firstPublishedAt': '2022-01-13T11:36:56.749531+03:00',
+    'locale': 'en'
+  },
+  'itemType': 'PDF_DOCUMENT',
+  'timeEstimateSeconds': 10,
+  'body': '''
+<p data-block-key="sg8u8">Test document</p>''',
+  'heroImage': <String, dynamic>{'ID': 14, 'title': 'document'},
+  'heroImageRendition': <String, dynamic>{
+    'url': 'https://test.jpg',
+    'width': 720,
+    'height': 1080,
+    'alt': 'document'
+  },
+  'likeCount': 0,
+  'bookmarkCount': 0,
+  'viewCount': 0,
+  'shareCount': 0,
+  'author': <String, dynamic>{'ID': 'test-id-001'},
+  'documents': <Map<String, dynamic>>[
+    <String, dynamic>{
+      'ID': 10001,
+      'Document': <String, dynamic>{
+        'ID': 10001,
+        'title': 'myCareHub Requirements',
+        'meta': <String, dynamic>{
+          'documentDetailUrl':
+              'http://www.africau.edu/images/default/sample.pdf',
+          'documentDownloadUrl':
+              'http://www.africau.edu/images/default/sample.pdf'
+        }
+      }
+    }
+  ],
+  'categoryDetails': <Map<String, dynamic>>[
+    <String, dynamic>{
+      'ID': 6,
+      'categoryName': 'recommended',
+      'categoryIcon': 'https://test.png'
+    }
+  ],
+};
+
+final List<Map<String, dynamic>> videoContentMock = <Map<String, dynamic>>[
+  <String, dynamic>{
+    'ID': 1,
+    'title': 'Tips on how to keep yourself healthy',
+    'date': '2021-08-23T06:42:05.085216Z',
+    'intro': 'Keep yourself healthy',
+    'authorName': 'Abiud Orina',
+    'authorAvatar': 'https://i.postimg.cc/9XpbrC25/profile-image.png',
+    'author': <String, dynamic>{'ID': 'some-id'},
+    'itemType': 'AUDIO_VIDEO',
+    'timeEstimateSeconds': 180,
+    'body':
+        'The coronavirus pandemic has affected our lives, our economy, and nearly every corner of the globe. Almost 4 billion vaccine doses have been administered worldwide; 53 for every 100 people. But the worldwide numbers of infections continue to rise, driven by the Delta variant with highly vaccinated regions like Western Europe and the United States, where cases are relatively low but climbing fast. As cases continue to surge, you can take some steps to keep yourself and your family safe. Here are some tips from our trusted science team.',
+    'heroImageRendition': <String, dynamic>{
+      'url': 'https://i.postimg.cc/zvW46yxk/wellness.jpg',
+    },
+    'likeCount': 180,
+    'bookmarkCount': 180,
+    'viewCount': 180,
+    'shareCount': 180,
+    'hasSaved': false,
+    'hasLiked': false,
+    'documents': <dynamic>[],
+    'isNew': true,
+    'featuredMedia': <dynamic>[
+      <String, dynamic>{
+        'ID': 1,
+        'url':
+            'https://storage.googleapis.com/mycarehub-test/media/media/production_ID_4473012.mp4',
+        'title': 'Awesome diet video',
+        'type': 'video',
+        'duration': 165,
+        'width': 100,
+        'height': 0,
+        'thumbnail':
+            'https://storage.googleapis.com/mycarehub-test/media/media_thumbnails/vitalii-pavlyshynets-kcRFW-Hje8Y-unsplash_1.jpg',
+      }
+    ],
+    'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    'meta': <String, dynamic>{
+      'contentHTMLURL': 'https://mycarehub.co.ke/',
+      'firstPublishedAt': '2021-08-23T06:42:05.085216Z',
+    },
+    'tagNames': <String>['Recommended', 'Health', 'Fitness'],
+  },
+];

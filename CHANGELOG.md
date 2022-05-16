@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.97
+
+- chore: add shared content widgets
+
 ## 0.0.96
 
 - chore: add content utils

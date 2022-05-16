@@ -9,12 +9,10 @@ part 'content_details.g.dart';
 @JsonSerializable()
 class ContentDetails {
   final Content content;
-  final bool showReactions;
   final ContentDisplayedType contentDisplayedType;
 
   ContentDetails({
     required this.content,
-    this.showReactions = true,
     this.contentDisplayedType = ContentDisplayedType.UNKNOWN,
   });
 
