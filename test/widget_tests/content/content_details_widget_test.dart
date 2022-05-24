@@ -30,6 +30,7 @@ void main() {
               child: Builder(
                 builder: (BuildContext context) {
                   return ContentDetailWidget(
+                    onCloseCallback: () => Navigator.of(context).pop(),
                     payload: ContentDetails(
                       content: mockContent.copyWith(
                         metadata: ContentMetadata.initial(),
