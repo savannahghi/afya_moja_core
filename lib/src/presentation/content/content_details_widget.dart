@@ -1,4 +1,10 @@
 // Package imports:
+import 'package:chewie/chewie.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:shared_themes/spaces.dart';
+
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
@@ -8,11 +14,6 @@ import 'package:afya_moja_core/src/presentation/generic_empty_data_widget.dart';
 import 'package:afya_moja_core/src/presentation/video_player/chewie_video_player.dart';
 import 'package:afya_moja_core/src/utils.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
-import 'package:chewie/chewie.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shared_themes/spaces.dart';
 
 class ContentDetailWidget extends StatefulWidget {
   const ContentDetailWidget({
@@ -20,11 +21,13 @@ class ContentDetailWidget extends StatefulWidget {
     this.chewieVideoPlayer,
     this.galleryImageCallback,
     this.reactionsWidget,
+    this.onCloseCallback,
   });
 
-  final ContentDetails payload;
   final ChewieVideoPlayer? chewieVideoPlayer;
   final VoidCallback? galleryImageCallback;
+  final VoidCallback? onCloseCallback;
+  final ContentDetails payload;
   final Widget? reactionsWidget;
 
   @override
@@ -33,6 +36,15 @@ class ContentDetailWidget extends StatefulWidget {
 
 class _ContentDetailWidgetState extends State<ContentDetailWidget> {
   ChewieVideoPlayer? _chewieVideoPlayer;
+
+  @override
+  void dispose() {
+    _chewieVideoPlayer?.chewieController?.then((ChewieController? value) {
+      value?.dispose();
+      value?.videoPlayerController.dispose();
+    });
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -51,13 +63,106 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _chewieVideoPlayer?.chewieController?.then((ChewieController? value) {
-      value?.dispose();
-      value?.videoPlayerController.dispose();
-    });
-    super.dispose();
+  List<Widget> getGalleryItems({required BuildContext context}) {
+    final List<GalleryImage>? galleryImages =
+        widget.payload.content.galleryImages;
+    final BorderRadius imageBorderRadius = BorderRadius.circular(12);
+    const double galleryImageHeight = 500;
+
+    final bool hasGalleryImages =
+        galleryImages != null && galleryImages.isNotEmpty;
+
+    final List<Widget> galleryItems = <Widget>[];
+
+    if (hasGalleryImages) {
+      if (galleryImages.length == 1) {
+        galleryItems.addAll(<Widget>[
+          GalleryImageWidget(
+            borderRadius: imageBorderRadius,
+            imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
+            height: galleryImageHeight,
+            width: MediaQuery.of(context).size.width - 16,
+          ),
+        ]);
+      } else if (galleryImages.length == 2) {
+        galleryItems.addAll(<Widget>[
+          Expanded(
+            child: GalleryImageWidget(
+              borderRadius: imageBorderRadius,
+              imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
+              height: galleryImageHeight,
+            ),
+          ),
+          const SizedBox(width: 4),
+          Expanded(
+            child: GalleryImageWidget(
+              borderRadius: imageBorderRadius,
+              imageUrl: galleryImages[1].image?.meta?.imageDownloadUrl ?? '',
+              height: galleryImageHeight,
+            ),
+          ),
+        ]);
+      } else {
+        galleryItems.addAll(<Widget>[
+          Expanded(
+            child: GalleryImageWidget(
+              borderRadius: imageBorderRadius,
+              imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
+              height: MediaQuery.of(context).size.height,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: GalleryImageWidget(
+                    borderRadius: imageBorderRadius,
+                    imageUrl:
+                        galleryImages[1].image?.meta?.imageDownloadUrl ?? '',
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Expanded(
+                  child: Stack(
+                    children: <Widget>[
+                      GalleryImageWidget(
+                        borderRadius: imageBorderRadius,
+                        imageUrl:
+                            galleryImages[2].image?.meta?.imageDownloadUrl ??
+                                '',
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                      ),
+                      if (galleryImages.length > 3)
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: imageBorderRadius,
+                            color: Colors.black.withOpacity(0.5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '+ ${galleryImages.length - 3} more',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ]);
+      }
+    }
+
+    return galleryItems;
   }
 
   @override
@@ -118,9 +223,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
                     child: GestureDetector(
                       key: galleryImagePageKey,
                       behavior: HitTestBehavior.opaque,
-                      onTap: () {
-                        widget.galleryImageCallback?.call();
-                      },
+                      onTap: () => widget.galleryImageCallback?.call(),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[...galleryItems],
@@ -237,7 +340,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
               margin: const EdgeInsets.all(10.0),
               child: ElevatedButton(
                 key: cancelButtonKey,
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => widget.onCloseCallback?.call(),
                 style: ElevatedButton.styleFrom(
                   primary: readTimeBackgroundColor.withOpacity(0.5),
                   shape: const CircleBorder(),
@@ -255,107 +358,5 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
         ],
       ),
     );
-  }
-
-  List<Widget> getGalleryItems({required BuildContext context}) {
-    final List<GalleryImage>? galleryImages =
-        widget.payload.content.galleryImages;
-    final BorderRadius imageBorderRadius = BorderRadius.circular(12);
-    const double galleryImageHeight = 500;
-
-    final bool hasGalleryImages =
-        galleryImages != null && galleryImages.isNotEmpty;
-
-    final List<Widget> galleryItems = <Widget>[];
-
-    if (hasGalleryImages) {
-      if (galleryImages.length == 1) {
-        galleryItems.addAll(<Widget>[
-          GalleryImageWidget(
-            borderRadius: imageBorderRadius,
-            imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
-            height: galleryImageHeight,
-            width: MediaQuery.of(context).size.width - 16,
-          ),
-        ]);
-      } else if (galleryImages.length == 2) {
-        galleryItems.addAll(<Widget>[
-          Expanded(
-            child: GalleryImageWidget(
-              borderRadius: imageBorderRadius,
-              imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
-              height: galleryImageHeight,
-            ),
-          ),
-          const SizedBox(width: 4),
-          Expanded(
-            child: GalleryImageWidget(
-              borderRadius: imageBorderRadius,
-              imageUrl: galleryImages[1].image?.meta?.imageDownloadUrl ?? '',
-              height: galleryImageHeight,
-            ),
-          ),
-        ]);
-      } else {
-        galleryItems.addAll(<Widget>[
-          Expanded(
-            child: GalleryImageWidget(
-              borderRadius: imageBorderRadius,
-              imageUrl: galleryImages[0].image?.meta?.imageDownloadUrl ?? '',
-              height: MediaQuery.of(context).size.height,
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: GalleryImageWidget(
-                    borderRadius: imageBorderRadius,
-                    imageUrl:
-                        galleryImages[1].image?.meta?.imageDownloadUrl ?? '',
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Expanded(
-                  child: Stack(
-                    children: <Widget>[
-                      GalleryImageWidget(
-                        borderRadius: imageBorderRadius,
-                        imageUrl:
-                            galleryImages[2].image?.meta?.imageDownloadUrl ??
-                                '',
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
-                      ),
-                      if (galleryImages.length > 3)
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: imageBorderRadius,
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                          child: Center(
-                            child: Text(
-                              '+ ${galleryImages.length - 3} more',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ]);
-      }
-    }
-
-    return galleryItems;
   }
 }

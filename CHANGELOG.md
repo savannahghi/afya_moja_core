@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.98
+
+- feat: add content on cancel callback
+
 ## 0.0.97
 
 - chore: add shared content widgets
