@@ -1,8 +1,17 @@
 # Changelog
 
+0.0.101
+
+- chore: setup and fix automated publishing to pub.dev
+
+0.0.100
+
+- fix: debug automated publishing
+
 ## 0.0.99
 
 - feat: make login counter widget dynamic
+
 ## 0.0.98
 
 - feat: add content on cancel callback
