@@ -12,6 +12,9 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: LoginCounterWidget(
+            title: 'title',
+            subtitle: 'subtitle',
+            requestForAssistanceSubtitle: 'request for assistance',
             retryTimeout: 20,
             actionText: 'test',
             onButtonTapped: () {
@@ -44,6 +47,9 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: LoginCounterWidget(
+            title: 'title',
+            subtitle: 'subtitle',
+            requestForAssistanceSubtitle: 'request for assistance',
             retryTimeout: -1,
             onTimerEnded: () {
               test = 'timer ended';

@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
-import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/presentation/buttons.dart';
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
@@ -11,17 +10,24 @@ import 'package:shared_themes/spaces.dart';
 
 class LoginCounterWidget extends StatefulWidget {
   const LoginCounterWidget({
-    required this.retryTimeout,
+    this.retryTimeout,
     this.actionText,
     this.onButtonTapped,
     this.onTimerEnded,
     this.actionKey,
+    required this.title,
+    required this.subtitle,
+    required this.requestForAssistanceSubtitle,
   });
-  final int retryTimeout;
+
+  final Key? actionKey;
   final String? actionText;
   final VoidCallback? onButtonTapped;
   final VoidCallback? onTimerEnded;
-  final Key? actionKey;
+  final String requestForAssistanceSubtitle;
+  final int? retryTimeout;
+  final String subtitle;
+  final String title;
 
   @override
   State<LoginCounterWidget> createState() => _LoginCounterWidgetState();
@@ -29,8 +35,22 @@ class LoginCounterWidget extends StatefulWidget {
 
 class _LoginCounterWidgetState extends State<LoginCounterWidget> {
   late Timer timer;
-  late int _start = widget.retryTimeout;
   bool timerRunning = false;
+
+  late int _start = widget.retryTimeout ?? 0;
+
+  @override
+  void initState() {
+    if (widget.retryTimeout != null) {
+      if (widget.retryTimeout! < 1) {
+        widget.onTimerEnded?.call();
+      } else {
+        _startTimer();
+      }
+    }
+
+    super.initState();
+  }
 
   void _startTimer() {
     timer = Timer.periodic(
@@ -54,16 +74,6 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
   }
 
   @override
-  void initState() {
-    if (widget.retryTimeout < 1) {
-      widget.onTimerEnded?.call();
-    } else {
-      _startTimer();
-    }
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -78,27 +88,29 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
                 ),
                 largeVerticalSizedBox,
                 Text(
-                  tooManyAttemptsString,
+                  widget.title,
+                  textAlign: TextAlign.center,
                   style: heavySize20Text(redColor),
                 ),
                 smallVerticalSizedBox,
                 Text(
-                  tooManyAttemptsMessageString,
+                  widget.subtitle,
                   style: normalSize14Text(
                     darkGreyTextColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                Text(
-                  '$_start seconds',
-                  style: heavySize14Text(
-                    Theme.of(context).primaryColor,
+                if (widget.retryTimeout != null)
+                  Text(
+                    '$_start seconds',
+                    style: heavySize14Text(
+                      Theme.of(context).primaryColor,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
                 smallVerticalSizedBox,
                 Text(
-                  requestForAssistanceMessageString,
+                  widget.requestForAssistanceSubtitle,
                   style: normalSize14Text(
                     darkGreyTextColor,
                   ),
@@ -112,7 +124,9 @@ class _LoginCounterWidgetState extends State<LoginCounterWidget> {
                       buttonKey: widget.actionKey,
                       text: widget.actionText,
                       onPressed: () {
-                        timer.cancel();
+                        if (widget.retryTimeout != null) {
+                          timer.cancel();
+                        }
                         widget.onButtonTapped?.call();
                       },
                     ),
