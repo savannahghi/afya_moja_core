@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.99
+
+- feat: make login counter widget dynamic
 ## 0.0.98
 
 - feat: add content on cancel callback
