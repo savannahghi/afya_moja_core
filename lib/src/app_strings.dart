@@ -67,6 +67,7 @@ const String requestForAssistanceMessageString =
 const String moderatorText = 'Moderator';
 const String bannedString = 'Banned';
 const String promoteToModeratorText = 'Promote to moderator';
+const String demoteUserText = 'Demote to normal user';
 const String banUserText = 'Ban user';
 const String unBanUserText = 'UnBan user';
 const String actionsText = 'Actions';

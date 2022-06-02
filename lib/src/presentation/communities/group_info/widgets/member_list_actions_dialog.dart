@@ -12,6 +12,7 @@ class MemberListActionsDialog extends StatelessWidget {
     required this.communityName,
     required this.memberName,
     this.isBanned = false,
+    this.isModerator = false,
     this.isPromoting = false,
     this.isBanning = false,
     this.isRemoving = false,
@@ -25,6 +26,7 @@ class MemberListActionsDialog extends StatelessWidget {
   final String communityName;
   final String memberName;
   final bool isBanned;
+  final bool isModerator;
   final bool isPromoting;
   final bool isBanning;
   final bool isRemoving;
@@ -44,7 +46,7 @@ class MemberListActionsDialog extends StatelessWidget {
       promotionButton = MyAfyaHubPrimaryButton(
         onPressed: onPromoteTapped,
         buttonKey: promoteButtonKey,
-        text: promoteToModeratorText,
+        text: isModerator ? demoteUserText : promoteToModeratorText,
         buttonColor: Theme.of(context).primaryColor.withOpacity(0.2),
         textColor: blackColor,
         borderColor: Theme.of(context).primaryColor.withOpacity(0.3),

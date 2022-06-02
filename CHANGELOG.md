@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.103
+
+- add demote moderator option to group member item actions
+
 ## 0.0.102
 
 - feat: add long press option to group member item
