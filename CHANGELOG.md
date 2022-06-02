@@ -1,6 +1,10 @@
 # Changelog
 
-0.0.101
+## 0.0.102
+
+- feat: add long press option to group member item
+
+## 0.0.101
 
 - chore: setup and fix automated publishing to pub.dev
 
