@@ -17,6 +17,7 @@ class GroupMemberItem extends StatelessWidget {
     this.isBanned = false,
     this.itemKey,
     this.onTap,
+    this.onLongPress,
   });
 
   final String userName;
@@ -29,13 +30,14 @@ class GroupMemberItem extends StatelessWidget {
   final bool isBanned;
   final Key? itemKey;
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       key: itemKey,
-      behavior: HitTestBehavior.opaque,
       onTap: onTap,
+      onLongPress: onLongPress,
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(

@@ -12,14 +12,16 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: GroupMemberItem(
-            userName: 'userName',
-            memberID: 'memberID',
-            communityId: 'communityId',
-            communityName: 'communityName',
-            userType: 'STAFF',
-            onTap: () => tapped++,
-            itemKey: itemKey,
+          home: Scaffold(
+            body: GroupMemberItem(
+              userName: 'userName',
+              memberID: 'memberID',
+              communityId: 'communityId',
+              communityName: 'communityName',
+              userType: 'STAFF',
+              onTap: () => tapped++,
+              itemKey: itemKey,
+            ),
           ),
         ),
       );
@@ -36,14 +38,16 @@ void main() {
     testWidgets('should show moderator badge', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: GroupMemberItem(
-            userName: 'userName',
-            memberID: 'memberID',
-            communityId: 'communityId',
-            communityName: 'communityName',
-            userType: 'STAFF',
-            onTap: () {},
-            isModerator: true,
+          home: Scaffold(
+            body: GroupMemberItem(
+              userName: 'userName',
+              memberID: 'memberID',
+              communityId: 'communityId',
+              communityName: 'communityName',
+              userType: 'STAFF',
+              onTap: () {},
+              isModerator: true,
+            ),
           ),
         ),
       );
@@ -55,14 +59,16 @@ void main() {
     testWidgets('should show banned badge', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: GroupMemberItem(
-            userName: 'userName',
-            memberID: 'memberID',
-            communityId: 'communityId',
-            communityName: 'communityName',
-            userType: 'CLIENT',
-            onTap: () {},
-            isBanned: true,
+          home: Scaffold(
+            body: GroupMemberItem(
+              userName: 'userName',
+              memberID: 'memberID',
+              communityId: 'communityId',
+              communityName: 'communityName',
+              userType: 'CLIENT',
+              onTap: () {},
+              isBanned: true,
+            ),
           ),
         ),
       );
