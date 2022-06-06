@@ -1,8 +1,6 @@
-// Flutter imports:
+import 'package:afya_moja_core/src/presentation/spaces.dart';
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:shared_themes/spaces.dart';
 
 ///[OnboardingScaffoldHeader] header on the onboarding scaffold
 class OnboardingScaffoldHeader extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:afya_moja_core/src/presentation/buttons.dart';
 import 'package:afya_moja_core/src/presentation/colors.dart';
+import 'package:afya_moja_core/src/presentation/spaces.dart';
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shared_themes/spaces.dart';
 
 class PINRequestScaffold extends StatelessWidget {
   final String title;

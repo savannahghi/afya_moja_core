@@ -1,6 +1,5 @@
 import 'package:afya_moja_core/src/presentation/platform_loader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:just_audio/just_audio.dart';
 
 class AudioContentControls extends StatelessWidget {

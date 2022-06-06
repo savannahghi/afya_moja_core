@@ -67,6 +67,8 @@ class MyAfyaHubPhoneInput extends FormField<String> {
 
               isValidNumber = !showAlertIcon;
             }
+
+            return null;
           },
           builder: (FormFieldState<String> state) {
             final PhoneInputBehaviorSubject phoneInputBehaviorSubject =

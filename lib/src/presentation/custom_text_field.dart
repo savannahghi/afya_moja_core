@@ -1,9 +1,8 @@
+import 'package:afya_moja_core/src/presentation/spaces.dart';
 import 'package:afya_moja_core/src/presentation/text_form_hint_text.dart';
 import 'package:afya_moja_core/src/types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_themes/colors.dart';
-import 'package:shared_themes/spaces.dart';
 
 /// A wrapper for [TextFormField] that contains options for a field label.
 class CustomTextField extends StatelessWidget {
@@ -107,7 +106,8 @@ class CustomTextField extends StatelessWidget {
           focusNode: focusNode,
           decoration: InputDecoration(
             filled: true,
-            fillColor: (!enabled) ? Colors.grey[200] : customFillColor ?? white,
+            fillColor:
+                (!enabled) ? Colors.grey[200] : customFillColor ?? Colors.white,
             alignLabelWithHint: alignLabelWithHint(maxLines),
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -116,7 +116,7 @@ class CustomTextField extends StatelessWidget {
             hintStyle: Theme.of(context)
                 .textTheme
                 .headline4!
-                .copyWith(color: hintColor ?? grey, fontSize: 16),
+                .copyWith(color: hintColor ?? Colors.grey, fontSize: 16),
             suffixIcon: suffixIcon,
             suffixIconConstraints:
                 const BoxConstraints(minHeight: 24, minWidth: 24),
@@ -134,7 +134,7 @@ class CustomTextField extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             disabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: borderColor ?? grey),
+              borderSide: BorderSide(color: borderColor ?? Colors.grey),
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             focusedBorder: OutlineInputBorder(
@@ -145,11 +145,11 @@ class CustomTextField extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(5)),
             ),
             errorBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: red),
+              borderSide: BorderSide(color: Colors.red),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
             focusedErrorBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: red),
+              borderSide: BorderSide(color: Colors.red),
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
             focusColor: Theme.of(context).colorScheme.secondary,

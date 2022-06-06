@@ -3,10 +3,8 @@ import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/utils.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_themes/spaces.dart';
 
 /// [CreateNewPINPage] has two [CustomTextField] to create new user PIN
 ///

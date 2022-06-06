@@ -2,7 +2,6 @@ import 'dart:io';
 
 // Package imports:
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/presentation/content/gallery_image_widget.dart';
 import 'package:afya_moja_core/src/presentation/generic_empty_data_widget.dart';
 import 'package:afya_moja_core/src/presentation/video_player/chewie_video_player.dart';
 import 'package:afya_moja_core/src/services/video_player_initializer.dart';

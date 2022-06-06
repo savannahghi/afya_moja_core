@@ -1,10 +1,6 @@
-// Flutter imports:
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
-// Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
-// Project imports:
-import 'package:shared_themes/spaces.dart';
 
 class ReactionItem extends StatelessWidget {
   const ReactionItem({required this.iconUrl, required this.count});
