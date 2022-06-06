@@ -4,8 +4,6 @@ import 'dart:io';
 // Package imports:
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/presentation/audio_player/audio_content.dart';
-import 'package:afya_moja_core/src/presentation/content/gallery_image_widget.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,7 +19,6 @@ void main() {
     });
 
     testWidgets('shows audio content', (WidgetTester tester) async {
-
       final Content mockContent = Content.fromJson(contentMock[1]);
       await tester.pumpWidget(
         MaterialApp(
@@ -70,7 +67,7 @@ void main() {
     testWidgets('shows the play icon if a piece of content has a video',
         (WidgetTester tester) async {
       final Content contentWithVideo = mockVideoContent.copyWith(body: null);
-    String testString = '';
+      String testString = '';
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -79,7 +76,7 @@ void main() {
                 builder: (BuildContext context) {
                   return ContentItem(
                     contentDetails: contentWithVideo,
-                    onTapCallback: () => testString='test',
+                    onTapCallback: () => testString = 'test',
                   );
                 },
               ),

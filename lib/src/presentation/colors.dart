@@ -20,3 +20,4 @@ const Color greenColor = Color(0xFF50C878);
 const Color readTimeBackgroundColor = Color(0xff4c4c4c);
 const Color marigoldNavColor = Color(0xFFF79E25);
 const Color lightGreyBackgroundColor = Color(0xfff6f6f6);
+const Color subtitleGrey = Color(0xFF666666);
