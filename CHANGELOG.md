@@ -1,9 +1,5 @@
 # Changelog
 
-## 0.1.0
-
-- upgrade libraries components
-
 ## 0.0.103
 
 - add demote moderator option to group member item actions

@@ -1,5 +1,8 @@
-import 'package:afya_moja_core/afya_moja_core.dart';
+// Flutter imports:
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
+// Package imports:
+import 'package:shared_themes/colors.dart';
 
 class TextFormHintText extends StatelessWidget {
   const TextFormHintText({
@@ -17,7 +20,7 @@ class TextFormHintText extends StatelessWidget {
         children: <Widget>[
           HintText(hintText: hintText),
           Flexible(
-            child: Text('*', style: heavySize20Text(Colors.redAccent)),
+            child: Text('*', style: heavySize20Text(redAccent)),
           )
         ],
       );

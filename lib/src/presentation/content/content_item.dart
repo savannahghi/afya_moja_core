@@ -1,10 +1,16 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
+import 'package:afya_moja_core/src/presentation/audio_player/audio_content.dart';
+import 'package:afya_moja_core/src/presentation/content/gallery_image_widget.dart';
+import 'package:afya_moja_core/src/presentation/content/leading_graphic_widget.dart';
+import 'package:afya_moja_core/src/presentation/content/reaction_item.dart';
 import 'package:afya_moja_core/src/widget_keys.dart';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_themes/spaces.dart';
 
 /// [ContentItem] Displays the feed
 /// [isNew] renders the new tag

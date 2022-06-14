@@ -1,4 +1,5 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/domain/core/entities/communities/extra_data.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'member.freezed.dart';

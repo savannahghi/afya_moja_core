@@ -1,4 +1,5 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/presentation/login_counter_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

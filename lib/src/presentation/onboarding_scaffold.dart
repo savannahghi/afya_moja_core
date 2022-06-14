@@ -1,7 +1,10 @@
+// Project imports:
 import 'package:afya_moja_core/src/presentation/onboarding_scaffold_header.dart';
 import 'package:afya_moja_core/src/presentation/responsive_widget.dart';
-import 'package:afya_moja_core/src/presentation/spaces.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+// Package imports:
+import 'package:shared_themes/spaces.dart';
 
 /// [OnboardingScaffold] a scaffold used during the onboarding process
 class OnboardingScaffold extends StatelessWidget {

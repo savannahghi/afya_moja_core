@@ -1,7 +1,9 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:afya_moja_core/src/widget_keys.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_themes/spaces.dart';
+
+import '../../../../app_strings.dart';
+import '../../../../widget_keys.dart';
 
 class MemberListActionsDialog extends StatelessWidget {
   const MemberListActionsDialog({

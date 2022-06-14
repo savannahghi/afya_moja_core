@@ -1,6 +1,9 @@
 import 'package:afya_moja_core/afya_moja_core.dart';
-import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_themes/spaces.dart';
+
+import '../../../../app_strings.dart';
+import 'group_member_badge.dart';
 
 class GroupMemberItem extends StatelessWidget {
   const GroupMemberItem({

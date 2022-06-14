@@ -26,7 +26,7 @@ class MyAfyaHubPrimaryButton extends StatelessWidget {
   final double? customElevation;
   final EdgeInsets? customPadding;
   final double? customRadius;
-  final void Function()? onLongPress;
+  final Function? onLongPress;
   final String? text;
   final Color? textColor;
   final TextStyle? textStyle;
@@ -72,14 +72,16 @@ class MyAfyaHubNoBorderButton extends StatelessWidget {
   final Key? buttonKey;
   final Widget? customChild;
   final VoidCallback? onLongPress;
-  final void Function()? onPressed;
+  final Function? onPressed;
   final String? text;
   final Color? textColor;
   @override
   Widget build(BuildContext context) {
     return TextButton(
       key: buttonKey,
-      onPressed: onPressed,
+      onPressed: () {
+        onPressed!();
+      },
       onLongPress: onLongPress,
       child: customChild ??
           Text(

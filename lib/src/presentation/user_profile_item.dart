@@ -1,9 +1,10 @@
 // Project imports:
 // Flutter imports:
-import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_svg/svg.dart';
+
+import '../../afya_moja_core.dart';
 
 /// [UserProfileItem] Displays the user profile item with Icons and
 /// a title

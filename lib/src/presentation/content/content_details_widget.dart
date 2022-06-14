@@ -3,11 +3,13 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_themes/spaces.dart';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:afya_moja_core/src/presentation/content/estimated_read_time_badge_widget.dart';
+import 'package:afya_moja_core/src/presentation/content/gallery_image_widget.dart';
 import 'package:afya_moja_core/src/presentation/generic_empty_data_widget.dart';
 import 'package:afya_moja_core/src/presentation/video_player/chewie_video_player.dart';
 import 'package:afya_moja_core/src/utils.dart';

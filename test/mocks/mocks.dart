@@ -121,6 +121,7 @@ final Map<String, dynamic> mockFeedContent = <String, dynamic>{
   },
 };
 
+
 final Map<String, dynamic> mockGalleryImage = <String, dynamic>{
   'id': 2,
   'image': <String, dynamic>{
@@ -128,6 +129,7 @@ final Map<String, dynamic> mockGalleryImage = <String, dynamic>{
     'meta': <String, String>{'imageDownloadUrl': 'testImage'}
   }
 };
+
 
 final List<Map<String, dynamic>> contentMock = <Map<String, dynamic>>[
   <String, dynamic>{
@@ -530,12 +532,8 @@ class MockVideoPlayerController extends ValueNotifier<VideoPlayerValue>
 
   @override
   void setCaptionOffset(Duration offset) {}
-
-  @override
-  Future<void> setClosedCaptionFile(
-    Future<ClosedCaptionFile>? closedCaptionFile,
-  ) async {}
 }
+
 
 Future<ClosedCaptionFile> _loadClosedCaption() async =>
     _FakeClosedCaptionFile();
@@ -561,7 +559,8 @@ class _FakeClosedCaptionFile extends ClosedCaptionFile {
 }
 
 final Content mockContent = Content.fromJson(contentMock.first);
-final Content mockVideoContent = Content.fromJson(videoContentMock.first);
+final Content mockVideoContent =
+    Content.fromJson(videoContentMock.first);
 
 final Map<String, dynamic> documentContentMock = <String, dynamic>{
   'ID': 16,

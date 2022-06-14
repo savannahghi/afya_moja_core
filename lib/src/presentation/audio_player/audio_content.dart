@@ -6,17 +6,20 @@ import 'package:afya_moja_core/src/domain/core/entities/content/audio_position_d
 import 'package:afya_moja_core/src/domain/core/entities/content/content.dart';
 import 'package:afya_moja_core/src/enums.dart';
 import 'package:afya_moja_core/src/helpers.dart';
-import 'package:afya_moja_core/src/presentation/audio_player/audio_content_controls.dart';
 import 'package:afya_moja_core/src/presentation/audio_player/audio_custom_track_shape.dart';
 import 'package:afya_moja_core/src/presentation/audio_player/audio_hidden_thumb_widget_shape.dart';
 import 'package:afya_moja_core/src/presentation/colors.dart';
 import 'package:afya_moja_core/src/presentation/content/estimated_read_time_badge_widget.dart';
 import 'package:afya_moja_core/src/presentation/content/reaction_item.dart';
-import 'package:afya_moja_core/src/presentation/spaces.dart';
 import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+// Package imports:
 import 'package:just_audio/just_audio.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:shared_themes/spaces.dart';
+
+import 'audio_content_controls.dart';
 
 class AudioContent extends StatefulWidget {
   const AudioContent({
@@ -39,7 +42,7 @@ class _AudioContentState extends State<AudioContent>
   void initState() {
     super.initState();
     _player = widget.audioPlayer ?? AudioPlayer();
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance?.addObserver(this);
     _init();
   }
 
@@ -58,7 +61,7 @@ class _AudioContentState extends State<AudioContent>
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance?.removeObserver(this);
     _player.dispose();
     super.dispose();
   }

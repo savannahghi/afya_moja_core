@@ -6,6 +6,8 @@ import 'package:afya_moja_core/src/presentation/date_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
+// Package imports:
+import 'package:shared_themes/colors.dart';
 
 bool alignLabelWithHint(int? maxLines) => maxLines != null && maxLines > 1;
 
@@ -100,7 +102,7 @@ class ExpandableQuestion extends StatelessWidget {
   final ValueChanged<String?> onChanged;
   final ValueChanged<String>? onFieldSubmit;
   final FormFieldSetter<String>? onSaved;
-  final void Function()? onTap;
+  final Function? onTap;
   final Widget? prefixIcon;
   final String question;
   final Widget? suffixIcon;
@@ -112,18 +114,16 @@ class ExpandableQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
-        color: Colors.white,
-      ),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(5.0), color: white),
       child: InputDecorator(
         decoration: InputDecoration(
-          fillColor: Colors.white,
+          fillColor: white,
           focusColor: Colors.grey[200],
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: color ?? Colors.white),
+            borderSide: BorderSide(color: color ?? white),
             borderRadius: const BorderRadius.all(Radius.circular(5)),
           ),
           focusedBorder: const OutlineInputBorder(
@@ -137,19 +137,19 @@ class ExpandableQuestion extends StatelessWidget {
         child: Theme(
           data: ThemeData().copyWith(
             dividerColor: Colors.transparent,
-            unselectedWidgetColor: Colors.black,
+            unselectedWidgetColor: black,
             colorScheme:
                 Theme.of(context).colorScheme.copyWith(secondary: Colors.black),
           ),
           child: Column(
             children: <Widget>[
               ExpansionTile(
-                iconColor: Colors.black,
+                iconColor: black,
                 title: Text(
                   question,
                   style: questionTextStyle ??
                       const TextStyle(
-                        color: Colors.black,
+                        color: black,
                         fontSize: 14.0,
                         fontWeight: FontWeight.normal,
                       ),
@@ -197,7 +197,7 @@ class ExpandableQuestion extends StatelessWidget {
                             hintText: hintText,
                             hintStyle:
                                 Theme.of(context).textTheme.headline4!.copyWith(
-                                      color: hintColor ?? Colors.grey,
+                                      color: hintColor ?? grey,
                                       fontSize: 16,
                                     ),
                             suffix: suffixIcon,
@@ -205,7 +205,7 @@ class ExpandableQuestion extends StatelessWidget {
                             labelStyle: Theme.of(context)
                                 .textTheme
                                 .headline6!
-                                .copyWith(color: Colors.grey, fontSize: 16),
+                                .copyWith(color: grey, fontSize: 16),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: customFillColor ??
@@ -229,32 +229,32 @@ class ExpandableQuestion extends StatelessWidget {
                               ),
                             ),
                             errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(color: red),
                               borderRadius: BorderRadius.all(
                                 Radius.circular(isSearchField == true ? 1 : 5),
                               ),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
+                              borderSide: const BorderSide(color: red),
                               borderRadius: BorderRadius.all(
                                 Radius.circular(isSearchField == true ? 1 : 5),
                               ),
                             ),
-                            focusColor: Colors.black,
+                            focusColor: black,
                           ),
-                      cursorColor: Colors.black,
+                      cursorColor: black,
                       autofocus: autoFocus ?? false,
                       style: responseTextStyle ??
                           Theme.of(context)
                               .textTheme
                               .headline6!
-                              .copyWith(color: Colors.black, fontSize: 14),
+                              .copyWith(color: black, fontSize: 14),
                       onFieldSubmitted: onFieldSubmit,
                       textInputAction: textInputAction ?? TextInputAction.done,
                       textAlignVertical: TextAlignVertical.center,
                       onChanged: onChanged,
                       onSaved: onSaved,
-                      onTap: onTap,
+                      onTap: onTap != null ? () => onTap!() : null,
                       controller: controller,
                       focusNode: focusNode,
                       obscureText: obscureText ?? false,
@@ -299,8 +299,8 @@ class VerifyOTPInput extends StatelessWidget {
   final FocusNode? focusNode;
   final TextInputType keyboardType;
   final int? maxLength;
-  final void Function(String)? onDone;
-  final Function(String)? onTextChanged;
+  final Function onDone;
+  final Function? onTextChanged;
   final double? pinBoxHeight;
   final double? pinBoxWidth;
   final WrapAlignment? wrapAlignment;
@@ -333,8 +333,11 @@ class VerifyOTPInput extends StatelessWidget {
       highlightAnimationBeginColor: Colors.black,
       highlightAnimationEndColor: Colors.white12,
       keyboardType: keyboardType,
-      onDone: onDone,
-      onTextChanged: onTextChanged,
+      onDone: (String val) {
+        onDone(val);
+      },
+      onTextChanged: (String val) =>
+          (onTextChanged == null) ? <dynamic>{} : onTextChanged!(val),
     );
   }
 }
@@ -374,7 +377,7 @@ class EditInformationDropDown extends StatelessWidget {
     return InputDecorator(
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white,
+        fillColor: white,
         contentPadding: const EdgeInsets.symmetric(
           vertical: 15,
           horizontal: 15,
@@ -391,7 +394,7 @@ class EditInformationDropDown extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
         disabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: grey),
           borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
         focusedBorder: OutlineInputBorder(
@@ -407,8 +410,8 @@ class EditInformationDropDown extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .headline4!
-              .copyWith(color: Colors.grey, fontSize: 16),
-          dropdownColor: Colors.white,
+              .copyWith(color: grey, fontSize: 16),
+          dropdownColor: white,
           value: value,
           items: items.map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
@@ -451,8 +454,8 @@ class PINInputField extends StatelessWidget {
   final FocusNode? focusNode;
   final TextInputType keyboardType;
   final int? maxLength;
-  final void Function(String)? onDone;
-  final Function(String)? onTextChanged;
+  final Function onDone;
+  final Function? onTextChanged;
   final double? pinBoxHeight;
   final double? pinBoxWidth;
   final WrapAlignment? wrapAlignment;
@@ -484,8 +487,11 @@ class PINInputField extends StatelessWidget {
       highlightAnimationBeginColor: Colors.black,
       highlightAnimationEndColor: Colors.white12,
       keyboardType: keyboardType,
-      onDone: onDone,
-      onTextChanged: onTextChanged,
+      onDone: (String val) {
+        onDone(val);
+      },
+      onTextChanged: (String val) =>
+          (onTextChanged == null) ? <dynamic>{} : onTextChanged!(val),
     );
   }
 }

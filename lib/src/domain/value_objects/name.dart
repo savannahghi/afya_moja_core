@@ -1,9 +1,10 @@
-import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/domain/value_objects/value_object.dart';
 import 'package:afya_moja_core/src/failures/value_object_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../../afya_moja_core.dart';
 
 part 'name.g.dart';
 
