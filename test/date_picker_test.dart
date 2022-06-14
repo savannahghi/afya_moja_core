@@ -155,6 +155,52 @@ void main() {
       debugDefaultTargetPlatformOverride = null;
     });
 
+    testWidgets('should render date picker with minimumTime',
+        (WidgetTester tester) async {
+      final TextEditingController controller = TextEditingController();
+      const Key key = Key('datePickerKey');
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Builder(
+            builder: (BuildContext context) {
+              return Material(
+                child: DatePickerField(
+                  controller: controller,
+                  gestureDateKey: key,
+                  initialAllowedDate: DateTime.now().subtract(const Duration(days: 2)),
+                  onChanged: (dynamic val) {
+                    controller.text;
+                  },
+                ),
+              );
+            },
+          ),
+        ),
+      );
+      expect(find.byKey(key), findsOneWidget);
+      await tester.tap(find.byKey(key));
+      await tester.pumpAndSettle();
+
+      expect(find.text(thisYear.toString()), findsOneWidget);
+
+      await tester.tap(find.text(thisYear.toString()));
+      await tester.pumpAndSettle();
+
+      expect(find.text(currentDay.toString()), findsOneWidget);
+      await tester.tap(find.text(currentDay.toString()));
+
+      expect(find.text('OK'), findsOneWidget);
+      await tester.tap(find.text('OK'));
+      await tester.pumpAndSettle();
+
+      expect(
+        controller.text,
+        DateFormat(datePickerFormat)
+            .format(DateTime(thisYear, currentMonth, currentDay)),
+      );
+    });
+
     testWidgets('should render android date picker with allowed Future years',
         (WidgetTester tester) async {
       final TextEditingController controller = TextEditingController();
