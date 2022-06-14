@@ -24,6 +24,26 @@ void main() {
       box = veryLargeHorizontalSizedBox;
       expect(box.height, isNull);
       expect(box.width, 50);
+
+      box = extremelySmallVerticalSizedBox;
+      expect(box.height, 2);
+      expect(box.width, isNull);
+
+      box = extremelyLargeVerticalSizedBox;
+      expect(box.height, 60);
+      expect(box.width, isNull);
+
+      box = size100VerticalSizedBox;
+      expect(box.height, 100);
+      expect(box.width, isNull);
+
+      box = size70VerticalSizedBox;
+      expect(box.height, 70);
+      expect(box.width, isNull);
+      
+      box = size120VerticalSizedBox;
+      expect(box.height, 120);
+      expect(box.width, isNull);
     });
   });
 }

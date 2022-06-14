@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- revert library upgrades
+
 ## 0.1.0
 
 - upgrade libraries components

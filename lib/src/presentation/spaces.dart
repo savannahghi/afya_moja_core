@@ -15,3 +15,10 @@ SizedBox size15HorizontalSizedBox = const SizedBox(width: 15);
 SizedBox mediumHorizontalSizedBox = const SizedBox(width: 20);
 SizedBox largeHorizontalSizedBox = const SizedBox(width: 30);
 SizedBox veryLargeHorizontalSizedBox = const SizedBox(width: 50);
+
+/// vertical sized boxes
+SizedBox extremelySmallVerticalSizedBox = const SizedBox(height: 2);
+SizedBox extremelyLargeVerticalSizedBox = const SizedBox(height: 60);
+SizedBox size100VerticalSizedBox = const SizedBox(height: 100);
+SizedBox size70VerticalSizedBox = const SizedBox(height: 70);
+SizedBox size120VerticalSizedBox = const SizedBox(height: 120);

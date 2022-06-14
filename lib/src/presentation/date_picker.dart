@@ -27,6 +27,9 @@ class DatePickerField extends StatelessWidget {
   ///   controller: controller,
   /// )
   /// ```
+  ///
+  /// [initialAllowedDate] is the initial valid date time of the date picker. If provided any date before
+  /// [initialAllowedDate] cannot be selected.
   const DatePickerField({
     required this.controller,
     this.onChanged,
@@ -45,6 +48,7 @@ class DatePickerField extends StatelessWidget {
     this.customEligibleYear,
     this.decoration,
     this.style,
+    this.initialAllowedDate,
   });
 
   final bool allowCurrentYear;
@@ -62,6 +66,7 @@ class DatePickerField extends StatelessWidget {
   final Key? textFieldDateKey;
   final FormFieldValidator<String>? validator;
   final DateTime? customEligibleYear;
+  final DateTime? initialAllowedDate;
   final InputDecoration? decoration;
   final TextStyle? style;
 
@@ -91,14 +96,16 @@ class DatePickerField extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).copyWith().size.height / 3,
             child: CupertinoDatePicker(
-              initialDateTime: allowCurrentYear
-                  ? DateTime(currentYear, currentMonth, currentDay)
-                  : eligibleYear,
               onDateTimeChanged: (DateTime newDate) {
                 selectedDate = newDate;
               },
-              minimumDate: DateTime(oldestYear, currentMonth, currentDay),
-              minimumYear: oldestYear,
+              initialDateTime: initialAllowedDate ??
+                  (allowCurrentYear
+                      ? DateTime(currentYear, currentMonth, currentDay)
+                      : eligibleYear),
+              minimumDate: initialAllowedDate?.subtract(const Duration(days: 1)) ??
+                  DateTime(oldestYear, currentMonth, currentDay),
+              minimumYear: initialAllowedDate?.year ?? oldestYear,
               maximumDate: getLastDate(),
               maximumYear: getLastDate().year,
               mode: CupertinoDatePickerMode.date,
@@ -110,10 +117,12 @@ class DatePickerField extends StatelessWidget {
       selectedDate = await showDatePicker(
         context: context,
         initialDatePickerMode: DatePickerMode.year,
-        initialDate: allowCurrentYear
-            ? DateTime(currentYear, currentMonth, currentDay)
-            : eligibleYear,
-        firstDate: DateTime(oldestYear),
+        initialDate: initialAllowedDate != null
+            ? initialAllowedDate!.add(const Duration(days: 1))
+            : allowCurrentYear
+                ? DateTime(currentYear, currentMonth, currentDay)
+                : eligibleYear,
+        firstDate: initialAllowedDate ?? DateTime(oldestYear),
         lastDate: getLastDate(),
         builder: (BuildContext? context, Widget? child) {
           return Padding(
