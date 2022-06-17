@@ -21,12 +21,16 @@ const String tooManyAttemptsIconSvgPath =
 const String saveIconUrl = 'packages/afya_moja_core/assets/save.svg';
 const String shareIconUrl = 'packages/afya_moja_core/assets/share.svg';
 const String heartIconUrl = 'packages/afya_moja_core/assets/heart.svg';
-const String placeholderImageUrl = 'packages/afya_moja_core/assets/placeholder_image.svg';
+const String placeholderImageUrl =
+    'packages/afya_moja_core/assets/placeholder_image.svg';
 const String contentImagePlaceHolderSvgPath =
     'packages/afya_moja_core/assets/content_image_placeholder.png';
-const String contentIconSvgPath = 'packages/afya_moja_core/assets/content_icon.svg';
-const String playIcon = 'packages/afya_moja_core/assets/playIcon.svg'; //pdf icon
+const String contentIconSvgPath =
+    'packages/afya_moja_core/assets/content_icon.svg';
+const String playIcon =
+    'packages/afya_moja_core/assets/playIcon.svg'; //pdf icon
 const String pdfIconSvg = 'packages/afya_moja_core/assets/pdf_icon.svg';
-const String profileImage = 'packages/afya_moja_core/assets/profile_image.png';
-const String whiteCloseIconSvgPath = 'packages/afya_moja_core/assets/white_close_icon.svg';
-const String emptyStateCover = 'packages/afya_moja_core/assets/no_content_image.svg';
+const String whiteCloseIconSvgPath =
+    'packages/afya_moja_core/assets/white_close_icon.svg';
+const String emptyStateCover =
+    'packages/afya_moja_core/assets/no_content_image.svg';
