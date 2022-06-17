@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -245,19 +244,20 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
                         Row(
                           children: <Widget>[
                             Container(
-                              width: 40,
-                              height: 40,
+                              height: 38,
+                              width: 38,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  // TODO(eugene): revert when backend is ready
-                                  // image: articleDetails.authorAvatar == null
-                                  //     ? const AssetImage(profileImage)
-                                  //     : NetworkImage(
-                                  //         articleDetails.authorAvatar!,
-                                  //       ) as ImageProvider,
-                                  image: AssetImage(profileImage),
+                                color: galleryColor,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  (widget.payload.content.authorName ??
+                                          UNKNOWN)[0]
+                                      .toUpperCase(),
+                                  style: boldSize14Text(
+                                    Theme.of(context).primaryColor,
+                                  ),
                                 ),
                               ),
                             ),

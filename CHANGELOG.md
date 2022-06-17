@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+
+- chore: change content avatar image
 ## 0.1.1
 
 - revert library upgrades
