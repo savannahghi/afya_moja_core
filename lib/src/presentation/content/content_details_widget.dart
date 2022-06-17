@@ -180,6 +180,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
             FeaturedMediaType.video;
 
     final List<Widget> galleryItems = getGalleryItems(context: context);
+    final TargetPlatform _platform = Theme.of(context).platform;
 
     return Scaffold(
       backgroundColor: lightGreyBackgroundColor,
@@ -330,21 +331,23 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
             ],
           ),
           Positioned(
-            top: widget.payload.content.contentType == ContentType.AUDIO_VIDEO
-                ? 75
-                : 30,
+            top:
+                widget.payload.content.contentType == ContentType.AUDIO_VIDEO &&
+                        _platform == TargetPlatform.iOS
+                    ? 75
+                    : 30,
             left: -6,
             child: Container(
               margin: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
+              child: TextButton(
                 key: cancelButtonKey,
                 onPressed: () => widget.onCloseCallback?.call(),
                 style: ElevatedButton.styleFrom(
-                  primary: readTimeBackgroundColor.withOpacity(0.5),
+                  primary: readTimeBackgroundColor.withOpacity(0.8),
                   shape: const CircleBorder(),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: SvgPicture.asset(
                     whiteCloseIconSvgPath,
                     color: Colors.white,
