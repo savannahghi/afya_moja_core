@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.1.3
+
+- fix: cancel button size and position on content details page
+
 ## 0.1.2
 
 - chore: change content avatar image
+
 ## 0.1.1
 
 - revert library upgrades
