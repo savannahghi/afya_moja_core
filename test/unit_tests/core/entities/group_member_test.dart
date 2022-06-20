@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/src/domain/core/entities/communities/group_member.dart';
+import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,7 +11,10 @@ void main() {
             'username': 'kim',
             'role': 'user',
             'gender': 'male',
-            'extraData': <String, dynamic>{'bannedInCommunity': false}
+            'extraData': <String, dynamic>{
+              'banned': false,
+              'userType': 'CLIENT',
+            }
           },
           'isModerator': true
         },
@@ -24,6 +27,10 @@ void main() {
       expect(memberFromJson.memberDetails?.username, 'kim');
       expect(memberFromJson.memberDetails?.role, 'user');
       expect(memberFromJson.memberDetails?.extraData?.isBanned, false);
+      expect(
+        memberFromJson.memberDetails?.extraData?.userType,
+        UserType.CLIENT,
+      );
       expect(memberFromJson.isModerator, true);
     });
   });

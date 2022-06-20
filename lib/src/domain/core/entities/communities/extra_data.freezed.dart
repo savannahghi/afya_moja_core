@@ -22,9 +22,12 @@ ExtraData _$ExtraDataFromJson(Map<String, dynamic> json) {
 class _$ExtraDataTearOff {
   const _$ExtraDataTearOff();
 
-  _ExtraData call({@JsonKey(name: 'bannedInCommunity') bool? isBanned}) {
+  _ExtraData call(
+      {@JsonKey(name: 'banned') bool? isBanned,
+      @JsonKey(name: 'userType') UserType? userType = UserType.UNKNOWN}) {
     return _ExtraData(
       isBanned: isBanned,
+      userType: userType,
     );
   }
 
@@ -38,8 +41,10 @@ const $ExtraData = _$ExtraDataTearOff();
 
 /// @nodoc
 mixin _$ExtraData {
-  @JsonKey(name: 'bannedInCommunity')
+  @JsonKey(name: 'banned')
   bool? get isBanned => throw _privateConstructorUsedError;
+  @JsonKey(name: 'userType')
+  UserType? get userType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +56,9 @@ mixin _$ExtraData {
 abstract class $ExtraDataCopyWith<$Res> {
   factory $ExtraDataCopyWith(ExtraData value, $Res Function(ExtraData) then) =
       _$ExtraDataCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'bannedInCommunity') bool? isBanned});
+  $Res call(
+      {@JsonKey(name: 'banned') bool? isBanned,
+      @JsonKey(name: 'userType') UserType? userType});
 }
 
 /// @nodoc
@@ -65,12 +72,17 @@ class _$ExtraDataCopyWithImpl<$Res> implements $ExtraDataCopyWith<$Res> {
   @override
   $Res call({
     Object? isBanned = freezed,
+    Object? userType = freezed,
   }) {
     return _then(_value.copyWith(
       isBanned: isBanned == freezed
           ? _value.isBanned
           : isBanned // ignore: cast_nullable_to_non_nullable
               as bool?,
+      userType: userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType?,
     ));
   }
 }
@@ -81,7 +93,9 @@ abstract class _$ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Res> {
           _ExtraData value, $Res Function(_ExtraData) then) =
       __$ExtraDataCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'bannedInCommunity') bool? isBanned});
+  $Res call(
+      {@JsonKey(name: 'banned') bool? isBanned,
+      @JsonKey(name: 'userType') UserType? userType});
 }
 
 /// @nodoc
@@ -96,12 +110,17 @@ class __$ExtraDataCopyWithImpl<$Res> extends _$ExtraDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isBanned = freezed,
+    Object? userType = freezed,
   }) {
     return _then(_ExtraData(
       isBanned: isBanned == freezed
           ? _value.isBanned
           : isBanned // ignore: cast_nullable_to_non_nullable
               as bool?,
+      userType: userType == freezed
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType?,
     ));
   }
 }
@@ -109,18 +128,23 @@ class __$ExtraDataCopyWithImpl<$Res> extends _$ExtraDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ExtraData implements _ExtraData {
-  _$_ExtraData({@JsonKey(name: 'bannedInCommunity') this.isBanned});
+  _$_ExtraData(
+      {@JsonKey(name: 'banned') this.isBanned,
+      @JsonKey(name: 'userType') this.userType = UserType.UNKNOWN});
 
   factory _$_ExtraData.fromJson(Map<String, dynamic> json) =>
       _$$_ExtraDataFromJson(json);
 
   @override
-  @JsonKey(name: 'bannedInCommunity')
+  @JsonKey(name: 'banned')
   final bool? isBanned;
+  @override
+  @JsonKey(name: 'userType')
+  final UserType? userType;
 
   @override
   String toString() {
-    return 'ExtraData(isBanned: $isBanned)';
+    return 'ExtraData(isBanned: $isBanned, userType: $userType)';
   }
 
   @override
@@ -128,12 +152,15 @@ class _$_ExtraData implements _ExtraData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ExtraData &&
-            const DeepCollectionEquality().equals(other.isBanned, isBanned));
+            const DeepCollectionEquality().equals(other.isBanned, isBanned) &&
+            const DeepCollectionEquality().equals(other.userType, userType));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isBanned));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(isBanned),
+      const DeepCollectionEquality().hash(userType));
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +174,19 @@ class _$_ExtraData implements _ExtraData {
 }
 
 abstract class _ExtraData implements ExtraData {
-  factory _ExtraData({@JsonKey(name: 'bannedInCommunity') bool? isBanned}) =
-      _$_ExtraData;
+  factory _ExtraData(
+      {@JsonKey(name: 'banned') bool? isBanned,
+      @JsonKey(name: 'userType') UserType? userType}) = _$_ExtraData;
 
   factory _ExtraData.fromJson(Map<String, dynamic> json) =
       _$_ExtraData.fromJson;
 
   @override
-  @JsonKey(name: 'bannedInCommunity')
+  @JsonKey(name: 'banned')
   bool? get isBanned;
+  @override
+  @JsonKey(name: 'userType')
+  UserType? get userType;
   @override
   @JsonKey(ignore: true)
   _$ExtraDataCopyWith<_ExtraData> get copyWith =>

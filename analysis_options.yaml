@@ -15,6 +15,7 @@ analyzer:
     - "bin/cache/**"
     - "lib/**/*.g.dart"
     - "lib/**/*.freezed.dart"
+    - "test/**/*.mocks.dart"
     - "pubspec.yaml"
 
 linter:
