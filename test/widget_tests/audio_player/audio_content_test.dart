@@ -9,7 +9,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import '../../mocks/mocks.dart';
-import './audio_content_test.mocks.dart';
+import 'audio_content_test.mocks.dart';
 
 @GenerateMocks(<Type>[AudioPlayer])
 void main() {

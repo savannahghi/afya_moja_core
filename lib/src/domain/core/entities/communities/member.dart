@@ -11,7 +11,6 @@ class Member with _$Member {
     @JsonKey(name: 'userID') String? userID,
     @JsonKey(name: 'role') String? role,
     @JsonKey(name: 'username') String? username,
-    @JsonKey(name: 'userType') String? userType,
     @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
         Gender? gender,
     @JsonKey(name: 'extraData') ExtraData? extraData,
@@ -23,7 +22,6 @@ class Member with _$Member {
         id: UNKNOWN,
         userID: UNKNOWN,
         role: UNKNOWN,
-        userType: UNKNOWN,
         username: UNKNOWN,
         gender: Gender.unknown,
         extraData: ExtraData.initial(),

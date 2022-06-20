@@ -11,7 +11,6 @@ _$_Member _$$_MemberFromJson(Map<String, dynamic> json) => _$_Member(
       userID: json['userID'] as String?,
       role: json['role'] as String?,
       username: json['username'] as String?,
-      userType: json['userType'] as String?,
       gender: genderFromJson(json['gender'] as String?),
       extraData: json['extraData'] == null
           ? null
@@ -23,7 +22,6 @@ Map<String, dynamic> _$$_MemberToJson(_$_Member instance) => <String, dynamic>{
       'userID': instance.userID,
       'role': instance.role,
       'username': instance.username,
-      'userType': instance.userType,
       'gender': genderToJson(instance.gender),
       'extraData': instance.extraData,
     };

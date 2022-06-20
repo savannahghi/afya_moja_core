@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- chore: update group member entity class
+
 ## 0.1.3
 
 - fix: cancel button size and position on content details page

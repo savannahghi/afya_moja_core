@@ -24,12 +24,10 @@ class _$GroupMemberTearOff {
 
   _GroupMember call(
       {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator = false,
-      @JsonKey(name: 'userType') UserType? userType = UserType.UNKNOWN}) {
+      @JsonKey(name: 'isModerator') bool isModerator = false}) {
     return _GroupMember(
       memberDetails: memberDetails,
       isModerator: isModerator,
-      userType: userType,
     );
   }
 
@@ -47,8 +45,6 @@ mixin _$GroupMember {
   Member? get memberDetails => throw _privateConstructorUsedError;
   @JsonKey(name: 'isModerator')
   bool get isModerator => throw _privateConstructorUsedError;
-  @JsonKey(name: 'userType')
-  UserType? get userType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -63,8 +59,7 @@ abstract class $GroupMemberCopyWith<$Res> {
       _$GroupMemberCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator,
-      @JsonKey(name: 'userType') UserType? userType});
+      @JsonKey(name: 'isModerator') bool isModerator});
 
   $MemberCopyWith<$Res>? get memberDetails;
 }
@@ -81,7 +76,6 @@ class _$GroupMemberCopyWithImpl<$Res> implements $GroupMemberCopyWith<$Res> {
   $Res call({
     Object? memberDetails = freezed,
     Object? isModerator = freezed,
-    Object? userType = freezed,
   }) {
     return _then(_value.copyWith(
       memberDetails: memberDetails == freezed
@@ -92,10 +86,6 @@ class _$GroupMemberCopyWithImpl<$Res> implements $GroupMemberCopyWith<$Res> {
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
               as bool,
-      userType: userType == freezed
-          ? _value.userType
-          : userType // ignore: cast_nullable_to_non_nullable
-              as UserType?,
     ));
   }
 
@@ -120,8 +110,7 @@ abstract class _$GroupMemberCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator,
-      @JsonKey(name: 'userType') UserType? userType});
+      @JsonKey(name: 'isModerator') bool isModerator});
 
   @override
   $MemberCopyWith<$Res>? get memberDetails;
@@ -141,7 +130,6 @@ class __$GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
   $Res call({
     Object? memberDetails = freezed,
     Object? isModerator = freezed,
-    Object? userType = freezed,
   }) {
     return _then(_GroupMember(
       memberDetails: memberDetails == freezed
@@ -152,10 +140,6 @@ class __$GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
               as bool,
-      userType: userType == freezed
-          ? _value.userType
-          : userType // ignore: cast_nullable_to_non_nullable
-              as UserType?,
     ));
   }
 }
@@ -165,8 +149,7 @@ class __$GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
 class _$_GroupMember implements _GroupMember {
   _$_GroupMember(
       {@JsonKey(name: 'user') this.memberDetails,
-      @JsonKey(name: 'isModerator') this.isModerator = false,
-      @JsonKey(name: 'userType') this.userType = UserType.UNKNOWN});
+      @JsonKey(name: 'isModerator') this.isModerator = false});
 
   factory _$_GroupMember.fromJson(Map<String, dynamic> json) =>
       _$$_GroupMemberFromJson(json);
@@ -177,13 +160,10 @@ class _$_GroupMember implements _GroupMember {
   @override
   @JsonKey(name: 'isModerator')
   final bool isModerator;
-  @override
-  @JsonKey(name: 'userType')
-  final UserType? userType;
 
   @override
   String toString() {
-    return 'GroupMember(memberDetails: $memberDetails, isModerator: $isModerator, userType: $userType)';
+    return 'GroupMember(memberDetails: $memberDetails, isModerator: $isModerator)';
   }
 
   @override
@@ -194,16 +174,14 @@ class _$_GroupMember implements _GroupMember {
             const DeepCollectionEquality()
                 .equals(other.memberDetails, memberDetails) &&
             const DeepCollectionEquality()
-                .equals(other.isModerator, isModerator) &&
-            const DeepCollectionEquality().equals(other.userType, userType));
+                .equals(other.isModerator, isModerator));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(memberDetails),
-      const DeepCollectionEquality().hash(isModerator),
-      const DeepCollectionEquality().hash(userType));
+      const DeepCollectionEquality().hash(isModerator));
 
   @JsonKey(ignore: true)
   @override
@@ -219,8 +197,7 @@ class _$_GroupMember implements _GroupMember {
 abstract class _GroupMember implements GroupMember {
   factory _GroupMember(
       {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator,
-      @JsonKey(name: 'userType') UserType? userType}) = _$_GroupMember;
+      @JsonKey(name: 'isModerator') bool isModerator}) = _$_GroupMember;
 
   factory _GroupMember.fromJson(Map<String, dynamic> json) =
       _$_GroupMember.fromJson;
@@ -231,9 +208,6 @@ abstract class _GroupMember implements GroupMember {
   @override
   @JsonKey(name: 'isModerator')
   bool get isModerator;
-  @override
-  @JsonKey(name: 'userType')
-  UserType? get userType;
   @override
   @JsonKey(ignore: true)
   _$GroupMemberCopyWith<_GroupMember> get copyWith =>
