@@ -14,11 +14,12 @@ void main() {
                 onTap: () => showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return const MemberListActionsDialog(
+                    return MemberListActionsDialog(
                       memberID: '',
                       communityId: '',
                       memberName: '',
                       communityName: '',
+                      onPromoteTapped: () {},
                     );
                   },
                 ),
@@ -32,7 +33,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(Dialog), findsOneWidget);
-      expect(find.byType(MyAfyaHubPrimaryButton), findsNWidgets(3));
+      expect(find.byType(MyAfyaHubPrimaryButton), findsNWidgets(2));
 
       expect(find.byKey(promoteButtonKey), findsOneWidget);
       expect(find.byKey(banButtonKey), findsOneWidget);

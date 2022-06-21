@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- feat: promote action is optional
+
 ## 0.1.4
 
 - chore: update group member entity class
