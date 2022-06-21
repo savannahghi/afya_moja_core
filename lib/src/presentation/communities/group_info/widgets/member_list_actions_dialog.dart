@@ -41,14 +41,23 @@ class MemberListActionsDialog extends StatelessWidget {
     if (isPromoting) {
       promotionButton = const PlatformLoader();
     } else {
-      promotionButton = MyAfyaHubPrimaryButton(
+      promotionButton = OutlinedButton(
         onPressed: onPromoteTapped,
-        buttonKey: promoteButtonKey,
-        text: isModerator ? demoteUserText : promoteToModeratorText,
-        buttonColor: Theme.of(context).primaryColor.withOpacity(0.2),
-        textColor: blackColor,
-        borderColor: Theme.of(context).primaryColor.withOpacity(0.3),
-        textStyle: normalSize14Text(),
+        key: promoteButtonKey,
+        style: OutlinedButton.styleFrom(
+          primary: Theme.of(context).primaryColor.withOpacity(0.2),
+          backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            side: BorderSide(
+              color: Theme.of(context).primaryColor.withOpacity(0.3),
+            ),
+          ),
+        ),
+        child: Text(
+          isModerator ? demoteUserText : promoteToModeratorText,
+          style: const TextStyle(color: blackColor, fontSize: 14),
+        ),
       );
     }
 
@@ -96,11 +105,12 @@ class MemberListActionsDialog extends StatelessWidget {
               style: boldSize20Text(blackColor),
             ),
             smallVerticalSizedBox,
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: promotionButton,
-            ),
+            if (onPromoteTapped != null)
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: promotionButton,
+              ),
             smallVerticalSizedBox,
             SizedBox(
               width: double.infinity,
