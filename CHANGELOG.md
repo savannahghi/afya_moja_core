@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7
+
+- feat: update code generation
+
 ## 0.1.6
 
 - feat: update notification types enum

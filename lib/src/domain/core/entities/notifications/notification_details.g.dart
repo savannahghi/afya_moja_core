@@ -39,5 +39,10 @@ const _$NotificationTypeEnumMap = {
   NotificationType.APPOINTMENT: 'APPOINTMENT',
   NotificationType.SERVICE_REQUEST: 'SERVICE_REQUEST',
   NotificationType.COMMUNITIES: 'COMMUNITIES',
+  NotificationType.SURVEYS: 'SURVEYS',
+  NotificationType.ROLE_ASSIGNMENT: 'ROLE_ASSIGNMENT',
+  NotificationType.ROLE_REVOCATION: 'ROLE_REVOCATION',
+  NotificationType.DEMOTE_MODERATOR: 'DEMOTE_MODERATOR',
+  NotificationType.PROMOTE_TO_MODERATOR: 'PROMOTE_TO_MODERATOR',
   NotificationType.UNKNOWN: 'UNKNOWN',
 };
