@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6
+
+- feat: update notification types enum
+
 ## 0.1.5
 
 - feat: promote action is optional
