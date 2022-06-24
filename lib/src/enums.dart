@@ -46,7 +46,17 @@ extension GenderEx on Gender {
   }
 }
 
-enum NotificationType { APPOINTMENT, SERVICE_REQUEST, COMMUNITIES, UNKNOWN }
+enum NotificationType {
+  APPOINTMENT,
+  SERVICE_REQUEST,
+  COMMUNITIES,
+  SURVEYS,
+  ROLE_ASSIGNMENT,
+  ROLE_REVOCATION,
+  DEMOTE_MODERATOR,
+  PROMOTE_TO_MODERATOR,
+  UNKNOWN
+}
 
 extension RoleName on RoleValue {
   String get name {
