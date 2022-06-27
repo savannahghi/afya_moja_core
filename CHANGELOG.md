@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.9
+
+- chore: upgrade flutter and dart versions
+
 ## 0.1.8
 
 - fix: CCC number validator
