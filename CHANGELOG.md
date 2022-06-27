@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8
+
+- fix: CCC number validator
+
 ## 0.1.7
 
 - feat: update code generation
