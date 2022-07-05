@@ -12,32 +12,11 @@ part of 'extra_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ExtraData _$ExtraDataFromJson(Map<String, dynamic> json) {
   return _ExtraData.fromJson(json);
 }
-
-/// @nodoc
-class _$ExtraDataTearOff {
-  const _$ExtraDataTearOff();
-
-  _ExtraData call(
-      {@JsonKey(name: 'banned') bool? isBanned,
-      @JsonKey(name: 'userType') UserType? userType = UserType.UNKNOWN}) {
-    return _ExtraData(
-      isBanned: isBanned,
-      userType: userType,
-    );
-  }
-
-  ExtraData fromJson(Map<String, Object?> json) {
-    return ExtraData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ExtraData = _$ExtraDataTearOff();
 
 /// @nodoc
 mixin _$ExtraData {
@@ -88,10 +67,10 @@ class _$ExtraDataCopyWithImpl<$Res> implements $ExtraDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Res> {
-  factory _$ExtraDataCopyWith(
-          _ExtraData value, $Res Function(_ExtraData) then) =
-      __$ExtraDataCopyWithImpl<$Res>;
+abstract class _$$_ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Res> {
+  factory _$$_ExtraDataCopyWith(
+          _$_ExtraData value, $Res Function(_$_ExtraData) then) =
+      __$$_ExtraDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'banned') bool? isBanned,
@@ -99,20 +78,21 @@ abstract class _$ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExtraDataCopyWithImpl<$Res> extends _$ExtraDataCopyWithImpl<$Res>
-    implements _$ExtraDataCopyWith<$Res> {
-  __$ExtraDataCopyWithImpl(_ExtraData _value, $Res Function(_ExtraData) _then)
-      : super(_value, (v) => _then(v as _ExtraData));
+class __$$_ExtraDataCopyWithImpl<$Res> extends _$ExtraDataCopyWithImpl<$Res>
+    implements _$$_ExtraDataCopyWith<$Res> {
+  __$$_ExtraDataCopyWithImpl(
+      _$_ExtraData _value, $Res Function(_$_ExtraData) _then)
+      : super(_value, (v) => _then(v as _$_ExtraData));
 
   @override
-  _ExtraData get _value => super._value as _ExtraData;
+  _$_ExtraData get _value => super._value as _$_ExtraData;
 
   @override
   $Res call({
     Object? isBanned = freezed,
     Object? userType = freezed,
   }) {
-    return _then(_ExtraData(
+    return _then(_$_ExtraData(
       isBanned: isBanned == freezed
           ? _value.isBanned
           : isBanned // ignore: cast_nullable_to_non_nullable
@@ -151,11 +131,12 @@ class _$_ExtraData implements _ExtraData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ExtraData &&
+            other is _$_ExtraData &&
             const DeepCollectionEquality().equals(other.isBanned, isBanned) &&
             const DeepCollectionEquality().equals(other.userType, userType));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -164,8 +145,8 @@ class _$_ExtraData implements _ExtraData {
 
   @JsonKey(ignore: true)
   @override
-  _$ExtraDataCopyWith<_ExtraData> get copyWith =>
-      __$ExtraDataCopyWithImpl<_ExtraData>(this, _$identity);
+  _$$_ExtraDataCopyWith<_$_ExtraData> get copyWith =>
+      __$$_ExtraDataCopyWithImpl<_$_ExtraData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -175,20 +156,20 @@ class _$_ExtraData implements _ExtraData {
 
 abstract class _ExtraData implements ExtraData {
   factory _ExtraData(
-      {@JsonKey(name: 'banned') bool? isBanned,
-      @JsonKey(name: 'userType') UserType? userType}) = _$_ExtraData;
+      {@JsonKey(name: 'banned') final bool? isBanned,
+      @JsonKey(name: 'userType') final UserType? userType}) = _$_ExtraData;
 
   factory _ExtraData.fromJson(Map<String, dynamic> json) =
       _$_ExtraData.fromJson;
 
   @override
   @JsonKey(name: 'banned')
-  bool? get isBanned;
+  bool? get isBanned => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'userType')
-  UserType? get userType;
+  UserType? get userType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExtraDataCopyWith<_ExtraData> get copyWith =>
+  _$$_ExtraDataCopyWith<_$_ExtraData> get copyWith =>
       throw _privateConstructorUsedError;
 }

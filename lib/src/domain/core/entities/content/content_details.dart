@@ -3,7 +3,6 @@ import 'package:afya_moja_core/src/domain/core/entities/content/content.dart';
 import 'package:afya_moja_core/src/enums.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-
 part 'content_details.g.dart';
 
 @JsonSerializable()

@@ -12,32 +12,11 @@ part of 'group_member.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
   return _GroupMember.fromJson(json);
 }
-
-/// @nodoc
-class _$GroupMemberTearOff {
-  const _$GroupMemberTearOff();
-
-  _GroupMember call(
-      {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator = false}) {
-    return _GroupMember(
-      memberDetails: memberDetails,
-      isModerator: isModerator,
-    );
-  }
-
-  GroupMember fromJson(Map<String, Object?> json) {
-    return GroupMember.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GroupMember = _$GroupMemberTearOff();
 
 /// @nodoc
 mixin _$GroupMember {
@@ -102,11 +81,11 @@ class _$GroupMemberCopyWithImpl<$Res> implements $GroupMemberCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GroupMemberCopyWith<$Res>
+abstract class _$$_GroupMemberCopyWith<$Res>
     implements $GroupMemberCopyWith<$Res> {
-  factory _$GroupMemberCopyWith(
-          _GroupMember value, $Res Function(_GroupMember) then) =
-      __$GroupMemberCopyWithImpl<$Res>;
+  factory _$$_GroupMemberCopyWith(
+          _$_GroupMember value, $Res Function(_$_GroupMember) then) =
+      __$$_GroupMemberCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'user') Member? memberDetails,
@@ -117,21 +96,21 @@ abstract class _$GroupMemberCopyWith<$Res>
 }
 
 /// @nodoc
-class __$GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
-    implements _$GroupMemberCopyWith<$Res> {
-  __$GroupMemberCopyWithImpl(
-      _GroupMember _value, $Res Function(_GroupMember) _then)
-      : super(_value, (v) => _then(v as _GroupMember));
+class __$$_GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
+    implements _$$_GroupMemberCopyWith<$Res> {
+  __$$_GroupMemberCopyWithImpl(
+      _$_GroupMember _value, $Res Function(_$_GroupMember) _then)
+      : super(_value, (v) => _then(v as _$_GroupMember));
 
   @override
-  _GroupMember get _value => super._value as _GroupMember;
+  _$_GroupMember get _value => super._value as _$_GroupMember;
 
   @override
   $Res call({
     Object? memberDetails = freezed,
     Object? isModerator = freezed,
   }) {
-    return _then(_GroupMember(
+    return _then(_$_GroupMember(
       memberDetails: memberDetails == freezed
           ? _value.memberDetails
           : memberDetails // ignore: cast_nullable_to_non_nullable
@@ -170,13 +149,14 @@ class _$_GroupMember implements _GroupMember {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupMember &&
+            other is _$_GroupMember &&
             const DeepCollectionEquality()
                 .equals(other.memberDetails, memberDetails) &&
             const DeepCollectionEquality()
                 .equals(other.isModerator, isModerator));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -185,8 +165,8 @@ class _$_GroupMember implements _GroupMember {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupMemberCopyWith<_GroupMember> get copyWith =>
-      __$GroupMemberCopyWithImpl<_GroupMember>(this, _$identity);
+  _$$_GroupMemberCopyWith<_$_GroupMember> get copyWith =>
+      __$$_GroupMemberCopyWithImpl<_$_GroupMember>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -196,20 +176,20 @@ class _$_GroupMember implements _GroupMember {
 
 abstract class _GroupMember implements GroupMember {
   factory _GroupMember(
-      {@JsonKey(name: 'user') Member? memberDetails,
-      @JsonKey(name: 'isModerator') bool isModerator}) = _$_GroupMember;
+      {@JsonKey(name: 'user') final Member? memberDetails,
+      @JsonKey(name: 'isModerator') final bool isModerator}) = _$_GroupMember;
 
   factory _GroupMember.fromJson(Map<String, dynamic> json) =
       _$_GroupMember.fromJson;
 
   @override
   @JsonKey(name: 'user')
-  Member? get memberDetails;
+  Member? get memberDetails => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'isModerator')
-  bool get isModerator;
+  bool get isModerator => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GroupMemberCopyWith<_GroupMember> get copyWith =>
+  _$$_GroupMemberCopyWith<_$_GroupMember> get copyWith =>
       throw _privateConstructorUsedError;
 }

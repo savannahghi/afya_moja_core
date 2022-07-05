@@ -12,72 +12,11 @@ part of 'content.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Content _$ContentFromJson(Map<String, dynamic> json) {
   return _Content.fromJson(json);
 }
-
-/// @nodoc
-class _$ContentTearOff {
-  const _$ContentTearOff();
-
-  _Content call(
-      {@JsonKey(name: 'ID') int? contentID,
-      @JsonKey(name: 'title') String? title,
-      @JsonKey(name: 'date') DateTime? date,
-      @JsonKey(name: 'intro') String? intro,
-      @JsonKey(name: 'authorName') String? authorName,
-      @JsonKey(name: 'author') Author? author,
-      @JsonKey(name: 'itemType') ContentType? contentType,
-      @JsonKey(name: 'timeEstimateSeconds') int? estimate,
-      @JsonKey(name: 'body') String? body,
-      @JsonKey(name: 'heroImageRendition') HeroImage? heroImage,
-      @JsonKey(name: 'likeCount') int? likeCount,
-      @JsonKey(name: 'bookmarkCount') int? bookmarkCount,
-      @JsonKey(name: 'viewCount') int? viewCount,
-      @JsonKey(name: 'shareCount') int? shareCount,
-      @JsonKey(name: 'documents') List<Document>? documents,
-      @JsonKey(name: 'categoryDetails') List<ContentCategory>? categories,
-      @JsonKey(name: 'tagNames') List<String?>? tags,
-      @JsonKey(name: 'meta') ContentMetadata? metadata,
-      @JsonKey(name: 'featuredMedia') List<FeaturedMedia?>? featuredMedia,
-      @JsonKey(name: 'hasLiked', defaultValue: false) bool? hasLiked,
-      @JsonKey(name: 'hasSaved', defaultValue: false) bool? hasSaved,
-      @JsonKey(name: 'galleryImages') List<GalleryImage>? galleryImages}) {
-    return _Content(
-      contentID: contentID,
-      title: title,
-      date: date,
-      intro: intro,
-      authorName: authorName,
-      author: author,
-      contentType: contentType,
-      estimate: estimate,
-      body: body,
-      heroImage: heroImage,
-      likeCount: likeCount,
-      bookmarkCount: bookmarkCount,
-      viewCount: viewCount,
-      shareCount: shareCount,
-      documents: documents,
-      categories: categories,
-      tags: tags,
-      metadata: metadata,
-      featuredMedia: featuredMedia,
-      hasLiked: hasLiked,
-      hasSaved: hasSaved,
-      galleryImages: galleryImages,
-    );
-  }
-
-  Content fromJson(Map<String, Object?> json) {
-    return Content.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Content = _$ContentTearOff();
 
 /// @nodoc
 mixin _$Content {
@@ -332,9 +271,10 @@ class _$ContentCopyWithImpl<$Res> implements $ContentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ContentCopyWith<$Res> implements $ContentCopyWith<$Res> {
-  factory _$ContentCopyWith(_Content value, $Res Function(_Content) then) =
-      __$ContentCopyWithImpl<$Res>;
+abstract class _$$_ContentCopyWith<$Res> implements $ContentCopyWith<$Res> {
+  factory _$$_ContentCopyWith(
+          _$_Content value, $Res Function(_$_Content) then) =
+      __$$_ContentCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ID') int? contentID,
@@ -369,13 +309,13 @@ abstract class _$ContentCopyWith<$Res> implements $ContentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
-    implements _$ContentCopyWith<$Res> {
-  __$ContentCopyWithImpl(_Content _value, $Res Function(_Content) _then)
-      : super(_value, (v) => _then(v as _Content));
+class __$$_ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
+    implements _$$_ContentCopyWith<$Res> {
+  __$$_ContentCopyWithImpl(_$_Content _value, $Res Function(_$_Content) _then)
+      : super(_value, (v) => _then(v as _$_Content));
 
   @override
-  _Content get _value => super._value as _Content;
+  _$_Content get _value => super._value as _$_Content;
 
   @override
   $Res call({
@@ -402,7 +342,7 @@ class __$ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
     Object? hasSaved = freezed,
     Object? galleryImages = freezed,
   }) {
-    return _then(_Content(
+    return _then(_$_Content(
       contentID: contentID == freezed
           ? _value.contentID
           : contentID // ignore: cast_nullable_to_non_nullable
@@ -460,15 +400,15 @@ class __$ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
           : shareCount // ignore: cast_nullable_to_non_nullable
               as int?,
       documents: documents == freezed
-          ? _value.documents
+          ? _value._documents
           : documents // ignore: cast_nullable_to_non_nullable
               as List<Document>?,
       categories: categories == freezed
-          ? _value.categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<ContentCategory>?,
       tags: tags == freezed
-          ? _value.tags
+          ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
       metadata: metadata == freezed
@@ -476,7 +416,7 @@ class __$ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
           : metadata // ignore: cast_nullable_to_non_nullable
               as ContentMetadata?,
       featuredMedia: featuredMedia == freezed
-          ? _value.featuredMedia
+          ? _value._featuredMedia
           : featuredMedia // ignore: cast_nullable_to_non_nullable
               as List<FeaturedMedia?>?,
       hasLiked: hasLiked == freezed
@@ -488,7 +428,7 @@ class __$ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
           : hasSaved // ignore: cast_nullable_to_non_nullable
               as bool?,
       galleryImages: galleryImages == freezed
-          ? _value.galleryImages
+          ? _value._galleryImages
           : galleryImages // ignore: cast_nullable_to_non_nullable
               as List<GalleryImage>?,
     ));
@@ -513,14 +453,19 @@ class _$_Content implements _Content {
       @JsonKey(name: 'bookmarkCount') this.bookmarkCount,
       @JsonKey(name: 'viewCount') this.viewCount,
       @JsonKey(name: 'shareCount') this.shareCount,
-      @JsonKey(name: 'documents') this.documents,
-      @JsonKey(name: 'categoryDetails') this.categories,
-      @JsonKey(name: 'tagNames') this.tags,
+      @JsonKey(name: 'documents') final List<Document>? documents,
+      @JsonKey(name: 'categoryDetails') final List<ContentCategory>? categories,
+      @JsonKey(name: 'tagNames') final List<String?>? tags,
       @JsonKey(name: 'meta') this.metadata,
-      @JsonKey(name: 'featuredMedia') this.featuredMedia,
+      @JsonKey(name: 'featuredMedia') final List<FeaturedMedia?>? featuredMedia,
       @JsonKey(name: 'hasLiked', defaultValue: false) this.hasLiked,
       @JsonKey(name: 'hasSaved', defaultValue: false) this.hasSaved,
-      @JsonKey(name: 'galleryImages') this.galleryImages});
+      @JsonKey(name: 'galleryImages') final List<GalleryImage>? galleryImages})
+      : _documents = documents,
+        _categories = categories,
+        _tags = tags,
+        _featuredMedia = featuredMedia,
+        _galleryImages = galleryImages;
 
   factory _$_Content.fromJson(Map<String, dynamic> json) =>
       _$$_ContentFromJson(json);
@@ -537,17 +482,20 @@ class _$_Content implements _Content {
   @override
   @JsonKey(name: 'intro')
   final String? intro;
-  @override // TODO(abiud): move this to the Author object
+// TODO(abiud): move this to the Author object
+  @override
   @JsonKey(name: 'authorName')
   final String? authorName;
-  @override // TODO(abiud): add when backend is ready
+// TODO(abiud): add when backend is ready
 // @JsonKey(name: 'authorAvatar') String? authorAvatar,
+  @override
   @JsonKey(name: 'author')
   final Author? author;
   @override
   @JsonKey(name: 'itemType')
   final ContentType? contentType;
-  @override // "ARTICLE"
+// "ARTICLE"
+  @override
   @JsonKey(name: 'timeEstimateSeconds')
   final int? estimate;
   @override
@@ -568,32 +516,70 @@ class _$_Content implements _Content {
   @override
   @JsonKey(name: 'shareCount')
   final int? shareCount;
+  final List<Document>? _documents;
   @override
   @JsonKey(name: 'documents')
-  final List<Document>? documents;
+  List<Document>? get documents {
+    final value = _documents;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<ContentCategory>? _categories;
   @override
   @JsonKey(name: 'categoryDetails')
-  final List<ContentCategory>? categories;
-  @override // TODO(abiud): add when backend is ready
+  List<ContentCategory>? get categories {
+    final value = _categories;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+// TODO(abiud): add when backend is ready
 // @JsonKey(name: 'isNew') bool? isNew,
+  final List<String?>? _tags;
+// TODO(abiud): add when backend is ready
+// @JsonKey(name: 'isNew') bool? isNew,
+  @override
   @JsonKey(name: 'tagNames')
-  final List<String?>? tags;
+  List<String?>? get tags {
+    final value = _tags;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'meta')
   final ContentMetadata? metadata;
+  final List<FeaturedMedia?>? _featuredMedia;
   @override
   @JsonKey(name: 'featuredMedia')
-  final List<FeaturedMedia?>? featuredMedia;
-  @override // Internal trackers to know whether this user has performed any action on
+  List<FeaturedMedia?>? get featuredMedia {
+    final value = _featuredMedia;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+// Internal trackers to know whether this user has performed any action on
 // this content item
+  @override
   @JsonKey(name: 'hasLiked', defaultValue: false)
   final bool? hasLiked;
   @override
   @JsonKey(name: 'hasSaved', defaultValue: false)
   final bool? hasSaved;
+  final List<GalleryImage>? _galleryImages;
   @override
   @JsonKey(name: 'galleryImages')
-  final List<GalleryImage>? galleryImages;
+  List<GalleryImage>? get galleryImages {
+    final value = _galleryImages;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -604,7 +590,7 @@ class _$_Content implements _Content {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Content &&
+            other is _$_Content &&
             const DeepCollectionEquality().equals(other.contentID, contentID) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.date, date) &&
@@ -623,19 +609,21 @@ class _$_Content implements _Content {
             const DeepCollectionEquality().equals(other.viewCount, viewCount) &&
             const DeepCollectionEquality()
                 .equals(other.shareCount, shareCount) &&
-            const DeepCollectionEquality().equals(other.documents, documents) &&
             const DeepCollectionEquality()
-                .equals(other.categories, categories) &&
-            const DeepCollectionEquality().equals(other.tags, tags) &&
+                .equals(other._documents, _documents) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.metadata, metadata) &&
             const DeepCollectionEquality()
-                .equals(other.featuredMedia, featuredMedia) &&
+                .equals(other._featuredMedia, _featuredMedia) &&
             const DeepCollectionEquality().equals(other.hasLiked, hasLiked) &&
             const DeepCollectionEquality().equals(other.hasSaved, hasSaved) &&
             const DeepCollectionEquality()
-                .equals(other.galleryImages, galleryImages));
+                .equals(other._galleryImages, _galleryImages));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -653,20 +641,20 @@ class _$_Content implements _Content {
         const DeepCollectionEquality().hash(bookmarkCount),
         const DeepCollectionEquality().hash(viewCount),
         const DeepCollectionEquality().hash(shareCount),
-        const DeepCollectionEquality().hash(documents),
-        const DeepCollectionEquality().hash(categories),
-        const DeepCollectionEquality().hash(tags),
+        const DeepCollectionEquality().hash(_documents),
+        const DeepCollectionEquality().hash(_categories),
+        const DeepCollectionEquality().hash(_tags),
         const DeepCollectionEquality().hash(metadata),
-        const DeepCollectionEquality().hash(featuredMedia),
+        const DeepCollectionEquality().hash(_featuredMedia),
         const DeepCollectionEquality().hash(hasLiked),
         const DeepCollectionEquality().hash(hasSaved),
-        const DeepCollectionEquality().hash(galleryImages)
+        const DeepCollectionEquality().hash(_galleryImages)
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$ContentCopyWith<_Content> get copyWith =>
-      __$ContentCopyWithImpl<_Content>(this, _$identity);
+  _$$_ContentCopyWith<_$_Content> get copyWith =>
+      __$$_ContentCopyWithImpl<_$_Content>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -676,103 +664,124 @@ class _$_Content implements _Content {
 
 abstract class _Content implements Content {
   factory _Content(
-          {@JsonKey(name: 'ID') int? contentID,
-          @JsonKey(name: 'title') String? title,
-          @JsonKey(name: 'date') DateTime? date,
-          @JsonKey(name: 'intro') String? intro,
-          @JsonKey(name: 'authorName') String? authorName,
-          @JsonKey(name: 'author') Author? author,
-          @JsonKey(name: 'itemType') ContentType? contentType,
-          @JsonKey(name: 'timeEstimateSeconds') int? estimate,
-          @JsonKey(name: 'body') String? body,
-          @JsonKey(name: 'heroImageRendition') HeroImage? heroImage,
-          @JsonKey(name: 'likeCount') int? likeCount,
-          @JsonKey(name: 'bookmarkCount') int? bookmarkCount,
-          @JsonKey(name: 'viewCount') int? viewCount,
-          @JsonKey(name: 'shareCount') int? shareCount,
-          @JsonKey(name: 'documents') List<Document>? documents,
-          @JsonKey(name: 'categoryDetails') List<ContentCategory>? categories,
-          @JsonKey(name: 'tagNames') List<String?>? tags,
-          @JsonKey(name: 'meta') ContentMetadata? metadata,
-          @JsonKey(name: 'featuredMedia') List<FeaturedMedia?>? featuredMedia,
-          @JsonKey(name: 'hasLiked', defaultValue: false) bool? hasLiked,
-          @JsonKey(name: 'hasSaved', defaultValue: false) bool? hasSaved,
-          @JsonKey(name: 'galleryImages') List<GalleryImage>? galleryImages}) =
-      _$_Content;
+      {@JsonKey(name: 'ID')
+          final int? contentID,
+      @JsonKey(name: 'title')
+          final String? title,
+      @JsonKey(name: 'date')
+          final DateTime? date,
+      @JsonKey(name: 'intro')
+          final String? intro,
+      @JsonKey(name: 'authorName')
+          final String? authorName,
+      @JsonKey(name: 'author')
+          final Author? author,
+      @JsonKey(name: 'itemType')
+          final ContentType? contentType,
+      @JsonKey(name: 'timeEstimateSeconds')
+          final int? estimate,
+      @JsonKey(name: 'body')
+          final String? body,
+      @JsonKey(name: 'heroImageRendition')
+          final HeroImage? heroImage,
+      @JsonKey(name: 'likeCount')
+          final int? likeCount,
+      @JsonKey(name: 'bookmarkCount')
+          final int? bookmarkCount,
+      @JsonKey(name: 'viewCount')
+          final int? viewCount,
+      @JsonKey(name: 'shareCount')
+          final int? shareCount,
+      @JsonKey(name: 'documents')
+          final List<Document>? documents,
+      @JsonKey(name: 'categoryDetails')
+          final List<ContentCategory>? categories,
+      @JsonKey(name: 'tagNames')
+          final List<String?>? tags,
+      @JsonKey(name: 'meta')
+          final ContentMetadata? metadata,
+      @JsonKey(name: 'featuredMedia')
+          final List<FeaturedMedia?>? featuredMedia,
+      @JsonKey(name: 'hasLiked', defaultValue: false)
+          final bool? hasLiked,
+      @JsonKey(name: 'hasSaved', defaultValue: false)
+          final bool? hasSaved,
+      @JsonKey(name: 'galleryImages')
+          final List<GalleryImage>? galleryImages}) = _$_Content;
 
   factory _Content.fromJson(Map<String, dynamic> json) = _$_Content.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  int? get contentID;
+  int? get contentID => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'title')
-  String? get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'date')
-  DateTime? get date;
+  DateTime? get date => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'intro')
-  String? get intro;
+  String? get intro => throw _privateConstructorUsedError;
   @override // TODO(abiud): move this to the Author object
   @JsonKey(name: 'authorName')
-  String? get authorName;
+  String? get authorName => throw _privateConstructorUsedError;
   @override // TODO(abiud): add when backend is ready
 // @JsonKey(name: 'authorAvatar') String? authorAvatar,
   @JsonKey(name: 'author')
-  Author? get author;
+  Author? get author => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'itemType')
-  ContentType? get contentType;
+  ContentType? get contentType => throw _privateConstructorUsedError;
   @override // "ARTICLE"
   @JsonKey(name: 'timeEstimateSeconds')
-  int? get estimate;
+  int? get estimate => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'body')
-  String? get body;
+  String? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'heroImageRendition')
-  HeroImage? get heroImage;
+  HeroImage? get heroImage => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'likeCount')
-  int? get likeCount;
+  int? get likeCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'bookmarkCount')
-  int? get bookmarkCount;
+  int? get bookmarkCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'viewCount')
-  int? get viewCount;
+  int? get viewCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'shareCount')
-  int? get shareCount;
+  int? get shareCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'documents')
-  List<Document>? get documents;
+  List<Document>? get documents => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'categoryDetails')
-  List<ContentCategory>? get categories;
+  List<ContentCategory>? get categories => throw _privateConstructorUsedError;
   @override // TODO(abiud): add when backend is ready
 // @JsonKey(name: 'isNew') bool? isNew,
   @JsonKey(name: 'tagNames')
-  List<String?>? get tags;
+  List<String?>? get tags => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'meta')
-  ContentMetadata? get metadata;
+  ContentMetadata? get metadata => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'featuredMedia')
-  List<FeaturedMedia?>? get featuredMedia;
+  List<FeaturedMedia?>? get featuredMedia => throw _privateConstructorUsedError;
   @override // Internal trackers to know whether this user has performed any action on
 // this content item
   @JsonKey(name: 'hasLiked', defaultValue: false)
-  bool? get hasLiked;
+  bool? get hasLiked => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'hasSaved', defaultValue: false)
-  bool? get hasSaved;
+  bool? get hasSaved => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'galleryImages')
-  List<GalleryImage>? get galleryImages;
+  List<GalleryImage>? get galleryImages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ContentCopyWith<_Content> get copyWith =>
+  _$$_ContentCopyWith<_$_Content> get copyWith =>
       throw _privateConstructorUsedError;
 }

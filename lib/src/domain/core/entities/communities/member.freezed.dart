@@ -12,46 +12,11 @@ part of 'member.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Member _$MemberFromJson(Map<String, dynamic> json) {
   return _Member.fromJson(json);
 }
-
-/// @nodoc
-class _$MemberTearOff {
-  const _$MemberTearOff();
-
-  _Member call(
-      {@JsonKey(name: 'id')
-          String? id,
-      @JsonKey(name: 'userID')
-          String? userID,
-      @JsonKey(name: 'role')
-          String? role,
-      @JsonKey(name: 'username')
-          String? username,
-      @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
-          Gender? gender,
-      @JsonKey(name: 'extraData')
-          ExtraData? extraData}) {
-    return _Member(
-      id: id,
-      userID: userID,
-      role: role,
-      username: username,
-      gender: gender,
-      extraData: extraData,
-    );
-  }
-
-  Member fromJson(Map<String, Object?> json) {
-    return Member.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Member = _$MemberTearOff();
 
 /// @nodoc
 mixin _$Member {
@@ -152,9 +117,9 @@ class _$MemberCopyWithImpl<$Res> implements $MemberCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
-  factory _$MemberCopyWith(_Member value, $Res Function(_Member) then) =
-      __$MemberCopyWithImpl<$Res>;
+abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
+  factory _$$_MemberCopyWith(_$_Member value, $Res Function(_$_Member) then) =
+      __$$_MemberCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id')
@@ -175,13 +140,13 @@ abstract class _$MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
-    implements _$MemberCopyWith<$Res> {
-  __$MemberCopyWithImpl(_Member _value, $Res Function(_Member) _then)
-      : super(_value, (v) => _then(v as _Member));
+class __$$_MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
+    implements _$$_MemberCopyWith<$Res> {
+  __$$_MemberCopyWithImpl(_$_Member _value, $Res Function(_$_Member) _then)
+      : super(_value, (v) => _then(v as _$_Member));
 
   @override
-  _Member get _value => super._value as _Member;
+  _$_Member get _value => super._value as _$_Member;
 
   @override
   $Res call({
@@ -192,7 +157,7 @@ class __$MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
     Object? gender = freezed,
     Object? extraData = freezed,
   }) {
-    return _then(_Member(
+    return _then(_$_Member(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -269,7 +234,7 @@ class _$_Member implements _Member {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Member &&
+            other is _$_Member &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.userID, userID) &&
             const DeepCollectionEquality().equals(other.role, role) &&
@@ -278,6 +243,7 @@ class _$_Member implements _Member {
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -290,8 +256,8 @@ class _$_Member implements _Member {
 
   @JsonKey(ignore: true)
   @override
-  _$MemberCopyWith<_Member> get copyWith =>
-      __$MemberCopyWithImpl<_Member>(this, _$identity);
+  _$$_MemberCopyWith<_$_Member> get copyWith =>
+      __$$_MemberCopyWithImpl<_$_Member>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -302,39 +268,40 @@ class _$_Member implements _Member {
 abstract class _Member implements Member {
   factory _Member(
       {@JsonKey(name: 'id')
-          String? id,
+          final String? id,
       @JsonKey(name: 'userID')
-          String? userID,
+          final String? userID,
       @JsonKey(name: 'role')
-          String? role,
+          final String? role,
       @JsonKey(name: 'username')
-          String? username,
+          final String? username,
       @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
-          Gender? gender,
+          final Gender? gender,
       @JsonKey(name: 'extraData')
-          ExtraData? extraData}) = _$_Member;
+          final ExtraData? extraData}) = _$_Member;
 
   factory _Member.fromJson(Map<String, dynamic> json) = _$_Member.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  String? get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'userID')
-  String? get userID;
+  String? get userID => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'role')
-  String? get role;
+  String? get role => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'username')
-  String? get username;
+  String? get username => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
-  Gender? get gender;
+  Gender? get gender => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'extraData')
-  ExtraData? get extraData;
+  ExtraData? get extraData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MemberCopyWith<_Member> get copyWith => throw _privateConstructorUsedError;
+  _$$_MemberCopyWith<_$_Member> get copyWith =>
+      throw _privateConstructorUsedError;
 }

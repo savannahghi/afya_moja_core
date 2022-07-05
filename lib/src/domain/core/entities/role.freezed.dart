@@ -12,34 +12,11 @@ part of 'role.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Role _$RoleFromJson(Map<String, dynamic> json) {
   return _Role.fromJson(json);
 }
-
-/// @nodoc
-class _$RoleTearOff {
-  const _$RoleTearOff();
-
-  _Role call(
-      {@JsonKey(name: 'authorityRoleID') String? roleID,
-      @JsonKey(name: 'name', fromJson: roleValueFromJson) RoleValue? name,
-      @JsonKey(name: 'active') bool? active}) {
-    return _Role(
-      roleID: roleID,
-      name: name,
-      active: active,
-    );
-  }
-
-  Role fromJson(Map<String, Object?> json) {
-    return Role.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Role = _$RoleTearOff();
 
 /// @nodoc
 mixin _$Role {
@@ -97,9 +74,9 @@ class _$RoleCopyWithImpl<$Res> implements $RoleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
-  factory _$RoleCopyWith(_Role value, $Res Function(_Role) then) =
-      __$RoleCopyWithImpl<$Res>;
+abstract class _$$_RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
+  factory _$$_RoleCopyWith(_$_Role value, $Res Function(_$_Role) then) =
+      __$$_RoleCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'authorityRoleID') String? roleID,
@@ -108,13 +85,13 @@ abstract class _$RoleCopyWith<$Res> implements $RoleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RoleCopyWithImpl<$Res> extends _$RoleCopyWithImpl<$Res>
-    implements _$RoleCopyWith<$Res> {
-  __$RoleCopyWithImpl(_Role _value, $Res Function(_Role) _then)
-      : super(_value, (v) => _then(v as _Role));
+class __$$_RoleCopyWithImpl<$Res> extends _$RoleCopyWithImpl<$Res>
+    implements _$$_RoleCopyWith<$Res> {
+  __$$_RoleCopyWithImpl(_$_Role _value, $Res Function(_$_Role) _then)
+      : super(_value, (v) => _then(v as _$_Role));
 
   @override
-  _Role get _value => super._value as _Role;
+  _$_Role get _value => super._value as _$_Role;
 
   @override
   $Res call({
@@ -122,7 +99,7 @@ class __$RoleCopyWithImpl<$Res> extends _$RoleCopyWithImpl<$Res>
     Object? name = freezed,
     Object? active = freezed,
   }) {
-    return _then(_Role(
+    return _then(_$_Role(
       roleID: roleID == freezed
           ? _value.roleID
           : roleID // ignore: cast_nullable_to_non_nullable
@@ -168,12 +145,13 @@ class _$_Role implements _Role {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Role &&
+            other is _$_Role &&
             const DeepCollectionEquality().equals(other.roleID, roleID) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.active, active));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -183,8 +161,8 @@ class _$_Role implements _Role {
 
   @JsonKey(ignore: true)
   @override
-  _$RoleCopyWith<_Role> get copyWith =>
-      __$RoleCopyWithImpl<_Role>(this, _$identity);
+  _$$_RoleCopyWith<_$_Role> get copyWith =>
+      __$$_RoleCopyWithImpl<_$_Role>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -194,22 +172,22 @@ class _$_Role implements _Role {
 
 abstract class _Role implements Role {
   factory _Role(
-      {@JsonKey(name: 'authorityRoleID') String? roleID,
-      @JsonKey(name: 'name', fromJson: roleValueFromJson) RoleValue? name,
-      @JsonKey(name: 'active') bool? active}) = _$_Role;
+      {@JsonKey(name: 'authorityRoleID') final String? roleID,
+      @JsonKey(name: 'name', fromJson: roleValueFromJson) final RoleValue? name,
+      @JsonKey(name: 'active') final bool? active}) = _$_Role;
 
   factory _Role.fromJson(Map<String, dynamic> json) = _$_Role.fromJson;
 
   @override
   @JsonKey(name: 'authorityRoleID')
-  String? get roleID;
+  String? get roleID => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'name', fromJson: roleValueFromJson)
-  RoleValue? get name;
+  RoleValue? get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'active')
-  bool? get active;
+  bool? get active => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RoleCopyWith<_Role> get copyWith => throw _privateConstructorUsedError;
+  _$$_RoleCopyWith<_$_Role> get copyWith => throw _privateConstructorUsedError;
 }

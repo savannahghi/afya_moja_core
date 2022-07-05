@@ -12,34 +12,11 @@ part of 'faqs_content_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FAQsContentState _$FAQsContentStateFromJson(Map<String, dynamic> json) {
   return _FAQsContentState.fromJson(json);
 }
-
-/// @nodoc
-class _$FAQsContentStateTearOff {
-  const _$FAQsContentStateTearOff();
-
-  _FAQsContentState call(
-      {List<Content?>? profileFAQs,
-      bool? errorFetchingFAQs,
-      bool? timeoutFetchingFAQs}) {
-    return _FAQsContentState(
-      profileFAQs: profileFAQs,
-      errorFetchingFAQs: errorFetchingFAQs,
-      timeoutFetchingFAQs: timeoutFetchingFAQs,
-    );
-  }
-
-  FAQsContentState fromJson(Map<String, Object?> json) {
-    return FAQsContentState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FAQsContentState = _$FAQsContentStateTearOff();
 
 /// @nodoc
 mixin _$FAQsContentState {
@@ -97,11 +74,11 @@ class _$FAQsContentStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FAQsContentStateCopyWith<$Res>
+abstract class _$$_FAQsContentStateCopyWith<$Res>
     implements $FAQsContentStateCopyWith<$Res> {
-  factory _$FAQsContentStateCopyWith(
-          _FAQsContentState value, $Res Function(_FAQsContentState) then) =
-      __$FAQsContentStateCopyWithImpl<$Res>;
+  factory _$$_FAQsContentStateCopyWith(
+          _$_FAQsContentState value, $Res Function(_$_FAQsContentState) then) =
+      __$$_FAQsContentStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<Content?>? profileFAQs,
@@ -110,15 +87,15 @@ abstract class _$FAQsContentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FAQsContentStateCopyWithImpl<$Res>
+class __$$_FAQsContentStateCopyWithImpl<$Res>
     extends _$FAQsContentStateCopyWithImpl<$Res>
-    implements _$FAQsContentStateCopyWith<$Res> {
-  __$FAQsContentStateCopyWithImpl(
-      _FAQsContentState _value, $Res Function(_FAQsContentState) _then)
-      : super(_value, (v) => _then(v as _FAQsContentState));
+    implements _$$_FAQsContentStateCopyWith<$Res> {
+  __$$_FAQsContentStateCopyWithImpl(
+      _$_FAQsContentState _value, $Res Function(_$_FAQsContentState) _then)
+      : super(_value, (v) => _then(v as _$_FAQsContentState));
 
   @override
-  _FAQsContentState get _value => super._value as _FAQsContentState;
+  _$_FAQsContentState get _value => super._value as _$_FAQsContentState;
 
   @override
   $Res call({
@@ -126,9 +103,9 @@ class __$FAQsContentStateCopyWithImpl<$Res>
     Object? errorFetchingFAQs = freezed,
     Object? timeoutFetchingFAQs = freezed,
   }) {
-    return _then(_FAQsContentState(
+    return _then(_$_FAQsContentState(
       profileFAQs: profileFAQs == freezed
-          ? _value.profileFAQs
+          ? _value._profileFAQs
           : profileFAQs // ignore: cast_nullable_to_non_nullable
               as List<Content?>?,
       errorFetchingFAQs: errorFetchingFAQs == freezed
@@ -147,13 +124,23 @@ class __$FAQsContentStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FAQsContentState implements _FAQsContentState {
   _$_FAQsContentState(
-      {this.profileFAQs, this.errorFetchingFAQs, this.timeoutFetchingFAQs});
+      {final List<Content?>? profileFAQs,
+      this.errorFetchingFAQs,
+      this.timeoutFetchingFAQs})
+      : _profileFAQs = profileFAQs;
 
   factory _$_FAQsContentState.fromJson(Map<String, dynamic> json) =>
       _$$_FAQsContentStateFromJson(json);
 
+  final List<Content?>? _profileFAQs;
   @override
-  final List<Content?>? profileFAQs;
+  List<Content?>? get profileFAQs {
+    final value = _profileFAQs;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final bool? errorFetchingFAQs;
   @override
@@ -168,26 +155,27 @@ class _$_FAQsContentState implements _FAQsContentState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FAQsContentState &&
+            other is _$_FAQsContentState &&
             const DeepCollectionEquality()
-                .equals(other.profileFAQs, profileFAQs) &&
+                .equals(other._profileFAQs, _profileFAQs) &&
             const DeepCollectionEquality()
                 .equals(other.errorFetchingFAQs, errorFetchingFAQs) &&
             const DeepCollectionEquality()
                 .equals(other.timeoutFetchingFAQs, timeoutFetchingFAQs));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(profileFAQs),
+      const DeepCollectionEquality().hash(_profileFAQs),
       const DeepCollectionEquality().hash(errorFetchingFAQs),
       const DeepCollectionEquality().hash(timeoutFetchingFAQs));
 
   @JsonKey(ignore: true)
   @override
-  _$FAQsContentStateCopyWith<_FAQsContentState> get copyWith =>
-      __$FAQsContentStateCopyWithImpl<_FAQsContentState>(this, _$identity);
+  _$$_FAQsContentStateCopyWith<_$_FAQsContentState> get copyWith =>
+      __$$_FAQsContentStateCopyWithImpl<_$_FAQsContentState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -197,21 +185,21 @@ class _$_FAQsContentState implements _FAQsContentState {
 
 abstract class _FAQsContentState implements FAQsContentState {
   factory _FAQsContentState(
-      {List<Content?>? profileFAQs,
-      bool? errorFetchingFAQs,
-      bool? timeoutFetchingFAQs}) = _$_FAQsContentState;
+      {final List<Content?>? profileFAQs,
+      final bool? errorFetchingFAQs,
+      final bool? timeoutFetchingFAQs}) = _$_FAQsContentState;
 
   factory _FAQsContentState.fromJson(Map<String, dynamic> json) =
       _$_FAQsContentState.fromJson;
 
   @override
-  List<Content?>? get profileFAQs;
+  List<Content?>? get profileFAQs => throw _privateConstructorUsedError;
   @override
-  bool? get errorFetchingFAQs;
+  bool? get errorFetchingFAQs => throw _privateConstructorUsedError;
   @override
-  bool? get timeoutFetchingFAQs;
+  bool? get timeoutFetchingFAQs => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FAQsContentStateCopyWith<_FAQsContentState> get copyWith =>
+  _$$_FAQsContentStateCopyWith<_$_FAQsContentState> get copyWith =>
       throw _privateConstructorUsedError;
 }

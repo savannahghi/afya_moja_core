@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- update json_annotation package version
+
 ## 0.2.1
 
 - update freezed package version
