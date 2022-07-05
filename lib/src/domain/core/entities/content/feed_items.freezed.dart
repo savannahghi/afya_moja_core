@@ -12,29 +12,11 @@ part of 'feed_items.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FeedItems _$FeedItemsFromJson(Map<String, dynamic> json) {
   return _FeedItems.fromJson(json);
 }
-
-/// @nodoc
-class _$FeedItemsTearOff {
-  const _$FeedItemsTearOff();
-
-  _FeedItems call({@JsonKey(name: 'items') List<Content>? items}) {
-    return _FeedItems(
-      items: items,
-    );
-  }
-
-  FeedItems fromJson(Map<String, Object?> json) {
-    return FeedItems.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FeedItems = _$FeedItemsTearOff();
 
 /// @nodoc
 mixin _$FeedItems {
@@ -76,30 +58,31 @@ class _$FeedItemsCopyWithImpl<$Res> implements $FeedItemsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FeedItemsCopyWith<$Res> implements $FeedItemsCopyWith<$Res> {
-  factory _$FeedItemsCopyWith(
-          _FeedItems value, $Res Function(_FeedItems) then) =
-      __$FeedItemsCopyWithImpl<$Res>;
+abstract class _$$_FeedItemsCopyWith<$Res> implements $FeedItemsCopyWith<$Res> {
+  factory _$$_FeedItemsCopyWith(
+          _$_FeedItems value, $Res Function(_$_FeedItems) then) =
+      __$$_FeedItemsCopyWithImpl<$Res>;
   @override
   $Res call({@JsonKey(name: 'items') List<Content>? items});
 }
 
 /// @nodoc
-class __$FeedItemsCopyWithImpl<$Res> extends _$FeedItemsCopyWithImpl<$Res>
-    implements _$FeedItemsCopyWith<$Res> {
-  __$FeedItemsCopyWithImpl(_FeedItems _value, $Res Function(_FeedItems) _then)
-      : super(_value, (v) => _then(v as _FeedItems));
+class __$$_FeedItemsCopyWithImpl<$Res> extends _$FeedItemsCopyWithImpl<$Res>
+    implements _$$_FeedItemsCopyWith<$Res> {
+  __$$_FeedItemsCopyWithImpl(
+      _$_FeedItems _value, $Res Function(_$_FeedItems) _then)
+      : super(_value, (v) => _then(v as _$_FeedItems));
 
   @override
-  _FeedItems get _value => super._value as _FeedItems;
+  _$_FeedItems get _value => super._value as _$_FeedItems;
 
   @override
   $Res call({
     Object? items = freezed,
   }) {
-    return _then(_FeedItems(
+    return _then(_$_FeedItems(
       items: items == freezed
-          ? _value.items
+          ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Content>?,
     ));
@@ -109,14 +92,21 @@ class __$FeedItemsCopyWithImpl<$Res> extends _$FeedItemsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_FeedItems implements _FeedItems {
-  _$_FeedItems({@JsonKey(name: 'items') this.items});
+  _$_FeedItems({@JsonKey(name: 'items') final List<Content>? items})
+      : _items = items;
 
   factory _$_FeedItems.fromJson(Map<String, dynamic> json) =>
       _$$_FeedItemsFromJson(json);
 
+  final List<Content>? _items;
   @override
   @JsonKey(name: 'items')
-  final List<Content>? items;
+  List<Content>? get items {
+    final value = _items;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -127,18 +117,19 @@ class _$_FeedItems implements _FeedItems {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FeedItems &&
-            const DeepCollectionEquality().equals(other.items, items));
+            other is _$_FeedItems &&
+            const DeepCollectionEquality().equals(other._items, _items));
   }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
 
   @JsonKey(ignore: true)
   @override
-  _$FeedItemsCopyWith<_FeedItems> get copyWith =>
-      __$FeedItemsCopyWithImpl<_FeedItems>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_FeedItemsCopyWith<_$_FeedItems> get copyWith =>
+      __$$_FeedItemsCopyWithImpl<_$_FeedItems>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -147,7 +138,7 @@ class _$_FeedItems implements _FeedItems {
 }
 
 abstract class _FeedItems implements FeedItems {
-  factory _FeedItems({@JsonKey(name: 'items') List<Content>? items}) =
+  factory _FeedItems({@JsonKey(name: 'items') final List<Content>? items}) =
       _$_FeedItems;
 
   factory _FeedItems.fromJson(Map<String, dynamic> json) =
@@ -155,9 +146,9 @@ abstract class _FeedItems implements FeedItems {
 
   @override
   @JsonKey(name: 'items')
-  List<Content>? get items;
+  List<Content>? get items => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FeedItemsCopyWith<_FeedItems> get copyWith =>
+  _$$_FeedItemsCopyWith<_$_FeedItems> get copyWith =>
       throw _privateConstructorUsedError;
 }
