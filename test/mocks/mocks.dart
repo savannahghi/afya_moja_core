@@ -530,6 +530,11 @@ class MockVideoPlayerController extends ValueNotifier<VideoPlayerValue>
 
   @override
   void setCaptionOffset(Duration offset) {}
+
+  @override
+  Future<void> setClosedCaptionFile(
+    Future<ClosedCaptionFile>? closedCaptionFile,
+  ) async {}
 }
 
 Future<ClosedCaptionFile> _loadClosedCaption() async =>

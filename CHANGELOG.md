@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- upgrade packages
+
 ## 0.1.9
 
 - chore: upgrade flutter and dart versions

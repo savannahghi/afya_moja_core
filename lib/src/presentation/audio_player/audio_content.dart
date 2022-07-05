@@ -39,7 +39,7 @@ class _AudioContentState extends State<AudioContent>
   void initState() {
     super.initState();
     _player = widget.audioPlayer ?? AudioPlayer();
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _init();
   }
 
@@ -58,7 +58,7 @@ class _AudioContentState extends State<AudioContent>
 
   @override
   void dispose() {
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     _player.dispose();
     super.dispose();
   }
