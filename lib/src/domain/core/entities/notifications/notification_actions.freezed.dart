@@ -12,34 +12,11 @@ part of 'notification_actions.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 NotificationActions _$NotificationActionsFromJson(Map<String, dynamic> json) {
   return _NotificationActions.fromJson(json);
 }
-
-/// @nodoc
-class _$NotificationActionsTearOff {
-  const _$NotificationActionsTearOff();
-
-  _NotificationActions call(
-      {@JsonKey(name: 'name') required String name,
-      @JsonKey(name: 'route') required String route,
-      @JsonKey(name: 'icon') required IconDetails icon}) {
-    return _NotificationActions(
-      name: name,
-      route: route,
-      icon: icon,
-    );
-  }
-
-  NotificationActions fromJson(Map<String, Object?> json) {
-    return NotificationActions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NotificationActions = _$NotificationActionsTearOff();
 
 /// @nodoc
 mixin _$NotificationActions {
@@ -109,11 +86,11 @@ class _$NotificationActionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotificationActionsCopyWith<$Res>
+abstract class _$$_NotificationActionsCopyWith<$Res>
     implements $NotificationActionsCopyWith<$Res> {
-  factory _$NotificationActionsCopyWith(_NotificationActions value,
-          $Res Function(_NotificationActions) then) =
-      __$NotificationActionsCopyWithImpl<$Res>;
+  factory _$$_NotificationActionsCopyWith(_$_NotificationActions value,
+          $Res Function(_$_NotificationActions) then) =
+      __$$_NotificationActionsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'name') String name,
@@ -125,15 +102,15 @@ abstract class _$NotificationActionsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NotificationActionsCopyWithImpl<$Res>
+class __$$_NotificationActionsCopyWithImpl<$Res>
     extends _$NotificationActionsCopyWithImpl<$Res>
-    implements _$NotificationActionsCopyWith<$Res> {
-  __$NotificationActionsCopyWithImpl(
-      _NotificationActions _value, $Res Function(_NotificationActions) _then)
-      : super(_value, (v) => _then(v as _NotificationActions));
+    implements _$$_NotificationActionsCopyWith<$Res> {
+  __$$_NotificationActionsCopyWithImpl(_$_NotificationActions _value,
+      $Res Function(_$_NotificationActions) _then)
+      : super(_value, (v) => _then(v as _$_NotificationActions));
 
   @override
-  _NotificationActions get _value => super._value as _NotificationActions;
+  _$_NotificationActions get _value => super._value as _$_NotificationActions;
 
   @override
   $Res call({
@@ -141,7 +118,7 @@ class __$NotificationActionsCopyWithImpl<$Res>
     Object? route = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_NotificationActions(
+    return _then(_$_NotificationActions(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -188,12 +165,13 @@ class _$_NotificationActions implements _NotificationActions {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotificationActions &&
+            other is _$_NotificationActions &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.route, route) &&
             const DeepCollectionEquality().equals(other.icon, icon));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -203,8 +181,8 @@ class _$_NotificationActions implements _NotificationActions {
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationActionsCopyWith<_NotificationActions> get copyWith =>
-      __$NotificationActionsCopyWithImpl<_NotificationActions>(
+  _$$_NotificationActionsCopyWith<_$_NotificationActions> get copyWith =>
+      __$$_NotificationActionsCopyWithImpl<_$_NotificationActions>(
           this, _$identity);
 
   @override
@@ -215,9 +193,9 @@ class _$_NotificationActions implements _NotificationActions {
 
 abstract class _NotificationActions implements NotificationActions {
   factory _NotificationActions(
-          {@JsonKey(name: 'name') required String name,
-          @JsonKey(name: 'route') required String route,
-          @JsonKey(name: 'icon') required IconDetails icon}) =
+          {@JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'route') required final String route,
+          @JsonKey(name: 'icon') required final IconDetails icon}) =
       _$_NotificationActions;
 
   factory _NotificationActions.fromJson(Map<String, dynamic> json) =
@@ -225,15 +203,15 @@ abstract class _NotificationActions implements NotificationActions {
 
   @override
   @JsonKey(name: 'name')
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'route')
-  String get route;
+  String get route => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'icon')
-  IconDetails get icon;
+  IconDetails get icon => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NotificationActionsCopyWith<_NotificationActions> get copyWith =>
+  _$$_NotificationActionsCopyWith<_$_NotificationActions> get copyWith =>
       throw _privateConstructorUsedError;
 }

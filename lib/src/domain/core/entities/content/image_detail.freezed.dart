@@ -12,31 +12,11 @@ part of 'image_detail.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ImageDetail _$ImageDetailFromJson(Map<String, dynamic> json) {
   return _ImageDetail.fromJson(json);
 }
-
-/// @nodoc
-class _$ImageDetailTearOff {
-  const _$ImageDetailTearOff();
-
-  _ImageDetail call({int? id, String? title, ImageMeta? meta}) {
-    return _ImageDetail(
-      id: id,
-      title: title,
-      meta: meta,
-    );
-  }
-
-  ImageDetail fromJson(Map<String, Object?> json) {
-    return ImageDetail.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ImageDetail = _$ImageDetailTearOff();
 
 /// @nodoc
 mixin _$ImageDetail {
@@ -103,11 +83,11 @@ class _$ImageDetailCopyWithImpl<$Res> implements $ImageDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ImageDetailCopyWith<$Res>
+abstract class _$$_ImageDetailCopyWith<$Res>
     implements $ImageDetailCopyWith<$Res> {
-  factory _$ImageDetailCopyWith(
-          _ImageDetail value, $Res Function(_ImageDetail) then) =
-      __$ImageDetailCopyWithImpl<$Res>;
+  factory _$$_ImageDetailCopyWith(
+          _$_ImageDetail value, $Res Function(_$_ImageDetail) then) =
+      __$$_ImageDetailCopyWithImpl<$Res>;
   @override
   $Res call({int? id, String? title, ImageMeta? meta});
 
@@ -116,14 +96,14 @@ abstract class _$ImageDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ImageDetailCopyWithImpl<$Res> extends _$ImageDetailCopyWithImpl<$Res>
-    implements _$ImageDetailCopyWith<$Res> {
-  __$ImageDetailCopyWithImpl(
-      _ImageDetail _value, $Res Function(_ImageDetail) _then)
-      : super(_value, (v) => _then(v as _ImageDetail));
+class __$$_ImageDetailCopyWithImpl<$Res> extends _$ImageDetailCopyWithImpl<$Res>
+    implements _$$_ImageDetailCopyWith<$Res> {
+  __$$_ImageDetailCopyWithImpl(
+      _$_ImageDetail _value, $Res Function(_$_ImageDetail) _then)
+      : super(_value, (v) => _then(v as _$_ImageDetail));
 
   @override
-  _ImageDetail get _value => super._value as _ImageDetail;
+  _$_ImageDetail get _value => super._value as _$_ImageDetail;
 
   @override
   $Res call({
@@ -131,7 +111,7 @@ class __$ImageDetailCopyWithImpl<$Res> extends _$ImageDetailCopyWithImpl<$Res>
     Object? title = freezed,
     Object? meta = freezed,
   }) {
-    return _then(_ImageDetail(
+    return _then(_$_ImageDetail(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -172,12 +152,13 @@ class _$_ImageDetail implements _ImageDetail {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ImageDetail &&
+            other is _$_ImageDetail &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.meta, meta));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -187,8 +168,8 @@ class _$_ImageDetail implements _ImageDetail {
 
   @JsonKey(ignore: true)
   @override
-  _$ImageDetailCopyWith<_ImageDetail> get copyWith =>
-      __$ImageDetailCopyWithImpl<_ImageDetail>(this, _$identity);
+  _$$_ImageDetailCopyWith<_$_ImageDetail> get copyWith =>
+      __$$_ImageDetailCopyWithImpl<_$_ImageDetail>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -197,20 +178,22 @@ class _$_ImageDetail implements _ImageDetail {
 }
 
 abstract class _ImageDetail implements ImageDetail {
-  factory _ImageDetail({int? id, String? title, ImageMeta? meta}) =
-      _$_ImageDetail;
+  factory _ImageDetail(
+      {final int? id,
+      final String? title,
+      final ImageMeta? meta}) = _$_ImageDetail;
 
   factory _ImageDetail.fromJson(Map<String, dynamic> json) =
       _$_ImageDetail.fromJson;
 
   @override
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String? get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  ImageMeta? get meta;
+  ImageMeta? get meta => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ImageDetailCopyWith<_ImageDetail> get copyWith =>
+  _$$_ImageDetailCopyWith<_$_ImageDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }

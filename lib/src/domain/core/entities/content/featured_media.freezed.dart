@@ -12,52 +12,11 @@ part of 'featured_media.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 FeaturedMedia _$FeaturedMediaFromJson(Map<String, dynamic> json) {
   return _FeaturedMedia.fromJson(json);
 }
-
-/// @nodoc
-class _$FeaturedMediaTearOff {
-  const _$FeaturedMediaTearOff();
-
-  _FeaturedMedia call(
-      {@JsonKey(name: 'ID')
-          int? id,
-      @JsonKey(name: 'url')
-          String? mediaUrl,
-      @JsonKey(name: 'title')
-          String? title,
-      @JsonKey(name: 'type', unknownEnumValue: FeaturedMediaType.UNKNOWN)
-          FeaturedMediaType? featuredMediaType,
-      @JsonKey(name: 'duration')
-          int? duration,
-      @JsonKey(name: 'width')
-          int? width,
-      @JsonKey(name: 'height')
-          int? height,
-      @JsonKey(name: 'thumbnail')
-          String? thumbnail}) {
-    return _FeaturedMedia(
-      id: id,
-      mediaUrl: mediaUrl,
-      title: title,
-      featuredMediaType: featuredMediaType,
-      duration: duration,
-      width: width,
-      height: height,
-      thumbnail: thumbnail,
-    );
-  }
-
-  FeaturedMedia fromJson(Map<String, Object?> json) {
-    return FeaturedMedia.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $FeaturedMedia = _$FeaturedMediaTearOff();
 
 /// @nodoc
 mixin _$FeaturedMedia {
@@ -167,11 +126,11 @@ class _$FeaturedMediaCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FeaturedMediaCopyWith<$Res>
+abstract class _$$_FeaturedMediaCopyWith<$Res>
     implements $FeaturedMediaCopyWith<$Res> {
-  factory _$FeaturedMediaCopyWith(
-          _FeaturedMedia value, $Res Function(_FeaturedMedia) then) =
-      __$FeaturedMediaCopyWithImpl<$Res>;
+  factory _$$_FeaturedMediaCopyWith(
+          _$_FeaturedMedia value, $Res Function(_$_FeaturedMedia) then) =
+      __$$_FeaturedMediaCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ID')
@@ -193,15 +152,15 @@ abstract class _$FeaturedMediaCopyWith<$Res>
 }
 
 /// @nodoc
-class __$FeaturedMediaCopyWithImpl<$Res>
+class __$$_FeaturedMediaCopyWithImpl<$Res>
     extends _$FeaturedMediaCopyWithImpl<$Res>
-    implements _$FeaturedMediaCopyWith<$Res> {
-  __$FeaturedMediaCopyWithImpl(
-      _FeaturedMedia _value, $Res Function(_FeaturedMedia) _then)
-      : super(_value, (v) => _then(v as _FeaturedMedia));
+    implements _$$_FeaturedMediaCopyWith<$Res> {
+  __$$_FeaturedMediaCopyWithImpl(
+      _$_FeaturedMedia _value, $Res Function(_$_FeaturedMedia) _then)
+      : super(_value, (v) => _then(v as _$_FeaturedMedia));
 
   @override
-  _FeaturedMedia get _value => super._value as _FeaturedMedia;
+  _$_FeaturedMedia get _value => super._value as _$_FeaturedMedia;
 
   @override
   $Res call({
@@ -214,7 +173,7 @@ class __$FeaturedMediaCopyWithImpl<$Res>
     Object? height = freezed,
     Object? thumbnail = freezed,
   }) {
-    return _then(_FeaturedMedia(
+    return _then(_$_FeaturedMedia(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -309,7 +268,7 @@ class _$_FeaturedMedia implements _FeaturedMedia {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FeaturedMedia &&
+            other is _$_FeaturedMedia &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.mediaUrl, mediaUrl) &&
             const DeepCollectionEquality().equals(other.title, title) &&
@@ -321,6 +280,7 @@ class _$_FeaturedMedia implements _FeaturedMedia {
             const DeepCollectionEquality().equals(other.thumbnail, thumbnail));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -335,8 +295,8 @@ class _$_FeaturedMedia implements _FeaturedMedia {
 
   @JsonKey(ignore: true)
   @override
-  _$FeaturedMediaCopyWith<_FeaturedMedia> get copyWith =>
-      __$FeaturedMediaCopyWithImpl<_FeaturedMedia>(this, _$identity);
+  _$$_FeaturedMediaCopyWith<_$_FeaturedMedia> get copyWith =>
+      __$$_FeaturedMediaCopyWithImpl<_$_FeaturedMedia>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -347,51 +307,52 @@ class _$_FeaturedMedia implements _FeaturedMedia {
 abstract class _FeaturedMedia implements FeaturedMedia {
   factory _FeaturedMedia(
       {@JsonKey(name: 'ID')
-          int? id,
+          final int? id,
       @JsonKey(name: 'url')
-          String? mediaUrl,
+          final String? mediaUrl,
       @JsonKey(name: 'title')
-          String? title,
+          final String? title,
       @JsonKey(name: 'type', unknownEnumValue: FeaturedMediaType.UNKNOWN)
-          FeaturedMediaType? featuredMediaType,
+          final FeaturedMediaType? featuredMediaType,
       @JsonKey(name: 'duration')
-          int? duration,
+          final int? duration,
       @JsonKey(name: 'width')
-          int? width,
+          final int? width,
       @JsonKey(name: 'height')
-          int? height,
+          final int? height,
       @JsonKey(name: 'thumbnail')
-          String? thumbnail}) = _$_FeaturedMedia;
+          final String? thumbnail}) = _$_FeaturedMedia;
 
   factory _FeaturedMedia.fromJson(Map<String, dynamic> json) =
       _$_FeaturedMedia.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'url')
-  String? get mediaUrl;
+  String? get mediaUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'title')
-  String? get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'type', unknownEnumValue: FeaturedMediaType.UNKNOWN)
-  FeaturedMediaType? get featuredMediaType;
+  FeaturedMediaType? get featuredMediaType =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'duration')
-  int? get duration;
+  int? get duration => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'width')
-  int? get width;
+  int? get width => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'height')
-  int? get height;
+  int? get height => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'thumbnail')
-  String? get thumbnail;
+  String? get thumbnail => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FeaturedMediaCopyWith<_FeaturedMedia> get copyWith =>
+  _$$_FeaturedMediaCopyWith<_$_FeaturedMedia> get copyWith =>
       throw _privateConstructorUsedError;
 }

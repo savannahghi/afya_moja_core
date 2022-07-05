@@ -12,52 +12,11 @@ part of 'notification_details.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 NotificationDetails _$NotificationDetailsFromJson(Map<String, dynamic> json) {
   return _NotificationDetails.fromJson(json);
 }
-
-/// @nodoc
-class _$NotificationDetailsTearOff {
-  const _$NotificationDetailsTearOff();
-
-  _NotificationDetails call(
-      {@JsonKey(name: 'id')
-          String? id,
-      @JsonKey(name: 'title')
-          String? title,
-      @JsonKey(name: 'body')
-          String? body,
-      @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          NotificationType? type,
-      @JsonKey(name: 'isRead', defaultValue: false)
-          bool? isRead,
-      @JsonKey(name: 'createdAt')
-          String? createdAt,
-      @JsonKey(name: 'actions')
-          List<NotificationActions>? actions,
-      @JsonKey(name: 'status')
-          String? status}) {
-    return _NotificationDetails(
-      id: id,
-      title: title,
-      body: body,
-      type: type,
-      isRead: isRead,
-      createdAt: createdAt,
-      actions: actions,
-      status: status,
-    );
-  }
-
-  NotificationDetails fromJson(Map<String, Object?> json) {
-    return NotificationDetails.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $NotificationDetails = _$NotificationDetailsTearOff();
 
 /// @nodoc
 mixin _$NotificationDetails {
@@ -166,11 +125,11 @@ class _$NotificationDetailsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotificationDetailsCopyWith<$Res>
+abstract class _$$_NotificationDetailsCopyWith<$Res>
     implements $NotificationDetailsCopyWith<$Res> {
-  factory _$NotificationDetailsCopyWith(_NotificationDetails value,
-          $Res Function(_NotificationDetails) then) =
-      __$NotificationDetailsCopyWithImpl<$Res>;
+  factory _$$_NotificationDetailsCopyWith(_$_NotificationDetails value,
+          $Res Function(_$_NotificationDetails) then) =
+      __$$_NotificationDetailsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id')
@@ -192,15 +151,15 @@ abstract class _$NotificationDetailsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NotificationDetailsCopyWithImpl<$Res>
+class __$$_NotificationDetailsCopyWithImpl<$Res>
     extends _$NotificationDetailsCopyWithImpl<$Res>
-    implements _$NotificationDetailsCopyWith<$Res> {
-  __$NotificationDetailsCopyWithImpl(
-      _NotificationDetails _value, $Res Function(_NotificationDetails) _then)
-      : super(_value, (v) => _then(v as _NotificationDetails));
+    implements _$$_NotificationDetailsCopyWith<$Res> {
+  __$$_NotificationDetailsCopyWithImpl(_$_NotificationDetails _value,
+      $Res Function(_$_NotificationDetails) _then)
+      : super(_value, (v) => _then(v as _$_NotificationDetails));
 
   @override
-  _NotificationDetails get _value => super._value as _NotificationDetails;
+  _$_NotificationDetails get _value => super._value as _$_NotificationDetails;
 
   @override
   $Res call({
@@ -213,7 +172,7 @@ class __$NotificationDetailsCopyWithImpl<$Res>
     Object? actions = freezed,
     Object? status = freezed,
   }) {
-    return _then(_NotificationDetails(
+    return _then(_$_NotificationDetails(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -239,7 +198,7 @@ class __$NotificationDetailsCopyWithImpl<$Res>
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
       actions: actions == freezed
-          ? _value.actions
+          ? _value._actions
           : actions // ignore: cast_nullable_to_non_nullable
               as List<NotificationActions>?,
       status: status == freezed
@@ -260,8 +219,9 @@ class _$_NotificationDetails implements _NotificationDetails {
       @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN) this.type,
       @JsonKey(name: 'isRead', defaultValue: false) this.isRead,
       @JsonKey(name: 'createdAt') this.createdAt,
-      @JsonKey(name: 'actions') this.actions,
-      @JsonKey(name: 'status') this.status});
+      @JsonKey(name: 'actions') final List<NotificationActions>? actions,
+      @JsonKey(name: 'status') this.status})
+      : _actions = actions;
 
   factory _$_NotificationDetails.fromJson(Map<String, dynamic> json) =>
       _$$_NotificationDetailsFromJson(json);
@@ -284,9 +244,16 @@ class _$_NotificationDetails implements _NotificationDetails {
   @override
   @JsonKey(name: 'createdAt')
   final String? createdAt;
+  final List<NotificationActions>? _actions;
   @override
   @JsonKey(name: 'actions')
-  final List<NotificationActions>? actions;
+  List<NotificationActions>? get actions {
+    final value = _actions;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'status')
   final String? status;
@@ -300,17 +267,18 @@ class _$_NotificationDetails implements _NotificationDetails {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotificationDetails &&
+            other is _$_NotificationDetails &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.body, body) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.isRead, isRead) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.actions, actions) &&
+            const DeepCollectionEquality().equals(other._actions, _actions) &&
             const DeepCollectionEquality().equals(other.status, status));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -320,13 +288,13 @@ class _$_NotificationDetails implements _NotificationDetails {
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(isRead),
       const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(actions),
+      const DeepCollectionEquality().hash(_actions),
       const DeepCollectionEquality().hash(status));
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationDetailsCopyWith<_NotificationDetails> get copyWith =>
-      __$NotificationDetailsCopyWithImpl<_NotificationDetails>(
+  _$$_NotificationDetailsCopyWith<_$_NotificationDetails> get copyWith =>
+      __$$_NotificationDetailsCopyWithImpl<_$_NotificationDetails>(
           this, _$identity);
 
   @override
@@ -338,51 +306,51 @@ class _$_NotificationDetails implements _NotificationDetails {
 abstract class _NotificationDetails implements NotificationDetails {
   factory _NotificationDetails(
       {@JsonKey(name: 'id')
-          String? id,
+          final String? id,
       @JsonKey(name: 'title')
-          String? title,
+          final String? title,
       @JsonKey(name: 'body')
-          String? body,
+          final String? body,
       @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          NotificationType? type,
+          final NotificationType? type,
       @JsonKey(name: 'isRead', defaultValue: false)
-          bool? isRead,
+          final bool? isRead,
       @JsonKey(name: 'createdAt')
-          String? createdAt,
+          final String? createdAt,
       @JsonKey(name: 'actions')
-          List<NotificationActions>? actions,
+          final List<NotificationActions>? actions,
       @JsonKey(name: 'status')
-          String? status}) = _$_NotificationDetails;
+          final String? status}) = _$_NotificationDetails;
 
   factory _NotificationDetails.fromJson(Map<String, dynamic> json) =
       _$_NotificationDetails.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  String? get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'title')
-  String? get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'body')
-  String? get body;
+  String? get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-  NotificationType? get type;
+  NotificationType? get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'isRead', defaultValue: false)
-  bool? get isRead;
+  bool? get isRead => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'createdAt')
-  String? get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'actions')
-  List<NotificationActions>? get actions;
+  List<NotificationActions>? get actions => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'status')
-  String? get status;
+  String? get status => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NotificationDetailsCopyWith<_NotificationDetails> get copyWith =>
+  _$$_NotificationDetailsCopyWith<_$_NotificationDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }

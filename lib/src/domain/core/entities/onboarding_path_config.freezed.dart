@@ -12,23 +12,7 @@ part of 'onboarding_path_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OnboardingPathConfigTearOff {
-  const _$OnboardingPathConfigTearOff();
-
-  _OnboardingPathConfig call(
-      {required String route, dynamic arguments = null}) {
-    return _OnboardingPathConfig(
-      route: route,
-      arguments: arguments,
-    );
-  }
-}
-
-/// @nodoc
-const $OnboardingPathConfig = _$OnboardingPathConfigTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OnboardingPathConfig {
@@ -78,32 +62,32 @@ class _$OnboardingPathConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$OnboardingPathConfigCopyWith<$Res>
+abstract class _$$_OnboardingPathConfigCopyWith<$Res>
     implements $OnboardingPathConfigCopyWith<$Res> {
-  factory _$OnboardingPathConfigCopyWith(_OnboardingPathConfig value,
-          $Res Function(_OnboardingPathConfig) then) =
-      __$OnboardingPathConfigCopyWithImpl<$Res>;
+  factory _$$_OnboardingPathConfigCopyWith(_$_OnboardingPathConfig value,
+          $Res Function(_$_OnboardingPathConfig) then) =
+      __$$_OnboardingPathConfigCopyWithImpl<$Res>;
   @override
   $Res call({String route, dynamic arguments});
 }
 
 /// @nodoc
-class __$OnboardingPathConfigCopyWithImpl<$Res>
+class __$$_OnboardingPathConfigCopyWithImpl<$Res>
     extends _$OnboardingPathConfigCopyWithImpl<$Res>
-    implements _$OnboardingPathConfigCopyWith<$Res> {
-  __$OnboardingPathConfigCopyWithImpl(
-      _OnboardingPathConfig _value, $Res Function(_OnboardingPathConfig) _then)
-      : super(_value, (v) => _then(v as _OnboardingPathConfig));
+    implements _$$_OnboardingPathConfigCopyWith<$Res> {
+  __$$_OnboardingPathConfigCopyWithImpl(_$_OnboardingPathConfig _value,
+      $Res Function(_$_OnboardingPathConfig) _then)
+      : super(_value, (v) => _then(v as _$_OnboardingPathConfig));
 
   @override
-  _OnboardingPathConfig get _value => super._value as _OnboardingPathConfig;
+  _$_OnboardingPathConfig get _value => super._value as _$_OnboardingPathConfig;
 
   @override
   $Res call({
     Object? route = freezed,
     Object? arguments = freezed,
   }) {
-    return _then(_OnboardingPathConfig(
+    return _then(_$_OnboardingPathConfig(
       route: route == freezed
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
@@ -121,10 +105,12 @@ class __$OnboardingPathConfigCopyWithImpl<$Res>
 class _$_OnboardingPathConfig implements _OnboardingPathConfig {
   _$_OnboardingPathConfig({required this.route, this.arguments = null});
 
-  @override // The route to navigate to
+// The route to navigate to
+  @override
   final String route;
+// Any route arguments that may need to be passed while navigating
+  @override
   @JsonKey()
-  @override // Any route arguments that may need to be passed while navigating
   final dynamic arguments;
 
   @override
@@ -136,7 +122,7 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _OnboardingPathConfig &&
+            other is _$_OnboardingPathConfig &&
             const DeepCollectionEquality().equals(other.route, route) &&
             const DeepCollectionEquality().equals(other.arguments, arguments));
   }
@@ -149,21 +135,22 @@ class _$_OnboardingPathConfig implements _OnboardingPathConfig {
 
   @JsonKey(ignore: true)
   @override
-  _$OnboardingPathConfigCopyWith<_OnboardingPathConfig> get copyWith =>
-      __$OnboardingPathConfigCopyWithImpl<_OnboardingPathConfig>(
+  _$$_OnboardingPathConfigCopyWith<_$_OnboardingPathConfig> get copyWith =>
+      __$$_OnboardingPathConfigCopyWithImpl<_$_OnboardingPathConfig>(
           this, _$identity);
 }
 
 abstract class _OnboardingPathConfig implements OnboardingPathConfig {
-  factory _OnboardingPathConfig({required String route, dynamic arguments}) =
-      _$_OnboardingPathConfig;
+  factory _OnboardingPathConfig(
+      {required final String route,
+      final dynamic arguments}) = _$_OnboardingPathConfig;
 
   @override // The route to navigate to
-  String get route;
+  String get route => throw _privateConstructorUsedError;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get arguments;
+  dynamic get arguments => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$OnboardingPathConfigCopyWith<_OnboardingPathConfig> get copyWith =>
+  _$$_OnboardingPathConfigCopyWith<_$_OnboardingPathConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }

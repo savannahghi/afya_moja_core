@@ -12,29 +12,11 @@ part of 'image_meta.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ImageMeta _$ImageMetaFromJson(Map<String, dynamic> json) {
   return _ImageMeta.fromJson(json);
 }
-
-/// @nodoc
-class _$ImageMetaTearOff {
-  const _$ImageMetaTearOff();
-
-  _ImageMeta call({String? imageDownloadUrl}) {
-    return _ImageMeta(
-      imageDownloadUrl: imageDownloadUrl,
-    );
-  }
-
-  ImageMeta fromJson(Map<String, Object?> json) {
-    return ImageMeta.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ImageMeta = _$ImageMetaTearOff();
 
 /// @nodoc
 mixin _$ImageMeta {
@@ -75,28 +57,29 @@ class _$ImageMetaCopyWithImpl<$Res> implements $ImageMetaCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ImageMetaCopyWith<$Res> implements $ImageMetaCopyWith<$Res> {
-  factory _$ImageMetaCopyWith(
-          _ImageMeta value, $Res Function(_ImageMeta) then) =
-      __$ImageMetaCopyWithImpl<$Res>;
+abstract class _$$_ImageMetaCopyWith<$Res> implements $ImageMetaCopyWith<$Res> {
+  factory _$$_ImageMetaCopyWith(
+          _$_ImageMeta value, $Res Function(_$_ImageMeta) then) =
+      __$$_ImageMetaCopyWithImpl<$Res>;
   @override
   $Res call({String? imageDownloadUrl});
 }
 
 /// @nodoc
-class __$ImageMetaCopyWithImpl<$Res> extends _$ImageMetaCopyWithImpl<$Res>
-    implements _$ImageMetaCopyWith<$Res> {
-  __$ImageMetaCopyWithImpl(_ImageMeta _value, $Res Function(_ImageMeta) _then)
-      : super(_value, (v) => _then(v as _ImageMeta));
+class __$$_ImageMetaCopyWithImpl<$Res> extends _$ImageMetaCopyWithImpl<$Res>
+    implements _$$_ImageMetaCopyWith<$Res> {
+  __$$_ImageMetaCopyWithImpl(
+      _$_ImageMeta _value, $Res Function(_$_ImageMeta) _then)
+      : super(_value, (v) => _then(v as _$_ImageMeta));
 
   @override
-  _ImageMeta get _value => super._value as _ImageMeta;
+  _$_ImageMeta get _value => super._value as _$_ImageMeta;
 
   @override
   $Res call({
     Object? imageDownloadUrl = freezed,
   }) {
-    return _then(_ImageMeta(
+    return _then(_$_ImageMeta(
       imageDownloadUrl: imageDownloadUrl == freezed
           ? _value.imageDownloadUrl
           : imageDownloadUrl // ignore: cast_nullable_to_non_nullable
@@ -125,19 +108,20 @@ class _$_ImageMeta implements _ImageMeta {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ImageMeta &&
+            other is _$_ImageMeta &&
             const DeepCollectionEquality()
                 .equals(other.imageDownloadUrl, imageDownloadUrl));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(imageDownloadUrl));
 
   @JsonKey(ignore: true)
   @override
-  _$ImageMetaCopyWith<_ImageMeta> get copyWith =>
-      __$ImageMetaCopyWithImpl<_ImageMeta>(this, _$identity);
+  _$$_ImageMetaCopyWith<_$_ImageMeta> get copyWith =>
+      __$$_ImageMetaCopyWithImpl<_$_ImageMeta>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -146,15 +130,15 @@ class _$_ImageMeta implements _ImageMeta {
 }
 
 abstract class _ImageMeta implements ImageMeta {
-  factory _ImageMeta({String? imageDownloadUrl}) = _$_ImageMeta;
+  factory _ImageMeta({final String? imageDownloadUrl}) = _$_ImageMeta;
 
   factory _ImageMeta.fromJson(Map<String, dynamic> json) =
       _$_ImageMeta.fromJson;
 
   @override
-  String? get imageDownloadUrl;
+  String? get imageDownloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ImageMetaCopyWith<_ImageMeta> get copyWith =>
+  _$$_ImageMetaCopyWith<_$_ImageMeta> get copyWith =>
       throw _privateConstructorUsedError;
 }

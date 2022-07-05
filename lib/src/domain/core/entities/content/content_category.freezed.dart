@@ -12,34 +12,11 @@ part of 'content_category.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ContentCategory _$ContentCategoryFromJson(Map<String, dynamic> json) {
   return _ContentCategory.fromJson(json);
 }
-
-/// @nodoc
-class _$ContentCategoryTearOff {
-  const _$ContentCategoryTearOff();
-
-  _ContentCategory call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'iconUrl') String? icon}) {
-    return _ContentCategory(
-      id: id,
-      name: name,
-      icon: icon,
-    );
-  }
-
-  ContentCategory fromJson(Map<String, Object?> json) {
-    return ContentCategory.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ContentCategory = _$ContentCategoryTearOff();
 
 /// @nodoc
 mixin _$ContentCategory {
@@ -100,11 +77,11 @@ class _$ContentCategoryCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ContentCategoryCopyWith<$Res>
+abstract class _$$_ContentCategoryCopyWith<$Res>
     implements $ContentCategoryCopyWith<$Res> {
-  factory _$ContentCategoryCopyWith(
-          _ContentCategory value, $Res Function(_ContentCategory) then) =
-      __$ContentCategoryCopyWithImpl<$Res>;
+  factory _$$_ContentCategoryCopyWith(
+          _$_ContentCategory value, $Res Function(_$_ContentCategory) then) =
+      __$$_ContentCategoryCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id') int? id,
@@ -113,15 +90,15 @@ abstract class _$ContentCategoryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ContentCategoryCopyWithImpl<$Res>
+class __$$_ContentCategoryCopyWithImpl<$Res>
     extends _$ContentCategoryCopyWithImpl<$Res>
-    implements _$ContentCategoryCopyWith<$Res> {
-  __$ContentCategoryCopyWithImpl(
-      _ContentCategory _value, $Res Function(_ContentCategory) _then)
-      : super(_value, (v) => _then(v as _ContentCategory));
+    implements _$$_ContentCategoryCopyWith<$Res> {
+  __$$_ContentCategoryCopyWithImpl(
+      _$_ContentCategory _value, $Res Function(_$_ContentCategory) _then)
+      : super(_value, (v) => _then(v as _$_ContentCategory));
 
   @override
-  _ContentCategory get _value => super._value as _ContentCategory;
+  _$_ContentCategory get _value => super._value as _$_ContentCategory;
 
   @override
   $Res call({
@@ -129,7 +106,7 @@ class __$ContentCategoryCopyWithImpl<$Res>
     Object? name = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_ContentCategory(
+    return _then(_$_ContentCategory(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -176,12 +153,13 @@ class _$_ContentCategory implements _ContentCategory {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContentCategory &&
+            other is _$_ContentCategory &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.icon, icon));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -191,8 +169,8 @@ class _$_ContentCategory implements _ContentCategory {
 
   @JsonKey(ignore: true)
   @override
-  _$ContentCategoryCopyWith<_ContentCategory> get copyWith =>
-      __$ContentCategoryCopyWithImpl<_ContentCategory>(this, _$identity);
+  _$$_ContentCategoryCopyWith<_$_ContentCategory> get copyWith =>
+      __$$_ContentCategoryCopyWithImpl<_$_ContentCategory>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -202,24 +180,24 @@ class _$_ContentCategory implements _ContentCategory {
 
 abstract class _ContentCategory implements ContentCategory {
   factory _ContentCategory(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'iconUrl') String? icon}) = _$_ContentCategory;
+      {@JsonKey(name: 'id') final int? id,
+      @JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'iconUrl') final String? icon}) = _$_ContentCategory;
 
   factory _ContentCategory.fromJson(Map<String, dynamic> json) =
       _$_ContentCategory.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'name')
-  String? get name;
+  String? get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'iconUrl')
-  String? get icon;
+  String? get icon => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ContentCategoryCopyWith<_ContentCategory> get copyWith =>
+  _$$_ContentCategoryCopyWith<_$_ContentCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,30 +12,11 @@ part of 'gallery_image.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 GalleryImage _$GalleryImageFromJson(Map<String, dynamic> json) {
   return _GalleryImage.fromJson(json);
 }
-
-/// @nodoc
-class _$GalleryImageTearOff {
-  const _$GalleryImageTearOff();
-
-  _GalleryImage call({int? id, ImageDetail? image}) {
-    return _GalleryImage(
-      id: id,
-      image: image,
-    );
-  }
-
-  GalleryImage fromJson(Map<String, Object?> json) {
-    return GalleryImage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GalleryImage = _$GalleryImageTearOff();
 
 /// @nodoc
 mixin _$GalleryImage {
@@ -96,11 +77,11 @@ class _$GalleryImageCopyWithImpl<$Res> implements $GalleryImageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GalleryImageCopyWith<$Res>
+abstract class _$$_GalleryImageCopyWith<$Res>
     implements $GalleryImageCopyWith<$Res> {
-  factory _$GalleryImageCopyWith(
-          _GalleryImage value, $Res Function(_GalleryImage) then) =
-      __$GalleryImageCopyWithImpl<$Res>;
+  factory _$$_GalleryImageCopyWith(
+          _$_GalleryImage value, $Res Function(_$_GalleryImage) then) =
+      __$$_GalleryImageCopyWithImpl<$Res>;
   @override
   $Res call({int? id, ImageDetail? image});
 
@@ -109,21 +90,22 @@ abstract class _$GalleryImageCopyWith<$Res>
 }
 
 /// @nodoc
-class __$GalleryImageCopyWithImpl<$Res> extends _$GalleryImageCopyWithImpl<$Res>
-    implements _$GalleryImageCopyWith<$Res> {
-  __$GalleryImageCopyWithImpl(
-      _GalleryImage _value, $Res Function(_GalleryImage) _then)
-      : super(_value, (v) => _then(v as _GalleryImage));
+class __$$_GalleryImageCopyWithImpl<$Res>
+    extends _$GalleryImageCopyWithImpl<$Res>
+    implements _$$_GalleryImageCopyWith<$Res> {
+  __$$_GalleryImageCopyWithImpl(
+      _$_GalleryImage _value, $Res Function(_$_GalleryImage) _then)
+      : super(_value, (v) => _then(v as _$_GalleryImage));
 
   @override
-  _GalleryImage get _value => super._value as _GalleryImage;
+  _$_GalleryImage get _value => super._value as _$_GalleryImage;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? image = freezed,
   }) {
-    return _then(_GalleryImage(
+    return _then(_$_GalleryImage(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -158,11 +140,12 @@ class _$_GalleryImage implements _GalleryImage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GalleryImage &&
+            other is _$_GalleryImage &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.image, image));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -171,8 +154,8 @@ class _$_GalleryImage implements _GalleryImage {
 
   @JsonKey(ignore: true)
   @override
-  _$GalleryImageCopyWith<_GalleryImage> get copyWith =>
-      __$GalleryImageCopyWithImpl<_GalleryImage>(this, _$identity);
+  _$$_GalleryImageCopyWith<_$_GalleryImage> get copyWith =>
+      __$$_GalleryImageCopyWithImpl<_$_GalleryImage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -181,17 +164,18 @@ class _$_GalleryImage implements _GalleryImage {
 }
 
 abstract class _GalleryImage implements GalleryImage {
-  factory _GalleryImage({int? id, ImageDetail? image}) = _$_GalleryImage;
+  factory _GalleryImage({final int? id, final ImageDetail? image}) =
+      _$_GalleryImage;
 
   factory _GalleryImage.fromJson(Map<String, dynamic> json) =
       _$_GalleryImage.fromJson;
 
   @override
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  ImageDetail? get image;
+  ImageDetail? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GalleryImageCopyWith<_GalleryImage> get copyWith =>
+  _$$_GalleryImageCopyWith<_$_GalleryImage> get copyWith =>
       throw _privateConstructorUsedError;
 }

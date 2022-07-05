@@ -12,37 +12,12 @@ part of 'verify_security_question_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 VerifySecurityQuestionData _$VerifySecurityQuestionDataFromJson(
     Map<String, dynamic> json) {
   return _VerifySecurityQuestionData.fromJson(json);
 }
-
-/// @nodoc
-class _$VerifySecurityQuestionDataTearOff {
-  const _$VerifySecurityQuestionDataTearOff();
-
-  _VerifySecurityQuestionData call(
-      {@JsonKey(name: 'questionID') String? questionID,
-      @JsonKey(name: 'flavour') String? flavour,
-      @JsonKey(name: 'response') String? response,
-      @JsonKey(name: 'phoneNumber') String? phoneNumber}) {
-    return _VerifySecurityQuestionData(
-      questionID: questionID,
-      flavour: flavour,
-      response: response,
-      phoneNumber: phoneNumber,
-    );
-  }
-
-  VerifySecurityQuestionData fromJson(Map<String, Object?> json) {
-    return VerifySecurityQuestionData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $VerifySecurityQuestionData = _$VerifySecurityQuestionDataTearOff();
 
 /// @nodoc
 mixin _$VerifySecurityQuestionData {
@@ -111,12 +86,12 @@ class _$VerifySecurityQuestionDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$VerifySecurityQuestionDataCopyWith<$Res>
+abstract class _$$_VerifySecurityQuestionDataCopyWith<$Res>
     implements $VerifySecurityQuestionDataCopyWith<$Res> {
-  factory _$VerifySecurityQuestionDataCopyWith(
-          _VerifySecurityQuestionData value,
-          $Res Function(_VerifySecurityQuestionData) then) =
-      __$VerifySecurityQuestionDataCopyWithImpl<$Res>;
+  factory _$$_VerifySecurityQuestionDataCopyWith(
+          _$_VerifySecurityQuestionData value,
+          $Res Function(_$_VerifySecurityQuestionData) then) =
+      __$$_VerifySecurityQuestionDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'questionID') String? questionID,
@@ -126,16 +101,17 @@ abstract class _$VerifySecurityQuestionDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$VerifySecurityQuestionDataCopyWithImpl<$Res>
+class __$$_VerifySecurityQuestionDataCopyWithImpl<$Res>
     extends _$VerifySecurityQuestionDataCopyWithImpl<$Res>
-    implements _$VerifySecurityQuestionDataCopyWith<$Res> {
-  __$VerifySecurityQuestionDataCopyWithImpl(_VerifySecurityQuestionData _value,
-      $Res Function(_VerifySecurityQuestionData) _then)
-      : super(_value, (v) => _then(v as _VerifySecurityQuestionData));
+    implements _$$_VerifySecurityQuestionDataCopyWith<$Res> {
+  __$$_VerifySecurityQuestionDataCopyWithImpl(
+      _$_VerifySecurityQuestionData _value,
+      $Res Function(_$_VerifySecurityQuestionData) _then)
+      : super(_value, (v) => _then(v as _$_VerifySecurityQuestionData));
 
   @override
-  _VerifySecurityQuestionData get _value =>
-      super._value as _VerifySecurityQuestionData;
+  _$_VerifySecurityQuestionData get _value =>
+      super._value as _$_VerifySecurityQuestionData;
 
   @override
   $Res call({
@@ -144,7 +120,7 @@ class __$VerifySecurityQuestionDataCopyWithImpl<$Res>
     Object? response = freezed,
     Object? phoneNumber = freezed,
   }) {
-    return _then(_VerifySecurityQuestionData(
+    return _then(_$_VerifySecurityQuestionData(
       questionID: questionID == freezed
           ? _value.questionID
           : questionID // ignore: cast_nullable_to_non_nullable
@@ -199,7 +175,7 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _VerifySecurityQuestionData &&
+            other is _$_VerifySecurityQuestionData &&
             const DeepCollectionEquality()
                 .equals(other.questionID, questionID) &&
             const DeepCollectionEquality().equals(other.flavour, flavour) &&
@@ -208,6 +184,7 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
                 .equals(other.phoneNumber, phoneNumber));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -218,9 +195,9 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
 
   @JsonKey(ignore: true)
   @override
-  _$VerifySecurityQuestionDataCopyWith<_VerifySecurityQuestionData>
-      get copyWith => __$VerifySecurityQuestionDataCopyWithImpl<
-          _VerifySecurityQuestionData>(this, _$identity);
+  _$$_VerifySecurityQuestionDataCopyWith<_$_VerifySecurityQuestionData>
+      get copyWith => __$$_VerifySecurityQuestionDataCopyWithImpl<
+          _$_VerifySecurityQuestionData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -231,10 +208,10 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
 abstract class _VerifySecurityQuestionData
     implements VerifySecurityQuestionData {
   factory _VerifySecurityQuestionData(
-          {@JsonKey(name: 'questionID') String? questionID,
-          @JsonKey(name: 'flavour') String? flavour,
-          @JsonKey(name: 'response') String? response,
-          @JsonKey(name: 'phoneNumber') String? phoneNumber}) =
+          {@JsonKey(name: 'questionID') final String? questionID,
+          @JsonKey(name: 'flavour') final String? flavour,
+          @JsonKey(name: 'response') final String? response,
+          @JsonKey(name: 'phoneNumber') final String? phoneNumber}) =
       _$_VerifySecurityQuestionData;
 
   factory _VerifySecurityQuestionData.fromJson(Map<String, dynamic> json) =
@@ -242,18 +219,18 @@ abstract class _VerifySecurityQuestionData
 
   @override
   @JsonKey(name: 'questionID')
-  String? get questionID;
+  String? get questionID => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'flavour')
-  String? get flavour;
+  String? get flavour => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'response')
-  String? get response;
+  String? get response => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'phoneNumber')
-  String? get phoneNumber;
+  String? get phoneNumber => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$VerifySecurityQuestionDataCopyWith<_VerifySecurityQuestionData>
+  _$$_VerifySecurityQuestionDataCopyWith<_$_VerifySecurityQuestionData>
       get copyWith => throw _privateConstructorUsedError;
 }
