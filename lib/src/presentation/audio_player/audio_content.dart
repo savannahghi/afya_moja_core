@@ -22,10 +22,12 @@ class AudioContent extends StatefulWidget {
   const AudioContent({
     required this.contentDetails,
     this.audioPlayer,
+    this.onPlayTapped,
   });
 
   final Content contentDetails;
   final AudioPlayer? audioPlayer;
+  final VoidCallback? onPlayTapped;
 
   @override
   State<AudioContent> createState() => _AudioContentState();
@@ -114,6 +116,7 @@ class _AudioContentState extends State<AudioContent>
                 padding: const EdgeInsets.all(10.0),
                 child: AudioContentControls(
                   player: _player,
+                  onPlayTapped: widget.onPlayTapped,
                 ),
               ),
             ),

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3
+
+- chore: add onPlayAudio callback to ContentItem
+
 ## 0.2.2
 
 - update json_annotation package version
