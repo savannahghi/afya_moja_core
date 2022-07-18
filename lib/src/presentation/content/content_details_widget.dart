@@ -174,11 +174,6 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
           )
         : const SizedBox();
 
-    final bool hasVideo = widget.payload.content.featuredMedia != null &&
-        widget.payload.content.featuredMedia!.isNotEmpty &&
-        widget.payload.content.featuredMedia?[0]?.featuredMediaType ==
-            FeaturedMediaType.video;
-
     final List<Widget> galleryItems = getGalleryItems(context: context);
     final TargetPlatform _platform = Theme.of(context).platform;
 
@@ -294,10 +289,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
                               ContentType.UNKNOWN,
                           estimateReadTime:
                               widget.payload.content.estimate ?? 0,
-                          videoDuration: hasVideo
-                              ? widget.payload.content.featuredMedia?.first
-                                  ?.duration
-                              : null,
+                          videoDuration: widget.payload.content.estimate ?? 0,
                         ),
                       ],
                     ),

@@ -34,9 +34,7 @@ class LeadingGraphicWidget extends StatelessWidget {
             child: EstimatedReadTimeBadge(
               contentType: contentDetails.contentType ?? ContentType.UNKNOWN,
               estimateReadTime: contentDetails.estimate ?? 0,
-              videoDuration: hasVideo
-                  ? contentDetails.featuredMedia?.first?.duration
-                  : null,
+              videoDuration: contentDetails.estimate ?? 0,
             ),
           ),
       ],
