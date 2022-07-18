@@ -15,6 +15,7 @@ class ContentItem extends StatelessWidget {
     this.contentDisplayedType = ContentDisplayedType.UNKNOWN,
     this.showReactions = true,
     this.onTapPdfCallback,
+    this.onPlayAudioTapped,
     required this.onTapCallback,
   });
 
@@ -24,6 +25,7 @@ class ContentItem extends StatelessWidget {
   final bool showReactions;
   final VoidCallback? onTapPdfCallback;
   final VoidCallback onTapCallback;
+  final VoidCallback? onPlayAudioTapped;
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +151,10 @@ class ContentItem extends StatelessWidget {
                   ),
                 ),
                 if (isAudio)
-                  AudioContent(contentDetails: contentDetails)
+                  AudioContent(
+                    contentDetails: contentDetails,
+                    onPlayTapped: onPlayAudioTapped,
+                  )
                 else if (contentDetails.contentType == ContentType.ARTICLE ||
                     contentDetails.featuredMedia != null &&
                         contentDetails.featuredMedia!.isNotEmpty &&

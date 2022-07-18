@@ -5,9 +5,11 @@ import 'package:just_audio/just_audio.dart';
 class AudioContentControls extends StatelessWidget {
   const AudioContentControls({
     required this.player,
+    this.onPlayTapped,
   });
 
   final AudioPlayer player;
+  final VoidCallback? onPlayTapped;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,10 @@ class AudioContentControls extends StatelessWidget {
               color: Colors.white,
               icon: const Icon(Icons.play_arrow),
               iconSize: 32.0,
-              onPressed: player.play,
+              onPressed: () {
+                player.play();
+                onPlayTapped?.call();
+              },
             ),
           );
         } else if (processingState != ProcessingState.completed) {
