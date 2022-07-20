@@ -48,7 +48,7 @@ class ContentItem extends StatelessWidget {
 
     final bool hasHeroImage = contentDetails.heroImage != null &&
         contentDetails.heroImage?.url != UNKNOWN &&
-        contentDetails.heroImage!.url!.isNotEmpty;
+        (contentDetails.heroImage?.url?.isNotEmpty ?? false);
 
     final bool isPdf = contentDetails.contentType == ContentType.PDF_DOCUMENT;
 
@@ -89,7 +89,7 @@ class ContentItem extends StatelessWidget {
                               Expanded(
                                 child: GalleryImageWidget(
                                   borderRadius: imageBorderRadius,
-                                  imageUrl: contentDetails.heroImage!.url!,
+                                  imageUrl: contentDetails.heroImage?.url ?? '',
                                   height: galleryImageHeight,
                                 ),
                               ),
@@ -172,7 +172,7 @@ class ContentItem extends StatelessWidget {
                             children: <Widget>[
                               Flexible(
                                 child: Text(
-                                  contentDetails.title!,
+                                  contentDetails.title ?? '',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: boldSize16Text(
@@ -187,7 +187,7 @@ class ContentItem extends StatelessWidget {
                                     greyTextColor,
                                   ),
                                   loadedDate:
-                                      contentDetails.metadata!.createdAt!,
+                                      contentDetails.metadata?.createdAt ?? '',
                                 ),
                               ),
                             ],
@@ -290,7 +290,7 @@ class ContentItem extends StatelessWidget {
                                   children: <Widget>[
                                     Flexible(
                                       child: Text(
-                                        contentDetails.title!,
+                                        contentDetails.title ?? '',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: boldSize16Text(
@@ -304,8 +304,9 @@ class ContentItem extends StatelessWidget {
                                         dateTextStyle: normalSize12Text(
                                           greyTextColor,
                                         ),
-                                        loadedDate:
-                                            contentDetails.metadata!.createdAt!,
+                                        loadedDate: contentDetails
+                                                .metadata?.createdAt ??
+                                            '',
                                       ),
                                     ),
                                   ],

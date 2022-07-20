@@ -12,32 +12,11 @@ part of 'content_metadata.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ContentMetadata _$ContentMetadataFromJson(Map<String, dynamic> json) {
   return _ContentMetadata.fromJson(json);
 }
-
-/// @nodoc
-class _$ContentMetadataTearOff {
-  const _$ContentMetadataTearOff();
-
-  _ContentMetadata call(
-      {@JsonKey(name: 'contentHTMLURL') String? publicLink,
-      @JsonKey(name: 'firstPublishedAt') String? createdAt}) {
-    return _ContentMetadata(
-      publicLink: publicLink,
-      createdAt: createdAt,
-    );
-  }
-
-  ContentMetadata fromJson(Map<String, Object?> json) {
-    return ContentMetadata.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ContentMetadata = _$ContentMetadataTearOff();
 
 /// @nodoc
 mixin _$ContentMetadata {
@@ -90,11 +69,11 @@ class _$ContentMetadataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ContentMetadataCopyWith<$Res>
+abstract class _$$_ContentMetadataCopyWith<$Res>
     implements $ContentMetadataCopyWith<$Res> {
-  factory _$ContentMetadataCopyWith(
-          _ContentMetadata value, $Res Function(_ContentMetadata) then) =
-      __$ContentMetadataCopyWithImpl<$Res>;
+  factory _$$_ContentMetadataCopyWith(
+          _$_ContentMetadata value, $Res Function(_$_ContentMetadata) then) =
+      __$$_ContentMetadataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'contentHTMLURL') String? publicLink,
@@ -102,22 +81,22 @@ abstract class _$ContentMetadataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ContentMetadataCopyWithImpl<$Res>
+class __$$_ContentMetadataCopyWithImpl<$Res>
     extends _$ContentMetadataCopyWithImpl<$Res>
-    implements _$ContentMetadataCopyWith<$Res> {
-  __$ContentMetadataCopyWithImpl(
-      _ContentMetadata _value, $Res Function(_ContentMetadata) _then)
-      : super(_value, (v) => _then(v as _ContentMetadata));
+    implements _$$_ContentMetadataCopyWith<$Res> {
+  __$$_ContentMetadataCopyWithImpl(
+      _$_ContentMetadata _value, $Res Function(_$_ContentMetadata) _then)
+      : super(_value, (v) => _then(v as _$_ContentMetadata));
 
   @override
-  _ContentMetadata get _value => super._value as _ContentMetadata;
+  _$_ContentMetadata get _value => super._value as _$_ContentMetadata;
 
   @override
   $Res call({
     Object? publicLink = freezed,
     Object? createdAt = freezed,
   }) {
-    return _then(_ContentMetadata(
+    return _then(_$_ContentMetadata(
       publicLink: publicLink == freezed
           ? _value.publicLink
           : publicLink // ignore: cast_nullable_to_non_nullable
@@ -156,12 +135,13 @@ class _$_ContentMetadata implements _ContentMetadata {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContentMetadata &&
+            other is _$_ContentMetadata &&
             const DeepCollectionEquality()
                 .equals(other.publicLink, publicLink) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -170,8 +150,8 @@ class _$_ContentMetadata implements _ContentMetadata {
 
   @JsonKey(ignore: true)
   @override
-  _$ContentMetadataCopyWith<_ContentMetadata> get copyWith =>
-      __$ContentMetadataCopyWithImpl<_ContentMetadata>(this, _$identity);
+  _$$_ContentMetadataCopyWith<_$_ContentMetadata> get copyWith =>
+      __$$_ContentMetadataCopyWithImpl<_$_ContentMetadata>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -181,8 +161,8 @@ class _$_ContentMetadata implements _ContentMetadata {
 
 abstract class _ContentMetadata implements ContentMetadata {
   factory _ContentMetadata(
-          {@JsonKey(name: 'contentHTMLURL') String? publicLink,
-          @JsonKey(name: 'firstPublishedAt') String? createdAt}) =
+          {@JsonKey(name: 'contentHTMLURL') final String? publicLink,
+          @JsonKey(name: 'firstPublishedAt') final String? createdAt}) =
       _$_ContentMetadata;
 
   factory _ContentMetadata.fromJson(Map<String, dynamic> json) =
@@ -190,12 +170,12 @@ abstract class _ContentMetadata implements ContentMetadata {
 
   @override
   @JsonKey(name: 'contentHTMLURL')
-  String? get publicLink;
+  String? get publicLink => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'firstPublishedAt')
-  String? get createdAt;
+  String? get createdAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ContentMetadataCopyWith<_ContentMetadata> get copyWith =>
+  _$$_ContentMetadataCopyWith<_$_ContentMetadata> get copyWith =>
       throw _privateConstructorUsedError;
 }

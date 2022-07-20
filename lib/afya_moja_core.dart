@@ -5,6 +5,7 @@ export 'src/domain/core/entities/communities/member.dart';
 export 'src/domain/core/entities/faqs/faqs_content_state.dart';
 export 'src/domain/core/entities/content/content.dart';
 export 'src/domain/core/entities/content/feed_content.dart';
+export 'src/domain/core/entities/content/faq_content.dart';
 export 'src/domain/core/entities/content/feed_items.dart';
 export 'src/domain/core/entities/content/content_category.dart';
 export 'src/domain/core/entities/content/content_details.dart';

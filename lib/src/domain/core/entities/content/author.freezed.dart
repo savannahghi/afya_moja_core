@@ -12,29 +12,11 @@ part of 'author.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Author _$AuthorFromJson(Map<String, dynamic> json) {
   return _Author.fromJson(json);
 }
-
-/// @nodoc
-class _$AuthorTearOff {
-  const _$AuthorTearOff();
-
-  _Author call({@JsonKey(name: 'ID') String? id}) {
-    return _Author(
-      id: id,
-    );
-  }
-
-  Author fromJson(Map<String, Object?> json) {
-    return Author.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Author = _$AuthorTearOff();
 
 /// @nodoc
 mixin _$Author {
@@ -75,27 +57,27 @@ class _$AuthorCopyWithImpl<$Res> implements $AuthorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AuthorCopyWith<$Res> implements $AuthorCopyWith<$Res> {
-  factory _$AuthorCopyWith(_Author value, $Res Function(_Author) then) =
-      __$AuthorCopyWithImpl<$Res>;
+abstract class _$$_AuthorCopyWith<$Res> implements $AuthorCopyWith<$Res> {
+  factory _$$_AuthorCopyWith(_$_Author value, $Res Function(_$_Author) then) =
+      __$$_AuthorCopyWithImpl<$Res>;
   @override
   $Res call({@JsonKey(name: 'ID') String? id});
 }
 
 /// @nodoc
-class __$AuthorCopyWithImpl<$Res> extends _$AuthorCopyWithImpl<$Res>
-    implements _$AuthorCopyWith<$Res> {
-  __$AuthorCopyWithImpl(_Author _value, $Res Function(_Author) _then)
-      : super(_value, (v) => _then(v as _Author));
+class __$$_AuthorCopyWithImpl<$Res> extends _$AuthorCopyWithImpl<$Res>
+    implements _$$_AuthorCopyWith<$Res> {
+  __$$_AuthorCopyWithImpl(_$_Author _value, $Res Function(_$_Author) _then)
+      : super(_value, (v) => _then(v as _$_Author));
 
   @override
-  _Author get _value => super._value as _Author;
+  _$_Author get _value => super._value as _$_Author;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(_Author(
+    return _then(_$_Author(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -125,18 +107,19 @@ class _$_Author implements _Author {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Author &&
+            other is _$_Author &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
-  _$AuthorCopyWith<_Author> get copyWith =>
-      __$AuthorCopyWithImpl<_Author>(this, _$identity);
+  _$$_AuthorCopyWith<_$_Author> get copyWith =>
+      __$$_AuthorCopyWithImpl<_$_Author>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -145,14 +128,15 @@ class _$_Author implements _Author {
 }
 
 abstract class _Author implements Author {
-  factory _Author({@JsonKey(name: 'ID') String? id}) = _$_Author;
+  factory _Author({@JsonKey(name: 'ID') final String? id}) = _$_Author;
 
   factory _Author.fromJson(Map<String, dynamic> json) = _$_Author.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  String? get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AuthorCopyWith<_Author> get copyWith => throw _privateConstructorUsedError;
+  _$$_AuthorCopyWith<_$_Author> get copyWith =>
+      throw _privateConstructorUsedError;
 }

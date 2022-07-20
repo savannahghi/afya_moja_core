@@ -12,29 +12,11 @@ part of 'icon_details.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 IconDetails _$IconDetailsFromJson(Map<String, dynamic> json) {
   return _IconDetails.fromJson(json);
 }
-
-/// @nodoc
-class _$IconDetailsTearOff {
-  const _$IconDetailsTearOff();
-
-  _IconDetails call({@JsonKey(name: 'url') required String iconUrlSvgPath}) {
-    return _IconDetails(
-      iconUrlSvgPath: iconUrlSvgPath,
-    );
-  }
-
-  IconDetails fromJson(Map<String, Object?> json) {
-    return IconDetails.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $IconDetails = _$IconDetailsTearOff();
 
 /// @nodoc
 mixin _$IconDetails {
@@ -77,30 +59,30 @@ class _$IconDetailsCopyWithImpl<$Res> implements $IconDetailsCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$IconDetailsCopyWith<$Res>
+abstract class _$$_IconDetailsCopyWith<$Res>
     implements $IconDetailsCopyWith<$Res> {
-  factory _$IconDetailsCopyWith(
-          _IconDetails value, $Res Function(_IconDetails) then) =
-      __$IconDetailsCopyWithImpl<$Res>;
+  factory _$$_IconDetailsCopyWith(
+          _$_IconDetails value, $Res Function(_$_IconDetails) then) =
+      __$$_IconDetailsCopyWithImpl<$Res>;
   @override
   $Res call({@JsonKey(name: 'url') String iconUrlSvgPath});
 }
 
 /// @nodoc
-class __$IconDetailsCopyWithImpl<$Res> extends _$IconDetailsCopyWithImpl<$Res>
-    implements _$IconDetailsCopyWith<$Res> {
-  __$IconDetailsCopyWithImpl(
-      _IconDetails _value, $Res Function(_IconDetails) _then)
-      : super(_value, (v) => _then(v as _IconDetails));
+class __$$_IconDetailsCopyWithImpl<$Res> extends _$IconDetailsCopyWithImpl<$Res>
+    implements _$$_IconDetailsCopyWith<$Res> {
+  __$$_IconDetailsCopyWithImpl(
+      _$_IconDetails _value, $Res Function(_$_IconDetails) _then)
+      : super(_value, (v) => _then(v as _$_IconDetails));
 
   @override
-  _IconDetails get _value => super._value as _IconDetails;
+  _$_IconDetails get _value => super._value as _$_IconDetails;
 
   @override
   $Res call({
     Object? iconUrlSvgPath = freezed,
   }) {
-    return _then(_IconDetails(
+    return _then(_$_IconDetails(
       iconUrlSvgPath: iconUrlSvgPath == freezed
           ? _value.iconUrlSvgPath
           : iconUrlSvgPath // ignore: cast_nullable_to_non_nullable
@@ -130,19 +112,20 @@ class _$_IconDetails implements _IconDetails {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IconDetails &&
+            other is _$_IconDetails &&
             const DeepCollectionEquality()
                 .equals(other.iconUrlSvgPath, iconUrlSvgPath));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(iconUrlSvgPath));
 
   @JsonKey(ignore: true)
   @override
-  _$IconDetailsCopyWith<_IconDetails> get copyWith =>
-      __$IconDetailsCopyWithImpl<_IconDetails>(this, _$identity);
+  _$$_IconDetailsCopyWith<_$_IconDetails> get copyWith =>
+      __$$_IconDetailsCopyWithImpl<_$_IconDetails>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,7 +134,8 @@ class _$_IconDetails implements _IconDetails {
 }
 
 abstract class _IconDetails implements IconDetails {
-  factory _IconDetails({@JsonKey(name: 'url') required String iconUrlSvgPath}) =
+  factory _IconDetails(
+          {@JsonKey(name: 'url') required final String iconUrlSvgPath}) =
       _$_IconDetails;
 
   factory _IconDetails.fromJson(Map<String, dynamic> json) =
@@ -159,9 +143,9 @@ abstract class _IconDetails implements IconDetails {
 
   @override
   @JsonKey(name: 'url')
-  String get iconUrlSvgPath;
+  String get iconUrlSvgPath => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$IconDetailsCopyWith<_IconDetails> get copyWith =>
+  _$$_IconDetailsCopyWith<_$_IconDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
