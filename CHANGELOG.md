@@ -1,11 +1,17 @@
 # Changelog
 
+## 0.2.5
+
+- feat: FAQ Content model class
+
 ## 0.2.4
 
 - chore: add onPlayAudio callback to ContentItem
+
 ## 0.2.3
 
 - fix content timing
+
 ## 0.2.2
 
 - update json_annotation package version

@@ -12,32 +12,11 @@ part of 'document.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Document _$DocumentFromJson(Map<String, dynamic> json) {
   return _Document.fromJson(json);
 }
-
-/// @nodoc
-class _$DocumentTearOff {
-  const _$DocumentTearOff();
-
-  _Document call(
-      {@JsonKey(name: 'ID') int? id,
-      @JsonKey(name: 'Document') DocumentData? documentData}) {
-    return _Document(
-      id: id,
-      documentData: documentData,
-    );
-  }
-
-  Document fromJson(Map<String, Object?> json) {
-    return Document.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Document = _$DocumentTearOff();
 
 /// @nodoc
 mixin _$Document {
@@ -101,9 +80,10 @@ class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
-  factory _$DocumentCopyWith(_Document value, $Res Function(_Document) then) =
-      __$DocumentCopyWithImpl<$Res>;
+abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
+  factory _$$_DocumentCopyWith(
+          _$_Document value, $Res Function(_$_Document) then) =
+      __$$_DocumentCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ID') int? id,
@@ -114,20 +94,21 @@ abstract class _$DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
-    implements _$DocumentCopyWith<$Res> {
-  __$DocumentCopyWithImpl(_Document _value, $Res Function(_Document) _then)
-      : super(_value, (v) => _then(v as _Document));
+class __$$_DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
+    implements _$$_DocumentCopyWith<$Res> {
+  __$$_DocumentCopyWithImpl(
+      _$_Document _value, $Res Function(_$_Document) _then)
+      : super(_value, (v) => _then(v as _$_Document));
 
   @override
-  _Document get _value => super._value as _Document;
+  _$_Document get _value => super._value as _$_Document;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? documentData = freezed,
   }) {
-    return _then(_Document(
+    return _then(_$_Document(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -166,12 +147,13 @@ class _$_Document implements _Document {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Document &&
+            other is _$_Document &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.documentData, documentData));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -180,8 +162,8 @@ class _$_Document implements _Document {
 
   @JsonKey(ignore: true)
   @override
-  _$DocumentCopyWith<_Document> get copyWith =>
-      __$DocumentCopyWithImpl<_Document>(this, _$identity);
+  _$$_DocumentCopyWith<_$_Document> get copyWith =>
+      __$$_DocumentCopyWithImpl<_$_Document>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -191,49 +173,27 @@ class _$_Document implements _Document {
 
 abstract class _Document implements Document {
   factory _Document(
-      {@JsonKey(name: 'ID') int? id,
-      @JsonKey(name: 'Document') DocumentData? documentData}) = _$_Document;
+          {@JsonKey(name: 'ID') final int? id,
+          @JsonKey(name: 'Document') final DocumentData? documentData}) =
+      _$_Document;
 
   factory _Document.fromJson(Map<String, dynamic> json) = _$_Document.fromJson;
 
   @override
   @JsonKey(name: 'ID')
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'Document')
-  DocumentData? get documentData;
+  DocumentData? get documentData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DocumentCopyWith<_Document> get copyWith =>
+  _$$_DocumentCopyWith<_$_Document> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 DocumentData _$DocumentDataFromJson(Map<String, dynamic> json) {
   return _DocumentData.fromJson(json);
 }
-
-/// @nodoc
-class _$DocumentDataTearOff {
-  const _$DocumentDataTearOff();
-
-  _DocumentData call(
-      {@JsonKey(name: 'ID') int? id,
-      @JsonKey(name: 'title') String? title,
-      @JsonKey(name: 'meta') DocumentMetaData? documentMetaData}) {
-    return _DocumentData(
-      id: id,
-      title: title,
-      documentMetaData: documentMetaData,
-    );
-  }
-
-  DocumentData fromJson(Map<String, Object?> json) {
-    return DocumentData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DocumentData = _$DocumentDataTearOff();
 
 /// @nodoc
 mixin _$DocumentData {
@@ -306,11 +266,11 @@ class _$DocumentDataCopyWithImpl<$Res> implements $DocumentDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DocumentDataCopyWith<$Res>
+abstract class _$$_DocumentDataCopyWith<$Res>
     implements $DocumentDataCopyWith<$Res> {
-  factory _$DocumentDataCopyWith(
-          _DocumentData value, $Res Function(_DocumentData) then) =
-      __$DocumentDataCopyWithImpl<$Res>;
+  factory _$$_DocumentDataCopyWith(
+          _$_DocumentData value, $Res Function(_$_DocumentData) then) =
+      __$$_DocumentDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ID') int? id,
@@ -322,14 +282,15 @@ abstract class _$DocumentDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DocumentDataCopyWithImpl<$Res> extends _$DocumentDataCopyWithImpl<$Res>
-    implements _$DocumentDataCopyWith<$Res> {
-  __$DocumentDataCopyWithImpl(
-      _DocumentData _value, $Res Function(_DocumentData) _then)
-      : super(_value, (v) => _then(v as _DocumentData));
+class __$$_DocumentDataCopyWithImpl<$Res>
+    extends _$DocumentDataCopyWithImpl<$Res>
+    implements _$$_DocumentDataCopyWith<$Res> {
+  __$$_DocumentDataCopyWithImpl(
+      _$_DocumentData _value, $Res Function(_$_DocumentData) _then)
+      : super(_value, (v) => _then(v as _$_DocumentData));
 
   @override
-  _DocumentData get _value => super._value as _DocumentData;
+  _$_DocumentData get _value => super._value as _$_DocumentData;
 
   @override
   $Res call({
@@ -337,7 +298,7 @@ class __$DocumentDataCopyWithImpl<$Res> extends _$DocumentDataCopyWithImpl<$Res>
     Object? title = freezed,
     Object? documentMetaData = freezed,
   }) {
-    return _then(_DocumentData(
+    return _then(_$_DocumentData(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -384,13 +345,14 @@ class _$_DocumentData implements _DocumentData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DocumentData &&
+            other is _$_DocumentData &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality()
                 .equals(other.documentMetaData, documentMetaData));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -400,8 +362,8 @@ class _$_DocumentData implements _DocumentData {
 
   @JsonKey(ignore: true)
   @override
-  _$DocumentDataCopyWith<_DocumentData> get copyWith =>
-      __$DocumentDataCopyWithImpl<_DocumentData>(this, _$identity);
+  _$$_DocumentDataCopyWith<_$_DocumentData> get copyWith =>
+      __$$_DocumentDataCopyWithImpl<_$_DocumentData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -411,9 +373,9 @@ class _$_DocumentData implements _DocumentData {
 
 abstract class _DocumentData implements DocumentData {
   factory _DocumentData(
-          {@JsonKey(name: 'ID') int? id,
-          @JsonKey(name: 'title') String? title,
-          @JsonKey(name: 'meta') DocumentMetaData? documentMetaData}) =
+          {@JsonKey(name: 'ID') final int? id,
+          @JsonKey(name: 'title') final String? title,
+          @JsonKey(name: 'meta') final DocumentMetaData? documentMetaData}) =
       _$_DocumentData;
 
   factory _DocumentData.fromJson(Map<String, dynamic> json) =
@@ -421,41 +383,22 @@ abstract class _DocumentData implements DocumentData {
 
   @override
   @JsonKey(name: 'ID')
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'title')
-  String? get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'meta')
-  DocumentMetaData? get documentMetaData;
+  DocumentMetaData? get documentMetaData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DocumentDataCopyWith<_DocumentData> get copyWith =>
+  _$$_DocumentDataCopyWith<_$_DocumentData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 DocumentMetaData _$DocumentMetaDataFromJson(Map<String, dynamic> json) {
   return _DocumentMetaData.fromJson(json);
 }
-
-/// @nodoc
-class _$DocumentMetaDataTearOff {
-  const _$DocumentMetaDataTearOff();
-
-  _DocumentMetaData call(
-      {@JsonKey(name: 'documentDownloadUrl') String? documentDownloadUrl}) {
-    return _DocumentMetaData(
-      documentDownloadUrl: documentDownloadUrl,
-    );
-  }
-
-  DocumentMetaData fromJson(Map<String, Object?> json) {
-    return DocumentMetaData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DocumentMetaData = _$DocumentMetaDataTearOff();
 
 /// @nodoc
 mixin _$DocumentMetaData {
@@ -500,32 +443,32 @@ class _$DocumentMetaDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DocumentMetaDataCopyWith<$Res>
+abstract class _$$_DocumentMetaDataCopyWith<$Res>
     implements $DocumentMetaDataCopyWith<$Res> {
-  factory _$DocumentMetaDataCopyWith(
-          _DocumentMetaData value, $Res Function(_DocumentMetaData) then) =
-      __$DocumentMetaDataCopyWithImpl<$Res>;
+  factory _$$_DocumentMetaDataCopyWith(
+          _$_DocumentMetaData value, $Res Function(_$_DocumentMetaData) then) =
+      __$$_DocumentMetaDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'documentDownloadUrl') String? documentDownloadUrl});
 }
 
 /// @nodoc
-class __$DocumentMetaDataCopyWithImpl<$Res>
+class __$$_DocumentMetaDataCopyWithImpl<$Res>
     extends _$DocumentMetaDataCopyWithImpl<$Res>
-    implements _$DocumentMetaDataCopyWith<$Res> {
-  __$DocumentMetaDataCopyWithImpl(
-      _DocumentMetaData _value, $Res Function(_DocumentMetaData) _then)
-      : super(_value, (v) => _then(v as _DocumentMetaData));
+    implements _$$_DocumentMetaDataCopyWith<$Res> {
+  __$$_DocumentMetaDataCopyWithImpl(
+      _$_DocumentMetaData _value, $Res Function(_$_DocumentMetaData) _then)
+      : super(_value, (v) => _then(v as _$_DocumentMetaData));
 
   @override
-  _DocumentMetaData get _value => super._value as _DocumentMetaData;
+  _$_DocumentMetaData get _value => super._value as _$_DocumentMetaData;
 
   @override
   $Res call({
     Object? documentDownloadUrl = freezed,
   }) {
-    return _then(_DocumentMetaData(
+    return _then(_$_DocumentMetaData(
       documentDownloadUrl: documentDownloadUrl == freezed
           ? _value.documentDownloadUrl
           : documentDownloadUrl // ignore: cast_nullable_to_non_nullable
@@ -556,19 +499,20 @@ class _$_DocumentMetaData implements _DocumentMetaData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DocumentMetaData &&
+            other is _$_DocumentMetaData &&
             const DeepCollectionEquality()
                 .equals(other.documentDownloadUrl, documentDownloadUrl));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(documentDownloadUrl));
 
   @JsonKey(ignore: true)
   @override
-  _$DocumentMetaDataCopyWith<_DocumentMetaData> get copyWith =>
-      __$DocumentMetaDataCopyWithImpl<_DocumentMetaData>(this, _$identity);
+  _$$_DocumentMetaDataCopyWith<_$_DocumentMetaData> get copyWith =>
+      __$$_DocumentMetaDataCopyWithImpl<_$_DocumentMetaData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -578,17 +522,17 @@ class _$_DocumentMetaData implements _DocumentMetaData {
 
 abstract class _DocumentMetaData implements DocumentMetaData {
   factory _DocumentMetaData(
-          {@JsonKey(name: 'documentDownloadUrl') String? documentDownloadUrl}) =
-      _$_DocumentMetaData;
+      {@JsonKey(name: 'documentDownloadUrl')
+          final String? documentDownloadUrl}) = _$_DocumentMetaData;
 
   factory _DocumentMetaData.fromJson(Map<String, dynamic> json) =
       _$_DocumentMetaData.fromJson;
 
   @override
   @JsonKey(name: 'documentDownloadUrl')
-  String? get documentDownloadUrl;
+  String? get documentDownloadUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DocumentMetaDataCopyWith<_DocumentMetaData> get copyWith =>
+  _$$_DocumentMetaDataCopyWith<_$_DocumentMetaData> get copyWith =>
       throw _privateConstructorUsedError;
 }

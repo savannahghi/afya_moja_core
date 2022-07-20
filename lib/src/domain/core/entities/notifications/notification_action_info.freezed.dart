@@ -12,26 +12,7 @@ part of 'notification_action_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NotificationActionInfoTearOff {
-  const _$NotificationActionInfoTearOff();
-
-  _NotificationActionInfo call(
-      {required String? actionTitle,
-      required String? route,
-      dynamic arguments = null}) {
-    return _NotificationActionInfo(
-      actionTitle: actionTitle,
-      route: route,
-      arguments: arguments,
-    );
-  }
-}
-
-/// @nodoc
-const $NotificationActionInfo = _$NotificationActionInfoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$NotificationActionInfo {
@@ -88,25 +69,26 @@ class _$NotificationActionInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotificationActionInfoCopyWith<$Res>
+abstract class _$$_NotificationActionInfoCopyWith<$Res>
     implements $NotificationActionInfoCopyWith<$Res> {
-  factory _$NotificationActionInfoCopyWith(_NotificationActionInfo value,
-          $Res Function(_NotificationActionInfo) then) =
-      __$NotificationActionInfoCopyWithImpl<$Res>;
+  factory _$$_NotificationActionInfoCopyWith(_$_NotificationActionInfo value,
+          $Res Function(_$_NotificationActionInfo) then) =
+      __$$_NotificationActionInfoCopyWithImpl<$Res>;
   @override
   $Res call({String? actionTitle, String? route, dynamic arguments});
 }
 
 /// @nodoc
-class __$NotificationActionInfoCopyWithImpl<$Res>
+class __$$_NotificationActionInfoCopyWithImpl<$Res>
     extends _$NotificationActionInfoCopyWithImpl<$Res>
-    implements _$NotificationActionInfoCopyWith<$Res> {
-  __$NotificationActionInfoCopyWithImpl(_NotificationActionInfo _value,
-      $Res Function(_NotificationActionInfo) _then)
-      : super(_value, (v) => _then(v as _NotificationActionInfo));
+    implements _$$_NotificationActionInfoCopyWith<$Res> {
+  __$$_NotificationActionInfoCopyWithImpl(_$_NotificationActionInfo _value,
+      $Res Function(_$_NotificationActionInfo) _then)
+      : super(_value, (v) => _then(v as _$_NotificationActionInfo));
 
   @override
-  _NotificationActionInfo get _value => super._value as _NotificationActionInfo;
+  _$_NotificationActionInfo get _value =>
+      super._value as _$_NotificationActionInfo;
 
   @override
   $Res call({
@@ -114,7 +96,7 @@ class __$NotificationActionInfoCopyWithImpl<$Res>
     Object? route = freezed,
     Object? arguments = freezed,
   }) {
-    return _then(_NotificationActionInfo(
+    return _then(_$_NotificationActionInfo(
       actionTitle: actionTitle == freezed
           ? _value.actionTitle
           : actionTitle // ignore: cast_nullable_to_non_nullable
@@ -137,12 +119,15 @@ class _$_NotificationActionInfo implements _NotificationActionInfo {
   _$_NotificationActionInfo(
       {required this.actionTitle, required this.route, this.arguments = null});
 
-  @override // The title string on the action button
+// The title string on the action button
+  @override
   final String? actionTitle;
-  @override // The route to navigate to
+// The route to navigate to
+  @override
   final String? route;
+// Any route arguments that may need to be passed while navigating
+  @override
   @JsonKey()
-  @override // Any route arguments that may need to be passed while navigating
   final dynamic arguments;
 
   @override
@@ -154,7 +139,7 @@ class _$_NotificationActionInfo implements _NotificationActionInfo {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotificationActionInfo &&
+            other is _$_NotificationActionInfo &&
             const DeepCollectionEquality()
                 .equals(other.actionTitle, actionTitle) &&
             const DeepCollectionEquality().equals(other.route, route) &&
@@ -170,25 +155,25 @@ class _$_NotificationActionInfo implements _NotificationActionInfo {
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationActionInfoCopyWith<_NotificationActionInfo> get copyWith =>
-      __$NotificationActionInfoCopyWithImpl<_NotificationActionInfo>(
+  _$$_NotificationActionInfoCopyWith<_$_NotificationActionInfo> get copyWith =>
+      __$$_NotificationActionInfoCopyWithImpl<_$_NotificationActionInfo>(
           this, _$identity);
 }
 
 abstract class _NotificationActionInfo implements NotificationActionInfo {
   factory _NotificationActionInfo(
-      {required String? actionTitle,
-      required String? route,
-      dynamic arguments}) = _$_NotificationActionInfo;
+      {required final String? actionTitle,
+      required final String? route,
+      final dynamic arguments}) = _$_NotificationActionInfo;
 
   @override // The title string on the action button
-  String? get actionTitle;
+  String? get actionTitle => throw _privateConstructorUsedError;
   @override // The route to navigate to
-  String? get route;
+  String? get route => throw _privateConstructorUsedError;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get arguments;
+  dynamic get arguments => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NotificationActionInfoCopyWith<_NotificationActionInfo> get copyWith =>
+  _$$_NotificationActionInfoCopyWith<_$_NotificationActionInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
