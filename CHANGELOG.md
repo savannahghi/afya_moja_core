@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.6
+
+- feat: notifications filters
 ## 0.2.5
 
 - feat: FAQ Content model class
