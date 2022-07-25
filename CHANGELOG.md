@@ -1,11 +1,17 @@
 # Changelog
 
+## 0.2.8
+
+- feat: add carousel_slider
+
 ## 0.2.7
 
 - chore: rename notification filters
+
 ## 0.2.6
 
 - feat: notifications filters
+
 ## 0.2.5
 
 - feat: FAQ Content model class

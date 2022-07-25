@@ -42,3 +42,5 @@ const Key feedVideoPlayIconKey = Key('feed_video_play_icon_key');
 const Key galleryImagePageKey = Key('gallery_image_page_key');
 const Key cancelButtonKey = Key('cancel_button');
 const Key genericContainerKey = Key('generic_container');
+
+const Key carouselItemKey = Key('carousel_item_key');

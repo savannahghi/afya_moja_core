@@ -70,3 +70,4 @@ export 'src/presentation/content/gallery_image_widget.dart';
 export 'src/presentation/content/reaction_item.dart';
 export 'src/presentation/content/leading_graphic_widget.dart';
 export 'src/presentation/content/content_details_widget.dart';
+export 'src/presentation/carousel_slider/carousel_slider.dart';
