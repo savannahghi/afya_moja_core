@@ -28,6 +28,7 @@ extension SecurityQuestionResponseTypeEx on SecurityQuestionResponseType {
 }
 
 enum EditInformationInputType { Text, DropDown }
+
 enum CaregiverType { FATHER, MOTHER, SIBLING, HEALTHCARE_PROFESSIONAL }
 
 extension CaregiverTypeEx on CaregiverType {
@@ -56,6 +57,12 @@ enum NotificationType {
   DEMOTE_MODERATOR,
   PROMOTE_TO_MODERATOR,
   UNKNOWN
+}
+
+extension NotificationTypeEx on NotificationType {
+  String get name {
+    return describeEnum(this);
+  }
 }
 
 extension RoleName on RoleValue {
