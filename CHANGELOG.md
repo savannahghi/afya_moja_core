@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.9
+
+- feat: add notification filter extension method
+
 ## 0.2.8
 
 - feat: add carousel_slider

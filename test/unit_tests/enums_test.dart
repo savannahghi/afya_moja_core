@@ -33,5 +33,12 @@ void main() {
         'Healthcare professional',
       );
     });
+
+    test('expects notification filters names', () {
+      expect(
+        NotificationType.APPOINTMENT.name,
+        'APPOINTMENT',
+      );
+    });
   });
 }
