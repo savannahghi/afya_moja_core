@@ -9,7 +9,7 @@ part 'notification_filter.g.dart';
 class NotificationFilter with _$NotificationFilter {
   factory NotificationFilter({
     @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
+    @JsonKey(name: 'enum', defaultValue: NotificationType.UNKNOWN)
         NotificationType? type,
   }) = _NotificationFilter;
 
