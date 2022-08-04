@@ -9,8 +9,7 @@ part 'notification_filter.g.dart';
 class NotificationFilter with _$NotificationFilter {
   factory NotificationFilter({
     @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'enum', defaultValue: NotificationType.UNKNOWN)
-        NotificationType? type,
+    @JsonKey(name: 'enum') NotificationType? type,
   }) = _NotificationFilter;
 
   factory NotificationFilter.fromJson(Map<String, dynamic> json) =>

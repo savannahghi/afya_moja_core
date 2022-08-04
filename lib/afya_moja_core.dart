@@ -31,6 +31,7 @@ export 'src/domain/core/entities/security_questions/responses/security_question_
 export 'src/domain/core/entities/security_questions/responses/verify_security_question_data.dart';
 export 'src/domain/value_objects/name.dart';
 export 'src/domain/value_objects/phone_number.dart';
+export 'src/domain/core/entities/notifications/notification_filter.dart';
 export 'src/domain/core/entities/notifications/notification_action_info.dart';
 export 'src/enums.dart';
 export 'src/failures/exception.dart';

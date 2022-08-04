@@ -10,15 +10,14 @@ _$_NotificationFilter _$$_NotificationFilterFromJson(
         Map<String, dynamic> json) =>
     _$_NotificationFilter(
       name: json['name'] as String?,
-      type: $enumDecodeNullable(_$NotificationTypeEnumMap, json['type']) ??
-          NotificationType.UNKNOWN,
+      type: $enumDecodeNullable(_$NotificationTypeEnumMap, json['enum']),
     );
 
 Map<String, dynamic> _$$_NotificationFilterToJson(
         _$_NotificationFilter instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'type': _$NotificationTypeEnumMap[instance.type],
+      'enum': _$NotificationTypeEnumMap[instance.type],
     };
 
 const _$NotificationTypeEnumMap = {
