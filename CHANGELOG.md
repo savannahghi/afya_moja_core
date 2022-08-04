@@ -1,4 +1,7 @@
 # Changelog
+## 0.2.11
+
+- chore: fix broken notification filter serialization
 
 ## 0.2.10
 

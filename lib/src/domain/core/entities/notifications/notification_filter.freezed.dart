@@ -22,7 +22,7 @@ NotificationFilter _$NotificationFilterFromJson(Map<String, dynamic> json) {
 mixin _$NotificationFilter {
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
+  @JsonKey(name: 'enum')
   NotificationType? get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,10 +37,8 @@ abstract class $NotificationFilterCopyWith<$Res> {
           NotificationFilter value, $Res Function(NotificationFilter) then) =
       _$NotificationFilterCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'name')
-          String? name,
-      @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          NotificationType? type});
+      {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'enum') NotificationType? type});
 }
 
 /// @nodoc
@@ -78,10 +76,8 @@ abstract class _$$_NotificationFilterCopyWith<$Res>
       __$$_NotificationFilterCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'name')
-          String? name,
-      @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          NotificationType? type});
+      {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'enum') NotificationType? type});
 }
 
 /// @nodoc
@@ -117,10 +113,7 @@ class __$$_NotificationFilterCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_NotificationFilter implements _NotificationFilter {
   _$_NotificationFilter(
-      {@JsonKey(name: 'name')
-          this.name,
-      @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          this.type});
+      {@JsonKey(name: 'name') this.name, @JsonKey(name: 'enum') this.type});
 
   factory _$_NotificationFilter.fromJson(Map<String, dynamic> json) =>
       _$$_NotificationFilterFromJson(json);
@@ -129,7 +122,7 @@ class _$_NotificationFilter implements _NotificationFilter {
   @JsonKey(name: 'name')
   final String? name;
   @override
-  @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
+  @JsonKey(name: 'enum')
   final NotificationType? type;
 
   @override
@@ -167,10 +160,9 @@ class _$_NotificationFilter implements _NotificationFilter {
 
 abstract class _NotificationFilter implements NotificationFilter {
   factory _NotificationFilter(
-      {@JsonKey(name: 'name')
-          final String? name,
-      @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-          final NotificationType? type}) = _$_NotificationFilter;
+          {@JsonKey(name: 'name') final String? name,
+          @JsonKey(name: 'enum') final NotificationType? type}) =
+      _$_NotificationFilter;
 
   factory _NotificationFilter.fromJson(Map<String, dynamic> json) =
       _$_NotificationFilter.fromJson;
@@ -179,7 +171,7 @@ abstract class _NotificationFilter implements NotificationFilter {
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
+  @JsonKey(name: 'enum')
   NotificationType? get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
