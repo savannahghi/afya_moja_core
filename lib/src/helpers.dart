@@ -2,15 +2,18 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart';
 import 'package:flutter_graphql_client/graph_constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 String formatPhoneNumber({
   required String countryCode,
@@ -459,4 +462,63 @@ Widget humanizeDate({
   }
 
   return const SizedBox();
+}
+
+OverlaySupportEntry headsUpNotification(String? title, String? body) {
+  return showOverlayNotification(
+    (BuildContext context) {
+      return SafeArea(
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: 60,
+                height: 60,
+                padding: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.only(right: 8),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: SvgPicture.asset(
+                  notificationIcon,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              Expanded(
+                child: DefaultTextStyle(
+                  style: normalSize13Text(greyTextColor),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        title ?? '',
+                        style: boldSize15Text(blackColor),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                      Text(
+                        body ?? '',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+    duration: const Duration(seconds: 5),
+  );
 }

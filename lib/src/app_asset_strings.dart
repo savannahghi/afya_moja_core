@@ -34,3 +34,5 @@ const String whiteCloseIconSvgPath =
     'packages/afya_moja_core/assets/white_close_icon.svg';
 const String emptyStateCover =
     'packages/afya_moja_core/assets/no_content_image.svg';
+    const String notificationIcon =
+    'packages/afya_moja_core/assets/notification_icon.svg';

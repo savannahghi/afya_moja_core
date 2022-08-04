@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.10
+
+- feat: add headUpNotification
+
 ## 0.2.9
 
 - feat: add notification filter extension method
