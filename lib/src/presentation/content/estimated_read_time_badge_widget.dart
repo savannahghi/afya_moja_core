@@ -20,24 +20,31 @@ class EstimatedReadTimeBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(6.0),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(6.0),
-        ),
-        color: readTimeBackgroundColor,
-      ),
-      child: Text(
-        contentType == ContentType.AUDIO_VIDEO && isAudio
-            ? audioTime(estimateReadTime)
-            : contentType == ContentType.AUDIO_VIDEO
-                ? contentAudioVideoDuration(
-                    videoDuration ?? 0,
-                  )
-                : contentReadDuration(estimateReadTime),
-        style: mediumSize14Text(Colors.white).copyWith(fontSize: 12),
-      ),
-    );
+    final String time;
+    if (contentType == ContentType.AUDIO_VIDEO && isAudio) {
+      time = audioTime(estimateReadTime);
+    } else {
+      if (contentType == ContentType.AUDIO_VIDEO) {
+        time = contentAudioVideoDuration(videoDuration ?? 0);
+      } else {
+        time = contentReadDuration(estimateReadTime);
+      }
+    }
+
+    return time.startsWith('0')
+        ? const SizedBox()
+        : Container(
+            padding: const EdgeInsets.all(6.0),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(6.0),
+              ),
+              color: readTimeBackgroundColor,
+            ),
+            child: Text(
+              time,
+              style: mediumSize14Text(Colors.white).copyWith(fontSize: 12),
+            ),
+          );
   }
 }

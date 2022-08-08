@@ -1,4 +1,8 @@
 # Changelog
+
+## 0.2.12
+
+- chore: fix zero minutes banner on content
 ## 0.2.11
 
 - chore: fix broken notification filter serialization
