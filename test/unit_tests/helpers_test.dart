@@ -686,4 +686,13 @@ void main() {
     expect(contentAudioVideoDuration(70), '1 min');
   });
 
+  test('newChatMessageTitle', () {
+    expect('New message', newChatMessageTitle(null, null));
+    expect('New message from John', newChatMessageTitle('John', null));
+    expect(
+      'New message from John in test group',
+      newChatMessageTitle('John', 'test group'),
+    );
+  });
+
 }

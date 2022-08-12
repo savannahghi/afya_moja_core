@@ -78,3 +78,6 @@ const String staffMemberText = 'Staff member';
 const String newText = 'New';
 const String pdfText = 'PDF';
 const String datePublishedString = 'Published on ';
+
+const String newNotificationMessageString = 'Please check your notification inbox';
+const String newNotificationTitleString = 'You have a new notification';
