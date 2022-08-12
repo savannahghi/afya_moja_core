@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.13
+
+- chore: add notifications helper functions
+
 ## 0.2.12
 
 - chore: fix zero minutes banner on content

@@ -5,10 +5,12 @@ import 'package:afya_moja_core/src/enums.dart';
 import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_client/graph_client.dart' as graph;
+import 'package:flutter_local_notifications_platform_interface/flutter_local_notifications_platform_interface.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
 import 'package:video_player/video_player.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockDeviceCapabilities extends IDeviceCapabilities {}
 
@@ -666,3 +668,15 @@ final List<Map<String, dynamic>> videoContentMock = <Map<String, dynamic>>[
     'tagNames': <String>['Recommended', 'Health', 'Fitness'],
   },
 ];
+
+class MockFlutterLocalNotificationsPlugin extends Mock
+    with MockPlatformInterfaceMixin
+    implements FlutterLocalNotificationsPlatform {
+  @override
+  Future<void> show(
+    int id,
+    String? title,
+    String? body, {
+    String? payload,
+  }) async {}
+}
