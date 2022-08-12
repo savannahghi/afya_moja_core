@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.14
+
+- chore: add backgroundMessageHandler and refactor
+
 ## 0.2.13
 
 - chore: add notifications helper functions
@@ -7,6 +11,7 @@
 ## 0.2.12
 
 - chore: fix zero minutes banner on content
+
 ## 0.2.11
 
 - chore: fix broken notification filter serialization
