@@ -628,9 +628,8 @@ void main() {
 
   test('should return the correct error message', () {
     expect(cccNumberValidator(''), 'Your CCC number is required');
-    expect(cccNumberValidator('a'), 'Only digits are allowed, 0-9');
     expect(cccNumberValidator('123456'), 'Enter a valid CCC number');
-    expect(cccNumberValidator('012345678901'), 'Enter a valid CCC number');
+    expect(cccNumberValidator('0123456789011234'), 'Enter a valid CCC number');
     expect(cccNumberValidator('0123456789'), null);
   });
 
@@ -694,5 +693,4 @@ void main() {
       newChatMessageTitle('John', 'test group'),
     );
   });
-
 }
