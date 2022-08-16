@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.14
+
+- chore: change CCC number validator to allow 15 character CCC numbers
+
 ## 0.2.13
 
 - chore: add notifications helper functions

@@ -357,10 +357,7 @@ String? cccNumberValidator(dynamic val) {
   if (value.isEmpty) {
     return 'Your CCC number is required';
   }
-  if (!RegExp(r'^-?[0-9]+$').hasMatch(value)) {
-    return 'Only digits are allowed, 0-9';
-  }
-  if (value.length < 7 || value.length > 10) {
+  if (value.length < 7 || value.length > 15) {
     return 'Enter a valid CCC number';
   }
   return null;
