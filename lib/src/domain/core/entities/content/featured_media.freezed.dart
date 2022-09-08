@@ -300,7 +300,9 @@ class _$_FeaturedMedia implements _FeaturedMedia {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FeaturedMediaToJson(this);
+    return _$$_FeaturedMediaToJson(
+      this,
+    );
   }
 }
 
@@ -328,29 +330,28 @@ abstract class _FeaturedMedia implements FeaturedMedia {
 
   @override
   @JsonKey(name: 'ID')
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
   @JsonKey(name: 'url')
-  String? get mediaUrl => throw _privateConstructorUsedError;
+  String? get mediaUrl;
   @override
   @JsonKey(name: 'title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'type', unknownEnumValue: FeaturedMediaType.UNKNOWN)
-  FeaturedMediaType? get featuredMediaType =>
-      throw _privateConstructorUsedError;
+  FeaturedMediaType? get featuredMediaType;
   @override
   @JsonKey(name: 'duration')
-  int? get duration => throw _privateConstructorUsedError;
+  int? get duration;
   @override
   @JsonKey(name: 'width')
-  int? get width => throw _privateConstructorUsedError;
+  int? get width;
   @override
   @JsonKey(name: 'height')
-  int? get height => throw _privateConstructorUsedError;
+  int? get height;
   @override
   @JsonKey(name: 'thumbnail')
-  String? get thumbnail => throw _privateConstructorUsedError;
+  String? get thumbnail;
   @override
   @JsonKey(ignore: true)
   _$$_FeaturedMediaCopyWith<_$_FeaturedMedia> get copyWith =>

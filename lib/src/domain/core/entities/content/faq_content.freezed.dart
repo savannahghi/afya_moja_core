@@ -145,7 +145,9 @@ class _$_FAQContent implements _FAQContent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FAQContentToJson(this);
+    return _$$_FAQContentToJson(
+      this,
+    );
   }
 }
 
@@ -158,7 +160,7 @@ abstract class _FAQContent implements FAQContent {
 
   @override
   @JsonKey(name: 'getFAQs')
-  FeedItems? get feedContent => throw _privateConstructorUsedError;
+  FeedItems? get feedContent;
   @override
   @JsonKey(ignore: true)
   _$$_FAQContentCopyWith<_$_FAQContent> get copyWith =>

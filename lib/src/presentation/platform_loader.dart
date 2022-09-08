@@ -9,13 +9,13 @@ class PlatformLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TargetPlatform _platform = Theme.of(context).platform;
+    final TargetPlatform platform = Theme.of(context).platform;
     Brightness brightness = Brightness.light;
     if (color != Colors.grey) {
       brightness = Brightness.dark;
     }
     return Center(
-      child: _platform == TargetPlatform.iOS
+      child: platform == TargetPlatform.iOS
           ? CupertinoTheme(
               key: iosLoaderThemeKey,
               data: CupertinoTheme.of(context).copyWith(brightness: brightness),

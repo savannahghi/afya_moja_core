@@ -299,7 +299,9 @@ class _$_NotificationDetails implements _NotificationDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationDetailsToJson(this);
+    return _$$_NotificationDetailsToJson(
+      this,
+    );
   }
 }
 
@@ -327,28 +329,28 @@ abstract class _NotificationDetails implements NotificationDetails {
 
   @override
   @JsonKey(name: 'id')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'body')
-  String? get body => throw _privateConstructorUsedError;
+  String? get body;
   @override
   @JsonKey(name: 'type', defaultValue: NotificationType.UNKNOWN)
-  NotificationType? get type => throw _privateConstructorUsedError;
+  NotificationType? get type;
   @override
   @JsonKey(name: 'isRead', defaultValue: false)
-  bool? get isRead => throw _privateConstructorUsedError;
+  bool? get isRead;
   @override
   @JsonKey(name: 'createdAt')
-  String? get createdAt => throw _privateConstructorUsedError;
+  String? get createdAt;
   @override
   @JsonKey(name: 'actions')
-  List<NotificationActions>? get actions => throw _privateConstructorUsedError;
+  List<NotificationActions>? get actions;
   @override
   @JsonKey(name: 'status')
-  String? get status => throw _privateConstructorUsedError;
+  String? get status;
   @override
   @JsonKey(ignore: true)
   _$$_NotificationDetailsCopyWith<_$_NotificationDetails> get copyWith =>

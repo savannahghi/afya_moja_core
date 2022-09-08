@@ -422,9 +422,9 @@ class MockGraphQlClient extends Mock implements graph.GraphQlClient {
   @override
   Map<String, dynamic> toMap(Response? response) {
     if (response == null) return <String, dynamic>{};
-    final dynamic _res = json.decode(response.body);
-    if (_res is List<dynamic>) return _res[0] as Map<String, dynamic>;
-    return _res as Map<String, dynamic>;
+    final dynamic res = json.decode(response.body);
+    if (res is List<dynamic>) return res[0] as Map<String, dynamic>;
+    return res as Map<String, dynamic>;
   }
 }
 

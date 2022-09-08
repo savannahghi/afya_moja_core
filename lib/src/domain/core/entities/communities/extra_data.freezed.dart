@@ -150,7 +150,9 @@ class _$_ExtraData implements _ExtraData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExtraDataToJson(this);
+    return _$$_ExtraDataToJson(
+      this,
+    );
   }
 }
 
@@ -164,10 +166,10 @@ abstract class _ExtraData implements ExtraData {
 
   @override
   @JsonKey(name: 'banned')
-  bool? get isBanned => throw _privateConstructorUsedError;
+  bool? get isBanned;
   @override
   @JsonKey(name: 'userType')
-  UserType? get userType => throw _privateConstructorUsedError;
+  UserType? get userType;
   @override
   @JsonKey(ignore: true)
   _$$_ExtraDataCopyWith<_$_ExtraData> get copyWith =>

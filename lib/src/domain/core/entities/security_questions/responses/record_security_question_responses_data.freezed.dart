@@ -160,7 +160,9 @@ class _$_RecordSecurityQuestionResponsesData
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecordSecurityQuestionResponsesDataToJson(this);
+    return _$$_RecordSecurityQuestionResponsesDataToJson(
+      this,
+    );
   }
 }
 
@@ -178,8 +180,7 @@ abstract class _RecordSecurityQuestionResponsesData
 
   @override
   @JsonKey(name: 'recordSecurityQuestionResponses')
-  List<RecordSecurityQuestionResponse> get recordSecurityQuestionResponses =>
-      throw _privateConstructorUsedError;
+  List<RecordSecurityQuestionResponse> get recordSecurityQuestionResponses;
   @override
   @JsonKey(ignore: true)
   _$$_RecordSecurityQuestionResponsesDataCopyWith<

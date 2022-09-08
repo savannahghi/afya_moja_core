@@ -155,7 +155,9 @@ class _$_ContentMetadata implements _ContentMetadata {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContentMetadataToJson(this);
+    return _$$_ContentMetadataToJson(
+      this,
+    );
   }
 }
 
@@ -170,10 +172,10 @@ abstract class _ContentMetadata implements ContentMetadata {
 
   @override
   @JsonKey(name: 'contentHTMLURL')
-  String? get publicLink => throw _privateConstructorUsedError;
+  String? get publicLink;
   @override
   @JsonKey(name: 'firstPublishedAt')
-  String? get createdAt => throw _privateConstructorUsedError;
+  String? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_ContentMetadataCopyWith<_$_ContentMetadata> get copyWith =>

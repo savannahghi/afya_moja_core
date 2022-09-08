@@ -126,7 +126,9 @@ class _$_HeroImage implements _HeroImage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HeroImageToJson(this);
+    return _$$_HeroImageToJson(
+      this,
+    );
   }
 }
 
@@ -138,7 +140,7 @@ abstract class _HeroImage implements HeroImage {
 
   @override
   @JsonKey(name: 'url')
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
   @JsonKey(ignore: true)
   _$$_HeroImageCopyWith<_$_HeroImage> get copyWith =>

@@ -24,9 +24,7 @@ class OnboardingScaffold extends StatelessWidget {
     final double sizedBoxHeight = MediaQuery.of(context).size.width / 4;
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
+      body: SizedBox.expand(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: SafeArea(

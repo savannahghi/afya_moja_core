@@ -129,7 +129,9 @@ class _$_IconDetails implements _IconDetails {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_IconDetailsToJson(this);
+    return _$$_IconDetailsToJson(
+      this,
+    );
   }
 }
 
@@ -143,7 +145,7 @@ abstract class _IconDetails implements IconDetails {
 
   @override
   @JsonKey(name: 'url')
-  String get iconUrlSvgPath => throw _privateConstructorUsedError;
+  String get iconUrlSvgPath;
   @override
   @JsonKey(ignore: true)
   _$$_IconDetailsCopyWith<_$_IconDetails> get copyWith =>

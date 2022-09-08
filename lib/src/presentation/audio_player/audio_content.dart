@@ -98,7 +98,7 @@ class _AudioContentState extends State<AudioContent>
 
   @override
   Widget build(BuildContext context) {
-    double? _dragValue;
+    double? dragValue;
     return Padding(
       padding: const EdgeInsets.all(12),
       child: Row(
@@ -107,7 +107,7 @@ class _AudioContentState extends State<AudioContent>
           SizedBox(
             height: 100,
             width: 100,
-            child: Container(
+            child: DecoratedBox(
               decoration: BoxDecoration(
                 color: Colors.grey.shade400,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -198,7 +198,7 @@ class _AudioContentState extends State<AudioContent>
                           snapshot.data?.bufferedPosition ?? Duration.zero,
                           Duration.zero,
                         );
-                    final SliderThemeData _sliderThemeData =
+                    final SliderThemeData sliderThemeData =
                         SliderTheme.of(context).copyWith(
                       //Sets the track height
                       trackHeight: 2.5,
@@ -208,7 +208,7 @@ class _AudioContentState extends State<AudioContent>
                     return Stack(
                       children: <Widget>[
                         SliderTheme(
-                          data: _sliderThemeData.copyWith(
+                          data: sliderThemeData.copyWith(
                             thumbShape: AudioHiddenThumbWidgetShape(),
                             activeTrackColor: Colors.grey.shade400,
                             inactiveTrackColor: Colors.white,
@@ -225,7 +225,7 @@ class _AudioContentState extends State<AudioContent>
                           ),
                         ),
                         SliderTheme(
-                          data: _sliderThemeData.copyWith(
+                          data: sliderThemeData.copyWith(
                             thumbShape: const RoundSliderThumbShape(
                               enabledThumbRadius: 7.0,
                             ),
@@ -237,14 +237,14 @@ class _AudioContentState extends State<AudioContent>
                             max:
                                 positionData.duration.inMilliseconds.toDouble(),
                             value: min(
-                              _dragValue ??
+                              dragValue ??
                                   positionData.position.inMilliseconds
                                       .toDouble(),
                               positionData.duration.inMilliseconds.toDouble(),
                             ),
                             onChanged: (double value) {
                               setState(() {
-                                _dragValue = value;
+                                dragValue = value;
                               });
                             },
                             onChangeEnd: (double value) {
@@ -253,7 +253,7 @@ class _AudioContentState extends State<AudioContent>
                                   milliseconds: value.round(),
                                 ),
                               );
-                              _dragValue = null;
+                              dragValue = null;
                             },
                           ),
                         ),

@@ -167,11 +167,11 @@ abstract class _NotificationActionInfo implements NotificationActionInfo {
       final dynamic arguments}) = _$_NotificationActionInfo;
 
   @override // The title string on the action button
-  String? get actionTitle => throw _privateConstructorUsedError;
+  String? get actionTitle;
   @override // The route to navigate to
-  String? get route => throw _privateConstructorUsedError;
+  String? get route;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get arguments => throw _privateConstructorUsedError;
+  dynamic get arguments;
   @override
   @JsonKey(ignore: true)
   _$$_NotificationActionInfoCopyWith<_$_NotificationActionInfo> get copyWith =>

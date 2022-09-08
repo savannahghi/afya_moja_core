@@ -133,7 +133,9 @@ class _$_FeedItems implements _FeedItems {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FeedItemsToJson(this);
+    return _$$_FeedItemsToJson(
+      this,
+    );
   }
 }
 
@@ -146,7 +148,7 @@ abstract class _FeedItems implements FeedItems {
 
   @override
   @JsonKey(name: 'items')
-  List<Content>? get items => throw _privateConstructorUsedError;
+  List<Content>? get items;
   @override
   @JsonKey(ignore: true)
   _$$_FeedItemsCopyWith<_$_FeedItems> get copyWith =>

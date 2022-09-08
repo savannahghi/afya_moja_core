@@ -123,7 +123,9 @@ class _$_Author implements _Author {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthorToJson(this);
+    return _$$_AuthorToJson(
+      this,
+    );
   }
 }
 
@@ -134,7 +136,7 @@ abstract class _Author implements Author {
 
   @override
   @JsonKey(name: 'ID')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(ignore: true)
   _$$_AuthorCopyWith<_$_Author> get copyWith =>

@@ -15,7 +15,7 @@ class NotificationListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String? actionTitle = notificationInfo?.actionTitle;
-    final double _width = MediaQuery.of(context).size.width - 60;
+    final double width = MediaQuery.of(context).size.width - 60;
     return Column(
       children: <Widget>[
         mediumVerticalSizedBox,
@@ -37,7 +37,7 @@ class NotificationListItem extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: _width,
+              width: width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -99,7 +99,7 @@ class NotificationListItem extends StatelessWidget {
           margin: const EdgeInsets.only(top: 10, left: 20),
           color: Theme.of(context).primaryColor.withOpacity(0.1),
           height: 1,
-          width: _width,
+          width: width,
         )
       ],
     );

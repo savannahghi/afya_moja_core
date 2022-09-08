@@ -261,7 +261,9 @@ class _$_Member implements _Member {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MemberToJson(this);
+    return _$$_MemberToJson(
+      this,
+    );
   }
 }
 
@@ -284,22 +286,22 @@ abstract class _Member implements Member {
 
   @override
   @JsonKey(name: 'id')
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(name: 'userID')
-  String? get userID => throw _privateConstructorUsedError;
+  String? get userID;
   @override
   @JsonKey(name: 'role')
-  String? get role => throw _privateConstructorUsedError;
+  String? get role;
   @override
   @JsonKey(name: 'username')
-  String? get username => throw _privateConstructorUsedError;
+  String? get username;
   @override
   @JsonKey(name: 'gender', fromJson: genderFromJson, toJson: genderToJson)
-  Gender? get gender => throw _privateConstructorUsedError;
+  Gender? get gender;
   @override
   @JsonKey(name: 'extraData')
-  ExtraData? get extraData => throw _privateConstructorUsedError;
+  ExtraData? get extraData;
   @override
   @JsonKey(ignore: true)
   _$$_MemberCopyWith<_$_Member> get copyWith =>

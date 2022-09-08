@@ -192,7 +192,9 @@ class _$_ListContentCategory implements _ListContentCategory {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ListContentCategoryToJson(this);
+    return _$$_ListContentCategoryToJson(
+      this,
+    );
   }
 }
 
@@ -208,14 +210,11 @@ abstract class _ListContentCategory implements ListContentCategory {
 
   @override
   @JsonKey(name: 'listContentCategories')
-  List<ContentCategory?>? get contentCategories =>
-      throw _privateConstructorUsedError;
+  List<ContentCategory?>? get contentCategories;
   @override
-  bool? get errorFetchingContentCategories =>
-      throw _privateConstructorUsedError;
+  bool? get errorFetchingContentCategories;
   @override
-  bool? get timeoutFetchingContentCategories =>
-      throw _privateConstructorUsedError;
+  bool? get timeoutFetchingContentCategories;
   @override
   @JsonKey(ignore: true)
   _$$_ListContentCategoryCopyWith<_$_ListContentCategory> get copyWith =>

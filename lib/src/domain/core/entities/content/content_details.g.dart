@@ -18,7 +18,7 @@ Map<String, dynamic> _$ContentDetailsToJson(ContentDetails instance) =>
     <String, dynamic>{
       'content': instance.content,
       'contentDisplayedType':
-          _$ContentDisplayedTypeEnumMap[instance.contentDisplayedType],
+          _$ContentDisplayedTypeEnumMap[instance.contentDisplayedType]!,
     };
 
 const _$ContentDisplayedTypeEnumMap = {
