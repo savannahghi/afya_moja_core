@@ -236,7 +236,9 @@ class _$_SecurityQuestion implements _SecurityQuestion {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SecurityQuestionToJson(this);
+    return _$$_SecurityQuestionToJson(
+      this,
+    );
   }
 }
 
@@ -258,21 +260,20 @@ abstract class _SecurityQuestion implements SecurityQuestion {
 
   @override
   @JsonKey(name: 'SecurityQuestionID')
-  String? get securityQuestionID => throw _privateConstructorUsedError;
+  String? get securityQuestionID;
   @override
   @JsonKey(name: 'QuestionStem')
-  String? get questionStem => throw _privateConstructorUsedError;
+  String? get questionStem;
   @override
   @JsonKey(name: 'Description')
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
   @JsonKey(
       name: 'ResponseType', defaultValue: SecurityQuestionResponseType.UNKNOWN)
-  SecurityQuestionResponseType? get responseType =>
-      throw _privateConstructorUsedError;
+  SecurityQuestionResponseType? get responseType;
   @override
   @JsonKey(name: 'Active')
-  bool? get active => throw _privateConstructorUsedError;
+  bool? get active;
   @override
   @JsonKey(ignore: true)
   _$$_SecurityQuestionCopyWith<_$_SecurityQuestion> get copyWith =>

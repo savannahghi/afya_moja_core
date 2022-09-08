@@ -134,7 +134,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
                         height: MediaQuery.of(context).size.height,
                       ),
                       if (galleryImages.length > 3)
-                        Container(
+                        DecoratedBox(
                           decoration: BoxDecoration(
                             borderRadius: imageBorderRadius,
                             color: Colors.black.withOpacity(0.5),
@@ -175,7 +175,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
         : const SizedBox();
 
     final List<Widget> galleryItems = getGalleryItems(context: context);
-    final TargetPlatform _platform = Theme.of(context).platform;
+    final TargetPlatform platform = Theme.of(context).platform;
 
     return Scaffold(
       backgroundColor: lightGreyBackgroundColor,
@@ -325,7 +325,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
           Positioned(
             top:
                 widget.payload.content.contentType == ContentType.AUDIO_VIDEO &&
-                        _platform == TargetPlatform.iOS
+                        platform == TargetPlatform.iOS
                     ? 75
                     : 30,
             left: -6,

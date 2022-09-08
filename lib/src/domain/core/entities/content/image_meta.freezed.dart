@@ -125,7 +125,9 @@ class _$_ImageMeta implements _ImageMeta {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImageMetaToJson(this);
+    return _$$_ImageMetaToJson(
+      this,
+    );
   }
 }
 
@@ -136,7 +138,7 @@ abstract class _ImageMeta implements ImageMeta {
       _$_ImageMeta.fromJson;
 
   @override
-  String? get imageDownloadUrl => throw _privateConstructorUsedError;
+  String? get imageDownloadUrl;
   @override
   @JsonKey(ignore: true)
   _$$_ImageMetaCopyWith<_$_ImageMeta> get copyWith =>

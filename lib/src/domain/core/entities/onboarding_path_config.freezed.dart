@@ -146,9 +146,9 @@ abstract class _OnboardingPathConfig implements OnboardingPathConfig {
       final dynamic arguments}) = _$_OnboardingPathConfig;
 
   @override // The route to navigate to
-  String get route => throw _privateConstructorUsedError;
+  String get route;
   @override // Any route arguments that may need to be passed while navigating
-  dynamic get arguments => throw _privateConstructorUsedError;
+  dynamic get arguments;
   @override
   @JsonKey(ignore: true)
   _$$_OnboardingPathConfigCopyWith<_$_OnboardingPathConfig> get copyWith =>

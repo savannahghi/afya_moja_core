@@ -201,7 +201,9 @@ class _$_VerifySecurityQuestionData implements _VerifySecurityQuestionData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VerifySecurityQuestionDataToJson(this);
+    return _$$_VerifySecurityQuestionDataToJson(
+      this,
+    );
   }
 }
 
@@ -219,16 +221,16 @@ abstract class _VerifySecurityQuestionData
 
   @override
   @JsonKey(name: 'questionID')
-  String? get questionID => throw _privateConstructorUsedError;
+  String? get questionID;
   @override
   @JsonKey(name: 'flavour')
-  String? get flavour => throw _privateConstructorUsedError;
+  String? get flavour;
   @override
   @JsonKey(name: 'response')
-  String? get response => throw _privateConstructorUsedError;
+  String? get response;
   @override
   @JsonKey(name: 'phoneNumber')
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$_VerifySecurityQuestionDataCopyWith<_$_VerifySecurityQuestionData>

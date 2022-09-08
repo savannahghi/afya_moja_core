@@ -100,7 +100,7 @@ class ContentItem extends StatelessWidget {
                         Stack(
                           key: contentHeroImagePlaceHolder,
                           children: <Widget>[
-                            Container(
+                            DecoratedBox(
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
                                   image: AssetImage(
@@ -118,7 +118,7 @@ class ContentItem extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              child: Container(
+                              child: DecoratedBox(
                                 decoration: BoxDecoration(
                                   color: Colors.black.withOpacity(0.6),
                                   borderRadius: const BorderRadius.only(

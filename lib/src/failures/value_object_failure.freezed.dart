@@ -244,7 +244,7 @@ abstract class InvalidEmailAddress<T> implements ValueObjectFailure<T> {
       _$InvalidEmailAddress<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidEmailAddressCopyWith<T, _$InvalidEmailAddress<T>> get copyWith =>
@@ -394,7 +394,7 @@ abstract class InvalidPhoneNumber<T> implements ValueObjectFailure<T> {
       _$InvalidPhoneNumber<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidPhoneNumberCopyWith<T, _$InvalidPhoneNumber<T>> get copyWith =>
@@ -547,7 +547,7 @@ abstract class EmailAddressMustNotBeNull<T> implements ValueObjectFailure<T> {
       _$EmailAddressMustNotBeNull<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$EmailAddressMustNotBeNullCopyWith<T, _$EmailAddressMustNotBeNull<T>>

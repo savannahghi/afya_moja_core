@@ -151,7 +151,9 @@ class _$_RespondedSecurityQuestionsData
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RespondedSecurityQuestionsDataToJson(this);
+    return _$$_RespondedSecurityQuestionsDataToJson(
+      this,
+    );
   }
 }
 
@@ -167,8 +169,7 @@ abstract class _RespondedSecurityQuestionsData
 
   @override
   @JsonKey(name: 'getUserRespondedSecurityQuestions')
-  List<SecurityQuestion> get securityQuestions =>
-      throw _privateConstructorUsedError;
+  List<SecurityQuestion> get securityQuestions;
   @override
   @JsonKey(ignore: true)
   _$$_RespondedSecurityQuestionsDataCopyWith<_$_RespondedSecurityQuestionsData>

@@ -187,7 +187,9 @@ class _$_NotificationActions implements _NotificationActions {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationActionsToJson(this);
+    return _$$_NotificationActionsToJson(
+      this,
+    );
   }
 }
 
@@ -203,13 +205,13 @@ abstract class _NotificationActions implements NotificationActions {
 
   @override
   @JsonKey(name: 'name')
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
   @JsonKey(name: 'route')
-  String get route => throw _privateConstructorUsedError;
+  String get route;
   @override
   @JsonKey(name: 'icon')
-  IconDetails get icon => throw _privateConstructorUsedError;
+  IconDetails get icon;
   @override
   @JsonKey(ignore: true)
   _$$_NotificationActionsCopyWith<_$_NotificationActions> get copyWith =>

@@ -13,7 +13,7 @@ void main() {
       }
 
       const Key selectOptionFieldKey = Key('select_option_field');
-      const String _selectedGender = 'Male';
+      const String selectedGender = 'Male';
       const Key formKey = Key('select_option_field');
       final List<String> options = <String>[
         'Male',
@@ -32,7 +32,7 @@ void main() {
                   child: SelectOptionField(
                     dropDownInputKey: selectOptionFieldKey,
                     hintText: 'Select gender',
-                    value: _selectedGender,
+                    value: selectedGender,
                     options: options,
                     onSaved: (dynamic value) {},
                     onChanged: (dynamic val) {},

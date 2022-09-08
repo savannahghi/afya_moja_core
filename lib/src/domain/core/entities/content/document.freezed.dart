@@ -167,7 +167,9 @@ class _$_Document implements _Document {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DocumentToJson(this);
+    return _$$_DocumentToJson(
+      this,
+    );
   }
 }
 
@@ -181,10 +183,10 @@ abstract class _Document implements Document {
 
   @override
   @JsonKey(name: 'ID')
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
   @JsonKey(name: 'Document')
-  DocumentData? get documentData => throw _privateConstructorUsedError;
+  DocumentData? get documentData;
   @override
   @JsonKey(ignore: true)
   _$$_DocumentCopyWith<_$_Document> get copyWith =>
@@ -367,7 +369,9 @@ class _$_DocumentData implements _DocumentData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DocumentDataToJson(this);
+    return _$$_DocumentDataToJson(
+      this,
+    );
   }
 }
 
@@ -383,13 +387,13 @@ abstract class _DocumentData implements DocumentData {
 
   @override
   @JsonKey(name: 'ID')
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
   @JsonKey(name: 'title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'meta')
-  DocumentMetaData? get documentMetaData => throw _privateConstructorUsedError;
+  DocumentMetaData? get documentMetaData;
   @override
   @JsonKey(ignore: true)
   _$$_DocumentDataCopyWith<_$_DocumentData> get copyWith =>
@@ -516,7 +520,9 @@ class _$_DocumentMetaData implements _DocumentMetaData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DocumentMetaDataToJson(this);
+    return _$$_DocumentMetaDataToJson(
+      this,
+    );
   }
 }
 
@@ -530,7 +536,7 @@ abstract class _DocumentMetaData implements DocumentMetaData {
 
   @override
   @JsonKey(name: 'documentDownloadUrl')
-  String? get documentDownloadUrl => throw _privateConstructorUsedError;
+  String? get documentDownloadUrl;
   @override
   @JsonKey(ignore: true)
   _$$_DocumentMetaDataCopyWith<_$_DocumentMetaData> get copyWith =>

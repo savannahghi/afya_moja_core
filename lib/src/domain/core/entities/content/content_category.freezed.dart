@@ -174,7 +174,9 @@ class _$_ContentCategory implements _ContentCategory {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContentCategoryToJson(this);
+    return _$$_ContentCategoryToJson(
+      this,
+    );
   }
 }
 
@@ -189,13 +191,13 @@ abstract class _ContentCategory implements ContentCategory {
 
   @override
   @JsonKey(name: 'id')
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
   @override
   @JsonKey(name: 'iconUrl')
-  String? get icon => throw _privateConstructorUsedError;
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$$_ContentCategoryCopyWith<_$_ContentCategory> get copyWith =>

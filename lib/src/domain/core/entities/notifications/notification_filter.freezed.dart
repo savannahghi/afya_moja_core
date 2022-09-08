@@ -154,7 +154,9 @@ class _$_NotificationFilter implements _NotificationFilter {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationFilterToJson(this);
+    return _$$_NotificationFilterToJson(
+      this,
+    );
   }
 }
 
@@ -169,10 +171,10 @@ abstract class _NotificationFilter implements NotificationFilter {
 
   @override
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String? get name;
   @override
   @JsonKey(name: 'enum')
-  NotificationType? get type => throw _privateConstructorUsedError;
+  NotificationType? get type;
   @override
   @JsonKey(ignore: true)
   _$$_NotificationFilterCopyWith<_$_NotificationFilter> get copyWith =>

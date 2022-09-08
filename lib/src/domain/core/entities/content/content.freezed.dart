@@ -658,7 +658,9 @@ class _$_Content implements _Content {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ContentToJson(this);
+    return _$$_ContentToJson(
+      this,
+    );
   }
 }
 
@@ -713,73 +715,73 @@ abstract class _Content implements Content {
 
   @override
   @JsonKey(name: 'ID')
-  int? get contentID => throw _privateConstructorUsedError;
+  int? get contentID;
   @override
   @JsonKey(name: 'title')
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
   @JsonKey(name: 'date')
-  DateTime? get date => throw _privateConstructorUsedError;
+  DateTime? get date;
   @override
   @JsonKey(name: 'intro')
-  String? get intro => throw _privateConstructorUsedError;
+  String? get intro;
   @override // TODO(abiud): move this to the Author object
   @JsonKey(name: 'authorName')
-  String? get authorName => throw _privateConstructorUsedError;
+  String? get authorName;
   @override // TODO(abiud): add when backend is ready
 // @JsonKey(name: 'authorAvatar') String? authorAvatar,
   @JsonKey(name: 'author')
-  Author? get author => throw _privateConstructorUsedError;
+  Author? get author;
   @override
   @JsonKey(name: 'itemType')
-  ContentType? get contentType => throw _privateConstructorUsedError;
+  ContentType? get contentType;
   @override // "ARTICLE"
   @JsonKey(name: 'timeEstimateSeconds')
-  int? get estimate => throw _privateConstructorUsedError;
+  int? get estimate;
   @override
   @JsonKey(name: 'body')
-  String? get body => throw _privateConstructorUsedError;
+  String? get body;
   @override
   @JsonKey(name: 'heroImageRendition')
-  HeroImage? get heroImage => throw _privateConstructorUsedError;
+  HeroImage? get heroImage;
   @override
   @JsonKey(name: 'likeCount')
-  int? get likeCount => throw _privateConstructorUsedError;
+  int? get likeCount;
   @override
   @JsonKey(name: 'bookmarkCount')
-  int? get bookmarkCount => throw _privateConstructorUsedError;
+  int? get bookmarkCount;
   @override
   @JsonKey(name: 'viewCount')
-  int? get viewCount => throw _privateConstructorUsedError;
+  int? get viewCount;
   @override
   @JsonKey(name: 'shareCount')
-  int? get shareCount => throw _privateConstructorUsedError;
+  int? get shareCount;
   @override
   @JsonKey(name: 'documents')
-  List<Document>? get documents => throw _privateConstructorUsedError;
+  List<Document>? get documents;
   @override
   @JsonKey(name: 'categoryDetails')
-  List<ContentCategory>? get categories => throw _privateConstructorUsedError;
+  List<ContentCategory>? get categories;
   @override // TODO(abiud): add when backend is ready
 // @JsonKey(name: 'isNew') bool? isNew,
   @JsonKey(name: 'tagNames')
-  List<String?>? get tags => throw _privateConstructorUsedError;
+  List<String?>? get tags;
   @override
   @JsonKey(name: 'meta')
-  ContentMetadata? get metadata => throw _privateConstructorUsedError;
+  ContentMetadata? get metadata;
   @override
   @JsonKey(name: 'featuredMedia')
-  List<FeaturedMedia?>? get featuredMedia => throw _privateConstructorUsedError;
+  List<FeaturedMedia?>? get featuredMedia;
   @override // Internal trackers to know whether this user has performed any action on
 // this content item
   @JsonKey(name: 'hasLiked', defaultValue: false)
-  bool? get hasLiked => throw _privateConstructorUsedError;
+  bool? get hasLiked;
   @override
   @JsonKey(name: 'hasSaved', defaultValue: false)
-  bool? get hasSaved => throw _privateConstructorUsedError;
+  bool? get hasSaved;
   @override
   @JsonKey(name: 'galleryImages')
-  List<GalleryImage>? get galleryImages => throw _privateConstructorUsedError;
+  List<GalleryImage>? get galleryImages;
   @override
   @JsonKey(ignore: true)
   _$$_ContentCopyWith<_$_Content> get copyWith =>

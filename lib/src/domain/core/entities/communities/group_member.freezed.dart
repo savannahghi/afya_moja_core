@@ -170,7 +170,9 @@ class _$_GroupMember implements _GroupMember {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroupMemberToJson(this);
+    return _$$_GroupMemberToJson(
+      this,
+    );
   }
 }
 
@@ -184,10 +186,10 @@ abstract class _GroupMember implements GroupMember {
 
   @override
   @JsonKey(name: 'user')
-  Member? get memberDetails => throw _privateConstructorUsedError;
+  Member? get memberDetails;
   @override
   @JsonKey(name: 'isModerator')
-  bool get isModerator => throw _privateConstructorUsedError;
+  bool get isModerator;
   @override
   @JsonKey(ignore: true)
   _$$_GroupMemberCopyWith<_$_GroupMember> get copyWith =>

@@ -179,7 +179,9 @@ class _$_SecurityQuestionResponse implements _SecurityQuestionResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SecurityQuestionResponseToJson(this);
+    return _$$_SecurityQuestionResponseToJson(
+      this,
+    );
   }
 }
 
@@ -195,13 +197,13 @@ abstract class _SecurityQuestionResponse implements SecurityQuestionResponse {
 
   @override
   @JsonKey(name: 'userID')
-  String? get userID => throw _privateConstructorUsedError;
+  String? get userID;
   @override
   @JsonKey(name: 'securityQuestionID')
-  String? get securityQuestionID => throw _privateConstructorUsedError;
+  String? get securityQuestionID;
   @override
   @JsonKey(name: 'response')
-  String? get response => throw _privateConstructorUsedError;
+  String? get response;
   @override
   @JsonKey(ignore: true)
   _$$_SecurityQuestionResponseCopyWith<_$_SecurityQuestionResponse>

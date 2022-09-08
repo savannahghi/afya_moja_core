@@ -173,7 +173,9 @@ class _$_ImageDetail implements _ImageDetail {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImageDetailToJson(this);
+    return _$$_ImageDetailToJson(
+      this,
+    );
   }
 }
 
@@ -187,11 +189,11 @@ abstract class _ImageDetail implements ImageDetail {
       _$_ImageDetail.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
-  ImageMeta? get meta => throw _privateConstructorUsedError;
+  ImageMeta? get meta;
   @override
   @JsonKey(ignore: true)
   _$$_ImageDetailCopyWith<_$_ImageDetail> get copyWith =>

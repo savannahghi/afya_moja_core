@@ -159,7 +159,9 @@ class _$_GalleryImage implements _GalleryImage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GalleryImageToJson(this);
+    return _$$_GalleryImageToJson(
+      this,
+    );
   }
 }
 
@@ -171,9 +173,9 @@ abstract class _GalleryImage implements GalleryImage {
       _$_GalleryImage.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  ImageDetail? get image => throw _privateConstructorUsedError;
+  ImageDetail? get image;
   @override
   @JsonKey(ignore: true)
   _$$_GalleryImageCopyWith<_$_GalleryImage> get copyWith =>

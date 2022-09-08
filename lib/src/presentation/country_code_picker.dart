@@ -39,10 +39,10 @@ class _MyAfyaHubCountryPickerState extends State<MyAfyaHubCountryPicker> {
       behavior: HitTestBehavior.opaque,
       key: widget.selectCountryKey,
       onTap: () async {
-        final Country? _result = await selectCountryModalBottomSheet(context);
-        if (_result != null) {
+        final Country? result = await selectCountryModalBottomSheet(context);
+        if (result != null) {
           setState(() {
-            _country = _result;
+            _country = result;
             final String countryCode = getCountry(_country)!['code']!;
             widget.onChanged(countryCode);
             phoneInputBehaviorSubject.countryCode.add(countryCode);

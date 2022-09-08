@@ -401,7 +401,7 @@ void main() {
   group('generic fetch function', () {
     testWidgets('should get data', (WidgetTester tester) async {
       final MockGraphQlClient mockGraphQlClient = MockGraphQlClient();
-      final StreamController<dynamic> _streamController =
+      final StreamController<dynamic> streamController =
           StreamController<dynamic>.broadcast();
       final Map<String, bool> variables = <String, bool>{'participate': false};
 
@@ -420,7 +420,7 @@ void main() {
                       key: const Key('fetch_data'),
                       onPressed: () async {
                         await genericFetchFunction(
-                          streamController: _streamController,
+                          streamController: streamController,
                           context: context,
                           queryString: uploadMutationQuery,
                           variables: variables,
@@ -443,12 +443,12 @@ void main() {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
 
-      await _streamController.close();
+      await streamController.close();
     });
 
     testWidgets('should get data with error', (WidgetTester tester) async {
       final MockGraphQlClient mockGraphQlClient = MockGraphQlClient();
-      final StreamController<dynamic> _streamController =
+      final StreamController<dynamic> streamController =
           StreamController<dynamic>.broadcast();
       final Map<String, bool> variables = <String, bool>{'fake': true};
 
@@ -467,7 +467,7 @@ void main() {
                       key: const Key('fetch_data'),
                       onPressed: () async {
                         await genericFetchFunction(
-                          streamController: _streamController,
+                          streamController: streamController,
                           context: context,
                           queryString: fakeQuery,
                           variables: variables,
@@ -489,13 +489,13 @@ void main() {
 
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
-      await _streamController.close();
+      await streamController.close();
     });
 
     testWidgets('should get data with data as null',
         (WidgetTester tester) async {
       final MockGraphQlClient mockGraphQlClient = MockGraphQlClient();
-      final StreamController<dynamic> _streamController =
+      final StreamController<dynamic> streamController =
           StreamController<dynamic>.broadcast();
       final Map<String, bool> variables = <String, bool>{'fake': true};
 
@@ -514,7 +514,7 @@ void main() {
                       key: const Key('fetch_data'),
                       onPressed: () async {
                         await genericFetchFunction(
-                          streamController: _streamController,
+                          streamController: streamController,
                           context: context,
                           queryString: fakeQueryTwo,
                           variables: variables,
@@ -536,13 +536,13 @@ void main() {
 
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
-      await _streamController.close();
+      await streamController.close();
     });
 
     testWidgets('should add error to stream controller when there is an error',
         (WidgetTester tester) async {
       final MockGraphQlClient mockGraphQlClient = MockGraphQlClient();
-      final StreamController<dynamic> _controller =
+      final StreamController<dynamic> controller =
           StreamController<dynamic>.broadcast();
       final Map<String, bool> userProfile = <String, bool>{
         'allowWhatsApp': true,
@@ -566,7 +566,7 @@ void main() {
                       key: const Key('fetch_data'),
                       onPressed: () async {
                         await genericFetchFunction(
-                          streamController: _controller,
+                          streamController: controller,
                           context: context,
                           queryString: updateUserProfile,
                           variables: userProfile,
@@ -589,7 +589,7 @@ void main() {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pumpAndSettle();
 
-      await _controller.close();
+      await controller.close();
     });
     test('should return false when phone doest match prefix', () {
       const String phone = '+2541908765432';

@@ -73,7 +73,7 @@ void main() {
     testWidgets('should render ios date picker', (WidgetTester tester) async {
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
       final DateFormat formatter = DateFormat('MMMM');
-      final String _month = formatter.format(now);
+      final String month = formatter.format(now);
       const Key materialKey = Key('material_key');
 
       final TextEditingController controller = TextEditingController();
@@ -104,8 +104,8 @@ void main() {
       expect(find.byType(Container), findsWidgets);
       expect(find.byType(CupertinoDatePicker), findsOneWidget);
 
-      expect(find.text(_month), findsOneWidget);
-      await tester.drag(find.text(_month), const Offset(0, 70.0));
+      expect(find.text(month), findsOneWidget);
+      await tester.drag(find.text(month), const Offset(0, 70.0));
 
       await tester.pumpAndSettle();
 
@@ -168,7 +168,8 @@ void main() {
                 child: DatePickerField(
                   controller: controller,
                   gestureDateKey: key,
-                  initialAllowedDate: DateTime.now().subtract(const Duration(days: 2)),
+                  initialAllowedDate:
+                      DateTime.now().subtract(const Duration(days: 2)),
                   onChanged: (dynamic val) {
                     controller.text;
                   },

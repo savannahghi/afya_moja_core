@@ -39,7 +39,7 @@ class AudioContentControls extends StatelessWidget {
           );
         } else if (playing != true) {
           ///Display while audio is playing
-          return Container(
+          return DecoratedBox(
             decoration: BoxDecoration(
               color: Colors.grey.shade800,
               borderRadius: const BorderRadius.all(Radius.circular(50)),
@@ -56,7 +56,7 @@ class AudioContentControls extends StatelessWidget {
           );
         } else if (processingState != ProcessingState.completed) {
           ///Display while audio is paused
-          return Container(
+          return DecoratedBox(
             decoration: BoxDecoration(
               color: Colors.grey.shade800,
               borderRadius: const BorderRadius.all(Radius.circular(400)),
@@ -69,7 +69,7 @@ class AudioContentControls extends StatelessWidget {
             ),
           );
         } else {
-          return Container(
+          return DecoratedBox(
             decoration: BoxDecoration(
               color: Colors.grey.shade800,
               borderRadius: const BorderRadius.all(Radius.circular(400)),

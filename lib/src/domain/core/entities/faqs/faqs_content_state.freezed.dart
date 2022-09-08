@@ -179,7 +179,9 @@ class _$_FAQsContentState implements _FAQsContentState {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FAQsContentStateToJson(this);
+    return _$$_FAQsContentStateToJson(
+      this,
+    );
   }
 }
 
@@ -193,11 +195,11 @@ abstract class _FAQsContentState implements FAQsContentState {
       _$_FAQsContentState.fromJson;
 
   @override
-  List<Content?>? get profileFAQs => throw _privateConstructorUsedError;
+  List<Content?>? get profileFAQs;
   @override
-  bool? get errorFetchingFAQs => throw _privateConstructorUsedError;
+  bool? get errorFetchingFAQs;
   @override
-  bool? get timeoutFetchingFAQs => throw _privateConstructorUsedError;
+  bool? get timeoutFetchingFAQs;
   @override
   @JsonKey(ignore: true)
   _$$_FAQsContentStateCopyWith<_$_FAQsContentState> get copyWith =>
