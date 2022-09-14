@@ -65,6 +65,7 @@ class ExpandableQuestion extends StatelessWidget {
     this.textFieldBackgroundColor,
     this.decoration,
     this.fieldKey,
+    this.isRequired = true,
   })  : assert(
           initialValue == null || controller == null,
           'When a controller is specified, initialValue must be null',
@@ -72,6 +73,7 @@ class ExpandableQuestion extends StatelessWidget {
         super(key: key);
 
   final bool? autoFocus;
+  final bool isRequired;
   final bool isDateType;
   final FormFieldValidator<String>? validator;
   final bool? autoValidate;
@@ -144,15 +146,26 @@ class ExpandableQuestion extends StatelessWidget {
           child: Column(
             children: <Widget>[
               ExpansionTile(
+                key: Key('${question}_key'),
                 iconColor: Colors.black,
-                title: Text(
-                  question,
-                  style: questionTextStyle ??
-                      const TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.normal,
-                      ),
+                title: RichText(
+                  text: TextSpan(
+                    text: question,
+                    style: questionTextStyle ??
+                        const TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.normal,
+                        ),
+                    children: isRequired
+                        ? <TextSpan>[
+                            const TextSpan(
+                              text: '*',
+                              style: TextStyle(color: warningColor),
+                            )
+                          ]
+                        : null,
+                  ),
                 ),
                 children: <Widget>[
                   if (isDateType)

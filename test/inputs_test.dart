@@ -28,7 +28,20 @@ void main() {
             ),
           ),
         );
-        expect(find.text(question), findsWidgets);
+        final Finder widgetFinder = find.byKey(const Key('${question}_key'));
+        final Finder richTextFinder =
+            find.descendant(of: widgetFinder, matching: find.byType(RichText));
+
+        final RichText richText =
+            richTextFinder.evaluate().first.widget as RichText;
+        final String richTextText = richText.text.toPlainText();
+        expect(
+          richTextText,
+          '$question*',
+          reason:
+              'Text from found text widget do not match the question parsed',
+        );
+
         final Finder expansionTile = find.byType(ExpansionTile);
         expect(expansionTile, findsOneWidget);
 
@@ -57,13 +70,27 @@ void main() {
                     onChanged: (String? value) {},
                     dateController: TextEditingController(),
                     isDateType: true,
+                    isRequired: false,
                   ),
                 );
               },
             ),
           ),
         );
-        expect(find.text(question), findsWidgets);
+        final Finder widgetFinder = find.byKey(const Key('${question}_key'));
+        final Finder richTextFinder =
+            find.descendant(of: widgetFinder, matching: find.byType(RichText));
+
+        final RichText richText =
+            richTextFinder.evaluate().first.widget as RichText;
+        final String richTextText = richText.text.toPlainText();
+        expect(
+          richTextText,
+          question,
+          reason:
+              'Text from found text widget do not match the question parsed',
+        );
+
         final Finder expansionTile = find.byType(ExpansionTile);
         expect(expansionTile, findsOneWidget);
 
