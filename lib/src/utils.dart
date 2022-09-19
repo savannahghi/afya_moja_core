@@ -74,7 +74,7 @@ Future<Country?> selectCountryModalBottomSheet(BuildContext context) {
     context: context,
     builder: (_) {
       return SizedBox(
-        child: Wrap(
+        child: ListView(
           children: <Widget>[
             for (Map<String, String> country in supportedCountries.values)
               ListTile(

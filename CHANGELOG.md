@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.17
+
+- fix: contents of modal bottom sheet to be scrollable
+
 ## 0.2.16
 
 - chore: add optional red asterisk to ExpandableQuestion
