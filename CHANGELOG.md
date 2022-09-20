@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.18
+
+- fix: overflow on group member item
+
 ## 0.2.17
 
 - fix: contents of modal bottom sheet to be scrollable

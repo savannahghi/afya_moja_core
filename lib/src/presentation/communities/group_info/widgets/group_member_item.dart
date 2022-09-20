@@ -38,57 +38,58 @@ class GroupMemberItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                  height: 38,
-                  width: 38,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: galleryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      userName.isNotEmpty
-                          ? userName.trim()[0].toUpperCase()
-                          : 'U',
-                      style: boldSize14Text(Theme.of(context).primaryColor),
+            Container(
+              height: 38,
+              width: 38,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: galleryColor,
+              ),
+              child: Center(
+                child: Text(
+                  userName.isNotEmpty ? userName.trim()[0].toUpperCase() : 'U',
+                  style: boldSize14Text(Theme.of(context).primaryColor),
+                ),
+              ),
+            ),
+            size15HorizontalSizedBox,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    userName.isNotEmpty ? userName : UNKNOWN,
+                    style: boldSize14Text(
+                      isBanned ? lightGrey.withOpacity(0.6) : null,
                     ),
                   ),
-                ),
-                size15HorizontalSizedBox,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
+                  if (userType == 'STAFF')
                     Text(
-                      userName.isNotEmpty ? userName : UNKNOWN,
-                      style: boldSize14Text(
-                        isBanned ? lightGrey.withOpacity(0.6) : null,
+                      staffMemberText,
+                      style: boldSize12Text().copyWith(
+                        color: greyTextColor.withOpacity(0.6),
+                        fontSize: 10,
                       ),
                     ),
-                    if (userType == 'STAFF')
-                      Text(
-                        staffMemberText,
-                        style: boldSize12Text().copyWith(
-                          color: greyTextColor.withOpacity(0.6),
-                          fontSize: 10,
-                        ),
-                      ),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
             if (isModerator)
-              const GroupMemberBadge(
-                text: moderatorText,
-                color: greenHappyColor,
+              const Align(
+                alignment: Alignment.centerRight,
+                child: GroupMemberBadge(
+                  text: moderatorText,
+                  color: greenHappyColor,
+                ),
               )
             else if (isBanned)
-              const GroupMemberBadge(
-                text: bannedString,
-                color: warningColor,
+              const Align(
+                alignment: Alignment.centerRight,
+                child: GroupMemberBadge(
+                  text: bannedString,
+                  color: warningColor,
+                ),
               )
           ],
         ),
