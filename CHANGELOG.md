@@ -3,6 +3,7 @@
 ## 0.2.18
 
 - fix: overflow on group member item
+- chore: added errorMaxLines decoration property to Custom Text Field
 
 ## 0.2.17
 

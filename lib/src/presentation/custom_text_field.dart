@@ -153,6 +153,7 @@ class CustomTextField extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
             focusColor: Theme.of(context).colorScheme.secondary,
+            errorMaxLines: 2,
           ),
           validator: validator,
           inputFormatters: inputFormatters,
