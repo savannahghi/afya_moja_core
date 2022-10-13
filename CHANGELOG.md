@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.19
+
+- fix: package versioning
+
 ## 0.2.18
 
 - fix: overflow on group member item
