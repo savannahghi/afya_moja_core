@@ -1,6 +1,6 @@
 name: afya_moja_core
 description: A shared library for `ProHealth360` and `ProHealth360 Daktari` that is responsible for rendering and exposing shared components
-version: 0.2.19
+version: 0.2.20
 homepage: https://github.com/savannahghi/afya_moja_core
 repository: https://github.com/savannahghi/afya_moja_core
 issue_tracker: https://github.com/savannahghi/afya_moja_core/issues
@@ -11,14 +11,14 @@ environment:
   flutter: ">=2.10.5"
 
 dependencies:
-  app_wrapper: ^0.1.36
+  app_wrapper: ^0.2.2
   cached_network_image: ^3.2.1
   chewie: ^1.3.4
   dartz: ^0.10.1
   firebase_messaging: ^13.0.0
   flutter:
     sdk: flutter
-  flutter_graphql_client: ^0.1.24
+  flutter_graphql_client: ^0.2.2
   flutter_html: ^3.0.0-alpha.5
   flutter_local_notifications: ^9.9.1
   flutter_local_notifications_platform_interface: ^5.0.0

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.20
+
+- chore: upgrade graphql client
 ## 0.2.19
 
 - fix: package versioning
