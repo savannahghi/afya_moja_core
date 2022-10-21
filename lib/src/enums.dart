@@ -92,3 +92,6 @@ enum ContentType { AUDIO_VIDEO, DOCUMENT, ARTICLE, PDF_DOCUMENT, UNKNOWN }
 enum FeaturedMediaType { audio, video, UNKNOWN }
 
 enum ContentDisplayedType { RECENT, FEED, BOOKMARK, UNKNOWN }
+
+/// The type of contact being used
+enum ContactType { PHONE, EMAIL, UNKNOWN }

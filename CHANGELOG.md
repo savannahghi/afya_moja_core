@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.2.21
+
+- chore: add UserData and Contact data classes
+
 ## 0.2.20
 
 - chore: upgrade graphql client
+
 ## 0.2.19
 
 - fix: package versioning
@@ -35,6 +40,7 @@
 ## 0.2.12
 
 - chore: fix zero minutes banner on content
+
 ## 0.2.11
 
 - chore: fix broken notification filter serialization
