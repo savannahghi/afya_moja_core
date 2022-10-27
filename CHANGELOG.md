@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.22
+
+- chore: add Caregiver data classes
+
 ## 0.2.21
 
 - chore: add UserData and Contact data classes
