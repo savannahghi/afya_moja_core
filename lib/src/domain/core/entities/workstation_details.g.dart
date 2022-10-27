@@ -13,6 +13,7 @@ _$_WorkStationDetails _$$_WorkStationDetailsFromJson(
       messages: json['Messages'] as int?,
       surveys: json['Surveys'] as int?,
       articles: json['Articles'] as int?,
+      serviceRequests: json['ServiceRequests'] as int?,
     );
 
 Map<String, dynamic> _$$_WorkStationDetailsToJson(
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_WorkStationDetailsToJson(
       'Messages': instance.messages,
       'Surveys': instance.surveys,
       'Articles': instance.articles,
+      'ServiceRequests': instance.serviceRequests,
     };
