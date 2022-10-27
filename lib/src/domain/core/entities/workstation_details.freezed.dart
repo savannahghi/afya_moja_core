@@ -28,6 +28,8 @@ mixin _$WorkStationDetails {
   int? get surveys => throw _privateConstructorUsedError;
   @JsonKey(name: 'Articles')
   int? get articles => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ServiceRequests')
+  int? get serviceRequests => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +46,8 @@ abstract class $WorkStationDetailsCopyWith<$Res> {
       {@JsonKey(name: 'Notifications') int? notifications,
       @JsonKey(name: 'Messages') int? messages,
       @JsonKey(name: 'Surveys') int? surveys,
-      @JsonKey(name: 'Articles') int? articles});
+      @JsonKey(name: 'Articles') int? articles,
+      @JsonKey(name: 'ServiceRequests') int? serviceRequests});
 }
 
 /// @nodoc
@@ -62,6 +65,7 @@ class _$WorkStationDetailsCopyWithImpl<$Res>
     Object? messages = freezed,
     Object? surveys = freezed,
     Object? articles = freezed,
+    Object? serviceRequests = freezed,
   }) {
     return _then(_value.copyWith(
       notifications: notifications == freezed
@@ -80,6 +84,10 @@ class _$WorkStationDetailsCopyWithImpl<$Res>
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as int?,
+      serviceRequests: serviceRequests == freezed
+          ? _value.serviceRequests
+          : serviceRequests // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -95,7 +103,8 @@ abstract class _$$_WorkStationDetailsCopyWith<$Res>
       {@JsonKey(name: 'Notifications') int? notifications,
       @JsonKey(name: 'Messages') int? messages,
       @JsonKey(name: 'Surveys') int? surveys,
-      @JsonKey(name: 'Articles') int? articles});
+      @JsonKey(name: 'Articles') int? articles,
+      @JsonKey(name: 'ServiceRequests') int? serviceRequests});
 }
 
 /// @nodoc
@@ -115,6 +124,7 @@ class __$$_WorkStationDetailsCopyWithImpl<$Res>
     Object? messages = freezed,
     Object? surveys = freezed,
     Object? articles = freezed,
+    Object? serviceRequests = freezed,
   }) {
     return _then(_$_WorkStationDetails(
       notifications: notifications == freezed
@@ -133,6 +143,10 @@ class __$$_WorkStationDetailsCopyWithImpl<$Res>
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as int?,
+      serviceRequests: serviceRequests == freezed
+          ? _value.serviceRequests
+          : serviceRequests // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -144,7 +158,8 @@ class _$_WorkStationDetails implements _WorkStationDetails {
       {@JsonKey(name: 'Notifications') this.notifications,
       @JsonKey(name: 'Messages') this.messages,
       @JsonKey(name: 'Surveys') this.surveys,
-      @JsonKey(name: 'Articles') this.articles});
+      @JsonKey(name: 'Articles') this.articles,
+      @JsonKey(name: 'ServiceRequests') this.serviceRequests});
 
   factory _$_WorkStationDetails.fromJson(Map<String, dynamic> json) =>
       _$$_WorkStationDetailsFromJson(json);
@@ -161,10 +176,13 @@ class _$_WorkStationDetails implements _WorkStationDetails {
   @override
   @JsonKey(name: 'Articles')
   final int? articles;
+  @override
+  @JsonKey(name: 'ServiceRequests')
+  final int? serviceRequests;
 
   @override
   String toString() {
-    return 'WorkStationDetails(notifications: $notifications, messages: $messages, surveys: $surveys, articles: $articles)';
+    return 'WorkStationDetails(notifications: $notifications, messages: $messages, surveys: $surveys, articles: $articles, serviceRequests: $serviceRequests)';
   }
 
   @override
@@ -176,7 +194,9 @@ class _$_WorkStationDetails implements _WorkStationDetails {
                 .equals(other.notifications, notifications) &&
             const DeepCollectionEquality().equals(other.messages, messages) &&
             const DeepCollectionEquality().equals(other.surveys, surveys) &&
-            const DeepCollectionEquality().equals(other.articles, articles));
+            const DeepCollectionEquality().equals(other.articles, articles) &&
+            const DeepCollectionEquality()
+                .equals(other.serviceRequests, serviceRequests));
   }
 
   @JsonKey(ignore: true)
@@ -186,7 +206,8 @@ class _$_WorkStationDetails implements _WorkStationDetails {
       const DeepCollectionEquality().hash(notifications),
       const DeepCollectionEquality().hash(messages),
       const DeepCollectionEquality().hash(surveys),
-      const DeepCollectionEquality().hash(articles));
+      const DeepCollectionEquality().hash(articles),
+      const DeepCollectionEquality().hash(serviceRequests));
 
   @JsonKey(ignore: true)
   @override
@@ -204,10 +225,12 @@ class _$_WorkStationDetails implements _WorkStationDetails {
 
 abstract class _WorkStationDetails implements WorkStationDetails {
   factory _WorkStationDetails(
-      {@JsonKey(name: 'Notifications') final int? notifications,
-      @JsonKey(name: 'Messages') final int? messages,
-      @JsonKey(name: 'Surveys') final int? surveys,
-      @JsonKey(name: 'Articles') final int? articles}) = _$_WorkStationDetails;
+          {@JsonKey(name: 'Notifications') final int? notifications,
+          @JsonKey(name: 'Messages') final int? messages,
+          @JsonKey(name: 'Surveys') final int? surveys,
+          @JsonKey(name: 'Articles') final int? articles,
+          @JsonKey(name: 'ServiceRequests') final int? serviceRequests}) =
+      _$_WorkStationDetails;
 
   factory _WorkStationDetails.fromJson(Map<String, dynamic> json) =
       _$_WorkStationDetails.fromJson;
@@ -224,6 +247,9 @@ abstract class _WorkStationDetails implements WorkStationDetails {
   @override
   @JsonKey(name: 'Articles')
   int? get articles;
+  @override
+  @JsonKey(name: 'ServiceRequests')
+  int? get serviceRequests;
   @override
   @JsonKey(ignore: true)
   _$$_WorkStationDetailsCopyWith<_$_WorkStationDetails> get copyWith =>

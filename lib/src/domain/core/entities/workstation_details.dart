@@ -10,6 +10,7 @@ class WorkStationDetails with _$WorkStationDetails {
     @JsonKey(name: 'Messages') int? messages,
     @JsonKey(name: 'Surveys') int? surveys,
     @JsonKey(name: 'Articles') int? articles,
+    @JsonKey(name: 'ServiceRequests') int? serviceRequests,
   }) = _WorkStationDetails;
 
   factory WorkStationDetails.fromJson(Map<String, dynamic> json) =>
@@ -20,5 +21,6 @@ class WorkStationDetails with _$WorkStationDetails {
         messages: 0,
         surveys: 0,
         articles: 0,
+        serviceRequests: 0,
       );
 }

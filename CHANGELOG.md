@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.23
+
+- chore: modify WorkStation details
+
 ## 0.2.22
 
 - chore: add Caregiver data classes
