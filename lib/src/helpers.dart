@@ -24,17 +24,17 @@ String formatPhoneNumber({
   required String countryCode,
   required String phoneNumber,
 }) {
-  final String _countryCode =
+  final String kCountryCode =
       !countryCode.startsWith('+') ? '+$countryCode' : countryCode;
 
-  if (_countryCode == '+1') {
+  if (kCountryCode == '+1') {
     return '$countryCode$phoneNumber';
   }
 
-  final String _phoneNumber =
+  final String kPhoneNumber =
       phoneNumber.startsWith('0') ? phoneNumber.substring(1) : phoneNumber;
 
-  return '$_countryCode$_phoneNumber';
+  return '$kCountryCode$kPhoneNumber';
 }
 
 /// expiresIn is in seconds
@@ -283,20 +283,20 @@ Future<dynamic> genericFetchFunction({
 }) async {
   streamController.add(<String, dynamic>{'loading': true});
 
-  final IGraphQlClient _client = AppWrapperBase.of(context)!.graphQLClient;
+  final IGraphQlClient kClient = AppWrapperBase.of(context)!.graphQLClient;
 
   /// fetch the data from the api
-  final http.Response response = await _client.query(
+  final http.Response response = await kClient.query(
     queryString,
     variables,
   );
 
-  final Map<String, dynamic> payLoad = _client.toMap(response);
+  final Map<String, dynamic> payLoad = kClient.toMap(response);
   final String? error = parseError(payLoad);
 
   if (error != null) {
     return streamController
-        .addError(<String, dynamic>{'error': _client.parseError(payLoad)});
+        .addError(<String, dynamic>{'error': kClient.parseError(payLoad)});
   }
 
   return (payLoad['data'] != null)
@@ -598,15 +598,15 @@ Future<FlutterLocalNotificationsPlugin> setupLocalNotifications() async {
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  const IOSInitializationSettings initializationSettingsIOS =
-      IOSInitializationSettings();
+  const DarwinInitializationSettings darwinInitializationSettings =
+      DarwinInitializationSettings();
 
   const AndroidInitializationSettings initializationSettingsAndroid =
       AndroidInitializationSettings('app_icon');
 
   const InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
-    iOS: initializationSettingsIOS,
+    iOS: darwinInitializationSettings,
   );
   await flutterLocalNotificationsPlugin.initialize(
     initializationSettings,

@@ -77,16 +77,16 @@ class MyAfyaHubPhoneInput extends FormField<String> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  decoration: showBorder
-                      ? BoxDecoration(
+                DecoratedBox(
+                  decoration: !showBorder ? const BoxDecoration() :
+                       BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(
                             color: borderColor ?? Colors.black,
                             width: 2,
                           ),
                         )
-                      : null,
+                    ,
                   child: Row(
                     children: <Widget>[
                       Container(

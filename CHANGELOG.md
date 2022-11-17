@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- chore: update flutter and packages
+
 ## 0.2.23
 
 - chore: modify WorkStation details

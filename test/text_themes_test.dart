@@ -1,4 +1,4 @@
-import 'package:afya_moja_core/afya_moja_core.dart';
+import 'package:afya_moja_core/src/presentation/text_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,9 +8,9 @@ void main() {
     Color? color;
 
     //size 50
-    final TextStyle _heavySize50Text = heavySize50Text();
+    final TextStyle kHeavySize50Text = heavySize50Text();
     expect(
-      _heavySize50Text,
+      kHeavySize50Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
@@ -18,9 +18,9 @@ void main() {
       ),
     );
     // size 45
-    final TextStyle _boldSize45Text = boldSize45Text();
+    final TextStyle kBoldSize45Text = boldSize45Text();
     expect(
-      _boldSize45Text,
+      kBoldSize45Text,
       GoogleFonts.sora(
         fontSize: 45,
         color: color,
@@ -29,9 +29,9 @@ void main() {
     );
 
     // size 34
-    final TextStyle _normalSize34Text = normalSize34Text();
+    final TextStyle kNormalSize34Text = normalSize34Text();
     expect(
-      _normalSize34Text,
+      kNormalSize34Text,
       GoogleFonts.sora(
         fontSize: 34,
         color: color,
@@ -39,9 +39,9 @@ void main() {
     );
 
     //size 32
-    final TextStyle _veryBoldSize32Text = veryBoldSize32Text();
+    final TextStyle kVeryBoldSize32Text = veryBoldSize32Text();
     expect(
-      _veryBoldSize32Text,
+      kVeryBoldSize32Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
@@ -49,9 +49,9 @@ void main() {
       ),
     );
 
-    final TextStyle _normalSize32Text = normalSize32Text();
+    final TextStyle kNormalSize32Text = normalSize32Text();
     expect(
-      _normalSize32Text,
+      kNormalSize32Text,
       GoogleFonts.sora(
         fontSize: 32,
         color: color,
@@ -59,9 +59,9 @@ void main() {
     );
 
     //size 30
-    final TextStyle _boldSize30Text = boldSize30Text();
+    final TextStyle kBoldSize30Text = boldSize30Text();
     expect(
-      _boldSize30Text,
+      kBoldSize30Text,
       GoogleFonts.sora(
         fontSize: 30,
         fontWeight: FontWeight.w500,
@@ -70,9 +70,9 @@ void main() {
     );
 
     //size 28
-    final TextStyle _veryBoldSize28Text = veryBoldSize28Text();
+    final TextStyle kVeryBoldSize28Text = veryBoldSize28Text();
     expect(
-      _veryBoldSize28Text,
+      kVeryBoldSize28Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
@@ -80,9 +80,9 @@ void main() {
       ),
     );
 
-    final TextStyle _heavySize28Text = heavySize28Text();
+    final TextStyle kHeavySize28Text = heavySize28Text();
     expect(
-      _heavySize28Text,
+      kHeavySize28Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w700,
@@ -90,9 +90,9 @@ void main() {
       ),
     );
 
-    final TextStyle _normalSize28Text = normalSize28Text();
+    final TextStyle kNormalSize28Text = normalSize28Text();
     expect(
-      _normalSize28Text,
+      kNormalSize28Text,
       GoogleFonts.sora(
         fontSize: 28,
         color: color,
@@ -101,9 +101,9 @@ void main() {
 
     //size 26
 
-    final TextStyle _heavySize26Text = heavySize26Text();
+    final TextStyle kHeavySize26Text = heavySize26Text();
     expect(
-      _heavySize26Text,
+      kHeavySize26Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w700,
@@ -111,18 +111,18 @@ void main() {
       ),
     );
 
-    final TextStyle _normalSize26Text = normalSize26Text();
+    final TextStyle kNormalSize26Text = normalSize26Text();
     expect(
-      _normalSize26Text,
+      kNormalSize26Text,
       GoogleFonts.sora(
         fontSize: 26,
         color: color,
       ),
     );
 
-    final TextStyle _boldSize26Title = boldSize26Title();
+    final TextStyle kBoldSize26Title = boldSize26Title();
     expect(
-      _boldSize26Title,
+      kBoldSize26Title,
       GoogleFonts.sora(
         fontSize: 26,
         color: color,
@@ -131,54 +131,54 @@ void main() {
     );
 
     // size 24
-    final TextStyle _heavySize24Text = heavySize24Text();
+    final TextStyle kHeavySize24Text = heavySize24Text();
     expect(
-      _heavySize24Text,
+      kHeavySize24Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w700,
         fontSize: 24,
       ),
     );
-    final TextStyle _mediumSize24Text = mediumSize24Text();
+    final TextStyle kMediumSize24Text = mediumSize24Text();
     expect(
-      _mediumSize24Text,
+      kMediumSize24Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w600,
         fontSize: 24,
       ),
     );
-    final TextStyle _boldSize24Text = boldSize24Text();
+    final TextStyle kBoldSize24Text = boldSize24Text();
     expect(
-      _boldSize24Text,
+      kBoldSize24Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w500,
         fontSize: 24,
       ),
     );
-    final TextStyle _normalSize24Text = normalSize24Text();
+    final TextStyle kNormalSize24Text = normalSize24Text();
     expect(
-      _normalSize24Text,
+      kNormalSize24Text,
       GoogleFonts.sora(
         color: color,
         fontSize: 24,
       ),
     );
 
-    final TextStyle _veryBoldSize22Text = veryBoldSize22Text();
+    final TextStyle kVeryBoldSize22Text = veryBoldSize22Text();
     expect(
-      _veryBoldSize22Text,
+      kVeryBoldSize22Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 22,
       ),
     );
-    final TextStyle _boldSize22Text = boldSize22Text();
+    final TextStyle kBoldSize22Text = boldSize22Text();
     expect(
-      _boldSize22Text,
+      kBoldSize22Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
@@ -186,9 +186,9 @@ void main() {
       ),
     );
 
-    final TextStyle _mediumSize22Text = mediumSize22Text();
+    final TextStyle kMediumSize22Text = mediumSize22Text();
     expect(
-      _mediumSize22Text,
+      kMediumSize22Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w500,
@@ -196,9 +196,9 @@ void main() {
       ),
     );
 
-    final TextStyle _normalSize22Text = normalSize22Text();
+    final TextStyle kNormalSize22Text = normalSize22Text();
     expect(
-      _normalSize22Text,
+      kNormalSize22Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -207,36 +207,36 @@ void main() {
     );
 
     // size 20
-    final TextStyle _veryHeavySize20Text = veryHeavySize20Text();
+    final TextStyle kVeryHeavySize20Text = veryHeavySize20Text();
     expect(
-      _veryHeavySize20Text,
+      kVeryHeavySize20Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w800,
         color: color,
         fontSize: 20,
       ),
     );
-    final TextStyle _heavySize20Text = heavySize20Text();
+    final TextStyle kHeavySize20Text = heavySize20Text();
     expect(
-      _heavySize20Text,
+      kHeavySize20Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 20,
       ),
     );
-    final TextStyle _veryBoldSize20Text = veryBoldSize20Text();
+    final TextStyle kVeryBoldSize20Text = veryBoldSize20Text();
     expect(
-      _veryBoldSize20Text,
+      kVeryBoldSize20Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 20,
       ),
     );
-    final TextStyle _boldSize20Text = boldSize20Text();
+    final TextStyle kBoldSize20Text = boldSize20Text();
     expect(
-      _boldSize20Text,
+      kBoldSize20Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
@@ -244,9 +244,9 @@ void main() {
       ),
     );
 
-    final TextStyle _mediumSize20Text = mediumSize20Text();
+    final TextStyle kMediumSize20Text = mediumSize20Text();
     expect(
-      _mediumSize20Text,
+      kMediumSize20Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w500,
@@ -254,9 +254,9 @@ void main() {
       ),
     );
 
-    final TextStyle _normalSize20Text = normalSize20Text();
+    final TextStyle kNormalSize20Text = normalSize20Text();
     expect(
-      _normalSize20Text,
+      kNormalSize20Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -265,36 +265,36 @@ void main() {
     );
 
     // size 18
-    final TextStyle _heavySize18Text = heavySize18Text();
+    final TextStyle kHeavySize18Text = heavySize18Text();
     expect(
-      _heavySize18Text,
+      kHeavySize18Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 18,
       ),
     );
-    final TextStyle _veryBoldSize18Text = veryBoldSize18Text();
+    final TextStyle kVeryBoldSize18Text = veryBoldSize18Text();
     expect(
-      _veryBoldSize18Text,
+      kVeryBoldSize18Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 18,
       ),
     );
-    final TextStyle _boldSize18Text = boldSize18Text();
+    final TextStyle kBoldSize18Text = boldSize18Text();
     expect(
-      _boldSize18Text,
+      kBoldSize18Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 18,
       ),
     );
-    final TextStyle _normalSize18Text = normalSize18Text();
+    final TextStyle kNormalSize18Text = normalSize18Text();
     expect(
-      _normalSize18Text,
+      kNormalSize18Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -303,18 +303,18 @@ void main() {
     );
 
     // size 17
-    final TextStyle _veryBoldSize17Text = veryBoldSize17Text();
+    final TextStyle kVeryBoldSize17Text = veryBoldSize17Text();
     expect(
-      _veryBoldSize17Text,
+      kVeryBoldSize17Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 17,
       ),
     );
-    final TextStyle _normalSize17Text = normalSize17Text();
+    final TextStyle kNormalSize17Text = normalSize17Text();
     expect(
-      _normalSize17Text,
+      kNormalSize17Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -323,45 +323,45 @@ void main() {
     );
 
     // size 16
-    final TextStyle _heavySize16Text = heavySize16Text();
+    final TextStyle kHeavySize16Text = heavySize16Text();
     expect(
-      _heavySize16Text,
+      kHeavySize16Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 16,
       ),
     );
-    final TextStyle _veryBoldSize16Text = veryBoldSize16Text();
+    final TextStyle kVeryBoldSize16Text = veryBoldSize16Text();
     expect(
-      _veryBoldSize16Text,
+      kVeryBoldSize16Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 16,
       ),
     );
-    final TextStyle _boldSize16Text = boldSize16Text();
+    final TextStyle kBoldSize16Text = boldSize16Text();
     expect(
-      _boldSize16Text,
+      kBoldSize16Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 16,
       ),
     );
-    final TextStyle _normalSize16Text = normalSize16Text();
+    final TextStyle kNormalSize16Text = normalSize16Text();
     expect(
-      _normalSize16Text,
+      kNormalSize16Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
         fontSize: 16,
       ),
     );
-    final TextStyle _lightSize16Text = lightSize16Text();
+    final TextStyle kLightSize16Text = lightSize16Text();
     expect(
-      _lightSize16Text,
+      kLightSize16Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w300,
         color: color,
@@ -370,27 +370,27 @@ void main() {
     );
 
     // size 15
-    final TextStyle _veryBoldSize15Text = veryBoldSize15Text();
+    final TextStyle kVeryBoldSize15Text = veryBoldSize15Text();
     expect(
-      _veryBoldSize15Text,
+      kVeryBoldSize15Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 15,
       ),
     );
-    final TextStyle _boldSize15Text = boldSize15Text();
+    final TextStyle kBoldSize15Text = boldSize15Text();
     expect(
-      _boldSize15Text,
+      kBoldSize15Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 15,
       ),
     );
-    final TextStyle _normalSize15Text = normalSize15Text();
+    final TextStyle kNormalSize15Text = normalSize15Text();
     expect(
-      _normalSize15Text,
+      kNormalSize15Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -399,45 +399,45 @@ void main() {
     );
 
     // size 14
-    final TextStyle _veryHeavySize14Text = veryHeavySize14Text();
+    final TextStyle kVeryHeavySize14Text = veryHeavySize14Text();
     expect(
-      _veryHeavySize14Text,
+      kVeryHeavySize14Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w800,
         color: color,
         fontSize: 14,
       ),
     );
-    final TextStyle _heavySize14Text = heavySize14Text();
+    final TextStyle kHeavySize14Text = heavySize14Text();
     expect(
-      _heavySize14Text,
+      kHeavySize14Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 14,
       ),
     );
-    final TextStyle _boldSize14Text = boldSize14Text();
+    final TextStyle kBoldSize14Text = boldSize14Text();
     expect(
-      _boldSize14Text,
+      kBoldSize14Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 14,
       ),
     );
-    final TextStyle _veryBoldSize14Text = veryBoldSize14Text();
+    final TextStyle kVeryBoldSize14Text = veryBoldSize14Text();
     expect(
-      _veryBoldSize14Text,
+      kVeryBoldSize14Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w600,
         color: color,
         fontSize: 14,
       ),
     );
-    final TextStyle _normalSize14Text = normalSize14Text();
+    final TextStyle kNormalSize14Text = normalSize14Text();
     expect(
-      _normalSize14Text,
+      kNormalSize14Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -445,9 +445,9 @@ void main() {
       ),
     );
 
-    final TextStyle _mediumSize14Text = mediumSize14Text();
+    final TextStyle kMediumSize14Text = mediumSize14Text();
     expect(
-      _mediumSize14Text,
+      kMediumSize14Text,
       GoogleFonts.sora(
         color: color,
         fontWeight: FontWeight.w600,
@@ -455,18 +455,18 @@ void main() {
       ),
     );
     // size 13
-    final TextStyle _boldSize13Text = boldSize13Text();
+    final TextStyle kBoldSize13Text = boldSize13Text();
     expect(
-      _boldSize13Text,
+      kBoldSize13Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 13,
       ),
     );
-    final TextStyle _normalSize13Text = normalSize13Text();
+    final TextStyle kNormalSize13Text = normalSize13Text();
     expect(
-      _normalSize13Text,
+      kNormalSize13Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -475,9 +475,9 @@ void main() {
     );
 
     // size 12
-    final TextStyle _heavySize12Text = heavySize12Text();
+    final TextStyle kHeavySize12Text = heavySize12Text();
     expect(
-      _heavySize12Text,
+      kHeavySize12Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
@@ -485,9 +485,9 @@ void main() {
       ),
     );
 
-    final TextStyle _veryHeavySize12Text = veryHeavySize12Text();
+    final TextStyle kVeryHeavySize12Text = veryHeavySize12Text();
     expect(
-      _veryHeavySize12Text,
+      kVeryHeavySize12Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w800,
         color: color,
@@ -495,18 +495,18 @@ void main() {
       ),
     );
 
-    final TextStyle _boldSize12Text = boldSize12Text();
+    final TextStyle kBoldSize12Text = boldSize12Text();
     expect(
-      _boldSize12Text,
+      kBoldSize12Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w500,
         color: color,
         fontSize: 12,
       ),
     );
-    final TextStyle _normalSize12Text = normalSize12Text();
+    final TextStyle kNormalSize12Text = normalSize12Text();
     expect(
-      _normalSize12Text,
+      kNormalSize12Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -515,18 +515,18 @@ void main() {
     );
 
     // size 11
-    final TextStyle _heavySize11Text = heavySize11Text();
+    final TextStyle kHeavySize11Text = heavySize11Text();
     expect(
-      _heavySize11Text,
+      kHeavySize11Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 11,
       ),
     );
-    final TextStyle _normalSize11Text = normalSize11Text();
+    final TextStyle kNormalSize11Text = normalSize11Text();
     expect(
-      _normalSize11Text,
+      kNormalSize11Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -535,18 +535,18 @@ void main() {
     );
 
     // size 10
-    final TextStyle _heavySize10Text = heavySize10Text();
+    final TextStyle kHeavySize10Text = heavySize10Text();
     expect(
-      _heavySize10Text,
+      kHeavySize10Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w700,
         color: color,
         fontSize: 10,
       ),
     );
-    final TextStyle _normalSize10Text = normalSize10Text();
+    final TextStyle kNormalSize10Text = normalSize10Text();
     expect(
-      _normalSize10Text,
+      kNormalSize10Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
@@ -555,9 +555,9 @@ void main() {
     );
 
     // size 9
-    final TextStyle _normalSize9Text = normalSize9Text();
+    final TextStyle kNormalSize9Text = normalSize9Text();
     expect(
-      _normalSize9Text,
+      kNormalSize9Text,
       GoogleFonts.sora(
         fontWeight: FontWeight.w400,
         color: color,
