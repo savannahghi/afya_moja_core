@@ -335,7 +335,7 @@ class _ContentDetailWidgetState extends State<ContentDetailWidget> {
                 key: cancelButtonKey,
                 onPressed: () => widget.onCloseCallback?.call(),
                 style: ElevatedButton.styleFrom(
-                  primary: readTimeBackgroundColor.withOpacity(0.8),
+                  foregroundColor: readTimeBackgroundColor.withOpacity(0.8),
                   shape: const CircleBorder(),
                 ),
                 child: Padding(

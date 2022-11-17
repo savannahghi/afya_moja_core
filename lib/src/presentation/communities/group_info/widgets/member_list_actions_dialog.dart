@@ -45,7 +45,7 @@ class MemberListActionsDialog extends StatelessWidget {
         onPressed: onPromoteTapped,
         key: promoteButtonKey,
         style: OutlinedButton.styleFrom(
-          primary: Theme.of(context).primaryColor.withOpacity(0.2),
+          foregroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
           backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),

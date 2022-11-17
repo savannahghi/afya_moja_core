@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
   /// For a documentation about the various parameters, see [TextFormField].
   const CustomTextField({
     bool? enabled,
-    final bool? obscureText,
+    bool? obscureText,
     this.formFieldKey,
     this.focusNode,
     this.fieldLabel,

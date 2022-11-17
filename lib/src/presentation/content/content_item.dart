@@ -235,7 +235,7 @@ class ContentItem extends StatelessWidget {
                         SizedBox(
                           height: 100,
                           width: 100,
-                          child: Container(
+                          child: DecoratedBox(
                             decoration: BoxDecoration(
                               color: Colors.grey.shade400,
                               borderRadius:
