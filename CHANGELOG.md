@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1
+
+- chore: upgrade dependencies
 ## 0.3.0
 
 - chore: update flutter and packages
