@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.2
+
+- chore: remove unused packages
 ## 0.3.1
 
 - chore: upgrade dependencies
