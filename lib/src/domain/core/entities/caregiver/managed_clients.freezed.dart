@@ -33,29 +33,32 @@ mixin _$ManagedClients {
 abstract class $ManagedClientsCopyWith<$Res> {
   factory $ManagedClientsCopyWith(
           ManagedClients value, $Res Function(ManagedClients) then) =
-      _$ManagedClientsCopyWithImpl<$Res>;
+      _$ManagedClientsCopyWithImpl<$Res, ManagedClients>;
+  @useResult
   $Res call({@JsonKey(name: 'ManagedClients') List<ManagedClient>? clients});
 }
 
 /// @nodoc
-class _$ManagedClientsCopyWithImpl<$Res>
+class _$ManagedClientsCopyWithImpl<$Res, $Val extends ManagedClients>
     implements $ManagedClientsCopyWith<$Res> {
   _$ManagedClientsCopyWithImpl(this._value, this._then);
 
-  final ManagedClients _value;
   // ignore: unused_field
-  final $Res Function(ManagedClients) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? clients = freezed,
   }) {
     return _then(_value.copyWith(
-      clients: clients == freezed
+      clients: freezed == clients
           ? _value.clients
           : clients // ignore: cast_nullable_to_non_nullable
               as List<ManagedClient>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,26 +69,25 @@ abstract class _$$_ManagedClientsCopyWith<$Res>
           _$_ManagedClients value, $Res Function(_$_ManagedClients) then) =
       __$$_ManagedClientsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'ManagedClients') List<ManagedClient>? clients});
 }
 
 /// @nodoc
 class __$$_ManagedClientsCopyWithImpl<$Res>
-    extends _$ManagedClientsCopyWithImpl<$Res>
+    extends _$ManagedClientsCopyWithImpl<$Res, _$_ManagedClients>
     implements _$$_ManagedClientsCopyWith<$Res> {
   __$$_ManagedClientsCopyWithImpl(
       _$_ManagedClients _value, $Res Function(_$_ManagedClients) _then)
-      : super(_value, (v) => _then(v as _$_ManagedClients));
+      : super(_value, _then);
 
-  @override
-  _$_ManagedClients get _value => super._value as _$_ManagedClients;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? clients = freezed,
   }) {
     return _then(_$_ManagedClients(
-      clients: clients == freezed
+      clients: freezed == clients
           ? _value._clients
           : clients // ignore: cast_nullable_to_non_nullable
               as List<ManagedClient>?,
@@ -133,6 +135,7 @@ class _$_ManagedClients implements _ManagedClients {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ManagedClientsCopyWith<_$_ManagedClients> get copyWith =>
       __$$_ManagedClientsCopyWithImpl<_$_ManagedClients>(this, _$identity);
 

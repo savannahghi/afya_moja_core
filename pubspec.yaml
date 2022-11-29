@@ -11,14 +11,12 @@ environment:
   flutter: ">=2.10.5"
 
 dependencies:
-  app_wrapper: ^0.2.2
   cached_network_image: ^3.2.2
   chewie: ^1.3.5
   dartz: ^0.10.1
   firebase_messaging: ^14.1.0
   flutter:
     sdk: flutter
-  flutter_graphql_client: ^0.2.2
   flutter_html: ^3.0.0-alpha.5
   flutter_local_notifications: ^12.0.3+1
   flutter_local_notifications_platform_interface: ^6.0.0
@@ -36,6 +34,8 @@ dependencies:
   pin_code_text_field: ^1.8.0
   plugin_platform_interface: ^2.1.3
   rxdart: ^0.27.7
+  sghi_core:
+    path: /Users/eugeneodhiambo/Developer/SIL/packages/sghi_core
   sms_autofill: ^2.2.0
   stream_chat_flutter: ^5.1.0
   unicons: ^2.1.0

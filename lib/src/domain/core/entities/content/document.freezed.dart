@@ -34,7 +34,8 @@ mixin _$Document {
 /// @nodoc
 abstract class $DocumentCopyWith<$Res> {
   factory $DocumentCopyWith(Document value, $Res Function(Document) then) =
-      _$DocumentCopyWithImpl<$Res>;
+      _$DocumentCopyWithImpl<$Res, Document>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? id,
       @JsonKey(name: 'Document') DocumentData? documentData});
@@ -43,38 +44,42 @@ abstract class $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DocumentCopyWithImpl<$Res> implements $DocumentCopyWith<$Res> {
+class _$DocumentCopyWithImpl<$Res, $Val extends Document>
+    implements $DocumentCopyWith<$Res> {
   _$DocumentCopyWithImpl(this._value, this._then);
 
-  final Document _value;
   // ignore: unused_field
-  final $Res Function(Document) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? documentData = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      documentData: documentData == freezed
+      documentData: freezed == documentData
           ? _value.documentData
           : documentData // ignore: cast_nullable_to_non_nullable
               as DocumentData?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DocumentDataCopyWith<$Res>? get documentData {
     if (_value.documentData == null) {
       return null;
     }
 
     return $DocumentDataCopyWith<$Res>(_value.documentData!, (value) {
-      return _then(_value.copyWith(documentData: value));
+      return _then(_value.copyWith(documentData: value) as $Val);
     });
   }
 }
@@ -85,6 +90,7 @@ abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
           _$_Document value, $Res Function(_$_Document) then) =
       __$$_DocumentCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? id,
       @JsonKey(name: 'Document') DocumentData? documentData});
@@ -94,26 +100,25 @@ abstract class _$$_DocumentCopyWith<$Res> implements $DocumentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DocumentCopyWithImpl<$Res> extends _$DocumentCopyWithImpl<$Res>
+class __$$_DocumentCopyWithImpl<$Res>
+    extends _$DocumentCopyWithImpl<$Res, _$_Document>
     implements _$$_DocumentCopyWith<$Res> {
   __$$_DocumentCopyWithImpl(
       _$_Document _value, $Res Function(_$_Document) _then)
-      : super(_value, (v) => _then(v as _$_Document));
+      : super(_value, _then);
 
-  @override
-  _$_Document get _value => super._value as _$_Document;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? documentData = freezed,
   }) {
     return _then(_$_Document(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      documentData: documentData == freezed
+      documentData: freezed == documentData
           ? _value.documentData
           : documentData // ignore: cast_nullable_to_non_nullable
               as DocumentData?,
@@ -148,20 +153,18 @@ class _$_Document implements _Document {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Document &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.documentData, documentData));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.documentData, documentData) ||
+                other.documentData == documentData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(documentData));
+  int get hashCode => Object.hash(runtimeType, id, documentData);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DocumentCopyWith<_$_Document> get copyWith =>
       __$$_DocumentCopyWithImpl<_$_Document>(this, _$identity);
 
@@ -216,7 +219,8 @@ mixin _$DocumentData {
 abstract class $DocumentDataCopyWith<$Res> {
   factory $DocumentDataCopyWith(
           DocumentData value, $Res Function(DocumentData) then) =
-      _$DocumentDataCopyWithImpl<$Res>;
+      _$DocumentDataCopyWithImpl<$Res, DocumentData>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? id,
       @JsonKey(name: 'title') String? title,
@@ -226,13 +230,16 @@ abstract class $DocumentDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DocumentDataCopyWithImpl<$Res> implements $DocumentDataCopyWith<$Res> {
+class _$DocumentDataCopyWithImpl<$Res, $Val extends DocumentData>
+    implements $DocumentDataCopyWith<$Res> {
   _$DocumentDataCopyWithImpl(this._value, this._then);
 
-  final DocumentData _value;
   // ignore: unused_field
-  final $Res Function(DocumentData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -240,29 +247,30 @@ class _$DocumentDataCopyWithImpl<$Res> implements $DocumentDataCopyWith<$Res> {
     Object? documentMetaData = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      documentMetaData: documentMetaData == freezed
+      documentMetaData: freezed == documentMetaData
           ? _value.documentMetaData
           : documentMetaData // ignore: cast_nullable_to_non_nullable
               as DocumentMetaData?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DocumentMetaDataCopyWith<$Res>? get documentMetaData {
     if (_value.documentMetaData == null) {
       return null;
     }
 
     return $DocumentMetaDataCopyWith<$Res>(_value.documentMetaData!, (value) {
-      return _then(_value.copyWith(documentMetaData: value));
+      return _then(_value.copyWith(documentMetaData: value) as $Val);
     });
   }
 }
@@ -274,6 +282,7 @@ abstract class _$$_DocumentDataCopyWith<$Res>
           _$_DocumentData value, $Res Function(_$_DocumentData) then) =
       __$$_DocumentDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? id,
       @JsonKey(name: 'title') String? title,
@@ -285,15 +294,13 @@ abstract class _$$_DocumentDataCopyWith<$Res>
 
 /// @nodoc
 class __$$_DocumentDataCopyWithImpl<$Res>
-    extends _$DocumentDataCopyWithImpl<$Res>
+    extends _$DocumentDataCopyWithImpl<$Res, _$_DocumentData>
     implements _$$_DocumentDataCopyWith<$Res> {
   __$$_DocumentDataCopyWithImpl(
       _$_DocumentData _value, $Res Function(_$_DocumentData) _then)
-      : super(_value, (v) => _then(v as _$_DocumentData));
+      : super(_value, _then);
 
-  @override
-  _$_DocumentData get _value => super._value as _$_DocumentData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -301,15 +308,15 @@ class __$$_DocumentDataCopyWithImpl<$Res>
     Object? documentMetaData = freezed,
   }) {
     return _then(_$_DocumentData(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      documentMetaData: documentMetaData == freezed
+      documentMetaData: freezed == documentMetaData
           ? _value.documentMetaData
           : documentMetaData // ignore: cast_nullable_to_non_nullable
               as DocumentMetaData?,
@@ -348,22 +355,19 @@ class _$_DocumentData implements _DocumentData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DocumentData &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.documentMetaData, documentMetaData));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.documentMetaData, documentMetaData) ||
+                other.documentMetaData == documentMetaData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(documentMetaData));
+  int get hashCode => Object.hash(runtimeType, id, title, documentMetaData);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DocumentDataCopyWith<_$_DocumentData> get copyWith =>
       __$$_DocumentDataCopyWithImpl<_$_DocumentData>(this, _$identity);
 
@@ -419,30 +423,33 @@ mixin _$DocumentMetaData {
 abstract class $DocumentMetaDataCopyWith<$Res> {
   factory $DocumentMetaDataCopyWith(
           DocumentMetaData value, $Res Function(DocumentMetaData) then) =
-      _$DocumentMetaDataCopyWithImpl<$Res>;
+      _$DocumentMetaDataCopyWithImpl<$Res, DocumentMetaData>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'documentDownloadUrl') String? documentDownloadUrl});
 }
 
 /// @nodoc
-class _$DocumentMetaDataCopyWithImpl<$Res>
+class _$DocumentMetaDataCopyWithImpl<$Res, $Val extends DocumentMetaData>
     implements $DocumentMetaDataCopyWith<$Res> {
   _$DocumentMetaDataCopyWithImpl(this._value, this._then);
 
-  final DocumentMetaData _value;
   // ignore: unused_field
-  final $Res Function(DocumentMetaData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? documentDownloadUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      documentDownloadUrl: documentDownloadUrl == freezed
+      documentDownloadUrl: freezed == documentDownloadUrl
           ? _value.documentDownloadUrl
           : documentDownloadUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -453,27 +460,26 @@ abstract class _$$_DocumentMetaDataCopyWith<$Res>
           _$_DocumentMetaData value, $Res Function(_$_DocumentMetaData) then) =
       __$$_DocumentMetaDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'documentDownloadUrl') String? documentDownloadUrl});
 }
 
 /// @nodoc
 class __$$_DocumentMetaDataCopyWithImpl<$Res>
-    extends _$DocumentMetaDataCopyWithImpl<$Res>
+    extends _$DocumentMetaDataCopyWithImpl<$Res, _$_DocumentMetaData>
     implements _$$_DocumentMetaDataCopyWith<$Res> {
   __$$_DocumentMetaDataCopyWithImpl(
       _$_DocumentMetaData _value, $Res Function(_$_DocumentMetaData) _then)
-      : super(_value, (v) => _then(v as _$_DocumentMetaData));
+      : super(_value, _then);
 
-  @override
-  _$_DocumentMetaData get _value => super._value as _$_DocumentMetaData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? documentDownloadUrl = freezed,
   }) {
     return _then(_$_DocumentMetaData(
-      documentDownloadUrl: documentDownloadUrl == freezed
+      documentDownloadUrl: freezed == documentDownloadUrl
           ? _value.documentDownloadUrl
           : documentDownloadUrl // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -504,17 +510,17 @@ class _$_DocumentMetaData implements _DocumentMetaData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DocumentMetaData &&
-            const DeepCollectionEquality()
-                .equals(other.documentDownloadUrl, documentDownloadUrl));
+            (identical(other.documentDownloadUrl, documentDownloadUrl) ||
+                other.documentDownloadUrl == documentDownloadUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(documentDownloadUrl));
+  int get hashCode => Object.hash(runtimeType, documentDownloadUrl);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DocumentMetaDataCopyWith<_$_DocumentMetaData> get copyWith =>
       __$$_DocumentMetaDataCopyWithImpl<_$_DocumentMetaData>(this, _$identity);
 

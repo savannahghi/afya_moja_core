@@ -38,7 +38,8 @@ mixin _$ListContentCategory {
 abstract class $ListContentCategoryCopyWith<$Res> {
   factory $ListContentCategoryCopyWith(
           ListContentCategory value, $Res Function(ListContentCategory) then) =
-      _$ListContentCategoryCopyWithImpl<$Res>;
+      _$ListContentCategoryCopyWithImpl<$Res, ListContentCategory>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'listContentCategories')
           List<ContentCategory?>? contentCategories,
@@ -47,14 +48,16 @@ abstract class $ListContentCategoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListContentCategoryCopyWithImpl<$Res>
+class _$ListContentCategoryCopyWithImpl<$Res, $Val extends ListContentCategory>
     implements $ListContentCategoryCopyWith<$Res> {
   _$ListContentCategoryCopyWithImpl(this._value, this._then);
 
-  final ListContentCategory _value;
   // ignore: unused_field
-  final $Res Function(ListContentCategory) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? contentCategories = freezed,
@@ -62,20 +65,20 @@ class _$ListContentCategoryCopyWithImpl<$Res>
     Object? timeoutFetchingContentCategories = freezed,
   }) {
     return _then(_value.copyWith(
-      contentCategories: contentCategories == freezed
+      contentCategories: freezed == contentCategories
           ? _value.contentCategories
           : contentCategories // ignore: cast_nullable_to_non_nullable
               as List<ContentCategory?>?,
-      errorFetchingContentCategories: errorFetchingContentCategories == freezed
+      errorFetchingContentCategories: freezed == errorFetchingContentCategories
           ? _value.errorFetchingContentCategories
           : errorFetchingContentCategories // ignore: cast_nullable_to_non_nullable
               as bool?,
-      timeoutFetchingContentCategories: timeoutFetchingContentCategories ==
-              freezed
+      timeoutFetchingContentCategories: freezed ==
+              timeoutFetchingContentCategories
           ? _value.timeoutFetchingContentCategories
           : timeoutFetchingContentCategories // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -86,6 +89,7 @@ abstract class _$$_ListContentCategoryCopyWith<$Res>
           $Res Function(_$_ListContentCategory) then) =
       __$$_ListContentCategoryCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'listContentCategories')
           List<ContentCategory?>? contentCategories,
@@ -95,15 +99,13 @@ abstract class _$$_ListContentCategoryCopyWith<$Res>
 
 /// @nodoc
 class __$$_ListContentCategoryCopyWithImpl<$Res>
-    extends _$ListContentCategoryCopyWithImpl<$Res>
+    extends _$ListContentCategoryCopyWithImpl<$Res, _$_ListContentCategory>
     implements _$$_ListContentCategoryCopyWith<$Res> {
   __$$_ListContentCategoryCopyWithImpl(_$_ListContentCategory _value,
       $Res Function(_$_ListContentCategory) _then)
-      : super(_value, (v) => _then(v as _$_ListContentCategory));
+      : super(_value, _then);
 
-  @override
-  _$_ListContentCategory get _value => super._value as _$_ListContentCategory;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? contentCategories = freezed,
@@ -111,16 +113,16 @@ class __$$_ListContentCategoryCopyWithImpl<$Res>
     Object? timeoutFetchingContentCategories = freezed,
   }) {
     return _then(_$_ListContentCategory(
-      contentCategories: contentCategories == freezed
+      contentCategories: freezed == contentCategories
           ? _value._contentCategories
           : contentCategories // ignore: cast_nullable_to_non_nullable
               as List<ContentCategory?>?,
-      errorFetchingContentCategories: errorFetchingContentCategories == freezed
+      errorFetchingContentCategories: freezed == errorFetchingContentCategories
           ? _value.errorFetchingContentCategories
           : errorFetchingContentCategories // ignore: cast_nullable_to_non_nullable
               as bool?,
-      timeoutFetchingContentCategories: timeoutFetchingContentCategories ==
-              freezed
+      timeoutFetchingContentCategories: freezed ==
+              timeoutFetchingContentCategories
           ? _value.timeoutFetchingContentCategories
           : timeoutFetchingContentCategories // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -168,12 +170,14 @@ class _$_ListContentCategory implements _ListContentCategory {
             other is _$_ListContentCategory &&
             const DeepCollectionEquality()
                 .equals(other._contentCategories, _contentCategories) &&
-            const DeepCollectionEquality().equals(
-                other.errorFetchingContentCategories,
-                errorFetchingContentCategories) &&
-            const DeepCollectionEquality().equals(
-                other.timeoutFetchingContentCategories,
-                timeoutFetchingContentCategories));
+            (identical(other.errorFetchingContentCategories,
+                    errorFetchingContentCategories) ||
+                other.errorFetchingContentCategories ==
+                    errorFetchingContentCategories) &&
+            (identical(other.timeoutFetchingContentCategories,
+                    timeoutFetchingContentCategories) ||
+                other.timeoutFetchingContentCategories ==
+                    timeoutFetchingContentCategories));
   }
 
   @JsonKey(ignore: true)
@@ -181,11 +185,12 @@ class _$_ListContentCategory implements _ListContentCategory {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_contentCategories),
-      const DeepCollectionEquality().hash(errorFetchingContentCategories),
-      const DeepCollectionEquality().hash(timeoutFetchingContentCategories));
+      errorFetchingContentCategories,
+      timeoutFetchingContentCategories);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ListContentCategoryCopyWith<_$_ListContentCategory> get copyWith =>
       __$$_ListContentCategoryCopyWithImpl<_$_ListContentCategory>(
           this, _$identity);

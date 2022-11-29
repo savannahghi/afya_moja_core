@@ -34,7 +34,8 @@ mixin _$ManagedClientsResponse {
 abstract class $ManagedClientsResponseCopyWith<$Res> {
   factory $ManagedClientsResponseCopyWith(ManagedClientsResponse value,
           $Res Function(ManagedClientsResponse) then) =
-      _$ManagedClientsResponseCopyWithImpl<$Res>;
+      _$ManagedClientsResponseCopyWithImpl<$Res, ManagedClientsResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'getCaregiverManagedClients')
           ManagedClients? managedClients});
@@ -43,34 +44,38 @@ abstract class $ManagedClientsResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ManagedClientsResponseCopyWithImpl<$Res>
+class _$ManagedClientsResponseCopyWithImpl<$Res,
+        $Val extends ManagedClientsResponse>
     implements $ManagedClientsResponseCopyWith<$Res> {
   _$ManagedClientsResponseCopyWithImpl(this._value, this._then);
 
-  final ManagedClientsResponse _value;
   // ignore: unused_field
-  final $Res Function(ManagedClientsResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? managedClients = freezed,
   }) {
     return _then(_value.copyWith(
-      managedClients: managedClients == freezed
+      managedClients: freezed == managedClients
           ? _value.managedClients
           : managedClients // ignore: cast_nullable_to_non_nullable
               as ManagedClients?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ManagedClientsCopyWith<$Res>? get managedClients {
     if (_value.managedClients == null) {
       return null;
     }
 
     return $ManagedClientsCopyWith<$Res>(_value.managedClients!, (value) {
-      return _then(_value.copyWith(managedClients: value));
+      return _then(_value.copyWith(managedClients: value) as $Val);
     });
   }
 }
@@ -82,6 +87,7 @@ abstract class _$$_ManagedClientsResponseCopyWith<$Res>
           $Res Function(_$_ManagedClientsResponse) then) =
       __$$_ManagedClientsResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'getCaregiverManagedClients')
           ManagedClients? managedClients});
@@ -92,22 +98,20 @@ abstract class _$$_ManagedClientsResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_ManagedClientsResponseCopyWithImpl<$Res>
-    extends _$ManagedClientsResponseCopyWithImpl<$Res>
+    extends _$ManagedClientsResponseCopyWithImpl<$Res,
+        _$_ManagedClientsResponse>
     implements _$$_ManagedClientsResponseCopyWith<$Res> {
   __$$_ManagedClientsResponseCopyWithImpl(_$_ManagedClientsResponse _value,
       $Res Function(_$_ManagedClientsResponse) _then)
-      : super(_value, (v) => _then(v as _$_ManagedClientsResponse));
+      : super(_value, _then);
 
-  @override
-  _$_ManagedClientsResponse get _value =>
-      super._value as _$_ManagedClientsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? managedClients = freezed,
   }) {
     return _then(_$_ManagedClientsResponse(
-      managedClients: managedClients == freezed
+      managedClients: freezed == managedClients
           ? _value.managedClients
           : managedClients // ignore: cast_nullable_to_non_nullable
               as ManagedClients?,
@@ -138,17 +142,17 @@ class _$_ManagedClientsResponse implements _ManagedClientsResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ManagedClientsResponse &&
-            const DeepCollectionEquality()
-                .equals(other.managedClients, managedClients));
+            (identical(other.managedClients, managedClients) ||
+                other.managedClients == managedClients));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(managedClients));
+  int get hashCode => Object.hash(runtimeType, managedClients);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ManagedClientsResponseCopyWith<_$_ManagedClientsResponse> get copyWith =>
       __$$_ManagedClientsResponseCopyWithImpl<_$_ManagedClientsResponse>(
           this, _$identity);

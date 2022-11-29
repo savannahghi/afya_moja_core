@@ -26,9 +26,9 @@ mixin _$ValueObjectFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? emailAddressMustNotBeNull,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? emailAddressMustNotBeNull,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,9 +49,9 @@ mixin _$ValueObjectFailure<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
-    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
-    TResult Function(EmailAddressMustNotBeNull<T> value)?
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(EmailAddressMustNotBeNull<T> value)?
         emailAddressMustNotBeNull,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,29 +74,33 @@ mixin _$ValueObjectFailure<T> {
 abstract class $ValueObjectFailureCopyWith<T, $Res> {
   factory $ValueObjectFailureCopyWith(ValueObjectFailure<T> value,
           $Res Function(ValueObjectFailure<T>) then) =
-      _$ValueObjectFailureCopyWithImpl<T, $Res>;
+      _$ValueObjectFailureCopyWithImpl<T, $Res, ValueObjectFailure<T>>;
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$ValueObjectFailureCopyWithImpl<T, $Res>
+class _$ValueObjectFailureCopyWithImpl<T, $Res,
+        $Val extends ValueObjectFailure<T>>
     implements $ValueObjectFailureCopyWith<T, $Res> {
   _$ValueObjectFailureCopyWithImpl(this._value, this._then);
 
-  final ValueObjectFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(ValueObjectFailure<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_value.copyWith(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
-    ));
+    ) as $Val);
   }
 }
 
@@ -107,27 +111,25 @@ abstract class _$$InvalidEmailAddressCopyWith<T, $Res>
           $Res Function(_$InvalidEmailAddress<T>) then) =
       __$$InvalidEmailAddressCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidEmailAddressCopyWithImpl<T, $Res>
-    extends _$ValueObjectFailureCopyWithImpl<T, $Res>
+    extends _$ValueObjectFailureCopyWithImpl<T, $Res, _$InvalidEmailAddress<T>>
     implements _$$InvalidEmailAddressCopyWith<T, $Res> {
   __$$InvalidEmailAddressCopyWithImpl(_$InvalidEmailAddress<T> _value,
       $Res Function(_$InvalidEmailAddress<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmailAddress<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidEmailAddress<T> get _value =>
-      super._value as _$InvalidEmailAddress<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$InvalidEmailAddress<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -163,6 +165,7 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidEmailAddressCopyWith<T, _$InvalidEmailAddress<T>> get copyWith =>
       __$$InvalidEmailAddressCopyWithImpl<T, _$InvalidEmailAddress<T>>(
           this, _$identity);
@@ -180,9 +183,9 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? emailAddressMustNotBeNull,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? emailAddressMustNotBeNull,
   }) {
     return invalidEmailAddress?.call(failedValue);
   }
@@ -215,9 +218,9 @@ class _$InvalidEmailAddress<T> implements InvalidEmailAddress<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
-    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
-    TResult Function(EmailAddressMustNotBeNull<T> value)?
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(EmailAddressMustNotBeNull<T> value)?
         emailAddressMustNotBeNull,
   }) {
     return invalidEmailAddress?.call(this);
@@ -258,26 +261,25 @@ abstract class _$$InvalidPhoneNumberCopyWith<T, $Res>
           $Res Function(_$InvalidPhoneNumber<T>) then) =
       __$$InvalidPhoneNumberCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$InvalidPhoneNumberCopyWithImpl<T, $Res>
-    extends _$ValueObjectFailureCopyWithImpl<T, $Res>
+    extends _$ValueObjectFailureCopyWithImpl<T, $Res, _$InvalidPhoneNumber<T>>
     implements _$$InvalidPhoneNumberCopyWith<T, $Res> {
   __$$InvalidPhoneNumberCopyWithImpl(_$InvalidPhoneNumber<T> _value,
       $Res Function(_$InvalidPhoneNumber<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidPhoneNumber<T>));
+      : super(_value, _then);
 
-  @override
-  _$InvalidPhoneNumber<T> get _value => super._value as _$InvalidPhoneNumber<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$InvalidPhoneNumber<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -313,6 +315,7 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$InvalidPhoneNumberCopyWith<T, _$InvalidPhoneNumber<T>> get copyWith =>
       __$$InvalidPhoneNumberCopyWithImpl<T, _$InvalidPhoneNumber<T>>(
           this, _$identity);
@@ -330,9 +333,9 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? emailAddressMustNotBeNull,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? emailAddressMustNotBeNull,
   }) {
     return invalidPhoneNumber?.call(failedValue);
   }
@@ -365,9 +368,9 @@ class _$InvalidPhoneNumber<T> implements InvalidPhoneNumber<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
-    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
-    TResult Function(EmailAddressMustNotBeNull<T> value)?
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(EmailAddressMustNotBeNull<T> value)?
         emailAddressMustNotBeNull,
   }) {
     return invalidPhoneNumber?.call(this);
@@ -409,28 +412,27 @@ abstract class _$$EmailAddressMustNotBeNullCopyWith<T, $Res>
           $Res Function(_$EmailAddressMustNotBeNull<T>) then) =
       __$$EmailAddressMustNotBeNullCopyWithImpl<T, $Res>;
   @override
+  @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
 class __$$EmailAddressMustNotBeNullCopyWithImpl<T, $Res>
-    extends _$ValueObjectFailureCopyWithImpl<T, $Res>
+    extends _$ValueObjectFailureCopyWithImpl<T, $Res,
+        _$EmailAddressMustNotBeNull<T>>
     implements _$$EmailAddressMustNotBeNullCopyWith<T, $Res> {
   __$$EmailAddressMustNotBeNullCopyWithImpl(
       _$EmailAddressMustNotBeNull<T> _value,
       $Res Function(_$EmailAddressMustNotBeNull<T>) _then)
-      : super(_value, (v) => _then(v as _$EmailAddressMustNotBeNull<T>));
+      : super(_value, _then);
 
-  @override
-  _$EmailAddressMustNotBeNull<T> get _value =>
-      super._value as _$EmailAddressMustNotBeNull<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
     return _then(_$EmailAddressMustNotBeNull<T>(
-      failedValue: failedValue == freezed
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as T,
@@ -466,6 +468,7 @@ class _$EmailAddressMustNotBeNull<T> implements EmailAddressMustNotBeNull<T> {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$EmailAddressMustNotBeNullCopyWith<T, _$EmailAddressMustNotBeNull<T>>
       get copyWith => __$$EmailAddressMustNotBeNullCopyWithImpl<T,
           _$EmailAddressMustNotBeNull<T>>(this, _$identity);
@@ -483,9 +486,9 @@ class _$EmailAddressMustNotBeNull<T> implements EmailAddressMustNotBeNull<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidEmailAddress,
-    TResult Function(T failedValue)? invalidPhoneNumber,
-    TResult Function(T failedValue)? emailAddressMustNotBeNull,
+    TResult? Function(T failedValue)? invalidEmailAddress,
+    TResult? Function(T failedValue)? invalidPhoneNumber,
+    TResult? Function(T failedValue)? emailAddressMustNotBeNull,
   }) {
     return emailAddressMustNotBeNull?.call(failedValue);
   }
@@ -518,9 +521,9 @@ class _$EmailAddressMustNotBeNull<T> implements EmailAddressMustNotBeNull<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
-    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
-    TResult Function(EmailAddressMustNotBeNull<T> value)?
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult? Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+    TResult? Function(EmailAddressMustNotBeNull<T> value)?
         emailAddressMustNotBeNull,
   }) {
     return emailAddressMustNotBeNull?.call(this);

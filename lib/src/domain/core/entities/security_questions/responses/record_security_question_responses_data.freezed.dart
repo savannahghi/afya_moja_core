@@ -37,7 +37,9 @@ abstract class $RecordSecurityQuestionResponsesDataCopyWith<$Res> {
   factory $RecordSecurityQuestionResponsesDataCopyWith(
           RecordSecurityQuestionResponsesData value,
           $Res Function(RecordSecurityQuestionResponsesData) then) =
-      _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res>;
+      _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res,
+          RecordSecurityQuestionResponsesData>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'recordSecurityQuestionResponses')
           List<RecordSecurityQuestionResponse>
@@ -45,25 +47,27 @@ abstract class $RecordSecurityQuestionResponsesDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res>
+class _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res,
+        $Val extends RecordSecurityQuestionResponsesData>
     implements $RecordSecurityQuestionResponsesDataCopyWith<$Res> {
   _$RecordSecurityQuestionResponsesDataCopyWithImpl(this._value, this._then);
 
-  final RecordSecurityQuestionResponsesData _value;
   // ignore: unused_field
-  final $Res Function(RecordSecurityQuestionResponsesData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recordSecurityQuestionResponses = freezed,
+    Object? recordSecurityQuestionResponses = null,
   }) {
     return _then(_value.copyWith(
-      recordSecurityQuestionResponses: recordSecurityQuestionResponses ==
-              freezed
+      recordSecurityQuestionResponses: null == recordSecurityQuestionResponses
           ? _value.recordSecurityQuestionResponses
           : recordSecurityQuestionResponses // ignore: cast_nullable_to_non_nullable
               as List<RecordSecurityQuestionResponse>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -75,6 +79,7 @@ abstract class _$$_RecordSecurityQuestionResponsesDataCopyWith<$Res>
           $Res Function(_$_RecordSecurityQuestionResponsesData) then) =
       __$$_RecordSecurityQuestionResponsesDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'recordSecurityQuestionResponses')
           List<RecordSecurityQuestionResponse>
@@ -83,25 +88,21 @@ abstract class _$$_RecordSecurityQuestionResponsesDataCopyWith<$Res>
 
 /// @nodoc
 class __$$_RecordSecurityQuestionResponsesDataCopyWithImpl<$Res>
-    extends _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res>
+    extends _$RecordSecurityQuestionResponsesDataCopyWithImpl<$Res,
+        _$_RecordSecurityQuestionResponsesData>
     implements _$$_RecordSecurityQuestionResponsesDataCopyWith<$Res> {
   __$$_RecordSecurityQuestionResponsesDataCopyWithImpl(
       _$_RecordSecurityQuestionResponsesData _value,
       $Res Function(_$_RecordSecurityQuestionResponsesData) _then)
-      : super(
-            _value, (v) => _then(v as _$_RecordSecurityQuestionResponsesData));
+      : super(_value, _then);
 
-  @override
-  _$_RecordSecurityQuestionResponsesData get _value =>
-      super._value as _$_RecordSecurityQuestionResponsesData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recordSecurityQuestionResponses = freezed,
+    Object? recordSecurityQuestionResponses = null,
   }) {
     return _then(_$_RecordSecurityQuestionResponsesData(
-      recordSecurityQuestionResponses: recordSecurityQuestionResponses ==
-              freezed
+      recordSecurityQuestionResponses: null == recordSecurityQuestionResponses
           ? _value._recordSecurityQuestionResponses
           : recordSecurityQuestionResponses // ignore: cast_nullable_to_non_nullable
               as List<RecordSecurityQuestionResponse>,
@@ -153,6 +154,7 @@ class _$_RecordSecurityQuestionResponsesData
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RecordSecurityQuestionResponsesDataCopyWith<
           _$_RecordSecurityQuestionResponsesData>
       get copyWith => __$$_RecordSecurityQuestionResponsesDataCopyWithImpl<

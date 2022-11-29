@@ -35,7 +35,8 @@ mixin _$GroupMember {
 abstract class $GroupMemberCopyWith<$Res> {
   factory $GroupMemberCopyWith(
           GroupMember value, $Res Function(GroupMember) then) =
-      _$GroupMemberCopyWithImpl<$Res>;
+      _$GroupMemberCopyWithImpl<$Res, GroupMember>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'user') Member? memberDetails,
       @JsonKey(name: 'isModerator') bool isModerator});
@@ -44,38 +45,42 @@ abstract class $GroupMemberCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GroupMemberCopyWithImpl<$Res> implements $GroupMemberCopyWith<$Res> {
+class _$GroupMemberCopyWithImpl<$Res, $Val extends GroupMember>
+    implements $GroupMemberCopyWith<$Res> {
   _$GroupMemberCopyWithImpl(this._value, this._then);
 
-  final GroupMember _value;
   // ignore: unused_field
-  final $Res Function(GroupMember) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? memberDetails = freezed,
-    Object? isModerator = freezed,
+    Object? isModerator = null,
   }) {
     return _then(_value.copyWith(
-      memberDetails: memberDetails == freezed
+      memberDetails: freezed == memberDetails
           ? _value.memberDetails
           : memberDetails // ignore: cast_nullable_to_non_nullable
               as Member?,
-      isModerator: isModerator == freezed
+      isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MemberCopyWith<$Res>? get memberDetails {
     if (_value.memberDetails == null) {
       return null;
     }
 
     return $MemberCopyWith<$Res>(_value.memberDetails!, (value) {
-      return _then(_value.copyWith(memberDetails: value));
+      return _then(_value.copyWith(memberDetails: value) as $Val);
     });
   }
 }
@@ -87,6 +92,7 @@ abstract class _$$_GroupMemberCopyWith<$Res>
           _$_GroupMember value, $Res Function(_$_GroupMember) then) =
       __$$_GroupMemberCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'user') Member? memberDetails,
       @JsonKey(name: 'isModerator') bool isModerator});
@@ -96,26 +102,25 @@ abstract class _$$_GroupMemberCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GroupMemberCopyWithImpl<$Res> extends _$GroupMemberCopyWithImpl<$Res>
+class __$$_GroupMemberCopyWithImpl<$Res>
+    extends _$GroupMemberCopyWithImpl<$Res, _$_GroupMember>
     implements _$$_GroupMemberCopyWith<$Res> {
   __$$_GroupMemberCopyWithImpl(
       _$_GroupMember _value, $Res Function(_$_GroupMember) _then)
-      : super(_value, (v) => _then(v as _$_GroupMember));
+      : super(_value, _then);
 
-  @override
-  _$_GroupMember get _value => super._value as _$_GroupMember;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? memberDetails = freezed,
-    Object? isModerator = freezed,
+    Object? isModerator = null,
   }) {
     return _then(_$_GroupMember(
-      memberDetails: memberDetails == freezed
+      memberDetails: freezed == memberDetails
           ? _value.memberDetails
           : memberDetails // ignore: cast_nullable_to_non_nullable
               as Member?,
-      isModerator: isModerator == freezed
+      isModerator: null == isModerator
           ? _value.isModerator
           : isModerator // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -150,21 +155,19 @@ class _$_GroupMember implements _GroupMember {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupMember &&
-            const DeepCollectionEquality()
-                .equals(other.memberDetails, memberDetails) &&
-            const DeepCollectionEquality()
-                .equals(other.isModerator, isModerator));
+            (identical(other.memberDetails, memberDetails) ||
+                other.memberDetails == memberDetails) &&
+            (identical(other.isModerator, isModerator) ||
+                other.isModerator == isModerator));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(memberDetails),
-      const DeepCollectionEquality().hash(isModerator));
+  int get hashCode => Object.hash(runtimeType, memberDetails, isModerator);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GroupMemberCopyWith<_$_GroupMember> get copyWith =>
       __$$_GroupMemberCopyWithImpl<_$_GroupMember>(this, _$identity);
 

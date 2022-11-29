@@ -2,13 +2,15 @@ import 'dart:convert';
 
 import 'package:afya_moja_core/src/domain/core/entities/content/content.dart';
 import 'package:afya_moja_core/src/enums.dart';
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_graphql_client/graph_client.dart' as graph;
+// import 'package:flutter_graphql_client/graph_client.dart' as graph;
 import 'package:flutter_local_notifications_platform_interface/flutter_local_notifications_platform_interface.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
+import 'package:sghi_core/app_wrapper/device_capabilities.dart';
+import 'package:sghi_core/flutter_graphql_client/flutter_graphql_client.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart' as graph;
 import 'package:video_player/video_player.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -301,7 +303,7 @@ Map<String, dynamic> mockGroupMember = <String, dynamic>{
 };
 
 // ignore: subtype_of_sealed_class
-class MockGraphQlClient extends Mock implements graph.GraphQlClient {
+class MockGraphQlClient extends Mock implements GraphQlClient {
   String setupUserAsExperimenterVariables =
       json.encode(<String, bool>{'participate': true});
   String removeUserAsExperimenterVariables =

@@ -37,7 +37,8 @@ mixin _$NotificationActions {
 abstract class $NotificationActionsCopyWith<$Res> {
   factory $NotificationActionsCopyWith(
           NotificationActions value, $Res Function(NotificationActions) then) =
-      _$NotificationActionsCopyWithImpl<$Res>;
+      _$NotificationActionsCopyWithImpl<$Res, NotificationActions>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'route') String route,
@@ -47,40 +48,43 @@ abstract class $NotificationActionsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotificationActionsCopyWithImpl<$Res>
+class _$NotificationActionsCopyWithImpl<$Res, $Val extends NotificationActions>
     implements $NotificationActionsCopyWith<$Res> {
   _$NotificationActionsCopyWithImpl(this._value, this._then);
 
-  final NotificationActions _value;
   // ignore: unused_field
-  final $Res Function(NotificationActions) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? route = freezed,
-    Object? icon = freezed,
+    Object? name = null,
+    Object? route = null,
+    Object? icon = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      route: route == freezed
+      route: null == route
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as IconDetails,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $IconDetailsCopyWith<$Res> get icon {
     return $IconDetailsCopyWith<$Res>(_value.icon, (value) {
-      return _then(_value.copyWith(icon: value));
+      return _then(_value.copyWith(icon: value) as $Val);
     });
   }
 }
@@ -92,6 +96,7 @@ abstract class _$$_NotificationActionsCopyWith<$Res>
           $Res Function(_$_NotificationActions) then) =
       __$$_NotificationActionsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'route') String route,
@@ -103,31 +108,29 @@ abstract class _$$_NotificationActionsCopyWith<$Res>
 
 /// @nodoc
 class __$$_NotificationActionsCopyWithImpl<$Res>
-    extends _$NotificationActionsCopyWithImpl<$Res>
+    extends _$NotificationActionsCopyWithImpl<$Res, _$_NotificationActions>
     implements _$$_NotificationActionsCopyWith<$Res> {
   __$$_NotificationActionsCopyWithImpl(_$_NotificationActions _value,
       $Res Function(_$_NotificationActions) _then)
-      : super(_value, (v) => _then(v as _$_NotificationActions));
+      : super(_value, _then);
 
-  @override
-  _$_NotificationActions get _value => super._value as _$_NotificationActions;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? route = freezed,
-    Object? icon = freezed,
+    Object? name = null,
+    Object? route = null,
+    Object? icon = null,
   }) {
     return _then(_$_NotificationActions(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      route: route == freezed
+      route: null == route
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as IconDetails,
@@ -166,21 +169,18 @@ class _$_NotificationActions implements _NotificationActions {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NotificationActions &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.route, route) &&
-            const DeepCollectionEquality().equals(other.icon, icon));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.route, route) || other.route == route) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(route),
-      const DeepCollectionEquality().hash(icon));
+  int get hashCode => Object.hash(runtimeType, name, route, icon);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NotificationActionsCopyWith<_$_NotificationActions> get copyWith =>
       __$$_NotificationActionsCopyWithImpl<_$_NotificationActions>(
           this, _$identity);

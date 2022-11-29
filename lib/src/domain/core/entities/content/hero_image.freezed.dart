@@ -32,28 +32,32 @@ mixin _$HeroImage {
 /// @nodoc
 abstract class $HeroImageCopyWith<$Res> {
   factory $HeroImageCopyWith(HeroImage value, $Res Function(HeroImage) then) =
-      _$HeroImageCopyWithImpl<$Res>;
+      _$HeroImageCopyWithImpl<$Res, HeroImage>;
+  @useResult
   $Res call({@JsonKey(name: 'url') String? url});
 }
 
 /// @nodoc
-class _$HeroImageCopyWithImpl<$Res> implements $HeroImageCopyWith<$Res> {
+class _$HeroImageCopyWithImpl<$Res, $Val extends HeroImage>
+    implements $HeroImageCopyWith<$Res> {
   _$HeroImageCopyWithImpl(this._value, this._then);
 
-  final HeroImage _value;
   // ignore: unused_field
-  final $Res Function(HeroImage) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -63,25 +67,25 @@ abstract class _$$_HeroImageCopyWith<$Res> implements $HeroImageCopyWith<$Res> {
           _$_HeroImage value, $Res Function(_$_HeroImage) then) =
       __$$_HeroImageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'url') String? url});
 }
 
 /// @nodoc
-class __$$_HeroImageCopyWithImpl<$Res> extends _$HeroImageCopyWithImpl<$Res>
+class __$$_HeroImageCopyWithImpl<$Res>
+    extends _$HeroImageCopyWithImpl<$Res, _$_HeroImage>
     implements _$$_HeroImageCopyWith<$Res> {
   __$$_HeroImageCopyWithImpl(
       _$_HeroImage _value, $Res Function(_$_HeroImage) _then)
-      : super(_value, (v) => _then(v as _$_HeroImage));
+      : super(_value, _then);
 
-  @override
-  _$_HeroImage get _value => super._value as _$_HeroImage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = freezed,
   }) {
     return _then(_$_HeroImage(
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -111,16 +115,16 @@ class _$_HeroImage implements _HeroImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HeroImage &&
-            const DeepCollectionEquality().equals(other.url, url));
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_HeroImageCopyWith<_$_HeroImage> get copyWith =>
       __$$_HeroImageCopyWithImpl<_$_HeroImage>(this, _$identity);
 

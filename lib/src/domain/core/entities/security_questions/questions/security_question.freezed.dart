@@ -43,7 +43,8 @@ mixin _$SecurityQuestion {
 abstract class $SecurityQuestionCopyWith<$Res> {
   factory $SecurityQuestionCopyWith(
           SecurityQuestion value, $Res Function(SecurityQuestion) then) =
-      _$SecurityQuestionCopyWithImpl<$Res>;
+      _$SecurityQuestionCopyWithImpl<$Res, SecurityQuestion>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'SecurityQuestionID')
           String? securityQuestionID,
@@ -58,14 +59,16 @@ abstract class $SecurityQuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SecurityQuestionCopyWithImpl<$Res>
+class _$SecurityQuestionCopyWithImpl<$Res, $Val extends SecurityQuestion>
     implements $SecurityQuestionCopyWith<$Res> {
   _$SecurityQuestionCopyWithImpl(this._value, this._then);
 
-  final SecurityQuestion _value;
   // ignore: unused_field
-  final $Res Function(SecurityQuestion) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? securityQuestionID = freezed,
@@ -75,27 +78,27 @@ class _$SecurityQuestionCopyWithImpl<$Res>
     Object? active = freezed,
   }) {
     return _then(_value.copyWith(
-      securityQuestionID: securityQuestionID == freezed
+      securityQuestionID: freezed == securityQuestionID
           ? _value.securityQuestionID
           : securityQuestionID // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionStem: questionStem == freezed
+      questionStem: freezed == questionStem
           ? _value.questionStem
           : questionStem // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      responseType: responseType == freezed
+      responseType: freezed == responseType
           ? _value.responseType
           : responseType // ignore: cast_nullable_to_non_nullable
               as SecurityQuestionResponseType?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -106,6 +109,7 @@ abstract class _$$_SecurityQuestionCopyWith<$Res>
           _$_SecurityQuestion value, $Res Function(_$_SecurityQuestion) then) =
       __$$_SecurityQuestionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'SecurityQuestionID')
           String? securityQuestionID,
@@ -121,15 +125,13 @@ abstract class _$$_SecurityQuestionCopyWith<$Res>
 
 /// @nodoc
 class __$$_SecurityQuestionCopyWithImpl<$Res>
-    extends _$SecurityQuestionCopyWithImpl<$Res>
+    extends _$SecurityQuestionCopyWithImpl<$Res, _$_SecurityQuestion>
     implements _$$_SecurityQuestionCopyWith<$Res> {
   __$$_SecurityQuestionCopyWithImpl(
       _$_SecurityQuestion _value, $Res Function(_$_SecurityQuestion) _then)
-      : super(_value, (v) => _then(v as _$_SecurityQuestion));
+      : super(_value, _then);
 
-  @override
-  _$_SecurityQuestion get _value => super._value as _$_SecurityQuestion;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? securityQuestionID = freezed,
@@ -139,23 +141,23 @@ class __$$_SecurityQuestionCopyWithImpl<$Res>
     Object? active = freezed,
   }) {
     return _then(_$_SecurityQuestion(
-      securityQuestionID: securityQuestionID == freezed
+      securityQuestionID: freezed == securityQuestionID
           ? _value.securityQuestionID
           : securityQuestionID // ignore: cast_nullable_to_non_nullable
               as String?,
-      questionStem: questionStem == freezed
+      questionStem: freezed == questionStem
           ? _value.questionStem
           : questionStem // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: description == freezed
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      responseType: responseType == freezed
+      responseType: freezed == responseType
           ? _value.responseType
           : responseType // ignore: cast_nullable_to_non_nullable
               as SecurityQuestionResponseType?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -208,29 +210,25 @@ class _$_SecurityQuestion implements _SecurityQuestion {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SecurityQuestion &&
-            const DeepCollectionEquality()
-                .equals(other.securityQuestionID, securityQuestionID) &&
-            const DeepCollectionEquality()
-                .equals(other.questionStem, questionStem) &&
-            const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality()
-                .equals(other.responseType, responseType) &&
-            const DeepCollectionEquality().equals(other.active, active));
+            (identical(other.securityQuestionID, securityQuestionID) ||
+                other.securityQuestionID == securityQuestionID) &&
+            (identical(other.questionStem, questionStem) ||
+                other.questionStem == questionStem) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.responseType, responseType) ||
+                other.responseType == responseType) &&
+            (identical(other.active, active) || other.active == active));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(securityQuestionID),
-      const DeepCollectionEquality().hash(questionStem),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(responseType),
-      const DeepCollectionEquality().hash(active));
+  int get hashCode => Object.hash(runtimeType, securityQuestionID, questionStem,
+      description, responseType, active);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SecurityQuestionCopyWith<_$_SecurityQuestion> get copyWith =>
       __$$_SecurityQuestionCopyWithImpl<_$_SecurityQuestion>(this, _$identity);
 

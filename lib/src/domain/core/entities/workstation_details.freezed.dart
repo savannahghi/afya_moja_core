@@ -41,7 +41,8 @@ mixin _$WorkStationDetails {
 abstract class $WorkStationDetailsCopyWith<$Res> {
   factory $WorkStationDetailsCopyWith(
           WorkStationDetails value, $Res Function(WorkStationDetails) then) =
-      _$WorkStationDetailsCopyWithImpl<$Res>;
+      _$WorkStationDetailsCopyWithImpl<$Res, WorkStationDetails>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'Notifications') int? notifications,
       @JsonKey(name: 'Messages') int? messages,
@@ -51,14 +52,16 @@ abstract class $WorkStationDetailsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WorkStationDetailsCopyWithImpl<$Res>
+class _$WorkStationDetailsCopyWithImpl<$Res, $Val extends WorkStationDetails>
     implements $WorkStationDetailsCopyWith<$Res> {
   _$WorkStationDetailsCopyWithImpl(this._value, this._then);
 
-  final WorkStationDetails _value;
   // ignore: unused_field
-  final $Res Function(WorkStationDetails) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? notifications = freezed,
@@ -68,27 +71,27 @@ class _$WorkStationDetailsCopyWithImpl<$Res>
     Object? serviceRequests = freezed,
   }) {
     return _then(_value.copyWith(
-      notifications: notifications == freezed
+      notifications: freezed == notifications
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as int?,
-      messages: messages == freezed
+      messages: freezed == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as int?,
-      surveys: surveys == freezed
+      surveys: freezed == surveys
           ? _value.surveys
           : surveys // ignore: cast_nullable_to_non_nullable
               as int?,
-      articles: articles == freezed
+      articles: freezed == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as int?,
-      serviceRequests: serviceRequests == freezed
+      serviceRequests: freezed == serviceRequests
           ? _value.serviceRequests
           : serviceRequests // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -99,6 +102,7 @@ abstract class _$$_WorkStationDetailsCopyWith<$Res>
           $Res Function(_$_WorkStationDetails) then) =
       __$$_WorkStationDetailsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'Notifications') int? notifications,
       @JsonKey(name: 'Messages') int? messages,
@@ -109,15 +113,13 @@ abstract class _$$_WorkStationDetailsCopyWith<$Res>
 
 /// @nodoc
 class __$$_WorkStationDetailsCopyWithImpl<$Res>
-    extends _$WorkStationDetailsCopyWithImpl<$Res>
+    extends _$WorkStationDetailsCopyWithImpl<$Res, _$_WorkStationDetails>
     implements _$$_WorkStationDetailsCopyWith<$Res> {
   __$$_WorkStationDetailsCopyWithImpl(
       _$_WorkStationDetails _value, $Res Function(_$_WorkStationDetails) _then)
-      : super(_value, (v) => _then(v as _$_WorkStationDetails));
+      : super(_value, _then);
 
-  @override
-  _$_WorkStationDetails get _value => super._value as _$_WorkStationDetails;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? notifications = freezed,
@@ -127,23 +129,23 @@ class __$$_WorkStationDetailsCopyWithImpl<$Res>
     Object? serviceRequests = freezed,
   }) {
     return _then(_$_WorkStationDetails(
-      notifications: notifications == freezed
+      notifications: freezed == notifications
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as int?,
-      messages: messages == freezed
+      messages: freezed == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
               as int?,
-      surveys: surveys == freezed
+      surveys: freezed == surveys
           ? _value.surveys
           : surveys // ignore: cast_nullable_to_non_nullable
               as int?,
-      articles: articles == freezed
+      articles: freezed == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as int?,
-      serviceRequests: serviceRequests == freezed
+      serviceRequests: freezed == serviceRequests
           ? _value.serviceRequests
           : serviceRequests // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -190,27 +192,25 @@ class _$_WorkStationDetails implements _WorkStationDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WorkStationDetails &&
-            const DeepCollectionEquality()
-                .equals(other.notifications, notifications) &&
-            const DeepCollectionEquality().equals(other.messages, messages) &&
-            const DeepCollectionEquality().equals(other.surveys, surveys) &&
-            const DeepCollectionEquality().equals(other.articles, articles) &&
-            const DeepCollectionEquality()
-                .equals(other.serviceRequests, serviceRequests));
+            (identical(other.notifications, notifications) ||
+                other.notifications == notifications) &&
+            (identical(other.messages, messages) ||
+                other.messages == messages) &&
+            (identical(other.surveys, surveys) || other.surveys == surveys) &&
+            (identical(other.articles, articles) ||
+                other.articles == articles) &&
+            (identical(other.serviceRequests, serviceRequests) ||
+                other.serviceRequests == serviceRequests));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(notifications),
-      const DeepCollectionEquality().hash(messages),
-      const DeepCollectionEquality().hash(surveys),
-      const DeepCollectionEquality().hash(articles),
-      const DeepCollectionEquality().hash(serviceRequests));
+      runtimeType, notifications, messages, surveys, articles, serviceRequests);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WorkStationDetailsCopyWith<_$_WorkStationDetails> get copyWith =>
       __$$_WorkStationDetailsCopyWithImpl<_$_WorkStationDetails>(
           this, _$identity);

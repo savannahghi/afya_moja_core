@@ -3,10 +3,11 @@ import 'dart:convert';
 
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:app_wrapper/app_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
+import 'package:sghi_core/app_wrapper/enums.dart';
 
 import '../mocks/mocks.dart';
 

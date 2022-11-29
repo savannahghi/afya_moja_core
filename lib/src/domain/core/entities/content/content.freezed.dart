@@ -81,7 +81,8 @@ mixin _$Content {
 /// @nodoc
 abstract class $ContentCopyWith<$Res> {
   factory $ContentCopyWith(Content value, $Res Function(Content) then) =
-      _$ContentCopyWithImpl<$Res>;
+      _$ContentCopyWithImpl<$Res, Content>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? contentID,
       @JsonKey(name: 'title') String? title,
@@ -112,13 +113,16 @@ abstract class $ContentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContentCopyWithImpl<$Res> implements $ContentCopyWith<$Res> {
+class _$ContentCopyWithImpl<$Res, $Val extends Content>
+    implements $ContentCopyWith<$Res> {
   _$ContentCopyWithImpl(this._value, this._then);
 
-  final Content _value;
   // ignore: unused_field
-  final $Res Function(Content) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? contentID = freezed,
@@ -145,127 +149,130 @@ class _$ContentCopyWithImpl<$Res> implements $ContentCopyWith<$Res> {
     Object? galleryImages = freezed,
   }) {
     return _then(_value.copyWith(
-      contentID: contentID == freezed
+      contentID: freezed == contentID
           ? _value.contentID
           : contentID // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      intro: intro == freezed
+      intro: freezed == intro
           ? _value.intro
           : intro // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorName: authorName == freezed
+      authorName: freezed == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as Author?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as ContentType?,
-      estimate: estimate == freezed
+      estimate: freezed == estimate
           ? _value.estimate
           : estimate // ignore: cast_nullable_to_non_nullable
               as int?,
-      body: body == freezed
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      heroImage: heroImage == freezed
+      heroImage: freezed == heroImage
           ? _value.heroImage
           : heroImage // ignore: cast_nullable_to_non_nullable
               as HeroImage?,
-      likeCount: likeCount == freezed
+      likeCount: freezed == likeCount
           ? _value.likeCount
           : likeCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookmarkCount: bookmarkCount == freezed
+      bookmarkCount: freezed == bookmarkCount
           ? _value.bookmarkCount
           : bookmarkCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      viewCount: viewCount == freezed
+      viewCount: freezed == viewCount
           ? _value.viewCount
           : viewCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      shareCount: shareCount == freezed
+      shareCount: freezed == shareCount
           ? _value.shareCount
           : shareCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      documents: documents == freezed
+      documents: freezed == documents
           ? _value.documents
           : documents // ignore: cast_nullable_to_non_nullable
               as List<Document>?,
-      categories: categories == freezed
+      categories: freezed == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<ContentCategory>?,
-      tags: tags == freezed
+      tags: freezed == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as ContentMetadata?,
-      featuredMedia: featuredMedia == freezed
+      featuredMedia: freezed == featuredMedia
           ? _value.featuredMedia
           : featuredMedia // ignore: cast_nullable_to_non_nullable
               as List<FeaturedMedia?>?,
-      hasLiked: hasLiked == freezed
+      hasLiked: freezed == hasLiked
           ? _value.hasLiked
           : hasLiked // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasSaved: hasSaved == freezed
+      hasSaved: freezed == hasSaved
           ? _value.hasSaved
           : hasSaved // ignore: cast_nullable_to_non_nullable
               as bool?,
-      galleryImages: galleryImages == freezed
+      galleryImages: freezed == galleryImages
           ? _value.galleryImages
           : galleryImages // ignore: cast_nullable_to_non_nullable
               as List<GalleryImage>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AuthorCopyWith<$Res>? get author {
     if (_value.author == null) {
       return null;
     }
 
     return $AuthorCopyWith<$Res>(_value.author!, (value) {
-      return _then(_value.copyWith(author: value));
+      return _then(_value.copyWith(author: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $HeroImageCopyWith<$Res>? get heroImage {
     if (_value.heroImage == null) {
       return null;
     }
 
     return $HeroImageCopyWith<$Res>(_value.heroImage!, (value) {
-      return _then(_value.copyWith(heroImage: value));
+      return _then(_value.copyWith(heroImage: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ContentMetadataCopyWith<$Res>? get metadata {
     if (_value.metadata == null) {
       return null;
     }
 
     return $ContentMetadataCopyWith<$Res>(_value.metadata!, (value) {
-      return _then(_value.copyWith(metadata: value));
+      return _then(_value.copyWith(metadata: value) as $Val);
     });
   }
 }
@@ -276,6 +283,7 @@ abstract class _$$_ContentCopyWith<$Res> implements $ContentCopyWith<$Res> {
           _$_Content value, $Res Function(_$_Content) then) =
       __$$_ContentCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') int? contentID,
       @JsonKey(name: 'title') String? title,
@@ -309,14 +317,13 @@ abstract class _$$_ContentCopyWith<$Res> implements $ContentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
+class __$$_ContentCopyWithImpl<$Res>
+    extends _$ContentCopyWithImpl<$Res, _$_Content>
     implements _$$_ContentCopyWith<$Res> {
   __$$_ContentCopyWithImpl(_$_Content _value, $Res Function(_$_Content) _then)
-      : super(_value, (v) => _then(v as _$_Content));
+      : super(_value, _then);
 
-  @override
-  _$_Content get _value => super._value as _$_Content;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? contentID = freezed,
@@ -343,91 +350,91 @@ class __$$_ContentCopyWithImpl<$Res> extends _$ContentCopyWithImpl<$Res>
     Object? galleryImages = freezed,
   }) {
     return _then(_$_Content(
-      contentID: contentID == freezed
+      contentID: freezed == contentID
           ? _value.contentID
           : contentID // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      date: date == freezed
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      intro: intro == freezed
+      intro: freezed == intro
           ? _value.intro
           : intro // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorName: authorName == freezed
+      authorName: freezed == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String?,
-      author: author == freezed
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as Author?,
-      contentType: contentType == freezed
+      contentType: freezed == contentType
           ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as ContentType?,
-      estimate: estimate == freezed
+      estimate: freezed == estimate
           ? _value.estimate
           : estimate // ignore: cast_nullable_to_non_nullable
               as int?,
-      body: body == freezed
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      heroImage: heroImage == freezed
+      heroImage: freezed == heroImage
           ? _value.heroImage
           : heroImage // ignore: cast_nullable_to_non_nullable
               as HeroImage?,
-      likeCount: likeCount == freezed
+      likeCount: freezed == likeCount
           ? _value.likeCount
           : likeCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookmarkCount: bookmarkCount == freezed
+      bookmarkCount: freezed == bookmarkCount
           ? _value.bookmarkCount
           : bookmarkCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      viewCount: viewCount == freezed
+      viewCount: freezed == viewCount
           ? _value.viewCount
           : viewCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      shareCount: shareCount == freezed
+      shareCount: freezed == shareCount
           ? _value.shareCount
           : shareCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      documents: documents == freezed
+      documents: freezed == documents
           ? _value._documents
           : documents // ignore: cast_nullable_to_non_nullable
               as List<Document>?,
-      categories: categories == freezed
+      categories: freezed == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<ContentCategory>?,
-      tags: tags == freezed
+      tags: freezed == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
-      metadata: metadata == freezed
+      metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as ContentMetadata?,
-      featuredMedia: featuredMedia == freezed
+      featuredMedia: freezed == featuredMedia
           ? _value._featuredMedia
           : featuredMedia // ignore: cast_nullable_to_non_nullable
               as List<FeaturedMedia?>?,
-      hasLiked: hasLiked == freezed
+      hasLiked: freezed == hasLiked
           ? _value.hasLiked
           : hasLiked // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasSaved: hasSaved == freezed
+      hasSaved: freezed == hasSaved
           ? _value.hasSaved
           : hasSaved // ignore: cast_nullable_to_non_nullable
               as bool?,
-      galleryImages: galleryImages == freezed
+      galleryImages: freezed == galleryImages
           ? _value._galleryImages
           : galleryImages // ignore: cast_nullable_to_non_nullable
               as List<GalleryImage>?,
@@ -591,34 +598,42 @@ class _$_Content implements _Content {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Content &&
-            const DeepCollectionEquality().equals(other.contentID, contentID) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.date, date) &&
-            const DeepCollectionEquality().equals(other.intro, intro) &&
-            const DeepCollectionEquality()
-                .equals(other.authorName, authorName) &&
-            const DeepCollectionEquality().equals(other.author, author) &&
-            const DeepCollectionEquality()
-                .equals(other.contentType, contentType) &&
-            const DeepCollectionEquality().equals(other.estimate, estimate) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality().equals(other.heroImage, heroImage) &&
-            const DeepCollectionEquality().equals(other.likeCount, likeCount) &&
-            const DeepCollectionEquality()
-                .equals(other.bookmarkCount, bookmarkCount) &&
-            const DeepCollectionEquality().equals(other.viewCount, viewCount) &&
-            const DeepCollectionEquality()
-                .equals(other.shareCount, shareCount) &&
+            (identical(other.contentID, contentID) ||
+                other.contentID == contentID) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.intro, intro) || other.intro == intro) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType) &&
+            (identical(other.estimate, estimate) ||
+                other.estimate == estimate) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.heroImage, heroImage) ||
+                other.heroImage == heroImage) &&
+            (identical(other.likeCount, likeCount) ||
+                other.likeCount == likeCount) &&
+            (identical(other.bookmarkCount, bookmarkCount) ||
+                other.bookmarkCount == bookmarkCount) &&
+            (identical(other.viewCount, viewCount) ||
+                other.viewCount == viewCount) &&
+            (identical(other.shareCount, shareCount) ||
+                other.shareCount == shareCount) &&
             const DeepCollectionEquality()
                 .equals(other._documents, _documents) &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.metadata, metadata) &&
+            (identical(other.metadata, metadata) ||
+                other.metadata == metadata) &&
             const DeepCollectionEquality()
                 .equals(other._featuredMedia, _featuredMedia) &&
-            const DeepCollectionEquality().equals(other.hasLiked, hasLiked) &&
-            const DeepCollectionEquality().equals(other.hasSaved, hasSaved) &&
+            (identical(other.hasLiked, hasLiked) ||
+                other.hasLiked == hasLiked) &&
+            (identical(other.hasSaved, hasSaved) ||
+                other.hasSaved == hasSaved) &&
             const DeepCollectionEquality()
                 .equals(other._galleryImages, _galleryImages));
   }
@@ -627,32 +642,33 @@ class _$_Content implements _Content {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(contentID),
-        const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(date),
-        const DeepCollectionEquality().hash(intro),
-        const DeepCollectionEquality().hash(authorName),
-        const DeepCollectionEquality().hash(author),
-        const DeepCollectionEquality().hash(contentType),
-        const DeepCollectionEquality().hash(estimate),
-        const DeepCollectionEquality().hash(body),
-        const DeepCollectionEquality().hash(heroImage),
-        const DeepCollectionEquality().hash(likeCount),
-        const DeepCollectionEquality().hash(bookmarkCount),
-        const DeepCollectionEquality().hash(viewCount),
-        const DeepCollectionEquality().hash(shareCount),
+        contentID,
+        title,
+        date,
+        intro,
+        authorName,
+        author,
+        contentType,
+        estimate,
+        body,
+        heroImage,
+        likeCount,
+        bookmarkCount,
+        viewCount,
+        shareCount,
         const DeepCollectionEquality().hash(_documents),
         const DeepCollectionEquality().hash(_categories),
         const DeepCollectionEquality().hash(_tags),
-        const DeepCollectionEquality().hash(metadata),
+        metadata,
         const DeepCollectionEquality().hash(_featuredMedia),
-        const DeepCollectionEquality().hash(hasLiked),
-        const DeepCollectionEquality().hash(hasSaved),
+        hasLiked,
+        hasSaved,
         const DeepCollectionEquality().hash(_galleryImages)
       ]);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ContentCopyWith<_$_Content> get copyWith =>
       __$$_ContentCopyWithImpl<_$_Content>(this, _$identity);
 

@@ -42,7 +42,8 @@ mixin _$UserData {
 /// @nodoc
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
-      _$UserDataCopyWithImpl<$Res>;
+      _$UserDataCopyWithImpl<$Res, UserData>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Username') String? userName,
@@ -55,13 +56,16 @@ abstract class $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
+class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
+    implements $UserDataCopyWith<$Res> {
   _$UserDataCopyWithImpl(this._value, this._then);
 
-  final UserData _value;
   // ignore: unused_field
-  final $Res Function(UserData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -72,41 +76,42 @@ class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
     Object? name = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      userName: userName == freezed
+      userName: freezed == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String?,
-      termsAccepted: termsAccepted == freezed
+      termsAccepted: freezed == termsAccepted
           ? _value.termsAccepted
           : termsAccepted // ignore: cast_nullable_to_non_nullable
               as bool?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
-      primaryContact: primaryContact == freezed
+      primaryContact: freezed == primaryContact
           ? _value.primaryContact
           : primaryContact // ignore: cast_nullable_to_non_nullable
               as Contact?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ContactCopyWith<$Res>? get primaryContact {
     if (_value.primaryContact == null) {
       return null;
     }
 
     return $ContactCopyWith<$Res>(_value.primaryContact!, (value) {
-      return _then(_value.copyWith(primaryContact: value));
+      return _then(_value.copyWith(primaryContact: value) as $Val);
     });
   }
 }
@@ -117,6 +122,7 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
           _$_UserData value, $Res Function(_$_UserData) then) =
       __$$_UserDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'ID') String? id,
       @JsonKey(name: 'Username') String? userName,
@@ -130,15 +136,14 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
+class __$$_UserDataCopyWithImpl<$Res>
+    extends _$UserDataCopyWithImpl<$Res, _$_UserData>
     implements _$$_UserDataCopyWith<$Res> {
   __$$_UserDataCopyWithImpl(
       _$_UserData _value, $Res Function(_$_UserData) _then)
-      : super(_value, (v) => _then(v as _$_UserData));
+      : super(_value, _then);
 
-  @override
-  _$_UserData get _value => super._value as _$_UserData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -149,27 +154,27 @@ class __$$_UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
     Object? name = freezed,
   }) {
     return _then(_$_UserData(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      userName: userName == freezed
+      userName: freezed == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String?,
-      termsAccepted: termsAccepted == freezed
+      termsAccepted: freezed == termsAccepted
           ? _value.termsAccepted
           : termsAccepted // ignore: cast_nullable_to_non_nullable
               as bool?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
-      primaryContact: primaryContact == freezed
+      primaryContact: freezed == primaryContact
           ? _value.primaryContact
           : primaryContact // ignore: cast_nullable_to_non_nullable
               as Contact?,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -220,29 +225,25 @@ class _$_UserData implements _UserData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserData &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality()
-                .equals(other.termsAccepted, termsAccepted) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
-            const DeepCollectionEquality()
-                .equals(other.primaryContact, primaryContact) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
+            (identical(other.termsAccepted, termsAccepted) ||
+                other.termsAccepted == termsAccepted) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.primaryContact, primaryContact) ||
+                other.primaryContact == primaryContact) &&
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(userName),
-      const DeepCollectionEquality().hash(termsAccepted),
-      const DeepCollectionEquality().hash(active),
-      const DeepCollectionEquality().hash(primaryContact),
-      const DeepCollectionEquality().hash(name));
+      runtimeType, id, userName, termsAccepted, active, primaryContact, name);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UserDataCopyWith<_$_UserData> get copyWith =>
       __$$_UserDataCopyWithImpl<_$_UserData>(this, _$identity);
 

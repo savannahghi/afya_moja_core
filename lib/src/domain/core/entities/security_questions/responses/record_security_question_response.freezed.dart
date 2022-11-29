@@ -37,36 +37,41 @@ abstract class $RecordSecurityQuestionResponseCopyWith<$Res> {
   factory $RecordSecurityQuestionResponseCopyWith(
           RecordSecurityQuestionResponse value,
           $Res Function(RecordSecurityQuestionResponse) then) =
-      _$RecordSecurityQuestionResponseCopyWithImpl<$Res>;
+      _$RecordSecurityQuestionResponseCopyWithImpl<$Res,
+          RecordSecurityQuestionResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'securityQuestionID') String? securityQuestionID,
       @JsonKey(name: 'isCorrect') bool? isCorrect});
 }
 
 /// @nodoc
-class _$RecordSecurityQuestionResponseCopyWithImpl<$Res>
+class _$RecordSecurityQuestionResponseCopyWithImpl<$Res,
+        $Val extends RecordSecurityQuestionResponse>
     implements $RecordSecurityQuestionResponseCopyWith<$Res> {
   _$RecordSecurityQuestionResponseCopyWithImpl(this._value, this._then);
 
-  final RecordSecurityQuestionResponse _value;
   // ignore: unused_field
-  final $Res Function(RecordSecurityQuestionResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? securityQuestionID = freezed,
     Object? isCorrect = freezed,
   }) {
     return _then(_value.copyWith(
-      securityQuestionID: securityQuestionID == freezed
+      securityQuestionID: freezed == securityQuestionID
           ? _value.securityQuestionID
           : securityQuestionID // ignore: cast_nullable_to_non_nullable
               as String?,
-      isCorrect: isCorrect == freezed
+      isCorrect: freezed == isCorrect
           ? _value.isCorrect
           : isCorrect // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -78,6 +83,7 @@ abstract class _$$_RecordSecurityQuestionResponseCopyWith<$Res>
           $Res Function(_$_RecordSecurityQuestionResponse) then) =
       __$$_RecordSecurityQuestionResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'securityQuestionID') String? securityQuestionID,
       @JsonKey(name: 'isCorrect') bool? isCorrect});
@@ -85,28 +91,26 @@ abstract class _$$_RecordSecurityQuestionResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_RecordSecurityQuestionResponseCopyWithImpl<$Res>
-    extends _$RecordSecurityQuestionResponseCopyWithImpl<$Res>
+    extends _$RecordSecurityQuestionResponseCopyWithImpl<$Res,
+        _$_RecordSecurityQuestionResponse>
     implements _$$_RecordSecurityQuestionResponseCopyWith<$Res> {
   __$$_RecordSecurityQuestionResponseCopyWithImpl(
       _$_RecordSecurityQuestionResponse _value,
       $Res Function(_$_RecordSecurityQuestionResponse) _then)
-      : super(_value, (v) => _then(v as _$_RecordSecurityQuestionResponse));
+      : super(_value, _then);
 
-  @override
-  _$_RecordSecurityQuestionResponse get _value =>
-      super._value as _$_RecordSecurityQuestionResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? securityQuestionID = freezed,
     Object? isCorrect = freezed,
   }) {
     return _then(_$_RecordSecurityQuestionResponse(
-      securityQuestionID: securityQuestionID == freezed
+      securityQuestionID: freezed == securityQuestionID
           ? _value.securityQuestionID
           : securityQuestionID // ignore: cast_nullable_to_non_nullable
               as String?,
-      isCorrect: isCorrect == freezed
+      isCorrect: freezed == isCorrect
           ? _value.isCorrect
           : isCorrect // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -143,20 +147,19 @@ class _$_RecordSecurityQuestionResponse
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RecordSecurityQuestionResponse &&
-            const DeepCollectionEquality()
-                .equals(other.securityQuestionID, securityQuestionID) &&
-            const DeepCollectionEquality().equals(other.isCorrect, isCorrect));
+            (identical(other.securityQuestionID, securityQuestionID) ||
+                other.securityQuestionID == securityQuestionID) &&
+            (identical(other.isCorrect, isCorrect) ||
+                other.isCorrect == isCorrect));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(securityQuestionID),
-      const DeepCollectionEquality().hash(isCorrect));
+  int get hashCode => Object.hash(runtimeType, securityQuestionID, isCorrect);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RecordSecurityQuestionResponseCopyWith<_$_RecordSecurityQuestionResponse>
       get copyWith => __$$_RecordSecurityQuestionResponseCopyWithImpl<
           _$_RecordSecurityQuestionResponse>(this, _$identity);

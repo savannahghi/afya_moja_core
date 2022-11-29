@@ -39,7 +39,8 @@ mixin _$Contact {
 /// @nodoc
 abstract class $ContactCopyWith<$Res> {
   factory $ContactCopyWith(Contact value, $Res Function(Contact) then) =
-      _$ContactCopyWithImpl<$Res>;
+      _$ContactCopyWithImpl<$Res, Contact>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') String? id,
       @JsonKey(name: 'contactType') ContactType? contactType,
@@ -49,13 +50,16 @@ abstract class $ContactCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ContactCopyWithImpl<$Res> implements $ContactCopyWith<$Res> {
+class _$ContactCopyWithImpl<$Res, $Val extends Contact>
+    implements $ContactCopyWith<$Res> {
   _$ContactCopyWithImpl(this._value, this._then);
 
-  final Contact _value;
   // ignore: unused_field
-  final $Res Function(Contact) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -65,27 +69,27 @@ class _$ContactCopyWithImpl<$Res> implements $ContactCopyWith<$Res> {
     Object? optedIn = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      contactType: contactType == freezed
+      contactType: freezed == contactType
           ? _value.contactType
           : contactType // ignore: cast_nullable_to_non_nullable
               as ContactType?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
-      optedIn: optedIn == freezed
+      optedIn: freezed == optedIn
           ? _value.optedIn
           : optedIn // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -95,6 +99,7 @@ abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
           _$_Contact value, $Res Function(_$_Contact) then) =
       __$$_ContactCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') String? id,
       @JsonKey(name: 'contactType') ContactType? contactType,
@@ -104,14 +109,13 @@ abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res>
+class __$$_ContactCopyWithImpl<$Res>
+    extends _$ContactCopyWithImpl<$Res, _$_Contact>
     implements _$$_ContactCopyWith<$Res> {
   __$$_ContactCopyWithImpl(_$_Contact _value, $Res Function(_$_Contact) _then)
-      : super(_value, (v) => _then(v as _$_Contact));
+      : super(_value, _then);
 
-  @override
-  _$_Contact get _value => super._value as _$_Contact;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -121,23 +125,23 @@ class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res>
     Object? optedIn = freezed,
   }) {
     return _then(_$_Contact(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      contactType: contactType == freezed
+      contactType: freezed == contactType
           ? _value.contactType
           : contactType // ignore: cast_nullable_to_non_nullable
               as ContactType?,
-      value: value == freezed
+      value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
-      active: active == freezed
+      active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
-      optedIn: optedIn == freezed
+      optedIn: freezed == optedIn
           ? _value.optedIn
           : optedIn // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -184,26 +188,22 @@ class _$_Contact implements _Contact {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Contact &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.contactType, contactType) &&
-            const DeepCollectionEquality().equals(other.value, value) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
-            const DeepCollectionEquality().equals(other.optedIn, optedIn));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.contactType, contactType) ||
+                other.contactType == contactType) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.optedIn, optedIn) || other.optedIn == optedIn));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(contactType),
-      const DeepCollectionEquality().hash(value),
-      const DeepCollectionEquality().hash(active),
-      const DeepCollectionEquality().hash(optedIn));
+  int get hashCode =>
+      Object.hash(runtimeType, id, contactType, value, active, optedIn);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ContactCopyWith<_$_Contact> get copyWith =>
       __$$_ContactCopyWithImpl<_$_Contact>(this, _$identity);
 

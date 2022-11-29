@@ -4,12 +4,10 @@ import 'dart:convert';
 import 'package:afya_moja_core/afya_moja_core.dart';
 import 'package:afya_moja_core/src/app_asset_strings.dart';
 import 'package:afya_moja_core/src/app_strings.dart';
-import 'package:app_wrapper/app_wrapper.dart';
+// import 'package:app_wrapper/app_wrapper.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_graphql_client/graph_client.dart';
-import 'package:flutter_graphql_client/graph_constants.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
@@ -18,6 +16,9 @@ import 'package:intl/intl.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart'
     as local_notifications;
+import 'package:sghi_core/app_wrapper/app_wrapper_base.dart';
+import 'package:sghi_core/flutter_graphql_client/constants.dart';
+import 'package:sghi_core/flutter_graphql_client/i_flutter_graphql_client.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart' as stream;
 
 String formatPhoneNumber({

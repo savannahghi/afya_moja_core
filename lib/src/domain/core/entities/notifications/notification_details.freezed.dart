@@ -47,7 +47,8 @@ mixin _$NotificationDetails {
 abstract class $NotificationDetailsCopyWith<$Res> {
   factory $NotificationDetailsCopyWith(
           NotificationDetails value, $Res Function(NotificationDetails) then) =
-      _$NotificationDetailsCopyWithImpl<$Res>;
+      _$NotificationDetailsCopyWithImpl<$Res, NotificationDetails>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id')
           String? id,
@@ -68,14 +69,16 @@ abstract class $NotificationDetailsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotificationDetailsCopyWithImpl<$Res>
+class _$NotificationDetailsCopyWithImpl<$Res, $Val extends NotificationDetails>
     implements $NotificationDetailsCopyWith<$Res> {
   _$NotificationDetailsCopyWithImpl(this._value, this._then);
 
-  final NotificationDetails _value;
   // ignore: unused_field
-  final $Res Function(NotificationDetails) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -88,39 +91,39 @@ class _$NotificationDetailsCopyWithImpl<$Res>
     Object? status = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      body: body == freezed
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType?,
-      isRead: isRead == freezed
+      isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
               as bool?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      actions: actions == freezed
+      actions: freezed == actions
           ? _value.actions
           : actions // ignore: cast_nullable_to_non_nullable
               as List<NotificationActions>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -131,6 +134,7 @@ abstract class _$$_NotificationDetailsCopyWith<$Res>
           $Res Function(_$_NotificationDetails) then) =
       __$$_NotificationDetailsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id')
           String? id,
@@ -152,15 +156,13 @@ abstract class _$$_NotificationDetailsCopyWith<$Res>
 
 /// @nodoc
 class __$$_NotificationDetailsCopyWithImpl<$Res>
-    extends _$NotificationDetailsCopyWithImpl<$Res>
+    extends _$NotificationDetailsCopyWithImpl<$Res, _$_NotificationDetails>
     implements _$$_NotificationDetailsCopyWith<$Res> {
   __$$_NotificationDetailsCopyWithImpl(_$_NotificationDetails _value,
       $Res Function(_$_NotificationDetails) _then)
-      : super(_value, (v) => _then(v as _$_NotificationDetails));
+      : super(_value, _then);
 
-  @override
-  _$_NotificationDetails get _value => super._value as _$_NotificationDetails;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
@@ -173,35 +175,35 @@ class __$$_NotificationDetailsCopyWithImpl<$Res>
     Object? status = freezed,
   }) {
     return _then(_$_NotificationDetails(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      body: body == freezed
+      body: freezed == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as NotificationType?,
-      isRead: isRead == freezed
+      isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
               as bool?,
-      createdAt: createdAt == freezed
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      actions: actions == freezed
+      actions: freezed == actions
           ? _value._actions
           : actions // ignore: cast_nullable_to_non_nullable
               as List<NotificationActions>?,
-      status: status == freezed
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -268,31 +270,25 @@ class _$_NotificationDetails implements _NotificationDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NotificationDetails &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.isRead, isRead) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.isRead, isRead) || other.isRead == isRead) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
             const DeepCollectionEquality().equals(other._actions, _actions) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(body),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(isRead),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(_actions),
-      const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(runtimeType, id, title, body, type, isRead,
+      createdAt, const DeepCollectionEquality().hash(_actions), status);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NotificationDetailsCopyWith<_$_NotificationDetails> get copyWith =>
       __$$_NotificationDetailsCopyWithImpl<_$_NotificationDetails>(
           this, _$identity);
